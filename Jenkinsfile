@@ -5,7 +5,7 @@ pipeline {
             agent {
                 docker {
                     label 'docker'
-                    image 'cm9-base'
+                    image '5.189.132.250:8083/cm9-base:1.0'
                     args ''
                     reuseNode true
                 }
