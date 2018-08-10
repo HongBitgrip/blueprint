@@ -11,6 +11,8 @@ pipeline {
                 }
             }
             steps {
+                sh "mvn --version"
+                sh "echo $MAVEN_HOME"
                 sh "mvn -T 2 clean install -DskipTests=true"
             }
         }
