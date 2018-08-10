@@ -1,0 +1,24 @@
+{
+  "name": "@coremedia/brick-navigation",
+  "version": "1.0.0",
+  "private": true,
+  "dependencies": {
+    "jquery": "3.2.1",
+    "@coremedia/js-device-detector": "^1.0.0",
+    "@coremedia/sass-utils": "^1.0.0",
+    "@coremedia/brick-media": "^1.0.0",
+    "@coremedia/brick-bootstrap": "^1.0.0"
+  },
+  "devDependencies": {
+    "jsdoc-to-markdown": "3.0.0",
+    "prettier": "1.11.1"
+  },
+  "scripts": {
+    "apidoc": "jsdoc2md src/js/*.js > API.md",
+    "prettier": "prettier \"**/*\" --write"
+  },
+  "coremedia": {
+    "type": "brick",
+    "init": "src/js/init.js"
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "author": {
+    "name": "CoreMedia",
+    "url": "http://www.coremedia.com"
+  },
+  "name": "@coremedia/livereload",
+  "private": true,
+  "version": "1.0.0",
+  "engines": {
+    "node": ">=8"
+  },
+  "dependencies": {
+    "@coremedia/cm-logger": "^1.0.0",
+    "@coremedia/tool-utils": "^1.0.0",
+    "tiny-lr": "1.0.5"
+  },
+  "devDependencies": {
+    "jest": "22.0.4",
+    "prettier": "1.11.1"
+  },
+  "scripts": {
+    "prettier": "prettier \"**/*\" --write",
+    "test": "jest"
+  },
+  "main": "src/index.js"
+}

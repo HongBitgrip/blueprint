@@ -1,0 +1,213 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <!--
+      You will need to change the groupId in all modules
+      A global search&replace will do the job !
+  -->
+  <groupId>com.coremedia.blueprint</groupId>
+  <artifactId>blueprint</artifactId>
+  <version>1-SNAPSHOT</version>
+  <packaging>pom</packaging>
+  <name>CoreMedia CMS Blueprint</name>
+
+  <organization>
+    <name>Blueprint</name>
+  </organization>
+
+  <properties>
+    <!--
+     | set this property in any reactor module, e.g. a module that has a modules element, so that it points to
+     | the correct path relative to the submodules.
+    -->
+    <workspace.configuration.dir>../workspace-configuration</workspace.configuration.dir>
+    <development-properties.dir>${workspace.configuration.dir}/development-properties</development-properties.dir>
+    <logging-properties.dir>${workspace.configuration.dir}/logging</logging-properties.dir>
+
+    <customer>Blueprint</customer>
+
+    <!-- Some values for the ThemeImporter exec-maven-plugin configuration -->
+    <theme-importer.argument.folder>-Dthemes_folder=${project.build.directory}/themes</theme-importer.argument.folder>
+    <theme-importer.argument.export-path>-Dexport_path=${project.build.directory}/content</theme-importer.argument.export-path>
+    <theme-importer.argument.runner>com.coremedia.blueprint.themeimporter.client.ThemeImporterRunner</theme-importer.argument.runner>
+
+  </properties>
+
+  <profiles>
+    <profile>
+      <id>deployment-archive</id>
+      <!--
+       | This profile creates the deployment archive containing the chef setup, the deployment artifacts
+       | (webapps, tools and some jars) and the content.
+       -->
+      <modules>
+        <module>deployment</module>
+      </modules>
+    </profile>
+    <profile>
+      <!-- Profile not supported. Can be removed safely-->
+      <id>check-dependencies-owasp</id>
+      <properties>
+        <!-- Skip all other checks -->
+        <skip-joo-unit-tests>true</skip-joo-unit-tests>
+        <skip-unit-tests>true</skip-unit-tests>
+        <enforcer.skip>true</enforcer.skip>
+        <coremedia.enforcer.skip>true</coremedia.enforcer.skip>
+        <mdep.analyze.skip>true</mdep.analyze.skip>
+        <skipTests>true</skipTests>
+        <suppressionFile/>
+        <nvdMirror>https://</nvdMirror>
+      </properties>
+      <build>
+        <plugins>
+          <plugin>
+            <groupId>org.owasp</groupId>
+            <artifactId>dependency-check-maven</artifactId>
+            <configuration>
+              <suppressionFiles>
+                <suppressionFile>${suppressionFile}</suppressionFile>
+              </suppressionFiles>
+              <skipArtifactType>swc|pom|pkg|coremedia-application|zip</skipArtifactType>
+              <skipProvidedScope>true</skipProvidedScope>
+              <skipSystemScope>true</skipSystemScope>
+              <skipArtifactType>swc|pom|pkg|coremedia-application|zip</skipArtifactType>
+              <failOnError>true</failOnError>
+              <assemblyAnalyzerEnabled>false</assemblyAnalyzerEnabled>
+              <nspAnalyzerEnabled>false</nspAnalyzerEnabled>
+              <cveUrl12Modified>${nvdMirror}nvd.nist.gov/feeds/xml/cve/1.2/nvdcve-modified.xml.gz</cveUrl12Modified>
+              <cveUrl20Modified>${nvdMirror}nvd.nist.gov/feeds/xml/cve/2.0/nvdcve-2.0-modified.xml.gz</cveUrl20Modified>
+              <cveUrl12Base>${nvdMirror}nvd.nist.gov/feeds/xml/cve/1.2/nvdcve-%d.xml.gz</cveUrl12Base>
+              <cveUrl20Base>${nvdMirror}nvd.nist.gov/feeds/xml/cve/2.0/nvdcve-2.0-%d.xml.gz</cveUrl20Base>
+            </configuration>
+          </plugin>
+        </plugins>
+      </build>
+    </profile>
+    <profile>
+      <id>check-sonar</id>
+      <build>
+        <plugins>
+          <plugin>
+            <groupId>org.sonarsource.scanner.maven</groupId>
+            <artifactId>sonar-maven-plugin</artifactId>
+          </plugin>
+        </plugins>
+      </build>
+    </profile>
+  </profiles>
+
+  <modules>
+    <module>blueprint-parent</module>
+    <module>modules</module>
+    <module>test-data</module>
+    <module>deployment</module>
+  </modules>
+
+  <scm>
+    <connection>scm:git:git@github.com:CoreMedia/cms.git</connection>
+    <developerConnection>scm:git:git@github.com:CoreMedia/cms.git</developerConnection>
+    <tag>HEAD</tag>
+  </scm>
+
+  <distributionManagement>
+    <snapshotRepository>
+      <id>localfs</id>
+      <url>file://${project.basedir}/target</url>
+    </snapshotRepository>
+    <repository>
+      <id>coremedia.external.releases</id>
+      <url>https://repository.coremedia.com/nexus/service/local/staging/deploy/maven2</url>
+    </repository>
+    <site>
+      <id>localsite</id>
+      <url>file://${project.basedir}/target/site-deploy</url>
+    </site>
+  </distributionManagement>
+
+  <build>
+    <pluginManagement>
+      <plugins>
+        <plugin>
+          <groupId>org.owasp</groupId>
+          <artifactId>dependency-check-maven</artifactId>
+          <version>2.1.0</version>
+        </plugin>
+      </plugins>
+    </pluginManagement>
+    <plugins>
+      <plugin>
+        <groupId>com.coremedia.maven</groupId>
+        <artifactId>coremedia-application-maven-plugin</artifactId>
+        <version>2.7.10</version>
+        <extensions>true</extensions>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-enforcer-plugin</artifactId>
+        <version>3.0.0-M1</version>
+        <executions>
+          <execution>
+            <id>enforce-maven</id>
+            <goals>
+              <goal>enforce</goal>
+            </goals>
+            <configuration>
+              <rules>
+                <requireMavenVersion>
+                  <version>3.3</version>
+                </requireMavenVersion>
+              </rules>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
+    </plugins>
+  </build>
+
+  <reporting>
+    <excludeDefaults>true</excludeDefaults>
+  </reporting>
+
+  <repositories>
+    <repository>
+      <id>coremedia.external.livecontext.releases</id>
+      <name>CoreMedia CMS</name>
+      <url>https://repository.coremedia.com/nexus/content/repositories/livecontext-releases/</url>
+      <layout>default</layout>
+      <snapshots>
+        <enabled>false</enabled>
+      </snapshots>
+    </repository>
+    <repository>
+      <id>coremedia.external.releases</id>
+      <name>CoreMedia CMS</name>
+      <url>https://repository.coremedia.com/nexus/content/groups/cms/</url>
+      <layout>default</layout>
+      <snapshots>
+        <enabled>false</enabled>
+      </snapshots>
+    </repository>
+  </repositories>
+
+  <pluginRepositories>
+    <pluginRepository>
+      <id>coremedia.external.livecontext.releases</id>
+      <name>CoreMedia CMS</name>
+      <url>https://repository.coremedia.com/nexus/content/repositories/livecontext-releases/</url>
+      <layout>default</layout>
+      <snapshots>
+        <enabled>false</enabled>
+      </snapshots>
+    </pluginRepository>
+    <pluginRepository>
+      <id>coremedia.external.releases</id>
+      <name>CoreMedia CMS</name>
+      <url>https://repository.coremedia.com/nexus/content/groups/cms/</url>
+      <layout>default</layout>
+      <snapshots>
+        <enabled>false</enabled>
+      </snapshots>
+    </pluginRepository>
+  </pluginRepositories>
+
+</project>
