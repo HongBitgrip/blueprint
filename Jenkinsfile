@@ -1,3 +1,4 @@
+@Library('nexus') _
 pipeline {
     agent { node { label 'docker' } }
     stages {
@@ -11,8 +12,23 @@ pipeline {
                 }
             }
             steps {
-                sh "mvn --version"
-                sh "mvn -T 2 clean install -DskipTests=true"
+                //sh "mvn -T 2 clean install -DskipTests=true"
+                sh "echo build coremedia"
+            }
+        }
+        stage('publish artifacts to repository') {
+            agent {
+                docker {
+                    label 'docker'
+                    image '5.189.132.250:8083/cm9-base:1.0'
+                    args ''
+                    reuseNode true
+                }
+            }
+            steps {
+                script {
+                    mavenPush();   
+                }
             }
         }
     }
