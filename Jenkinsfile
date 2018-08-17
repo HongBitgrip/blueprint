@@ -1,9 +1,6 @@
 @Library('nexus') _
 pipeline {
     agent { node { label 'docker' } }
-    environment {
-      VERSION = readMavenPom().getVersion()
-    }
     stages {
         stage('build coremedia') {
             agent {
@@ -29,7 +26,8 @@ pipeline {
             }
             steps {
                 script {
-                    mavenPush("${workspace}/spring-boot/services/content-management-server-app", "content-management-server.jar", ${VERSION});
+                    def pom = readMavenPom()
+                    mavenPush("${workspace}/spring-boot/services/content-management-server-app", "content-management-server.jar", pom.version);
                 }
             }
         }
