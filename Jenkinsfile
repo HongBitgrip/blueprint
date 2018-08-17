@@ -2,9 +2,7 @@
 pipeline {
     agent { node { label 'docker' } }
     environment {
-      node {
-        VERSION = readMavenPom().getVersion()
-      }
+      VERSION = readMavenPom().getVersion()
     }
     stages {
         stage('build coremedia') {
