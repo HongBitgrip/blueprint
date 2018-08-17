@@ -9,7 +9,7 @@
     <artifactId>blueprint-parent</artifactId>
     <version>1-SNAPSHOT</version>
     <!-- remove the relative path if you use this repo in a separate build reactor as the blueprint -->
-    <relativePath>../blueprint/blueprint-parent/pom.xml</relativePath>
+    <relativePath>../blueprint-parent/pom.xml</relativePath>
   </parent>
 
   <groupId>com.coremedia.blueprint.boot</groupId>
