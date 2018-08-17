@@ -1,0 +1,13 @@
+@if $cm-include-access-control-util {
+  $_block: "cm-access-control-util";
+  .#{$_block} {
+
+    &--read-only {
+      color: $cm-access-control-color-readonly;
+
+      .#{$prefix}grid-item-selected & {
+        color: $cm-access-control-color-readonly-selected;
+      }
+    }
+  }
+}

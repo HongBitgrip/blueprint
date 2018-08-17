@@ -1,0 +1,31 @@
+Ext.define("com.coremedia.cms.editor.controlroom.project.actions.LeaveProjectsAction", function(LeaveProjectsAction) {/*package com.coremedia.cms.editor.controlroom.project.actions{
+import com.coremedia.cms.editor.controlroom.project.actions.*;
+import net.jangaroo.ext.Exml;
+/**
+
+ An Action that removes the session user from the selected projects.
+
+ * /
+public class LeaveProjectsAction extends LeaveProjectsActionBase{
+
+    public*/function LeaveProjectsAction$(config/*:LeaveProjectsAction = null*/){if(arguments.length<=0)config=null;
+    var config_$1/*: com.coremedia.cms.editor.controlroom.project.actions.LeaveProjectsActionBase*/ =AS3.cast(com.coremedia.cms.editor.controlroom.project.actions.LeaveProjectsActionBase,{});
+    var defaults_$1/*:LeaveProjectsAction*/ =AS3.cast(LeaveProjectsAction,{});
+    config = net.jangaroo.ext.Exml.apply(defaults_$1,config);
+    net.jangaroo.ext.Exml.apply(config_$1,config);
+    this.super$L8x5(config_$1);
+  }/*}}
+
+============================================== Jangaroo part ==============================================*/
+    return {
+      extend: "com.coremedia.cms.editor.controlroom.project.actions.LeaveProjectsActionBase",
+      constructor: LeaveProjectsAction$,
+      super$L8x5: function() {
+        com.coremedia.cms.editor.controlroom.project.actions.LeaveProjectsActionBase.prototype.constructor.apply(this, arguments);
+      },
+      requires: [
+        "com.coremedia.cms.editor.controlroom.project.actions.LeaveProjectsActionBase",
+        "net.jangaroo.ext.Exml"
+      ]
+    };
+});

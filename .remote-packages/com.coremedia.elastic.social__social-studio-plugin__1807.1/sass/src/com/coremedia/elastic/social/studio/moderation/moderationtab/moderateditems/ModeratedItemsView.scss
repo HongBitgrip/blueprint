@@ -1,0 +1,41 @@
+@if $cm-include-moderated-items-view {
+  .cm-elastic-first-non-complaint-row td {
+    border-top: 1px solid $cm-grey-3;
+  }
+
+  $_block: "cm-moderation-item-prioritizable";
+  .#{$_block} {
+    cursor: pointer;
+    font-family: $cm-core-icons-100-font-name;
+    @include cm-core-icons-100-base-styles();
+
+    /* hide icon initially */
+    &:before {
+      display: none;
+    }
+
+    /* show icon when hovered */
+    &:hover,
+    &--over {
+      &:before {
+        content: $cm-core-icons-100-var-prioritize-up-button;
+        display: block;
+      }
+    }
+
+    &--enabled {
+      /* always show icon when enabled and indicate its current state */
+      &:before {
+        content: $cm-core-icons-100-var-prioritize-up;
+        display: block;
+      }
+      /* when hovered indicate that it can be prioritized down */
+      &:hover,
+      &.#{$_block}--over {
+        &:before {
+          content: $cm-core-icons-100-var-prioritize-down-button;
+        }
+      }
+    }
+  }
+}

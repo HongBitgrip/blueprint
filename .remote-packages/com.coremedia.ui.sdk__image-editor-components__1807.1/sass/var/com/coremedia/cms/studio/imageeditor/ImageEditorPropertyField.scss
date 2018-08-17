@@ -1,0 +1,15 @@
+/**
+ * @var {boolean}
+ * Enables styles for the ImageEditorPropertyField.
+ *
+ * @member com.coremedia.cms.studio.imageeditor.ImageEditorPropertyField
+ */
+$cm-include-image-editor-property-field: dynamic(true);
+
+/**
+ * @var {number}
+ * Defines the absolute positioning of the crop container's corner handles.
+ *
+ * @member com.coremedia.cms.studio.imageeditor.ImageEditorPropertyField
+ */
+$_cm-crop-container-handle-position-change: -2px;

@@ -1,0 +1,24 @@
+@if $cm-include-layout-preview {
+
+  $_block: "cm-layout-preview";
+
+  .#{$_block} {
+    background-color: $cm-white;
+    width: 70px;
+    min-height: 50px;
+    border: 1px solid $cm-grey-4;
+
+    &__cell {
+      border: 1px solid $cm-grey-4;
+    }
+
+    &__cell-read-only {
+      background-color: $cm-grey-4;
+    }
+
+    &__cell-highlighted {
+      background-color: $cm-blue-2;
+    }
+  }
+}
+

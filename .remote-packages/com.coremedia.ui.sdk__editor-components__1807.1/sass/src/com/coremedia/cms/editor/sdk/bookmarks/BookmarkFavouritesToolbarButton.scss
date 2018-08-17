@@ -1,0 +1,22 @@
+@if $cm-include-bookmarks-drop-zone {
+
+  .cm-row-insert-above,
+  .cm-row-insert-below {
+    overflow: visible;
+    position: relative;
+  }
+
+  .cm-row-insert-above:before,
+  .cm-row-insert-below:after {
+    content: '';
+    position: absolute;
+    left: -2px;
+    right: -2px;
+    height: 2px;
+    background-color: $cm-blue-5;
+  }
+
+  .cm-row-insert-below:after {
+    bottom: 0px;
+  }
+}

@@ -12,8 +12,7 @@ pipeline {
                 }
             }
             steps {
-                //sh "mvn -T 2 clean install -DskipTests=true"
-                sh "echo build coremedia"
+                sh "mvn -T 2 clean install -DskipTests=true"
             }
         }
         stage('publish artifacts to repository') {
@@ -27,7 +26,8 @@ pipeline {
             }
             steps {
                 script {
-                    mavenPush();   
+                    def pom = readMavenPom()
+                    mavenPush("${workspace}/spring-boot/services/content-management-server-app", "content-management-server.jar", pom.version);
                 }
             }
         }

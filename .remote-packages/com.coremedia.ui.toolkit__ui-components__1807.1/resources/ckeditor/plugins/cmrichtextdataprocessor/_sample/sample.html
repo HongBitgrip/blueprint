@@ -1,0 +1,31 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <title>CKeditor with CoreMedia Richtext Dataprocessor</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+  <meta name="robots" content="noindex, nofollow"/>
+  <script type="text/javascript" src="../../../ckeditor_source.js"></script>
+</head>
+<body>
+
+<textarea cols="80" id="editor1" name="editor1" rows="10"><div xmlns="http://www.coremedia.com/2003/richtext-1.0" xmlns:xlink="http://www.w3.org/1999/xlink"><p></p><p><strong>Fett</strong></p><p><br /></p><p><em>Italic</em></p><p><span class="underline">unterstrichen</span></p><p><a xlink:href="api/content/42836" xlink:show="new">interner Link</a></p><p><a xlink:href="http://www.coremedia.com" xlink:show="replace">externer Link</a></p><p></p><p><img alt="" xlink:actuate="onLoad" xlink:href="api/content/5428#properties.data" xlink:show="embed" /></p><p></p><p class="p--heading-1">Heading 1</p><p class="p--heading-1">more heading!</p><p class="p--heading-2">Heading 2</p><p class="p--heading-3">Heading 3</p><p class="p--heading-3"></p><p>Tabelle:</p><table><tbody><tr><td>1</td><td>2</td></tr><tr><td>3</td><td>4</td></tr><tr><td>5</td><td>66</td></tr><tr><td><p></p><p>7</p></td><td><p>this is a bigger table cell!</p><p>and more content. why is that so slow</p><p>and some more text. it is still quite slow especially the writes slow this down..</p><p></p><p></p></td></tr></tbody></table><p></p><p></p><p></p><p></p><p></p><p></p><p></p></div></textarea>
+<button onclick="alert(CKEDITOR.instances.editor1.getData())">Save</button>
+<script type="text/javascript">
+  //<![CDATA[
+
+  CKEDITOR.editorConfig = function(config)
+  {
+    config.forcePasteAsPlainText = false;
+    config.disableNativeTableHandles = true;
+    config.disableObjectResizing = true;
+    config.fullPage = false;
+    config.disableNativeSpellChecker = false;
+  };
+
+  var editor = CKEDITOR.replace('editor1', {
+    extraPlugins: 'cmrichtextdataprocessor',
+    toolbar : [ [ 'Source' ]]
+  });
+  //]]>
+</script>
+</body>
+</html>

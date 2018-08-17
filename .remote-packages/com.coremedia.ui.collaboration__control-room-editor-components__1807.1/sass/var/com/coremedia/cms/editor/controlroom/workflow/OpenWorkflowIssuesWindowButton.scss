@@ -1,0 +1,25 @@
+/**
+ * @var {color}
+ *
+ * Sets the background color for the OpenWorkflowIssuesWindowButton LoadMask.
+ *
+ * @member com.coremedia.cms.editor.controlroom.workflow.OpenWorkflowIssuesWindowButton
+ */
+$cm-open-workflow-issues-window-button-load-mask-background-color: dynamic($cm-white);
+
+/**
+ * @var {string}
+ *
+ * Sets the background image for the OpenWorkflowIssuesWindowButton LoadMask.
+ *
+ * @member com.coremedia.cms.editor.controlroom.workflow.OpenWorkflowIssuesWindowButton
+ */
+$cm-open-workflow-issues-window-button-load-mask-background-image: dynamic(url(images/loadmask/blue-loader.gif));
+
+/**
+ * @var {boolean}
+ * Enables styles for the OpenWorkflowIssuesWindowButton.
+ *
+ * @member com.coremedia.cms.editor.controlroom.workflow.OpenWorkflowIssuesWindowButton
+ */
+$cm-include-open-workflow-issues-window-button: dynamic(true);

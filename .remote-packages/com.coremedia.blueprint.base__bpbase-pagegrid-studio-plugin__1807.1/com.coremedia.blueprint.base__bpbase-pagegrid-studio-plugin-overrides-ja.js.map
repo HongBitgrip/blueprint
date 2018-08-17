@@ -1,0 +1,8 @@
+{
+"version":3,
+"file":"com.coremedia.blueprint.base__bpbase-pagegrid-studio-plugin-overrides-ja.js",
+"lineCount":1,
+"mappings":"AAGAA,GAAAC,OAAA,CAAW,qEAAX,CAAkF,CAChFC,SAAU,kEADsE,CAAlF,CAGG,QAAQ,EAAG,EAHd,C,CCAAF,GAAAC,OAAA,CAAW,2EAAX,CAAwF,CACtFC,SAAU,wEAD4E,CAEtF,mBAAoB,UAFkE,CAAxF,CAGG,QAAQ,EAAG,EAHd;",
+"sources":["locale/ja/com/coremedia/blueprint/base/pagegrid/PageGridLayouts_properties.js","locale/ja/com/coremedia/blueprint/base/pagegrid/PageGridPropertyField_properties.js"],
+"names":["Ext","define","override"]
+}

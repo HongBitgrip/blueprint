@@ -1,0 +1,11 @@
+@if $cm-collaboration-icons-100-bem-syntax {
+  .#{$cm-collaboration-icons-100-css-prefix} {
+    @if $cm-collaboration-icons-100-base-styles-in-before {
+      &:before {
+        @include cm-collaboration-icons-100-base-styles();
+      }
+    } @else {
+      @include cm-collaboration-icons-100-base-styles();
+    }
+  }
+}

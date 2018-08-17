@@ -1,0 +1,70 @@
+/**
+ * @var {number}
+ *
+ * Sets the line-height of the the IconWithTextBEMEntities.
+ *
+ * @member com.coremedia.ui.bem.IconWithTextBEMEntities
+ */
+$cm-icon-with-text-line-height: dynamic($cm-glyph-font-size-100);
+
+/**
+ * @var {number}
+ *
+ * Sets the font-size of the icon sub element of the IconWithTextBEMEntities.
+ *
+ * @member com.coremedia.ui.bem.IconWithTextBEMEntities
+ */
+$cm-icon-with-text-icon-font-size: dynamic($cm-glyph-font-size-100);
+
+/**
+ * @var {number}
+ *
+ * Sets the font-size of the text sub element of the IconWithTextBEMEntities.
+ *
+ * @member com.coremedia.ui.bem.IconWithTextBEMEntities
+ */
+$cm-icon-with-text-text-font-size: dynamic($cm-font-size);
+
+/**
+ * @var {color}
+ *
+ * Sets the color of the icon sub element of the IconWithTextBEMEntities.
+ *
+ * @member com.coremedia.ui.bem.IconWithTextBEMEntities
+ */
+$cm-icon-with-text-icon-color: dynamic($cm-icon-color-pos);
+
+/**
+ * @var {color}
+ *
+ * Sets the color of the text sub element of the IconWithTextBEMEntities.
+ *
+ * @member com.coremedia.ui.bem.IconWithTextBEMEntities
+ */
+$cm-icon-with-text-text-color: dynamic($grid-row-cell-color);
+
+/**
+ * @var {color}
+ *
+ * Sets the color of the icon sub element of the IconWithTextBEMEntities if the surrounding grid row is selected.
+ *
+ * @member com.coremedia.ui.bem.IconWithTextBEMEntities
+ */
+$cm-icon-with-text-icon-color-selected: dynamic($cm-icon-color-neg);
+
+/**
+ * @var {color}
+ *
+ * Sets the color of the text sub element of the IconWithTextBEMEntities if the surrounding grid row is selected.
+ *
+ * @member com.coremedia.ui.bem.IconWithTextBEMEntities
+ */
+$cm-icon-with-text-text-color-selected: dynamic($grid-row-cell-selected-color);
+
+/**
+ * @var {boolean}
+ * Enables styles for the IconWithTextBEMEntities.
+ *
+ * @member com.coremedia.ui.bem.IconWithTextBEMEntities
+ */
+$cm-include-icon-with-text: dynamic(true);

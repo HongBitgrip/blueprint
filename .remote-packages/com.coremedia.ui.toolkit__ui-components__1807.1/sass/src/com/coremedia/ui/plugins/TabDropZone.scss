@@ -1,0 +1,26 @@
+@if $cm-include-tab-drop-zone {
+
+  .cm-tab-strip-over-left,
+  .cm-tab-strip-over-right {
+    overflow: visible;
+    position: relative;
+  }
+
+  .cm-tab-strip-over-left:before,
+  .cm-tab-strip-over-right:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background-color: $cm-blue-7;
+  }
+
+  .cm-tab-strip-over-left:before {
+    left: 0;
+  }
+
+  .cm-tab-strip-over-right:after {
+    right: 0;
+  }
+}

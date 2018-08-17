@@ -1,0 +1,435 @@
+/**
+ * Only to be used after #extjs-panel-ui mixin has been included.
+ *
+ * CoreMedia UI Mixin for a Panel.
+ * Some parameters do not have a default value, so if omitted the styling rule is not applied.
+ *
+ * @param {string} $ui
+ * The name of the UI being created. May not include spaces or special punctuation as string is used as part of
+ * CSS class names.
+ *
+ * @param {color} [$background-color=null]
+ * If not null defines the background-color of the panel. Does not define header-background-color or body-background-color.
+ * background-color can also be set via the extjs-panel-ui $ui-body-background-color and will then be set twice:
+ * as background-color for the panel and for the panel's body.
+ *
+ * @param {color} [$background-color-collapsed=null]
+ * If not null defines the panel's background-color if collapsed class is attached to the panel element.
+ *
+ * @param {color} [$body-background-color=null]
+ * If not null defines the background-color of the panel's body. Does not define header-background-color or background-color.
+ * background-color can also be set via the extjs-panel-ui $ui-body-background-color and will then be set twice:
+ * as background-color for the panel and for the panel's body.
+ *
+ * @param {string} [$body-background-image=null]
+ * The panel's background-image property if set.
+ *
+ * @param {string} [$body-background-image-repeat=null]
+ * The panel's background-repeat property only applied if background-image is set.
+ *
+ * @param {string} [$body-background-image-position=null]
+ * The panel's background-position property only applied if background-image is set.
+ *
+ * @param {string} [$body-background-size=null]
+ * The panel's background-size property only applied if background-image is set.
+ *
+ * @param {string} [$body-background-blend-mode=null]
+ * The panel's $body-background-blend-mode property only applied if background-image is set.
+ *
+ * @param {number} [$body-line-height=null]
+ * Sets the line height for the body.
+ *
+ * @param {number/list} [$body-padding=null]
+ * If not null defines the padding of the panel's body.
+ *
+ * @param {list} [$box-shadow=$cm-panel-box-shadow]
+ * If not null defines the panels box-shadow.
+ *
+ * @param {number/list} [$box-shadow-transition=null]
+ * If not null the transition of the panels box-shadow. If null, no box-shadow will be used.
+ *
+ * @param {color} [$header-background-color-over=null]
+ * If not null defines the panel's header background-color if over-state is triggered.
+ * Overrides the $collapsed-header-background-color and $header-background-color in extjs-panel-ui mixin.
+ *
+ * @param {color} [$header-background-color-collapsed=null]
+ * If not null defines the panel's header background-color if collapsed class is attached to the panel element.
+ * This also sets the header tool background-color to transparent when collapsed.
+ * Gets overridden by $header-background-color-over.
+ *
+ * @param {number} [$header-font-size-collapsed=null]
+ * Sets the font-size property of the title within the panel header.
+ *
+ * @param {string/number} [$header-font-weight-collapsed=null]
+ * Sets the font-weight property of the title within the panel header.
+ *
+ * @param {number/list} [$header-inner-border-width-collapsed=null]
+ * If not null defines the border-width for the header inner element of the panel if collapsed.
+ *
+ * @param {string} [$header-inner-border-style-collapsed=null]
+ * If not null defines the border-style for the header inner element of the panel if collapsed.
+ *
+ * @param {color} [$header-inner-border-color-collapsed=null]
+ * If not null defines the border-color for the header inner element of the panel if collapsed.
+ *
+ * @param {color} [$header-inner-background-color-collapsed=null]
+ * The background-color of the header inner panel if collapsed and hovered.
+ *
+ * @param {color} [$header-inner-background-color-over-collapsed=null]
+ * The background-color of the header if collapsed and hovered.
+ *
+ * @param {number/list} [$header-padding-collapsed-vertical=null]
+ * Sets padding property for the header of the panel if it is collapsed vertically.
+ *
+ * @param {number/list} [$header-padding-collapsed-horizontal=null]
+ * Sets padding property for the header of the panel if it is collapsed horizontally.
+ *
+ * @param {number/list} [$header-text-padding-collapsed-vertical=null]
+ * Sets padding property for the header text of the panel if it is collapsed vertically.
+ *
+ * @param {number/list} [$header-text-padding-collapsed-horizontal=null]
+ * Sets padding property for the header text of the panel if it is collapsed horizontally.
+ *
+ * @param {number/list} [$header-transition-collapsed=null]
+ * The transition, if collapsed.
+ *
+ * @param {boolean} [$remove-body-padding-beneath-header=$cm-panel-remove-body-padding-beneath-header]
+ * If true, removes the $body-padding between body and header if header is visible.
+ * Set to false to always use body-padding in every direction if set.
+ *
+ * @param {number/string} [$sub-collapsible-separator-margin=null]
+ * Sets the separator top- and left-margin for the sub-collapsible panel.
+ *
+ * @param {color} [$sub-collapsible-separator-color=null]
+ * Sets the separator color for the sub-collapsible panel.
+ *
+ * @param {boolean} [$use-sub-collapsible-separator=$cm-panel-use-sub-collapsible-separator]
+ * Sets the separator for the sub-collapsible panel.
+ *
+ * @param {boolean} [$show-validation=$cm-panel-show-validation]
+ * If false the validation styles for the panel are not generated
+ *
+ * @param {number/list} [$border-width-error=$cm-validation-border-width]
+ * If not null defines the border-width to be applied when the error state is active.
+ *
+ * @param {color} [$border-color-error=$cm-validation-color-error]
+ * If not null defines the border-color to be applied when the error state is active.
+ *
+ * @param {number/list} [$border-width-warning=$cm-validation-border-width]
+ * If not null defines the border-width to be applied when the warning state is active.
+ *
+ * @param {color} [$border-color-warning=$cm-validation-color-warning]
+ * If not null defines the border-color to be applied when the warning state is active.
+ *
+ * @param {number/list} [$border-width-info=$cm-validation-border-width]
+ * If not null defines the border-width to be applied when the info state is active.
+ *
+ * @param {color} [$border-color-info=$cm-validation-color-info]
+ * If not null defines the border-color to be applied when the info state is active.
+ *
+ * @param {number/list} [$border-width-success=$cm-validation-border-width]
+ * If not null defines the border-width to be applied when the success state is active.
+ *
+ * @param {color} [$border-color-success=$cm-validation-color-success]
+ * If not null defines the border-color to be applied when the success state is active.
+ *
+ * @member Ext.panel.Panel
+ */
+@mixin cm-panel-ui(
+  $ui,
+  $background-color: null,
+  $background-color-collapsed: null,
+  $body-background-color: null,
+  $body-background-image: null,
+  $body-background-image-repeat: null,
+  $body-background-image-position: null,
+  $body-background-size: null,
+  $body-background-blend-mode: null,
+  $body-line-height: null,
+  $body-padding: null,
+  $box-shadow: $cm-panel-box-shadow,
+  $box-shadow-transition: null,
+  $header-background-color-over: null,
+  $header-background-color-collapsed: null,
+  $header-font-size-collapsed: null,
+  $header-font-weight-collapsed: null,
+  $header-inner-border-width-collapsed: null,
+  $header-inner-border-style-collapsed: null,
+  $header-inner-border-color-collapsed: null,
+  $header-inner-background-color-collapsed: null,
+  $header-inner-background-color-over-collapsed: null,
+  $header-padding-collapsed-vertical: null,
+  $header-padding-collapsed-horizontal: null,
+  $header-text-padding-collapsed-vertical: null,
+  $header-text-padding-collapsed-horizontal: null,
+  $header-transition-collapsed: null,
+  $remove-body-padding-beneath-header: $cm-panel-remove-body-padding-beneath-header,
+  $sub-collapsible-separator-margin: null,
+  $sub-collapsible-separator-color: null,
+  $use-sub-collapsible-separator: $cm-panel-use-sub-collapsible-separator,
+  // validation parameters:
+  $show-validation: $cm-panel-show-validation,
+  $border-width-error: $cm-validation-border-width,
+  $border-color-error: $cm-validation-color-error,
+  $border-width-warning: $cm-validation-border-width,
+  $border-color-warning: $cm-validation-color-warning,
+  $border-width-info: $cm-validation-border-width,
+  $border-color-info: $cm-validation-color-info,
+  $border-width-success: $cm-validation-border-width,
+  $border-color-success: $cm-validation-color-success
+) {
+  .#{$prefix}panel-#{$ui} {
+
+    &.cm-multiline-title {
+      & .#{$prefix}title-text-#{$ui} {
+        white-space: normal;
+        text-overflow: clip;
+      }
+      & .#{$prefix}panel-header-#{$ui} {
+        & .#{$prefix}tool {
+          //this needs to be important, because extjs sets its own vertical alignment styling inline
+          top: 0 !important;
+        }
+      }
+    }
+
+    @if $box-shadow-transition != null {
+      transition: $box-shadow-transition;
+      box-shadow: $box-shadow;
+    }
+
+    &,
+    &.#{$prefix}panel-ghost {
+      @if $background-color != null {
+        background-color: $background-color;
+      }
+    }
+
+    &.#{$prefix}collapsed {
+      @if $box-shadow-transition != null {
+        transition: $box-shadow-transition;
+        box-shadow: none;
+      }
+      @if $background-color-collapsed != null {
+        background-color: $background-color-collapsed;
+      }
+    }
+
+    .#{$prefix}panel-body-#{$ui} {
+
+      @if $body-background-color != null {
+        background-color: $body-background-color;
+      }
+
+      @if $body-padding != null {
+        padding: $body-padding;
+      }
+
+      @if $body-line-height != null {
+        line-height: $body-line-height;
+      }
+
+      @if $body-background-image != null {
+        background-image: $body-background-image;
+      }
+
+      @if $body-background-image-repeat != null {
+        background-repeat: $body-background-image-repeat;
+      }
+
+      @if $body-background-image-position != null {
+        background-position: $body-background-image-position;
+      }
+
+      @if $body-background-size != null {
+        background-size: $body-background-size;
+      }
+
+      @if $body-background-blend-mode != null {
+        background-blend-mode: $body-background-blend-mode;
+      }
+    }
+
+    @if $show-validation {
+      $state-map: (
+        "error" : (
+          border-width: $border-width-error,
+          border-color: $border-color-error),
+        "warning" : (
+          border-width: $border-width-warning,
+          border-color: $border-color-warning),
+        "info" : (
+          border-width: $border-width-info,
+          border-color: $border-color-info),
+        "success" : (
+          border-width: $border-width-success,
+          border-color: $border-color-success)
+      );
+
+      @each $state, $map in $state-map {
+        &.cm-validation-state-#{$state} {
+          & .#{$prefix}panel-body-#{$ui}{
+            z-index: 1;
+            position: relative;
+            $used-border-width: $cm-border-width;
+
+            @if (map_get($map, border-width) != null and map_get($map, border-color) != null) {
+              @if map_get($map, border-color) != null {
+                border: $used-border-width solid map_get($map, border-color);
+              }
+              @if map_get($map, border-width) != null {
+                border-left-width: left($used-border-width) + left(map_get($map, border-width));
+              }
+              @if map_get($map, border-color) != null and $body-padding != null {
+                padding-left: max(0, left($body-padding) - left(map_get($map, border-width)));
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  // header is not always underneath the panel dom element, so do not nest this rule
+  .#{$prefix}panel-header-#{$ui} {
+
+    @if $use-sub-collapsible-separator and $sub-collapsible-separator-margin != null and $sub-collapsible-separator-color != null {
+      .#{$prefix}panel-header-title {
+        .#{$prefix}title-text {
+          display: inline-block;
+        }
+
+        // same padding for the header as for the body
+        @if $body-padding != null {
+          padding-right: right($body-padding);
+          padding-left: left($body-padding);
+          overflow: hidden;
+          display: inline-block; // support IE11
+        }
+
+        &:after {
+          content: "";
+          display: inline-block;
+          width: 100%;
+          height: 1px;
+          position: absolute;
+          margin-left: left($sub-collapsible-separator-margin);
+          margin-top: top($sub-collapsible-separator-margin);
+          background-color: $sub-collapsible-separator-color;
+        }
+      }
+    }
+
+    @if ($body-padding != null and $remove-body-padding-beneath-header) {
+      // remove padding-top when the panel header is visible
+      + .#{$prefix}panel-bodyWrap .#{$prefix}panel-body-#{$ui} {
+        padding-top: 0;
+      }
+    }
+
+    &:hover {
+      @if $header-background-color-over != null {
+        background-color: $header-background-color-over;
+      }
+    }
+
+    &-collapsed {
+      @if $header-transition-collapsed != null {
+        transition: $header-transition-collapsed;
+      }
+
+      @if $header-background-color-collapsed != null {
+        background-color: $header-background-color-collapsed;
+        // tool color also needs to be set
+        .#{$prefix}tool-img {
+          background-color: transparent;
+        }
+      }
+
+      .#{$prefix}panel-header-title {
+        @if $header-font-size-collapsed != null {
+          font-size: $header-font-size-collapsed;
+        }
+
+        @if $header-font-weight-collapsed != null {
+          font-weight: $header-font-weight-collapsed;
+        }
+      }
+      // avoid layout depending selector
+      > div {
+        @if $header-inner-border-width-collapsed != null {
+          border: $header-inner-border-width-collapsed;
+        }
+
+        @if $header-inner-border-color-collapsed != null {
+          border-color: $header-inner-border-color-collapsed;
+        }
+
+        @if $header-inner-border-style-collapsed != null {
+          border-style: $header-inner-border-style-collapsed;
+        }
+
+        @if $header-inner-background-color-collapsed != null {
+          background-color: $header-inner-background-color-collapsed;
+        }
+
+        @if $header-inner-background-color-over-collapsed != null {
+          &:hover {
+            background-color: $header-inner-background-color-over-collapsed;
+            cursor: pointer;
+          }
+        }
+      }
+    }
+
+    &-collapsed-left {
+      @if $header-padding-collapsed-vertical != null {
+        padding: $header-padding-collapsed-vertical;
+      }
+
+      .#{$prefix}panel-header-title {
+        @if $header-text-padding-collapsed-vertical != null {
+          .#{$prefix}title-text {
+            padding: $header-text-padding-collapsed-vertical;
+          }
+        }
+      }
+
+      .#{$prefix}tool-expand-right {
+        position: relative;
+        &:before {
+          position: absolute;
+          top: $cm-grid-50;
+          left: $cm-grid-25;
+        }
+      }
+    }
+
+    &-collapsed-top {
+      @if $header-padding-collapsed-horizontal != null {
+        padding: $header-padding-collapsed-horizontal;
+        margin-top: -$cm-grid-25; // has to be set for Ext to calculate the position as we want here
+      }
+
+      .#{$prefix}panel-header-title {
+        @if $header-text-padding-collapsed-horizontal != null {
+          .#{$prefix}title-text {
+            padding: $header-text-padding-collapsed-horizontal;
+          }
+          }
+        }
+
+      .#{$prefix}tool-expand-top {
+        position: relative;
+        &:before {
+          position: absolute;
+          right: $cm-grid-50;
+        }
+      }
+      // avoid layout depending selector
+      > div {
+        height: $cm-field-height !important;
+      }
+    }
+  }
+}

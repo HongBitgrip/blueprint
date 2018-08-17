@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <parent>
+    <groupId>com.coremedia.blueprint.boot</groupId>
+    <artifactId>services</artifactId>
+    <version>1-SNAPSHOT</version>
+    <relativePath>../pom.xml</relativePath>
+  </parent>
+
+  <artifactId>cae-preview-app</artifactId>
+
+  <properties>
+    <propertieslocations>classpath:/cae-preview.properties</propertieslocations>
+
+    <!--convenience properties for local workspace paths-->
+    <cae-base-lib.resources>${project.basedir}/../../../blueprint/modules/cae/cae-base-lib/src/main/resources,${project.basedir}/../../../blueprint/modules/cae/cae-base-lib/src/main/resources/META-INF/resources</cae-base-lib.resources>
+    <frontend.resources>${project.basedir}/../../../blueprint/modules/frontend/target/resources</frontend.resources>
+
+    <!--you cannot linebreak this property-->
+    <spring.boot.tomcat.extraResources>${cae-base-lib.resources},${frontend.resources}</spring.boot.tomcat.extraResources>
+  </properties>
+
+  <dependencies>
+    <dependency>
+      <groupId>${project.groupId}</groupId>
+      <artifactId>blueprint-spring-boot-autoconfigure</artifactId>
+      <version>${project.version}</version>
+      <scope>runtime</scope>
+    </dependency>
+    <dependency>
+      <groupId>${blueprint.groupId}</groupId>
+      <artifactId>cae-preview-blueprint-component</artifactId>
+      <version>${blueprint.version}</version>
+      <scope>runtime</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-autoconfigure</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-context</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-webmvc</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-beans</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-core</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-web</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-actuator</artifactId>
+      <scope>runtime</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.tomcat.embed</groupId>
+      <artifactId>tomcat-embed-core</artifactId>
+      <scope>provided</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-tomcat</artifactId>
+      <scope>provided</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.tomcat.embed</groupId>
+      <artifactId>tomcat-embed-jasper</artifactId>
+      <scope>provided</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework.hateoas</groupId>
+      <artifactId>spring-hateoas</artifactId>
+      <scope>runtime</scope>
+    </dependency>
+  </dependencies>
+
+  <build>
+    <finalName>cae-preview</finalName>
+
+    <plugins>
+      <plugin>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-maven-plugin</artifactId>
+        <configuration>
+          <mainClass>com.coremedia.blueprint.boot.cae.preview.BlueprintBootApp</mainClass>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+
+  <profiles>
+    <profile>
+      <id>candy-preview</id>
+      <properties>
+        <propertieslocations.url>http://overview.${installation.host}/candy-preview.properties</propertieslocations.url>
+      </properties>
+    </profile>
+  </profiles>
+
+</project>

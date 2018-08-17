@@ -1,0 +1,8 @@
+{
+"version":3,
+"file":"com.coremedia.blueprint.base__bpbase-pagegrid-studio-plugin-overrides-de.js",
+"lineCount":4,
+"mappings":"AAGAA,GAAAC,OAAA,CAAW,2EAAX,CAAwF,CACtFC,SAAU,wEAD4E,CAKtF,mBAAoB,cALkE,CAMtF,sBAAuB,MAN+D,CAOtF,qBAAsB,uKAPgE,CAQtF,iCAAkC,4EARoD;AAStF,0BAA2B,UAT2D,CAatF,8BAA+B,oBAbuD,CActF,iCAAkC,sFAdoD,CAetF,wCAAyC,4DAf6C,CAgBtF,2BAA4B,iBAhB0D,CAiBtF,8BAA+B,iEAjBuD,CAkBtF,oCAAqC,oDAlBiD;AAmBtF,+BAAgC,qDAnBsD,CAoBtF,8BAA+B,8FApBuD,CAqBtF,sCAAuC,0FArB+C,CAsBtF,8BAA+B,mIAtBuD,CAAxF;AAuBG,QAAQ,EAAG,EAvBd,C,CCAAF,GAAAC,OAAA,CAAW,qEAAX,CAAkF,CAChFC,SAAU,kEADsE,CAAlF,CAGG,QAAQ,EAAG,EAHd;",
+"sources":["locale/de/com/coremedia/blueprint/base/pagegrid/PageGridPropertyField_properties.js","locale/de/com/coremedia/blueprint/base/pagegrid/PageGridLayouts_properties.js"],
+"names":["Ext","define","override"]
+}

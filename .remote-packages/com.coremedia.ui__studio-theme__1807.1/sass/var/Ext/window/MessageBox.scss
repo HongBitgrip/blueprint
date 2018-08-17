@@ -1,0 +1,10 @@
+$messagebox-info-glyph: dynamic($cm-core-icons-300-var-information $cm-glyph-font-size-300 $cm-core-icons-300-font-name);
+$messagebox-info-glyph-color: dynamic($cm-validation-color-info);
+
+$messagebox-question-glyph-color: dynamic($cm-validation-color-info);
+
+$messagebox-warning-glyph-color: dynamic($cm-validation-color-warning);
+$messagebox-warning-glyph: dynamic($cm-core-icons-300-var-warning $cm-glyph-font-size-300 $cm-core-icons-300-font-name);
+
+$messagebox-error-glyph-color: dynamic($cm-validation-color-error);
+$messagebox-error-glyph: dynamic($cm-core-icons-300-var-error $cm-glyph-font-size-300 $cm-core-icons-300-font-name);

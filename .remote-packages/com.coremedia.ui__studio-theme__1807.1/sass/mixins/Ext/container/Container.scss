@@ -1,0 +1,194 @@
+/**
+ * CoreMedia UI Mixin for a Container.
+ * Some parameters do not have a default value, so if omitted the styling rule is not applied.
+ *
+ * @param {string} $ui
+ * The name of the UI being created. May not include spaces or special punctuation as string is used as part of
+ * CSS class names.
+ *
+ * @param {color} [$background-color=$cm-container-background-color]
+ * If not null defines the background-color of the container
+ *
+ * @param {color} [$background-color-over=$cm-container-background-color-over]
+ * If not null defines the background-color of the container on mouseover
+ *
+ * @param {number/list} [$padding=$cm-container-padding]
+ * If not null defines the padding of the container
+ *
+ * @param {number/list} [$border-width=$cm-container-border-width]
+ * If not null defines the border-width of the container
+ *
+ * @param {color} [$border-color=$cm-container-border-color]
+ * If not null defines the border-color of the container.
+ *
+ * @param {color} [$border-color-error=$cm-container-border-color-error]
+ * If not null defines the border-color of the container in error state.
+ *
+ * @param {color} [$border-color-warning=$cm-container-border-color-warning]
+ * If not null defines the border-color of the container in warning state.
+ *
+ * @param {color} [$border-color-info=$cm-container-border-color-info]
+ * If not null defines the border-color of the container in info state.
+ *
+ * @param {color} [$border-color-success=$cm-container-border-color-success]
+ * If not null defines the border-color of the container in success state.
+ *
+ * @param {color} [$border-color-highlighted=$cm-container-border-color-highlighted]
+ * If not null defines the border-color of the container in highlighted state.
+ *
+ * @param {color} [$border-color-focused=$cm-container-border-color-focused]
+ * If not null defines the border-color of the container in focused state.
+ *
+ * @param {string} [$border-style=$cm-container-border-style]
+ * If not null defines the border-style of the container
+ *
+ * @param {number/list} [$border-radius=$cm-container-border-radius]
+ * If not null defines the border-radius of the container
+ *
+ * @param {string} [$text-align=$cm-container-text-align]
+ * If not null defines the text-align of the container
+ *
+ * @param {string} [$cursor=$cm-container-cursor]
+ * If not null defines the cursor-type
+ *
+ * @param {number/list} [$box-shadow=$cm-container-box-shadow]
+ * If not null, sets the panel's box-shadow.
+ *
+ * @param {number/list} [$box-shadow-highlighted=$cm-container-box-shadow-highlighted]
+ * If not null, sets the panel's box-shadow in highlighted state.
+ *
+ * @param {number/list} [$box-shadow-focused=$cm-container-box-shadow-focused]
+ * If not null, sets the panel's box-shadow in focused state.
+ *
+ * @param {boolean} [$force-border-when-docked=$cm-container-force-border-when-docked]
+ * If true the given border-width should be enforced if the container is docked.
+ *
+ * @member Ext.container.Container
+ */
+@mixin cm-container-ui(
+  $ui,
+  $background-color: $cm-container-background-color,
+  $background-color-over: $cm-container-background-color-over,
+  $padding: $cm-container-padding,
+  $border-width: $cm-container-border-width,
+  $border-color: $cm-container-border-color,
+  $border-color-error: $cm-container-border-color-error,
+  $border-color-warning: $cm-container-border-color-warning,
+  $border-color-info: $cm-container-border-color-info,
+  $border-color-success: $cm-container-border-color-success,
+  $border-color-highlighted: $cm-container-border-color-highlighted,
+  $border-color-focused: $cm-container-border-color-focused,
+  $border-style: $cm-container-border-style,
+  $border-radius: $cm-container-border-radius,
+  $text-align: $cm-container-text-align,
+  $cursor: $cm-container-cursor,
+  $box-shadow: $cm-container-box-shadow,
+  $box-shadow-highlighted: $cm-container-box-shadow-highlighted,
+  $box-shadow-focused: $cm-container-box-shadow-focused,
+  $force-border-when-docked: $cm-container-force-border-when-docked
+) {
+  .#{$prefix}container-#{$ui} {
+
+    @if $box-shadow != null {
+      box-shadow: $box-shadow;
+    }
+
+    @if $cursor != null {
+      cursor: $cursor;
+    }
+
+    @if $text-align != null {
+      text-align: $text-align;
+    }
+
+    @if $border-radius != null {
+      border-radius: $border-radius;
+    }
+
+    &,
+    &.#{$prefix}border-layout-ct {
+      @if $background-color != null {
+        background-color: $background-color;
+      }
+    }
+
+    &:hover,
+    &.#{$prefix}border-layout-ct:hover {
+      @if $background-color-over != null {
+        background-color: $background-color-over;
+      }
+    }
+
+    @if $padding != null {
+      padding: $padding;
+    }
+
+    @if $border-width != null {
+      border-width: $border-width;
+
+      @if $force-border-when-docked {
+        // enforce border-width, even when docked
+        &.#{$prefix}docked-top {
+          border-top-width: bottom($border-width) !important;
+        }
+
+        &.#{$prefix}docked-left {
+          border-top-width: right($border-width) !important;
+        }
+
+        &.#{$prefix}docked-right {
+          border-top-width: left($border-width) !important;
+        }
+
+        &.#{$prefix}docked-bottom {
+          border-top-width: top($border-width) !important;
+        }
+      }
+    }
+
+    @if $border-style != null {
+      border-style: $border-style;
+    }
+
+    @if $border-color != null {
+      border-color: $border-color;
+    }
+
+    $_state-colors: (
+      "error": $border-color-error,
+      "warning": $border-color-warning,
+      "info": $border-color-info,
+      "success": $border-color-success
+    );
+
+    @each $_state, $_state-color in $_state-colors {
+      @if $_state != null {
+        &.cm-validation-state-#{$_state} {
+          border-color: $_state-color;
+        }
+      }
+    }
+
+    // increased specificy here to override validation state
+    &.cm-highlighted {
+      @if $box-shadow-highlighted != null {
+        box-shadow: $box-shadow-highlighted;
+      }
+
+      @if $border-color-highlighted != null {
+        border-color: $border-color-highlighted;
+      }
+    }
+
+    // focused state
+    &.#{$prefix}focus {
+      @if $box-shadow-focused != null {
+        box-shadow: $box-shadow-focused;
+      }
+
+      @if $border-color-focused != null {
+        border-color: $border-color-focused;
+      }
+    }
+  }
+}

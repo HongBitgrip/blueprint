@@ -1,0 +1,17 @@
+@if $cm-include-project-todos-widget {
+
+  .cm-projects-todos-widget {
+    padding: 3px;
+
+    &__project {
+      & + & {
+        margin-top: 18px;
+      }
+    }
+
+    &__empty {
+      font-style: italic;
+      color: $cm-grey-5;
+    }
+  }
+}

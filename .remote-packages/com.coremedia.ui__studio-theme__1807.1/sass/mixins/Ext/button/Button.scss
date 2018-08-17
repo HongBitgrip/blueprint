@@ -1,0 +1,511 @@
+/**
+ * Only to be used in after {@link #extjs-button-ui} mixin has been included.
+ *
+ * CoreMedia UI Mixin for a Button. Just like {@link #extjs-button-ui} this mixin is not {@link #scale} aware.
+ * Parameters do not have a default value, so if omitted the styling rule is not applied.
+ *
+ * @param {string} $ui
+ * The name of the UI being created. May not include spaces or special punctuation as string is used as part of
+ * CSS class names.
+ * Because the mixin is not {@link #scale} aware and there is no toolbar variant, the {@link #$ui} needs to be suffixed
+ * with "-toolbar" if the button is used together with the {@link #extjs-button-toolbar-ui} and also suffixed with
+ * "-small", "-medium", "-large" depending on the {@link #scale} (e.g.: "-toolbar-small", "-medium", "-toolbar-large").
+ *
+ * @param {number/list} [$padding=null]
+ * If not null it overrides the standard padding.
+ *
+ * @param {list} [$box-shadow=null]
+ * If not null this property sets the shadow of the element.
+ *
+ * @param {boolean} [$enable-pointer-events=$cm-button-enable-pointer-events]
+ * If set to false no tooltip is available for disabled buttons.
+ *
+ * @param {color} [$icon-color-over=null]
+ * If not null defines the color of the icon when the cursor is over the button
+ *
+ * @param {color} [$icon-color-focus=null]
+ * If not null defines the color of the icon when the button is focused
+ *
+ * @param {color} [$icon-color-pressed=null]
+ * If not null defines the color of the icon when the button is pressed
+ *
+ * @param {color} [$icon-color-disabled=null]
+ * If not null defines the color of the icon when the button is disabled
+ *
+ * @param {boolean} [$icon-rendering-disabled=$cm-button-icon-rendering-disabled]
+ * If set to true no icon is visible.
+ * This also renders the button as clickable text link and breaks long text instead of ellipsis.
+ *
+ * @param {number} [$icon-font-size-pressed=null]
+ * If not null this property defines the font size of a pressed button.
+ *
+ * @param {number} [$text-min-height=null]
+ * If not null defines the minimum height of a text. Usually to ensure the rendered height is the same as a rendered
+ * input field.
+ *
+ * @param {string} [$text-decoration=null]
+ * If not null this property specifies the decorations that will be applied to the text content of an element.
+ *
+ * @param {number} [$text-max-width=null]
+ * If not null this property sets the max-width property to set the maximum width of a specified element.
+ *
+ * @param {string} [$text-word-break=null]
+ * If not null sets the word-break behaviour of the text.
+ *
+ * @param {string} [$text-white-space=null]
+ * If not null sets the white-space behaviour of the text.
+ *
+ * @param {string} [$text-float=null]
+ * If not null this property sets the float for positioning and layout.
+ *
+ * @param {string} [$text-align=null]
+ * If not null this property sets all inline or inline-block elements of a block element for aligning.
+ *
+ * @param {list} [$arrow-glyph-menu-active=null]
+ * If not null defines a custom icon for the arrow when the menu is active.
+ *
+ * @param {color} [$arrow-glyph-color-over=null]
+ * If not null defines the color of the arrow icon when the button is hovered.
+ *
+ * @param {color} [$arrow-glyph-color-pressed=null]
+ * If not null defines the color of the arrow icon when the button is pressed.
+ *
+ * @param {color} [$arrow-glyph-border-color-focus-pressed=null]
+ * If not null defines the color of the focus border of the arrow icon when the button is pressed.
+ *
+ * @param {string/number} [$arrow-right-font-size=null]
+ * If not null this property sets the font-size of the glyph or icon font.
+ *
+ * @param {number} [$arrow-right-padding=null]
+ * If not null defines the padding-right property of the glyph or icon font.
+ *
+ * @param {number} [$split-divider-height=null]
+ * If not null defines the height of the splitbuttons dividing line in percent.
+ *
+ * @param {boolean} [$enable-multiline=$cm-button-enable-multiline]
+ * If true enables multiline for the button's text element. Otherwise the text will be ellipsified at the end of the first line.
+ *
+ * @param {color} [$enable-color-state-fix=$cm-button-enable-color-state-fix]
+ * If true enables a fix that assures to generate the styles for color in over and pressed state.
+ * (ExtJS will not generate the styles for colors in different states if there is no difference between this color and the default color.)
+ *
+ * @param {color} [$used-color-over=$button-default-color-over]
+ * Only needed if {@link #enable-color-state-fix} is set to true.
+ * Defines the over color in the {@link #extjs-button-ui} include. Not meant to be used to redefine this value.
+ *
+ * @param {color} [$used-color-pressed=$button-default-color-pressed]
+ * Only needed if {@link #enable-color-state-fix} is set to true.
+ * Defines the pressed color in the {@link #extjs-button-ui} include. Not meant to be used to redefine this value.
+ *
+ * @param {color} [$background-color-error=$cm-button-background-color-error]
+ * If not null defines the background-color to be applied when the error state is active.
+ *
+ * @param {color} [$background-color-warning=$cm-button-background-color-warning]
+ * If not null defines the background-color to be applied when the warning state is active.
+ *
+ * @param {color} [$background-color-info=$cm-button-background-color-info]
+ * If not null defines the background-color to be applied when the info state is active.
+ *
+ * @param {color} [$background-color-success=$cm-button-background-color-success]
+ * If not null defines the background-color to be applied when the success state is active.
+ *
+ * @param {color} [$background-color-error-over=$cm-button-background-color-error-over]
+ * If not null defines the background-color to be applied when the error state is active and the button is hovered.
+ *
+ * @param {color} [$background-color-warning-over=$cm-button-background-color-warning-over]
+ * If not null defines the background-color to be applied when the warning state is active and the button is hovered.
+ *
+ * @param {color} [$background-color-info-over=$cm-button-background-color-info-over]
+ * If not null defines the background-color to be applied when the info state is active and the button is hovered.
+ *
+ * @param {color} [$background-color-success-over=$cm-button-background-color-success-over]
+ * If not null defines the background-color to be applied when the success state is active and the button is hovered.
+ *
+ * @param {color} [$background-color-error-pressed=$cm-button-background-color-error-pressed]
+ * If not null defines the background-color to be applied when the error state is active and the button is pressed.
+ *
+ * @param {color} [$background-color-warning-pressed=$cm-button-background-color-warning-pressed]
+ * If not null defines the background-color to be applied when the warning state is active and the button is pressed.
+ *
+ * @param {color} [$background-color-info-pressed=$cm-button-background-color-info-pressed]
+ * If not null defines the background-color to be applied when the info state is active and the button is pressed.
+ *
+ * @param {color} [$background-color-success-pressed=$cm-button-background-color-success-pressed]
+ * If not null defines the background-color to be applied when the success state is active and the button is pressed.
+ *
+ * @param {color} [$border-color-error=$cm-button-border-color-error]
+ * If not null defines the border-color to be applied when the error state is active.
+ *
+ * @param {color} [$border-color-warning=$cm-button-border-color-warning]
+ * If not null defines the border-color to be applied when the warning state is active.
+ *
+ * @param {color} [$border-color-info=$cm-button-border-color-info]
+ * If not null defines the border-color to be applied when the info state is active.
+ *
+ * @param {color} [$border-color-success=$cm-button-border-color-success]
+ * If not null defines the border-color to be applied when the success state is active.
+ *
+ * @param {color} [$border-color-error-over=$cm-button-border-color-error-over]
+ * If not null defines the border-color to be applied when the error state is active and the button is hovered.
+ *
+ * @param {color} [$border-color-warning-over=$cm-button-border-color-warning-over]
+ * If not null defines the border-color to be applied when the warning state is active and the button is hovered.
+ *
+ * @param {color} [$border-color-info-over=$cm-button-border-color-info-over]
+ * If not null defines the border-color to be applied when the info state is active and the button is hovered.
+ *
+ * @param {color} [$border-color-success-over=$cm-button-border-color-success-over]
+ * If not null defines the border-color to be applied when the success state is active and the button is hovered.
+ *
+ * @param {color} [$border-color-error-pressed=$cm-button-border-color-error-pressed]
+ * If not null defines the border-color to be applied when the error state is active and the button is pressed.
+ *
+ * @param {color} [$border-color-warning-pressed=$cm-button-border-color-warning-pressed]
+ * If not null defines the border-color to be applied when the warning state is active and the button is pressed.
+ *
+ * @param {color} [$border-color-info-pressed=$cm-button-border-color-info-pressed]
+ * If not null defines the border-color to be applied when the info state is active and the button is pressed.
+ *
+ * @param {color} [$border-color-success-pressed=$cm-button-border-color-success-pressed]
+ * If not null defines the border-color to be applied when the success state is active and the button is pressed.
+ *
+ * @param {color} [$box-shadow-error=$cm-button-box-shadow-error]
+ * If not null defines the box-shadow to be applied when the error state is active.
+ *
+ * @param {color} [$box-shadow-warning=$cm-button-box-shadow-warning]
+ * If not null defines the box-shadow to be applied when the warning state is active.
+ *
+ * @param {color} [$box-shadow-info=$cm-button-box-shadow-info]
+ * If not null defines the box-shadow to be applied when the info state is active.
+ *
+ * @param {color} [$box-shadow-success=$cm-button-box-shadow-success]
+ * If not null defines the box-shadow to be applied when the success state is active.
+ *
+ * @param {color} [$icon-color-error=$cm-button-icon-color-error]
+ * If not null defines the color of the icon to be applied when the error state is active.
+ *
+ * @param {color} [$icon-color-warning=$cm-button-icon-color-warning]
+ * If not null defines the color of the icon to be applied when the warning state is active.
+ *
+ * @param {color} [$icon-color-info=$cm-button-icon-color-info]
+ * If not null defines the color of the icon to be applied when the info state is active.
+ *
+ * @param {color} [$icon-color-success=$cm-button-icon-color-success]
+ * If not null defines the color of the icon to be applied when the success state is active.
+ *
+ * @member Ext.button.Button
+ */
+@mixin cm-button-ui(
+  $ui,
+  $padding: null,
+  $box-shadow: null,
+  $enable-pointer-events: $cm-button-enable-pointer-events,
+  $icon-color-over: null,
+  $icon-color-focus: null,
+  $icon-color-pressed: null,
+  $icon-color-disabled: null,
+  $icon-rendering-disabled: $cm-button-icon-rendering-disabled,
+  $icon-font-size-pressed: null,
+  $text-min-height: null,
+  $text-decoration: null,
+  $text-max-width: null,
+  $text-word-break: null,
+  $text-white-space: null,
+  $text-float: null,
+  $text-align: null,
+  $arrow-glyph-menu-active: null,
+  $arrow-glyph-color-over: null,
+  $arrow-glyph-color-pressed: null,
+  $arrow-glyph-border-color-focus-pressed: null,
+  $arrow-right-font-size: null,
+  $arrow-right-padding: null,
+  $split-divider-height: null,
+  $enable-multiline: $cm-button-enable-multiline,
+
+  $enable-color-state-fix: $cm-button-enable-color-state-fix,
+  $used-color-over: $button-default-color-over,
+  $used-color-pressed: $button-default-color-pressed,
+
+  // validation parameters:
+  $background-color-error: $cm-button-background-color-error,
+  $background-color-warning: $cm-button-background-color-warning,
+  $background-color-info: $cm-button-background-color-info,
+  $background-color-success: $cm-button-background-color-success,
+  $background-color-error-over: $cm-button-background-color-error-over,
+  $background-color-warning-over: $cm-button-background-color-warning-over,
+  $background-color-info-over: $cm-button-background-color-info-over,
+  $background-color-success-over: $cm-button-background-color-success-over,
+  $background-color-error-pressed: $cm-button-background-color-error-pressed,
+  $background-color-warning-pressed: $cm-button-background-color-warning-pressed,
+  $background-color-info-pressed: $cm-button-background-color-info-pressed,
+  $background-color-success-pressed: $cm-button-background-color-success-pressed,
+  $border-color-error: $cm-button-border-color-error,
+  $border-color-warning: $cm-button-border-color-warning,
+  $border-color-info: $cm-button-border-color-info,
+  $border-color-success: $cm-button-border-color-success,
+  $border-color-error-over: $cm-button-border-color-error-over,
+  $border-color-warning-over: $cm-button-border-color-warning-over,
+  $border-color-info-over: $cm-button-border-color-info-over,
+  $border-color-success-over: $cm-button-border-color-success-over,
+  $border-color-error-pressed: $cm-button-border-color-error-pressed,
+  $border-color-warning-pressed: $cm-button-border-color-warning-pressed,
+  $border-color-info-pressed: $cm-button-border-color-info-pressed,
+  $border-color-success-pressed: $cm-button-border-color-success-pressed,
+  $box-shadow-error: $cm-button-box-shadow-error,
+  $box-shadow-warning: $cm-button-box-shadow-warning,
+  $box-shadow-info: $cm-button-box-shadow-info,
+  $box-shadow-success: $cm-button-box-shadow-success,
+  $icon-color-error: $cm-button-icon-color-error,
+  $icon-color-warning: $cm-button-icon-color-warning,
+  $icon-color-info: $cm-button-icon-color-info,
+  $icon-color-success: $cm-button-icon-color-success
+) {
+  .#{$prefix}btn-#{$ui} {
+
+    @if $enable-multiline {
+      & .x-btn-button {
+        white-space: normal;
+      }
+    }
+
+    @if $enable-color-state-fix {
+      &.#{$prefix}btn.#{$prefix}btn-menu-active,
+      &.#{$prefix}btn.#{$prefix}btn-pressed {
+        .#{$prefix}btn-inner {
+          @if $used-color-pressed != null {
+            color: $used-color-pressed;
+          }
+        }
+      }
+
+      &.#{$prefix}btn-over {
+        .#{$prefix}btn-inner {
+          @if $used-color-over != null {
+            color: $used-color-over;
+          }
+        }
+      }
+    }
+    // force padding (gets recalculated on rounded corners)
+    @if $padding != null {
+      padding: $padding;
+    }
+    // hover color
+    &.#{$prefix}btn-over {
+      .#{$prefix}btn-icon-el {
+        @if $icon-color-over != null {
+          color: $icon-color-over;
+        }
+      }
+    }
+    // focus color
+    &.#{$prefix}btn-focus {
+      .#{$prefix}btn-icon-el {
+        @if $icon-color-focus != null {
+          color: $icon-color-focus;
+        }
+      }
+    }
+    // active color
+    &.#{$prefix}btn-menu-active,
+    &.#{$prefix}btn-pressed {
+      .#{$prefix}btn-icon-el {
+        @if $icon-color-pressed != null {
+          color: $icon-color-pressed;
+        }
+        @if $icon-font-size-pressed != null {
+          font-size: $icon-font-size-pressed;
+        }
+      }
+    }
+    // disabled color
+    &.#{$prefix}btn-disabled {
+      .#{$prefix}btn-icon-el {
+        @if $icon-color-disabled != null {
+          color: $icon-color-disabled;
+        }
+      }
+    }
+    // icon menu active
+    @if $arrow-glyph-menu-active != null {
+      &.#{$prefix}btn-menu-active {
+        .#{$prefix}btn-arrow-right:after,
+        .#{$prefix}btn-split-right:after {
+          @include font-icon($glyph: $arrow-glyph-menu-active, $pseudo: false);
+        }
+      }
+    }
+    // icon button hover
+    @if $arrow-glyph-color-over != null {
+      &.#{$prefix}btn-over {
+        .#{$prefix}btn-arrow-right:after,
+        .#{$prefix}btn-split-right:after {
+          color: $arrow-glyph-color-over;
+        }
+      }
+    }
+
+    // icon button pressed
+    @if $arrow-glyph-color-pressed != null {
+      &.#{$prefix}btn-menu-active,
+      &.#{$prefix}btn-pressed {
+        .#{$prefix}btn-arrow-right:after,
+        .#{$prefix}btn-split-right:after {
+          color: $arrow-glyph-color-pressed;
+        }
+        &.#{$prefix}arrow-focus .#{$prefix}btn-arrow-el {
+          border: 1px solid $arrow-glyph-border-color-focus-pressed;
+        }
+      }
+    }
+    // arrow size
+    .#{$prefix}btn-arrow-right:after,
+    .#{$prefix}btn-split-right:after {
+      @if $arrow-right-font-size != null {
+        font-size: $arrow-right-font-size;
+      }
+      @if $arrow-right-padding != null {
+        padding: $arrow-right-padding;
+      }
+    }
+    // underline text
+    @if $text-decoration != null {
+      .#{$prefix}btn-inner-#{$ui} {
+        text-decoration: $text-decoration;
+      }
+    }
+    // text link inline button
+    @if $icon-rendering-disabled {
+      .#{$prefix}btn-icon > {
+        .#{$prefix}btn-icon-el {
+          display: none;
+        }
+        .#{$prefix}btn-inner-#{$ui} {
+          padding: 0;
+          @if $text-max-width != null {
+            max-width: $text-max-width;
+          }
+          @if $text-min-height != null {
+            min-height: $text-min-height;
+          }
+          @if $text-word-break != null {
+            word-break: $text-word-break;
+          }
+          @if $text-white-space != null {
+            white-space: $text-white-space;
+          }
+          @if $text-float != null {
+            float: $text-float;
+          }
+          @if $text-align != null {
+            text-align: $text-align;
+          }
+        }
+      }
+    }
+    // shadows
+    @if $box-shadow != null {
+      box-shadow: $box-shadow;
+      &.#{$prefix}btn-focus {
+        box-shadow: $box-shadow;
+      }
+    }
+    // enable pointer events (e.g. enable tooltips for disabled buttons)
+    @if $enable-pointer-events {
+      &.#{$prefix}btn-disabled {
+        cursor: default;
+        pointer-events: auto;
+      }
+    }
+    // custom split design
+    @if $split-divider-height != null {
+      .#{$prefix}btn-split-right > .#{$prefix}btn-button:after {
+        border-color: transparent;
+        height: $split-divider-height;
+        top: (100% - $split-divider-height)/2;
+      }
+      &.#{$prefix}btn-over {
+        .#{$prefix}btn-split-right > .#{$prefix}btn-button:after {
+          border-color: $button-default-color; // !
+        }
+      }
+      &.#{$prefix}btn-pressed.#{$prefix}btn-over {
+        .#{$prefix}btn-split-right > .#{$prefix}btn-button:after {
+          border-color: $arrow-glyph-color-pressed;
+        }
+      }
+    }
+  }
+
+  $state-map: (
+    "error" : (
+      background-color: $background-color-error,
+      background-color-over: $background-color-error-over,
+      background-color-pressed: $background-color-error-pressed,
+      border-color: $border-color-error,
+      border-color-over: $border-color-error-over,
+      border-color-pressed: $border-color-error-pressed,
+      box-shadow: $box-shadow-error,
+      icon-color: $icon-color-error
+    ),
+    "warning" : (
+      background-color: $background-color-warning,
+      background-color-over: $background-color-warning-over,
+      background-color-pressed: $background-color-warning-pressed,
+      border-color: $border-color-warning,
+      border-color-over: $border-color-warning-over,
+      border-color-pressed: $border-color-warning-pressed,
+      box-shadow: $box-shadow-warning,
+      icon-color: $icon-color-warning
+    ),
+    "info" : (
+      background-color: $background-color-info,
+      background-color-over: $background-color-info-over,
+      background-color-pressed: $background-color-info-pressed,
+      border-color: $border-color-info,
+      border-color-over: $border-color-info-over,
+      border-color-pressed: $border-color-info-pressed,
+      box-shadow: $box-shadow-info,
+      icon-color: $icon-color-info
+    ),
+    "success" : (
+      background-color: $background-color-success,
+      background-color-over: $background-color-success-over,
+      background-color-pressed: $background-color-success-pressed,
+      border-color: $border-color-success,
+      border-color-over: $border-color-success-over,
+      border-color-pressed: $border-color-success-pressed,
+      box-shadow: $box-shadow-success,
+      icon-color: $icon-color-success
+    )
+  );
+
+  @each $state, $map in $state-map {
+    .#{$prefix}btn.#{$prefix}btn-#{$ui} {
+      &.cm-validation-state-#{$state} {
+        background-color: map-get($map, background-color);
+        border-color: map-get($map, border-color);
+
+        &.#{$prefix}btn-over {
+          background-color: map-get($map, background-color-over);
+          border-color: map-get($map, border-color-over);
+        }
+        &.#{$prefix}btn-pressed {
+          background-color: map-get($map, background-color-pressed);
+          border-color: map-get($map, border-color-pressed);
+        }
+        &.#{$prefix}focus{
+          box-shadow: map-get($map, box-shadow);
+        }
+        .#{$prefix}btn-arrow {
+          &:after {
+            color: $cm-font-light-coloured;
+          }
+        }        
+        .#{$prefix}btn-icon-el-#{$ui} {
+          color: map-get($map, icon-color);
+        }
+      }
+    }
+  }
+}

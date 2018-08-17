@@ -1,0 +1,28 @@
+@if $cm-include-image-grid-column-renderer {
+  $_block: "cm-image-grid-column";
+
+  .#{$_block} {
+    display: block;
+    text-align: center;
+    line-height: 0;
+
+    &__thumbnail {
+      padding-top: 3px;
+      max-height: 35px;
+      max-width: 42px;
+    }
+
+    &--empty {
+      padding: 5px;
+      @include font-icon(
+        $glyph: $cm-image-grid-column-renderer-empty-icon,
+        $color: $cm-darkgrey
+      );
+      opacity: 0.5;
+
+      .#{$prefix}grid-item-selected & {
+        color: $cm-white;
+      }
+    }
+  }
+}

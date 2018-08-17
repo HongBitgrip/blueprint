@@ -1,0 +1,31 @@
+@if $cm-include-draggable-items-utils {
+
+  $_source-placeholder-color: $cm-grey-1;
+
+  .cm-draggable-items-source-placeholder {
+    box-sizing: border-box;
+    background-color: $_source-placeholder-color;
+  }
+
+  .cm-draggable-items-target-placeholder {
+    box-sizing: border-box;
+    background-color: $cm-grey-0;
+
+    &--source-position {
+      background-color: $_source-placeholder-color;
+    }
+  }
+
+  .cm-drag-ghost {
+    &__icon {
+      vertical-align: middle;
+      font-size: $cm-glyph-font-size-100;
+      line-height: 1;
+      padding: 0 6px 0 2px;
+    }
+
+    &__text {
+      vertical-align: middle;
+    }
+  }
+}

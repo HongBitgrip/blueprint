@@ -1,0 +1,447 @@
+/**
+ * Only to be used in after {@link #extjs-text-field-ui} mixin has been included.
+ *
+ * CoreMedia UI Mixin for a text-field.
+ * Parameters do not have a default value, so if omitted the styling rule is not applied.
+ *
+ * @param {string} $ui
+ * The name of the UI being created. May not include spaces or special punctuation as string is used as part of
+ * CSS class names.
+ *
+ * @param {list} [$input-border=$cm-text-field-input-border]
+ * If not null, defines the border property of the input element.
+ *
+ * @param {number/list} [$input-box-shadow=$cm-text-field-input-shadow]
+ * If not null, defines the box shadow property of the input element.
+ *
+ * @param {number/list} [$input-box-shadow-focus=$cm-text-field-input-shadow-focus]
+ * If not null, defines the box shadow property of the input element when focused.
+ *
+ * @param {number/list} [$input-transition=$cm-text-field-input-transition]
+ * If not null, defines the shadow transition of the input element if focused or blurred.
+ *
+ * @param {string} [$input-overflow=$cm-text-field-input-overflow]
+ * If not null, defines the input element's overflow value. (use this e.g. in combination with
+ * $input-text-overflow and $input-white-space to get the text ellipsis)
+ *
+ * @param {string} [$input-text-overflow=$cm-text-field-input-text-overflow]
+ * If not null, defines the input element's text-overflow value. (use this e.g. in combination with
+ * $input-overflow and $input-white-space to get the text ellipsis)
+ *
+ * @param {string} [$input-white-space=$cm-text-field-input-white-space]
+ * If not null, defines the input element's white-space value. (use this e.g. in combination with
+ * $input-overflow and $input-text-overflow to get the text ellipsis)
+ *
+ * @param {string} [$input-text-align=$cm-text-field-input-text-align]
+ * If not null, defines the text align of the input element.
+ *
+ * @param {color} [$input-background-color-disabled=null]
+ * If not null, defines the background color of the input element when the component is disabled.
+ *
+ * @param {number/list} [$input-trigger-wrap-border-radius=$cm-text-field-trigger-wrap-border-radius]
+ * If not null, defines the border-radius of the wrapper around the (optional) trigger element of the text-field.
+ * (e.g. ComboBox)
+ *
+ * @param {color} [$input-trigger-wrap-border-color-focus=$cm-text-field-trigger-wrap-border-color-focus]
+ * If not null, defines the border-color of the input element on focus.
+ * (e.g. ComboBox)
+ *
+ * @param {string} [$textarea-overflow=$cm-text-field-textarea-overflow]
+ * If not null and a textarea is used, defines the textarea's overflow value to enable scrollbars.
+ * Important to ensure scrolling as default.
+ *
+ * @param {string} [$textarea-text-overflow=$cm-text-field-textarea-text-overflow]
+ * If not null and a textarea is used, defines the textarea's text-overflow value.
+ *
+ * @param {string} [$textarea-white-space=$cm-text-field-textarea-white-space]
+ * If not null and a textarea is used, defines the textarea's white-space value.
+ *
+ * @param {string} [$textarea-resize=$cm-text-field-textarea-resize]
+ * If not null and a textarea is used, defines the textarea's resize value.
+ * Important to suppress browser resizing.
+ *
+ * @param {string} [$textarea-padding=$cm-text-field-textarea-padding]
+ * If not null and a textarea is used, defines the textarea's padding.
+ *
+ * @param {string} [$default-text-font-style=$cm-text-field-default-text-font-style]
+ * If not null sets the font-style for the default text (not the empty text)
+ *
+ * @param {color} [$default-text-color=$cm-text-field-default-text-color]
+ * If not null sets the color for the default text (not the empty text)
+ *
+ * @param {number} [$border-width-highlighted=$cm-text-field-border-width-highlighted]
+ * If not null defines the border-width to be applied if the current field is highlighted.
+ *
+ * @param {string} [$border-style-highlighted=$cm-text-field-border-style-highlighted]
+ * If not null defines the border-style to be applied if the current field is highlighted.
+ *
+ * @param {color} [$border-color-highlighted=$cm-text-field-border-color-highlighted]
+ * If not null defines the border-color to be applied if the current field is highlighted.
+ *
+ * @param {color} [$background-color-readonly=$cm-text-field-background-color-readonly]
+ * If not null defines the background-color to be applied if the current field is readonly.
+ *
+ * @param {color} [$color-readonly=$cm-text-field-color-readonly]
+ * If not null defines the color to be applied if the current field is readonly.
+ *
+ * @param {number/list} [$padding-error=$cm-text-field-validation-padding-error]
+ * If not null defines the padding to be applied when the error state is active.
+ *
+ * @param {number/list} [$border-width-error=$cm-text-field-validation-border-width-error]
+ * If not null defines the border-width to be applied when the error state is active.
+ *
+ * @param {color} [$border-color-error=$cm-text-field-validation-border-color-error]
+ * If not null defines the border-color to be applied when the error state is active.
+ *
+ * @param {number/list} [$padding-warning=$cm-text-field-validation-padding-warning]
+ * If not null defines the padding to be applied when the warning state is active.
+ *
+ * @param {number/list} [$border-width-warning=$cm-text-field-validation-border-width-warning]
+ * If not null defines the border-width to be applied when the warning state is active.
+ *
+ * @param {color} [$border-color-warning=$cm-text-field-validation-border-color-warning]
+ * If not null defines the border-color to be applied when the warning state is active.
+ *
+ * @param {number/list} [$padding-info=$cm-text-field-validation-padding-info]
+ * If not null defines the padding to be applied when the info state is active.
+ *
+ * @param {number/list} [$border-width-info=$cm-text-field-validation-border-width-info]
+ * If not null defines the border-width to be applied when the info state is active.
+ *
+ * @param {color} [$border-color-info=$cm-text-field-validation-border-color-info]
+ * If not null defines the border-color to be applied when the info state is active.
+ *
+ * @param {number/list} [$padding-success=$cm-text-field-validation-padding-success]
+ * If not null defines the padding to be applied when the success state is active.
+ *
+ * @param {number/list} [$border-width-success=$cm-text-field-validation-border-width-success]
+ * If not null defines the border-width to be applied when the success state is active.
+ *
+ * @param {color} [$border-color-success=$cm-text-field-validation-border-color-success]
+ * If not null defines the border-color to be applied when the success state is active.
+ *
+ * @param {boolean} [$hide-inner-box-shadow-on-validation=true]
+ * If false shows the inner box-shadow of a validated text-field, which appears on focus. Defaults to true.
+ *
+ * @param {boolean} [$is-animated-text-field=true]
+ * If false no bottom line animation is used on focus. Defaults to true.
+ *
+ * @member Ext.form.field.Text
+ */
+@mixin cm-text-field-ui(
+  $ui,
+  $input-border: $cm-text-field-input-border,
+  $input-box-shadow: $cm-text-field-input-shadow,
+  $input-box-shadow-focus: $cm-text-field-input-shadow-focus,
+  $input-transition: $cm-text-field-input-transition,
+  $input-overflow: $cm-text-field-input-overflow,
+  $input-text-overflow: $cm-text-field-input-text-overflow,
+  $input-white-space: $cm-text-field-input-white-space,
+  $input-text-align: $cm-text-field-input-text-align,
+  $input-background-color-disabled: null,
+  $input-trigger-wrap-border-radius: $cm-text-field-trigger-wrap-border-radius,
+  $input-trigger-wrap-border-color-focus: $cm-text-field-trigger-wrap-border-color-focus,
+  // textarea parameters
+  $textarea-overflow: $cm-text-field-textarea-overflow,
+  $textarea-text-overflow: $cm-text-field-textarea-text-overflow,
+  $textarea-white-space: $cm-text-field-textarea-white-space,
+  $textarea-resize: $cm-text-field-textarea-resize,
+  $textarea-padding: $cm-text-field-textarea-padding,
+  $default-text-font-style: $cm-text-field-default-text-font-style,
+  $default-text-color: $cm-text-field-default-text-color,
+  $border-width-highlighted: $cm-text-field-border-width-highlighted,
+  $border-style-highlighted: $cm-text-field-border-style-highlighted,
+  $border-color-highlighted: $cm-text-field-border-color-highlighted,
+  $background-color-readonly: $cm-text-field-background-color-readonly,
+  $color-readonly: $cm-text-field-color-readonly,
+  // validation parameters:
+  $padding-error: $cm-text-field-validation-padding-error,
+  $border-width-error: $cm-text-field-validation-border-width-error,
+  $border-color-error: $cm-text-field-validation-border-color-error,
+  $padding-warning: $cm-text-field-validation-padding-warning,
+  $border-width-warning: $cm-text-field-validation-border-width-warning,
+  $border-color-warning: $cm-text-field-validation-border-color-warning,
+  $padding-info: $cm-text-field-validation-padding-info,
+  $border-width-info: $cm-text-field-validation-border-width-info,
+  $border-color-info: $cm-text-field-validation-border-color-info,
+  $padding-success: $cm-text-field-validation-padding-success,
+  $border-width-success: $cm-text-field-validation-border-width-success,
+  $border-color-success: $cm-text-field-validation-border-color-success,
+  // booleans
+  $hide-inner-box-shadow-on-validation: true,
+  $is-animated-text-field: true
+) {
+  .#{$prefix}field-#{$ui} {
+    @if not $is-animated-text-field {
+      &.cm-read-only,
+      &.#{$prefix}item-disabled {
+        .#{$prefix}form-trigger-wrap-#{$ui} {
+          @if $background-color-readonly != null {
+            background-color: $background-color-readonly;
+          }
+          @if $color-readonly != null {
+            color: $color-readonly;
+          }
+        }
+      }
+    }
+  }
+
+  .#{$prefix}form-text-field-body-#{$ui} {
+    .#{$prefix}form-trigger-wrap-#{$ui} {
+      @if $input-trigger-wrap-border-radius != null {
+        border-radius: $input-trigger-wrap-border-radius;
+      }
+      &.#{$prefix}form-trigger-wrap-focus {
+        @if $input-trigger-wrap-border-color-focus != null {
+          border-color: $input-trigger-wrap-border-color-focus;
+        }
+      }
+      @if $is-animated-text-field {
+        // default
+        @include _cm-animation-text-field($form-text-field-border-color, $border-color-highlighted, $form-text-field-background-color);
+        // programmatically highlighting
+        .cm-highlighted > & {
+          @include _cm-animation-text-field($border-color-highlighted, $border-color-highlighted, $form-text-field-background-color);
+        }
+        // focus & programmatically highlighting
+        &.#{$prefix}form-trigger-wrap-focus {
+          .cm-highlighted > & {
+            @include _cm-animation-text-field-focus;
+          }
+          // focus on default
+          @include _cm-animation-text-field-focus;
+        }
+        // override all background colors
+        .#{$prefix}item-disabled > &,
+        .cm-read-only > & {
+          background-color: $cm-text-field-background-color-readonly;
+        }
+      }
+      &.#{$prefix}form-trigger-wrap-focus {
+        @if $input-trigger-wrap-border-color-focus != null {
+          border-color: $input-trigger-wrap-border-color-focus;
+        }
+      }
+    }
+      .#{$prefix}form-text-#{$ui} {
+      @if $input-border != null {
+        border: $input-border;
+      }
+      @if $input-transition != null {
+        transition: $input-transition;
+      }
+      @if $input-box-shadow != null {
+        box-shadow: $input-box-shadow;
+      }
+      @if $input-overflow != null {
+        overflow: $input-overflow;
+      }
+      @if $input-white-space != null {
+        white-space: $input-white-space;
+      }
+      @if $input-text-overflow != null {
+        text-overflow: $input-text-overflow;
+      }
+      @if $input-text-align != null {
+        text-align: $input-text-align;
+      }
+      &.#{$prefix}form-focus {
+        @if $input-box-shadow-focus != null {
+          box-shadow: $input-box-shadow-focus;
+        }
+        @if $input-transition != null {
+          transition: $input-transition;
+        }
+      }
+      // styles for textareas
+      &.#{$prefix}form-textarea {
+        border: $cm-border-width $cm-border-style $form-text-field-border-color;
+        border-radius: $cm-border-radius;
+        @if $textarea-overflow != null {
+          overflow: $textarea-overflow;
+        }
+        @if $textarea-text-overflow != null {
+          text-overflow: $textarea-text-overflow;
+        }
+        @if $textarea-white-space != null {
+          white-space: $textarea-white-space;
+        }
+        @if $textarea-resize != null {
+          resize: $textarea-resize;
+        }
+        @if $textarea-padding != null {
+          padding: $textarea-padding;
+        }
+        &.#{$prefix}form-focus,
+        .cm-highlighted > & {
+          border: $border-width-highlighted $border-style-highlighted $border-color-highlighted;
+        }
+        .#{$prefix}field-resizable & {
+          border-bottom-left-radius: 0;
+          border-bottom-right-radius: 0;
+        }
+      }
+    }
+  }
+  // fields
+  .#{$prefix}field-#{$ui} {
+    &.#{$prefix}item-disabled {
+      .#{$prefix}form-text-#{$ui} {
+        @if $input-background-color-disabled != null {
+          background-color: $input-background-color-disabled;
+        }
+      }
+    }
+    // focus within fields
+    .#{$prefix}form-textarea-body {
+      .#{$prefix}form-trigger-wrap-#{$ui} {
+        padding-bottom: 0;
+        &.#{$prefix}form-trigger-wrap-focus {
+          background-size: 100% $cm-border-width;
+        }
+      }
+    }
+  }
+
+  .cm-text-field--display-default-text .#{$prefix}form-text-#{$ui} {
+    @if $default-text-color != null {
+      color: $default-text-color;
+    }
+    @if $default-text-font-style != null {
+      font-style: $default-text-font-style;
+    }
+  }
+
+  $state-map: (
+    "error" : (
+      padding: $padding-error,
+      border-width: $border-width-error,
+      border-color: $border-color-error),
+    "warning" : (
+      padding: $padding-warning,
+      border-width: $border-width-warning,
+      border-color: $border-color-warning),
+    "info" : (
+      padding: $padding-info,
+      border-width: $border-width-info,
+      border-color: $border-color-info),
+    "success" : (
+      padding: $padding-success,
+      border-width: $border-width-success,
+      border-color: $border-color-success)
+  );
+
+  .#{$prefix}field-#{$ui} {
+    @each $state, $map in $state-map {
+      &.cm-validation-state-#{$state} {
+        // readonly
+        &.#{$prefix}item-disabled,
+        &.cm-read-only {
+          .#{$prefix}form-text-field-body-#{$ui} {
+            .#{$prefix}form-trigger-wrap-#{$ui},
+            .#{$prefix}form-textarea {
+              background-color: $cm-text-field-background-color-readonly;
+            }
+          }
+        }
+        .#{$prefix}form-text-field-body-#{$ui} {
+          .#{$prefix}form-trigger-wrap-#{$ui} {
+            @if map-get($map, border-color) != null {
+              @if $is-animated-text-field {
+                @include _cm-animation-text-field(map-get($map, border-color), map-get($map, border-color), $form-text-field-background-color);
+                // focus
+                &.#{$prefix}form-trigger-wrap-focus {
+                  @include _cm-animation-text-field-focus;
+                }
+                .#{$prefix}form-focus,
+                .#{$prefix}form-trigger-focus {
+                  border-color: map-get($map, border-color);
+                }
+              }
+              .#{$prefix}form-focus {
+                box-shadow: cm-focus-box-shadow(map-get($map, border-color));
+              }
+            }
+          }
+          @if map-get($map, border-width) != null {
+            border-width: map-get($map, border-width);
+          }
+          @if map-get($map, padding) != null {
+            .#{$prefix}form-textarea {
+              padding-left: map-get($map, padding);
+            }
+          }
+          @if map-get($map, border-width) != null {
+            .#{$prefix}form-textarea {
+              border-width: map-get($map, border-width);
+            }
+          }
+          @if map-get($map, border-color) != null {
+            .#{$prefix}form-textarea {
+              border-color: map-get($map, border-color);
+            }
+          }
+          @if $hide-inner-box-shadow-on-validation {
+            .#{$prefix}form-text-#{$ui} {
+              &.#{$prefix}form-focus {
+                box-shadow: none;
+              }
+            }
+          }
+          // no animation for textareas
+          &.#{$prefix}form-textarea-body {
+            .#{$prefix}form-trigger-wrap-#{$ui} {
+              padding-bottom: 0;
+              background-image: none;
+              transition: none;
+              background-position: inherit;
+              background-size: auto;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+/**
+ * Set up text fields with animated gradient color on selection.
+ *
+ * @param {color} [$default-state-text-field-gradient-color=$cm-grey-3]
+ * Defines the default gradient color as border of a single-line textfield or combobox.
+ *
+ * @param {color} [$focus-state-text-field-gradient-color=$cm-highlight-color]
+ * Defines the focus gradient color as border of a single-line textfield or combobox.
+ *
+ * @param {color} [$text-field-background-color=transparent]
+ * Defines the background color of a single-line textfield or combobox.
+ *
+ * @member Ext.form.field.Text
+ * @private
+ */
+@mixin _cm-animation-text-field (
+  $default-state-text-field-gradient-color: $cm-grey-3,
+  $focus-state-text-field-gradient-color: $cm-highlight-color,
+  $text-field-background-color: transparent
+) {
+  padding-bottom: $cm-grid-25;
+  border: none;
+  background-color: $text-field-background-color;
+  background-repeat: no-repeat;
+  background-image: linear-gradient(to bottom, $focus-state-text-field-gradient-color, $focus-state-text-field-gradient-color),
+                    linear-gradient(to bottom, $default-state-text-field-gradient-color, $default-state-text-field-gradient-color);
+  background-size: 0 $cm-grid-25, 100% $cm-border-width;
+  background-position: 50% 100%, 50% 100%;
+  transition: background-size 0.2s ease;
+}
+
+/**
+ * Changes background size on selection
+ *
+ * @member Ext.form.field.Text
+ * @private
+ */
+@mixin _cm-animation-text-field-focus {
+  background-size: 100% $cm-grid-25, 100% $cm-border-width;
+}

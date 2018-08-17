@@ -1,0 +1,21 @@
+
+@mixin font-face($style-name, $file, $weight: normal, $style: normal) {
+  $studio-font-path: get-resource-path('fonts/') + $file;
+  @font-face {
+    font-family: "#{$style-name}";
+    font-weight: $weight;
+    font-style: $style;
+    src: url($studio-font-path + ".woff2") format('woff2'), // Super Modern Browsers
+    url($studio-font-path + ".woff") format('woff'), // Pretty Modern Browsers
+  }
+}
+
+// default font
+@include font-face("Roboto", "roboto-latin-regular", 400);
+@include font-face("Roboto", "roboto-latin-italic", 400, italic);
+// semi-bold
+@include font-face("Roboto", "roboto-latin-500", 600);
+@include font-face("Roboto", "roboto-latin-500italic", 600, italic);
+// bold
+@include font-face("Roboto", "roboto-latin-700", 700);
+@include font-face("Roboto", "roboto-latin-700italic", 700, italic);

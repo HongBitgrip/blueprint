@@ -1,0 +1,293 @@
+/**
+ * @var {color}
+ *
+ * Defines the default background color.
+ *
+ * @member Ext.container.Container
+ */
+$cm-container-background-color: dynamic(transparent);
+
+/**
+ * @var {color}
+ *
+ * Defines the default background color in over state.
+ *
+ * @member Ext.container.Container
+ */
+$cm-container-background-color-over: dynamic(null);
+
+/**
+ * @var {number/list}
+ *
+ * Defines the default padding.
+ *
+ * @member Ext.container.Container
+ */
+$cm-container-padding: dynamic(null);
+
+/**
+ * @var {number/list}
+ *
+ * Defines the default border width.
+ *
+ * @member Ext.container.Container
+ */
+$cm-container-border-width: dynamic(null);
+
+/**
+ * @var {color}
+ *
+ * Defines the default border color.
+ *
+ * @member Ext.container.Container
+ */
+$cm-container-border-color: dynamic(null);
+
+/**
+ * @var {color}
+ *
+ * Defines the default border color in error state.
+ *
+ * @member Ext.container.Container
+ */
+$cm-container-border-color-error: dynamic($cm-validation-color-error);
+
+/**
+ * @var {color}
+ *
+ * Defines the default border color in warning state.
+ *
+ * @member Ext.container.Container
+ */
+$cm-container-border-color-warning: dynamic($cm-validation-color-warning);
+
+/**
+ * @var {color}
+ *
+ * Defines the default border color in info state.
+ *
+ * @member Ext.container.Container
+ */
+$cm-container-border-color-info: dynamic($cm-validation-color-info);
+
+/**
+ * @var {color}
+ *
+ * Defines the default border color in success state.
+ *
+ * @member Ext.container.Container
+ */
+$cm-container-border-color-success: dynamic($cm-validation-color-success);
+
+/**
+ * @var {color}
+ *
+ * Defines the default border color in highlighted state.
+ *
+ * @member Ext.container.Container
+ */
+$cm-container-border-color-highlighted: dynamic(null);
+
+/**
+ * @var {color}
+ *
+ * Defines the default border color in focused state.
+ *
+ * @member Ext.container.Container
+ */
+$cm-container-border-color-focused: dynamic($cm-white);
+
+/**
+ * @var {string}
+ *
+ * Defines the default border style.
+ *
+ * @member Ext.container.Container
+ */
+$cm-container-border-style: dynamic(null);
+
+/**
+ * @var {number/list}
+ *
+ * Defines the default border radius.
+ *
+ * @member Ext.container.Container
+ */
+$cm-container-border-radius: dynamic(null);
+
+/**
+ * @var {string}
+ *
+ * Defines the default text align.
+ *
+ * @member Ext.container.Container
+ */
+$cm-container-text-align: dynamic(null);
+
+/**
+ * @var {string}
+ *
+ * Defines the default cursor.
+ *
+ * @member Ext.container.Container
+ */
+$cm-container-cursor: dynamic(null);
+
+/**
+ * @var {string}
+ *
+ * Defines the default box shadow.
+ *
+ * @member Ext.container.Container
+ */
+$cm-container-box-shadow: dynamic(null);
+
+/**
+ * @var {string}
+ *
+ * Defines the default box shadow in highlighted state.
+ *
+ * @member Ext.container.Container
+ */
+$cm-container-box-shadow-highlighted: dynamic(null);
+
+/**
+ * @var {string}
+ *
+ * Defines the default box shadow in focused state.
+ *
+ * @member Ext.container.Container
+ */
+$cm-container-box-shadow-focused: dynamic(cm-focus-box-shadow($cm-grey-7));
+
+/**
+ * @var {boolean}
+ *
+ * Defines if the border-width should be enforced if the container is docked by default.
+ *
+ * @member Ext.container.Container
+ */
+$cm-container-force-border-when-docked: dynamic(false);
+
+
+// CoreMedia specific vars, vars beginning with underscore are not meant to be changed!
+$_cm-container-frame-border-color: $cm-grey-3;
+$_cm-container-frame-border-width: $cm-border-width;
+$_cm-container-frame-border-style: solid;
+$_cm-container-frame-border-radius: $cm-border-radius;
+$_cm-container-frame-force-border-when-docked: true;
+
+/**
+ * @var {boolean}
+ * Enables styles for the "default" skin.
+ *
+ * Sencha has no variable for the default skin, so the css code will always be generated.
+ *
+ * @member Ext.container.Container
+ */
+$cm-include-container-default-ui: dynamic(true);
+
+/**
+ * @var {boolean}
+ * Specifies if the custom UI "group" for Ext.container.Container will be generated.
+ *
+ * @member Ext.container.Container
+ */
+$cm-include-container-group-ui: dynamic(true);
+
+/**
+ * @var {boolean}
+ * Specifies if the custom UI "group-dark" for Ext.container.Container will be generated.
+ *
+ * @member Ext.container.Container
+ */
+$cm-include-container-group-dark-ui: dynamic(true);
+
+/**
+ * @var {boolean}
+ * Specifies if the custom UI "grid-100" for Ext.container.Container will be generated.
+ *
+ * @member Ext.container.Container
+ */
+$cm-include-container-grid-100-ui: dynamic(true);
+
+/**
+ * @var {boolean}
+ * Specifies if the custom UI "grid-200" for Ext.container.Container will be generated.
+ *
+ * @member Ext.container.Container
+ */
+$cm-include-container-grid-200-ui: dynamic(true);
+
+/**
+ * @var {boolean}
+ * Specifies if the custom UI "selected-100" for Ext.container.Container will be generated.
+ *
+ * @member Ext.container.Container
+ */
+$cm-include-container-selected-100-ui: dynamic(true);
+
+/**
+ * @var {boolean}
+ * Specifies if the custom UI "dark-200" for Ext.container.Container will be generated.
+ *
+ * @member Ext.container.Container
+ */
+$cm-include-container-dark-200-ui: dynamic(true);
+
+/**
+ * @var {boolean}
+ * Specifies if the custom UI "frame" for Ext.container.Container will be generated.
+ *
+ * @member Ext.container.Container
+ */
+$cm-include-container-frame-ui: dynamic(true);
+
+/**
+ * @var {boolean}
+ * Specifies if the custom UI "frame-grid-200" for Ext.container.Container will be generated.
+ *
+ * @member Ext.container.Container
+ */
+$cm-include-container-frame-grid-200-ui: dynamic(true);
+
+/**
+ * @var {boolean}
+ * Specifies if the custom UI "special-translation-chart" for Ext.container.Container will be generated.
+ *
+ * @member Ext.container.Container
+ */
+$cm-include-container-special-translation-chart-ui: dynamic(true);
+
+/**
+ * @var {boolean}
+ * Specifies if the custom UI "card-200" for Ext.container.Container will be generated.
+ *
+ * @member Ext.container.Container
+ */
+$cm-include-card-collapsible-200-ui: dynamic(true);
+
+/**
+ * @var {boolean}
+ * Specifies if the custom UI "highlighted" for Ext.container.Container will be generated.
+ *
+ * @member Ext.container.Container
+ */
+$cm-include-container-highlighted-ui: dynamic(true);
+
+/**
+ * @var {boolean}
+ * Specifies if the custom UI "vivid" for Ext.container.Container will be generated.
+ *
+ * @member Ext.container.Container
+ */
+$cm-include-container-vivid-ui: dynamic(true);
+
+/**
+ * @var {boolean}
+ *
+ * Specifies if the custom UI "light" for Ext.container.Container will be generated.
+ *
+ * @member Ext.container.Container
+ */
+$cm-include-container-light-ui: dynamic(true);

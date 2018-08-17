@@ -1,0 +1,34 @@
+/**
+ * @var {number/list}
+ *
+ * Sets the border width for the TaskWarningPanel.
+ *
+ * @member com.coremedia.cms.editor.controlroom.workflow.TaskWarningPanel
+ */
+$cm-task-warning-panel-border-width: dynamic($cm-border-width);
+
+/**
+ * @var {string}
+ *
+ * Sets the border style for the TaskWarningPanel.
+ *
+ * @member com.coremedia.cms.editor.controlroom.workflow.TaskWarningPanel
+ */
+$cm-task-warning-panel-border-style: dynamic(solid);
+
+/**
+ * @var {color}
+ *
+ * Sets the border color for the TaskWarningPanel.
+ *
+ * @member com.coremedia.cms.editor.controlroom.workflow.TaskWarningPanel
+ */
+$cm-task-warning-panel-border-color: dynamic($cm-red);
+
+/**
+ * @var {boolean}
+ * Enables styles for the TaskWarningPanel.
+ *
+ * @member com.coremedia.cms.editor.controlroom.workflow.TaskWarningPanel
+ */
+$cm-include-task-warning-panel: dynamic(true);

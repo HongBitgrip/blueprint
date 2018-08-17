@@ -1,0 +1,8 @@
+{
+"version":3,
+"file":"com.coremedia.ui.sdk__editor-components-overrides.js",
+"lineCount":2,
+"mappings":"AAGAA,GAAAC,OAAA,CAAW,wEAAX,CAAqF,CACnFC,SAAU,uBADyE,CAGnFC,yBAA0BA,QAAS,EAAG,CACpC,IAAIC,GAAK,IACT,KAAIC,YAAcC,GAAAC,GAAA,CAAOH,EAAP,CAAWI,GAAAC,UAAAC,IAAAC,OAAAC,IAAAC,QAAAC,YAAX,CAClB,IAAIT,WAAJ,CAAiB,CACf,IAAIU,gBAAkBT,GAAAC,GAAA,CAAOF,WAAAW,mBAAA,EAAP,CAAyCR,GAAAC,UAAAC,IAAAC,OAAAC,IAAAC,QAAAI,YAAAC,gBAAzC,CACtB,IAAIH,eAAJ,CACE,MAHa,CAOjB,IAAAI,WAAA,CAAgBC,SAAhB,CAVoC,CAH6C,CAArF,CAeG,QAAQ,EAAG,CACZZ,GAAAC,UAAAY,GAAAC,OAAAC,kBAAAC,eAAA,CAAyD,IAAzD;AAA+D,CAAC,0BAAD,CAA/D,CADY,CAfd;",
+"sources":["overrides/com/coremedia/cms/editor/sdk/overrides/ReusableTabsInheritableOverride.js"],
+"names":["Ext","define","override","invalidateInheritedState","me","workAreaTab","AS3","as","com","coremedia","cms","editor","sdk","desktop","WorkAreaTab","reusableTabType","getWorkAreaTabType","reusability","ReusableTabType","callParent","arguments","ui","mixins","MixinOverrideUtil","reapplyMembers"]
+}

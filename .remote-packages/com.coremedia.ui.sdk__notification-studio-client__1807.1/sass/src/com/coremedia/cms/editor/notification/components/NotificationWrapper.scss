@@ -1,0 +1,83 @@
+@if $cm-include-notification-wrapper {
+  $_block: "cm-notification-wrapper";
+
+  /* Notification */
+  .#{$_block} {
+    background-color: $cm-grey-1;
+
+    &__state-indicator {
+      background-color: transparent;
+    }
+
+    &__details {
+      margin: $cm-grid-200 0 $cm-grid-200 $cm-grid-200;
+      padding: 2px;
+      border-radius: 2px;
+    }
+
+    &__date {
+      margin-top: $cm-grid-100;
+    }
+
+    &__btn {
+      cursor: default;
+      opacity: 0;
+      &:focus {
+          opacity: 1;
+          border: 2px solid transparent;
+          border-radius: 4px;
+          box-shadow: cm-focus-box-shadow($cm-grey-7);
+      }
+    }
+
+    &:hover {
+      background-color: $cm-grey-1;
+    }
+
+    &--action-holder {
+      .#{$_block}__state-indicator {
+        cursor: pointer;
+      }
+      .#{$_block}__details {
+        cursor: pointer;
+      }
+    }
+
+    &--state-read {
+      // this is the default state
+    }
+
+    &--state-unread {
+      &:hover {
+        background-color: $cm-grey-0;
+      }
+    }
+
+    &--state-unread,
+    &--toast {
+      background-color: $cm-white;
+
+      .#{$_block}__state-indicator {
+        background-color: $cm-blue-0;
+      }
+
+      &:hover {
+        .#{$_block}__btn {
+          cursor: pointer;
+          opacity: 1;
+        }
+      }
+    }
+
+    &--toast {
+      /* Hide date */
+      .#{$_block}__date {
+        opacity: 0;
+      }
+
+      &:hover {
+        background-color: $cm-white;
+      }
+    }
+  }
+}

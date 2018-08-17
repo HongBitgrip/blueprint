@@ -1,0 +1,13 @@
+$tool-size: dynamic($cm-glyph-font-size-100);
+$tool-glyph-font-size: dynamic($cm-glyph-font-size-100);
+$tool-close-glyph: dynamic($cm-core-icons-100-var-remove-small $tool-glyph-font-size $cm-core-icons-100-font-name);
+
+$tool-expand-top-glyph: dynamic($cm-core-icons-100-var-arrows-up $tool-glyph-font-size $cm-core-icons-100-font-name);
+$tool-expand-right-glyph: dynamic($cm-core-icons-100-var-arrows-right $tool-glyph-font-size $cm-core-icons-100-font-name);
+$tool-expand-bottom-glyph: dynamic($cm-core-icons-100-var-arrow-right $tool-glyph-font-size $cm-core-icons-100-font-name);
+$tool-expand-left-glyph: dynamic($cm-core-icons-100-var-arrows-left $tool-glyph-font-size $cm-core-icons-100-font-name);
+
+$tool-collapse-top-glyph: dynamic($cm-core-icons-100-var-arrow-down $tool-glyph-font-size $cm-core-icons-100-font-name);
+$tool-collapse-right-glyph: dynamic($cm-core-icons-100-var-arrows-right $tool-glyph-font-size $cm-core-icons-100-font-name);
+$tool-collapse-bottom-glyph: dynamic($cm-core-icons-100-var-arrows-down $tool-glyph-font-size $cm-core-icons-100-font-name);
+$tool-collapse-left-glyph: dynamic($cm-core-icons-100-var-arrows-left $tool-glyph-font-size $cm-core-icons-100-font-name);

@@ -1,0 +1,45 @@
+@if $cm-include-inner-preview-panel {
+  $_block: "cm-preview-panel";
+
+  .#{$_block}--devices-mode {
+    .cm-preview-device {
+      box-shadow: $cm-inner-preview-panel-device-box-shadow;
+      transition: $cm-shadow-transition;
+      border-radius: $cm-inner-preview-panel-device-border-radius;
+      background-color: $cm-inner-preview-panel-device-color;
+      .cm-preview-device__iframe {
+        background-color: #FFF;
+      }
+    }
+  }
+
+  .#{$_block} {
+    .cm-preview-device__iframe {
+      position: absolute;
+    }
+  }
+
+  .preview-scrollbar {
+    position: absolute;
+  }
+
+  .preview-device-scrollbar {
+    background-color: $cm-inner-preview-panel-device-scrollbar-color;
+  }
+
+  .preview-scrollbar-bottom-container {
+    position: absolute;
+    overflow-x: scroll;
+    overflow-y: hidden;
+  }
+
+  .preview-scrollbar-side-container {
+    position: absolute;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    & div {
+      width: inherit;
+    }
+  }
+
+}

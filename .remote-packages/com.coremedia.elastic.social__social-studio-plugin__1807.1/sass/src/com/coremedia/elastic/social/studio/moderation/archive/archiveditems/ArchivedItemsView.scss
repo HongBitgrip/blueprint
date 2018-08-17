@@ -1,0 +1,11 @@
+@if $cm-include-archived-items-view {
+  $_block: "cm-archive-item";
+  .#{$_block} {
+    &--rejected {
+      .#{$_block}__status {
+        background-color: $cm-grey-1;
+        color: $cm-font-color;
+      }
+    }
+  }
+}

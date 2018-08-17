@@ -1,0 +1,19 @@
+@if $cm-include-notification-details {
+  $_block: "cm-notification-details";
+
+  .#{$_block} {
+    white-space: pre-wrap;
+    color: $cm-grey-7;
+    font-size: $cm-font-size;
+
+    &__highlighted {
+      color: $cm-font-color;
+      text-decoration: underline;
+    }
+
+    &__date {
+      font-style: italic;
+      text-align: right;
+    }
+  }
+}

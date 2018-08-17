@@ -1,0 +1,30 @@
+@if $cm-include-notifications-menu {
+  $_block: "cm-notifications-menu-arrow";
+
+  .#{$_block} {
+    position: relative;
+    height: 21px;
+    width: 20px;
+
+    &:before,
+    &:after {
+      content: '';
+      position: absolute;
+      display: block;
+      width: 0;
+      height: 0;
+      border: 10px solid transparent;
+      pointer-events: none;
+    }
+
+    &:before {
+      border-bottom-color: $cm-grey-2;
+    }
+
+    &:after {
+      top: 1px;
+      border-bottom-color: #fff;
+    }
+  }
+}
+

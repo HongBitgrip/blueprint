@@ -1,0 +1,25 @@
+/**
+ * @var {color}
+ *
+ * If not null defines the text color of a grid-item when it is read-only.
+ *
+ * @member com.coremedia.cms.editor.sdk.util.AccessControlUtil
+ */
+$cm-access-control-color-readonly: dynamic($cm-grey-5);
+
+/**
+ * @var {color}
+ *
+ * If not null defines the text color of a grid-item when it is read-only and selected.
+ *
+ * @member com.coremedia.cms.editor.sdk.util.AccessControlUtil
+ */
+$cm-access-control-color-readonly-selected: dynamic($cm-white);
+
+/**
+ * @var {boolean}
+ * Enables styles for AccessControlUtil.
+ *
+ * @member com.coremedia.cms.editor.sdk.util.AccessControlUtil
+ */
+$cm-include-access-control-util: dynamic(true);

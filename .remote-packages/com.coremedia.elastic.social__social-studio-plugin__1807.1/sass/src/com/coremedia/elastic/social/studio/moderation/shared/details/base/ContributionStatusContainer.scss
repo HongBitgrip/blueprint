@@ -1,0 +1,10 @@
+@if $cm-include-contribution-status-container {
+  $_block: "cm-contribution-status-container";
+
+  .#{$_block} {
+    background-color: $cm-contribution-status-container-background-color;
+    padding: 8px 12px 7px 9px;
+    box-shadow: $cm-contribution-status-container-box-shadow;
+    z-index: 1;
+  }
+}

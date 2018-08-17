@@ -1,0 +1,47 @@
+@if $cm-include-image-map-editor {
+  $_ime-panel: "cm-ime-panel";
+  .#{$_ime-panel} {
+    background-color: $cm-grey-0;
+    border-width: 1px;
+    border-color: $cm-grey-1;
+    border-style: solid;
+    border-radius: $cm-border-radius;
+
+    & .kineticjs-content {
+      display: block !important; // important because we have to override an inline style set by KineticJS
+    }
+
+    $_state-map: (
+      "error" : (
+        border-color: $cm-validation-color-error),
+      "warning" : (
+        border-color: $cm-validation-color-warning),
+      "info" : (
+        border-color: $cm-validation-color-info),
+      "success" : (
+        border-color: $cm-validation-color-success)
+    );
+
+    $_cm-header-height: 34px;
+
+    @each $state, $map in $_state-map {
+      &.cm-validation-state-#{$state} {
+        &:before {
+          content: "";
+          position: absolute;
+          z-index: 3;
+          top: $_cm-header-height;
+          bottom: 0;
+          left: 1px;
+          border-radius: $cm-border-radius 0 0 $cm-border-radius;
+          border-left: $cm-validation-border-width map_get($map, border-color) solid;
+        }
+        & .#{$prefix}panel-body{
+          .#{$prefix}panel& {
+            border-left-width: 1px;
+          }
+        }
+      }
+    }
+  }
+}

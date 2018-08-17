@@ -1,0 +1,68 @@
+@if $cm-include-tab-bar-default-ui {
+  $_ui: "default";
+  @include cm-tab-bar-ui(
+    $ui: $_ui
+  );
+}
+
+@if $cm-include-tab-bar-side-ui {
+  $_ui: "side";
+  @include extjs-tab-bar-ui(
+    $ui: $_ui,
+    $ui-background-color: $cm-white,
+    $ui-padding: 0 $cm-grid-500 0 0,
+    $ui-strip-height: $cm-grid-50,
+    $ui-strip-border-width: 0,
+    $ui-strip-border-color: transparent,
+    $ui-strip-background-color: transparent
+  );
+  @include cm-tab-bar-ui(
+    $ui: $_ui,
+    $overflow: visible
+  );
+}
+
+@if $cm-include-tab-bar-workarea-ui {
+  $_ui: "workarea";
+  @include extjs-tab-bar-ui(
+    $ui: $_ui,
+    $ui-background-color: transparent,
+    $ui-padding: 0,
+    $ui-scroller-height: 40px,
+    $ui-scroller-left-margin: 0 4px 0 0,
+    $ui-scroller-right-margin: 0 6px 0 4px
+  );
+  @include cm-tab-bar-ui(
+    $ui: $_ui,
+    $scroller-background-color-hover: $cm-blue-6,
+    $scroller-background-color-pressed: $cm-blue-7,
+    $scroller-background-color-disabled: transparent,
+    $scroller-glyph-color-disabled: $cm-blue-3
+  );
+}
+
+@if $cm-include-tab-bar-workarea-light-ui {
+  $_ui: "workarea-light";
+  @include extjs-tab-bar-ui(
+    $ui: $_ui,
+    $ui-padding: 0,
+    $ui-background-color: $cm-grey-3,
+    $ui-scroller-glyph-color: $cm-black
+  );
+  @include cm-tab-bar-ui(
+    $ui: $_ui
+  );
+}
+
+@if $cm-include-tab-bar-workarea-panel-ui {
+  $_ui: "workarea-panel";
+  @include extjs-tab-bar-ui(
+    $ui: $_ui,
+    $ui-background-color: $cm-grey-2,
+    $ui-padding: 0 0 0 $cm-grid-200,
+    $ui-scroller-glyph-color: $cm-black
+  );
+  @include cm-tab-bar-ui(
+    $ui: $_ui
+  );
+}

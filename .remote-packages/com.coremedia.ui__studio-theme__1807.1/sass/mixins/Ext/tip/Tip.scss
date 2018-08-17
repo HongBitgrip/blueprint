@@ -1,0 +1,108 @@
+/**
+ * Only to be used in after #extjs-tip-ui mixin has been included.
+ *
+ * CoreMedia UI Mixin for a Tip.
+ * Parameters do not have a default value, so if omitted the styling rule is not applied.
+ *
+ * @param {string} $ui
+ * The name of the UI being created. May not include spaces or special punctuation as string is used as part of
+ * CSS class names.
+ *
+ * @param {number/list} [$padding=null]
+ * If not null defines the padding of the Tip
+ *
+ * @param {color} [$color-error=$cm-font-light-coloured]
+ * If not null defines the font-color to be applied when the error state is active.
+ *
+ * @param {color} [$background-color-error=$cm-validation-color-error]
+ * If not null defines the background-color to be applied when the error state is active.
+ *
+ * @param {color} [$color-warning=$cm-font-light-coloured]
+ * If not null defines the font-color to be applied when the warning state is active.
+ *
+ * @param {color} [$background-color-warning=$cm-validation-color-warning]
+ * If not null defines the background-color to be applied when the warning state is active.
+ *
+ * @param {color} [$color-info=$cm-font-light-coloured]
+ * If not null defines the font-color to be applied when the info state is active.
+ *
+ * @param {color} [$background-color-info=$cm-validation-color-info]
+ * If not null defines the background-color to be applied when the info state is active.
+ *
+ * @param {color} [$color-success=$cm-font-light-coloured]
+ * If not null defines the font-color to be applied when the success state is active.
+ *
+ * @param {color} [$background-color-success=$cm-validation-color-success]
+ * If not null defines the background-color to be applied when the success state is active.
+ *
+ * @member Ext.tip.Tip
+ */
+@mixin cm-tip-ui(
+  $ui,
+  $padding: null,
+  // validation parameters:
+  $color-error: $cm-font-light-coloured,
+  $background-color-error: $cm-validation-color-error,
+  $color-warning: $cm-font-light-coloured,
+  $background-color-warning: $cm-validation-color-warning,
+  $color-info: $cm-font-light-coloured,
+  $background-color-info: $cm-validation-color-info,
+  $color-success: $cm-font-light-coloured,
+  $background-color-success: $cm-validation-color-success
+) {
+
+  .#{$prefix}tip-#{$ui} {
+    @if $padding != null {
+      padding: $padding;
+    }
+
+    $state-map: (
+      "error" : (
+        color: $color-error,
+        background-color: $background-color-error),
+      "warning" : (
+        color: $color-warning,
+        background-color: $background-color-warning),
+      "info" : (
+        color: $color-info,
+        background-color: $background-color-info),
+      "success" : (
+        color: $color-success,
+        background-color: $background-color-success)
+    );
+
+    @each $state, $map in $state-map {
+      &.cm-validation-state-#{$state} {
+        .#{$prefix}tip-header-title-#{$ui} {
+          @if map_get($map, color) != null {
+            color: map_get($map, color);
+          }
+        }
+
+        .#{$prefix}tip-body-#{$ui} {
+          @if map_get($map, color) != null {
+            color: map_get($map, color);
+          }
+        }
+
+        @if map_get($map, background-color) != null {
+          background-color: map_get($map, background-color);
+
+          & .#{$prefix}tip-anchor-right,
+          & .#{$prefix}tip-anchor-right:after {
+            border-left-color: map_get($map, background-color);
+          }
+
+          & .#{$prefix}tip-anchor-left,
+          & .#{$prefix}tip-anchor-left:after  {
+            border-right-color: map_get($map, background-color);
+          }
+        }
+
+        .#{$prefix}tool-img {
+          background-color: transparent;
+        }
+      }
+    }
+  }
+}

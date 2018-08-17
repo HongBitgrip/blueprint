@@ -1,0 +1,138 @@
+/**
+ * Only to be used in after {@link #extjs-toolbar-ui} mixin has been included.
+ *
+ * CoreMedia UI Mixin for a Toolbar.
+ * Some Parameters do not have a default value, so if omitted the styling rule is not applied.
+ *
+ * @param {string} $ui
+ * The name of the UI being created. May not include spaces or special punctuation as string is used as part of
+ * CSS class names.
+ *
+ * @param {string} [$cursor=null]
+ * If not null defines the cursor if mouse hovers over the toolbar.
+ *
+ * @param {number/list} [$border-radius=null]
+ * If not null defines if the toolbars's border-radius
+ *
+ * @param {list} [$box-shadow=null]
+ * If not null this sets the box-shadow of the toolbar.
+ *
+ * @param {number/list} [$additional-padding=null]
+ * If not null defines if the toolbars's padding. This value is added to the toolbar's horizontal- and vertical-spacing.
+ * $used-horizontal-spacing and $used-vertical-spacing need to be provided to make $additional-padding work.
+ *
+ * @param {string} [$scroller-glyph-color-hover=null]
+ * If not null defines the glyph color of the scroller if state is hover.
+ *
+ * @param {string} [$scroller-glyph-color-pressed=null]
+ * If not null defines the glyph color of the scroller if state is pressed.
+ *
+ * @param {string} [$scroller-glyph-color-disabled=null]
+ * If not null defines the glyph color of the scroller if state is disabled.
+ *
+ * @param {string} [$scroller-glyph-font-size-hover=null]
+ * If not null defines the glyph font-size of the scroller if state is hover.
+ *
+ * @param {string} [$scroller-glyph-font-size-pressed=null]
+ * If not null defines the glyph font-size of the scroller if state is pressed.
+ *
+ * @param {string} [$scroller-glyph-font-size-disabled=null]
+ * If not null defines the glyph font-size of the scroller if state is disabled.
+ *
+ * @param {boolean} [$scroller-vertically-centered=$cm-toolbar-scroller-vertically-centered]
+ * If set to true this vertically centers the scroller.
+ *
+ * @param {number} [$used-horizontal-spacing=null]
+ * The horizontal spacing set in the extjs-toolbar-ui mixin. Needed to compute the toolbar's padding when setting an additional-padding.
+ *
+ * @param {number} [$used-vertical-spacing=null]
+ * The vertical spacing set in the extjs-toolbar-ui mixin. Needed to compute the toolbar's padding when setting an additional-padding.
+ *
+ * @param {number/list} [$used-border-width=null]
+ * Needs to be provided if {@link #force-border} is used. Specifies the border used in the prior
+ * {@link #extjs-toolbar-ui} inclusion.
+ *
+ * @param {boolean} [$force-border=$cm-toolbar-force-border]
+ * If set to true this forces the toolbar to always keep the given border. $used-border-width needs to be provided to make
+ * $force-border work.
+ *
+ * @param {boolean} [$ellipsify-text-item=$cm-toolbar-ellipsify-text-item]
+ * The toolbar's text-items (tbtext) will not be ellipsified if too long, if set to false.
+ *
+ * @member Ext.toolbar.Toolbar
+ */
+@mixin cm-toolbar-ui(
+  $ui,
+  $cursor: null,
+  $border-radius: null,
+  $box-shadow: null,
+  $additional-padding: null,
+  $scroller-glyph-color-hover: null,
+  $scroller-glyph-color-pressed: null,
+  $scroller-glyph-color-disabled: null,
+  $scroller-glyph-font-size-hover: null,
+  $scroller-glyph-font-size-pressed: null,
+  $scroller-glyph-font-size-disabled: null,
+  $scroller-vertically-centered: $cm-toolbar-scroller-vertically-centered,
+  $used-horizontal-spacing: null,
+  $used-vertical-spacing: null,
+  $used-border-width: null,
+  $force-border: $cm-toolbar-force-border,
+  $ellipsify-text-item: $cm-toolbar-ellipsify-text-item
+) {
+  .#{$prefix}toolbar-#{$ui} {
+    @if $cursor != null {
+      cursor: $cursor;
+    }
+    @if $border-radius != null {
+      border-radius: $border-radius;
+    }
+    @if $additional-padding != null and $used-vertical-spacing != null and $used-horizontal-spacing != null {
+      padding: top($additional-padding) + $used-vertical-spacing right($additional-padding) + 0 bottom($additional-padding) + $used-vertical-spacing left($additional-padding) + $used-horizontal-spacing;
+    }
+    @if $box-shadow != null {
+      box-shadow: $box-shadow;
+    }
+    @if $force-border and $used-border-width != null {
+      border-width: $used-border-width !important;
+    }
+
+    > .#{$prefix}box-scroller-toolbar-#{$ui} {
+      &.#{$prefix}box-scroller-hover {
+        @if $scroller-glyph-color-hover != null {
+          color: $scroller-glyph-color-hover;
+        }
+        @if $scroller-glyph-font-size-hover != null {
+          font-size: $scroller-glyph-font-size-hover;
+        }
+      }
+      &.#{$prefix}box-scroller-pressed {
+        @if $scroller-glyph-color-pressed != null {
+          color: $scroller-glyph-color-pressed;
+        }
+        @if $scroller-glyph-font-size-pressed != null {
+          font-size: $scroller-glyph-font-size-pressed;
+        }
+      }
+      &.#{$prefix}box-scroller-disabled {
+        @if $scroller-glyph-color-disabled != null {
+          color: $scroller-glyph-color-disabled;
+        }
+        @if $scroller-glyph-font-size-disabled != null {
+          font-size: $scroller-glyph-font-size-disabled;
+        }
+      }
+      @if $scroller-vertically-centered {
+        &.#{$prefix}box-scroller {
+          transform: translateY(-50%);
+        }
+      }
+    }
+
+    @if $ellipsify-text-item {
+      .#{$prefix}toolbar-text {
+        @include cm-ellipsis();
+      }
+    }
+  }
+}

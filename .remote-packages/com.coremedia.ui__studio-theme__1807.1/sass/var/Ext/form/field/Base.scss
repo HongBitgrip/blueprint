@@ -1,0 +1,37 @@
+$form-field-height: dynamic($cm-field-height);
+$form-item-margin-bottom: dynamic(0);
+$form-field-disabled-opacity: dynamic(1);
+$form-field-empty-color: dynamic($cm-spot-grey-2);
+$form-textarea-line-height: dynamic(15px);
+
+$form-checkbox-label-color: dynamic($cm-font-color);
+$form-checkbox-label-font-size: dynamic($cm-font-size);
+$form-checkbox-glyph-color: dynamic($cm-black);
+$form-checkbox-label-font-weight: dynamic($cm-font-weight);
+$form-checkbox-size: dynamic(16px);
+$form-radio-glyph-color: dynamic($cm-black);
+
+$form-label-font-color: dynamic($cm-font-color);
+$form-label-font-size: dynamic($cm-font-size);
+$form-label-font-weight: dynamic($cm-font-weight-bold);
+$form-label-line-height: dynamic($cm-line-height);
+$form-label-vertical-spacing: dynamic(2px);
+
+$form-display-field-line-height: dynamic($cm-line-height);
+$form-display-field-color: dynamic($cm-font-color);
+$form-display-field-font-size: dynamic($cm-font-size);
+$form-display-field-font-weight: dynamic($cm-font-weight);
+
+$form-date-trigger-glyph:dynamic($cm-core-icons-100-var-calendar-picker $cm-glyph-font-size-100 $cm-core-icons-100-font-name);
+
+$spinner-trigger-height: $cm-glyph-font-size-50;
+$spinner-trigger-up-glyph: dynamic($cm-core-icons-100-var-arrow-up $spinner-trigger-height $cm-core-icons-100-font-name);
+$spinner-trigger-down-glyph: dynamic($cm-core-icons-100-var-arrow-down $spinner-trigger-height $cm-core-icons-100-font-name);
+
+// sets space between label and body of form elements in form-layouts
+// We have to do this, because we just set $form-item-margin-bottom: dynamic(0)
+// This results in no border-spacing in form-layouts. Unfortunately Sencha sets label-padding in form-layouts to 0
+// and enforces this by using !important. Therefore we use the label-inner element and set a margin instead of padding on the item-label
+.#{$prefix}form-item-label-inner {
+  margin-right: $cm-grid-100;
+}

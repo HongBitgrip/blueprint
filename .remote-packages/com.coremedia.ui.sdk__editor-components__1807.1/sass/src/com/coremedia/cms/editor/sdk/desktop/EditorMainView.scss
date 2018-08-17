@@ -1,0 +1,26 @@
+@if $cm-include-editor-main-view {
+  $_block: "cm-main-view-panel";
+  $_side_panel_west_element: "west";
+  $_side_panel_east_element: "east";
+  .#{$_block} {
+    &__#{$_side_panel_west_element} {
+      > .#{$prefix}panel-bodyWrap {
+        border-left: 1px solid $cm-grey-3;
+      }
+    }
+    &__#{$_side_panel_east_element} {
+      > .#{$prefix}panel-bodyWrap {
+        border-right: 1px solid $cm-grey-3;
+      }
+    }
+  }
+
+  $_tabbar-height: 42px;
+
+  .cm-main-view {
+    background-color: $cm-grey-1;
+    -webkit-box-shadow: inset 0 $_tabbar-height 0 0 white;
+    -moz-box-shadow: inset 0 $_tabbar-height 0 0 white;
+    box-shadow: inset 0 $_tabbar-height 0 0 white;
+  }
+}

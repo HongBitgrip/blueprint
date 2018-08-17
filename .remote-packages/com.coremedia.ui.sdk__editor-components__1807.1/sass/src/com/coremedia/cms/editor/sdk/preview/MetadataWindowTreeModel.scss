@@ -1,0 +1,10 @@
+@if $cm-include-metadata-window-tree-model {
+  .cm-metadata-window-tree-model {
+    &--warn {
+      color: $cm-validation-color-warning;
+    }
+    &--error {
+      color: $cm-validation-color-error;
+    }
+  }
+}

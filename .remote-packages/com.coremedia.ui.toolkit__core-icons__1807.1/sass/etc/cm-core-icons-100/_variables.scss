@@ -1,0 +1,448 @@
+//# fashion warn -elevation
+//
+// @type String
+//
+// Defines the name of the font-family to be generated and used.
+//
+$cm-core-icons-100-font-name: "cm-core-icons-100" !default;
+
+//
+// @type String
+//
+// Defines the path to the directory where the font files can be found. Must be relative to the generated css file.
+//
+$cm-core-icons-100-font-path: "../fonts" !default;
+
+//
+// @type Bool
+//
+// Defines if the B.E.M. syntax should be used, so two css classes will be generated and are required to use the icon.
+// If false, only a single class will be required to use the icon.
+//
+// The B.E.M. syntax leads to smaller css files because shared stylings can be applied using a shared font class and the
+// icon classes only define the icon itself.
+//
+$cm-core-icons-100-bem-syntax: true !default;
+
+//
+// @type String
+//
+// Defines the prefix to attach to the css classes, may also contain selectors as long as the leading dot is left away.
+//
+// When B.E.M. syntax is used, the prefix is used for both classes. While the font class will represent the unmodified
+// css prefix the icon class will be suffixed by two dashes (--) followed by the icon identifier.
+// Otherwise the css-prefix is suffixed by a single dash (-) followed by the icon identifier.
+//
+$cm-core-icons-100-css-prefix: "cm-core-icons-100" !default;
+
+//
+// @type Bool
+//
+// Defines if the font-family (and extended base styling rules if enabled) will be attached to the before pseudo element
+// rather than the parent element.
+//
+$cm-core-icons-100-base-styles-in-before: false !default;
+
+//
+// @type Bool
+//
+// Defines if more basic styling rules are generated for the font along with the font-family.
+// When B.E.M. syntax is used this styles will be applied to the shared font class. The icon classes for will not
+// contain any base styles.
+// Otherwise the base styles will be applied to each icon class.
+//
+$cm-core-icons-100-extended-base-styles: true !default;
+
+$cm-core-icons-100-var-ab-testing-tool: "\f101";
+$cm-core-icons-100-var-abort-workflow: "\f102";
+$cm-core-icons-100-var-add-catalog-entries-sku: "\f103";
+$cm-core-icons-100-var-add-catalog-entries: "\f104";
+$cm-core-icons-100-var-add-external-link: "\f105";
+$cm-core-icons-100-var-add-hotzone: "\f106";
+$cm-core-icons-100-var-add-internal-link: "\f107";
+$cm-core-icons-100-var-add-item-to-property-list: "\f108";
+$cm-core-icons-100-var-add-link: "\f109";
+$cm-core-icons-100-var-add-people-to-shared-content-set: "\f10a";
+$cm-core-icons-100-var-add-setting: "\f10b";
+$cm-core-icons-100-var-add-special-size: "\f10c";
+$cm-core-icons-100-var-add-tag: "\f10d";
+$cm-core-icons-100-var-add-template: "\f10e";
+$cm-core-icons-100-var-add: "\f10f";
+$cm-core-icons-100-var-align-bottom: "\f110";
+$cm-core-icons-100-var-align-center: "\f111";
+$cm-core-icons-100-var-align-default: "\f112";
+$cm-core-icons-100-var-align-justified: "\f113";
+$cm-core-icons-100-var-align-left: "\f114";
+$cm-core-icons-100-var-align-middle: "\f115";
+$cm-core-icons-100-var-align-right: "\f116";
+$cm-core-icons-100-var-align-top: "\f117";
+$cm-core-icons-100-var-allowed: "\f118";
+$cm-core-icons-100-var-analytics: "\f119";
+$cm-core-icons-100-var-animated-gif: "\f11a";
+$cm-core-icons-100-var-approve-and-publish: "\f11b";
+$cm-core-icons-100-var-approve: "\f11c";
+$cm-core-icons-100-var-apps: "\f11d";
+$cm-core-icons-100-var-arrow-circle-down: "\f11e";
+$cm-core-icons-100-var-arrow-circle-right: "\f11f";
+$cm-core-icons-100-var-arrow-down: "\f120";
+$cm-core-icons-100-var-arrow-left: "\f121";
+$cm-core-icons-100-var-arrow-right: "\f122";
+$cm-core-icons-100-var-arrow-up: "\f123";
+$cm-core-icons-100-var-arrows-down: "\f124";
+$cm-core-icons-100-var-arrows-left: "\f125";
+$cm-core-icons-100-var-arrows-right: "\f126";
+$cm-core-icons-100-var-arrows-up: "\f127";
+$cm-core-icons-100-var-asset: "\f128";
+$cm-core-icons-100-var-augmentation: "\f129";
+$cm-core-icons-100-var-autocorrect: "\f12a";
+$cm-core-icons-100-var-backward: "\f12b";
+$cm-core-icons-100-var-badge-gif: "\f12c";
+$cm-core-icons-100-var-blacklist: "\f12d";
+$cm-core-icons-100-var-broken-picture: "\f12e";
+$cm-core-icons-100-var-bulleted-list: "\f12f";
+$cm-core-icons-100-var-bundle: "\f130";
+$cm-core-icons-100-var-calendar-dot: "\f131";
+$cm-core-icons-100-var-calendar-picker: "\f132";
+$cm-core-icons-100-var-calendar-show-week: "\f133";
+$cm-core-icons-100-var-canto-cumulus: "\f134";
+$cm-core-icons-100-var-catalog: "\f135";
+$cm-core-icons-100-var-celum: "\f136";
+$cm-core-icons-100-var-change-text-background-color: "\f137";
+$cm-core-icons-100-var-change-text-color: "\f138";
+$cm-core-icons-100-var-channel-desktop: "\f139";
+$cm-core-icons-100-var-channel-kiosk: "\f13a";
+$cm-core-icons-100-var-channel-mobile-landscape: "\f13b";
+$cm-core-icons-100-var-channel-mobile-portrait: "\f13c";
+$cm-core-icons-100-var-channel-notebook: "\f13d";
+$cm-core-icons-100-var-channel-tablet-landscape: "\f13e";
+$cm-core-icons-100-var-channel-tablet-portrait: "\f13f";
+$cm-core-icons-100-var-check-for-errors: "\f140";
+$cm-core-icons-100-var-check-for-warnings: "\f141";
+$cm-core-icons-100-var-check-in-document: "\f142";
+$cm-core-icons-100-var-checkbox-checked: "\f143";
+$cm-core-icons-100-var-checkbox-unchecked: "\f144";
+$cm-core-icons-100-var-clear-edited-content: "\f145";
+$cm-core-icons-100-var-cloud-device-1: "\f146";
+$cm-core-icons-100-var-cloud-device-2: "\f147";
+$cm-core-icons-100-var-cloud-device-3: "\f148";
+$cm-core-icons-100-var-cloudinary: "\f149";
+$cm-core-icons-100-var-collapsing-arrow-left: "\f14a";
+$cm-core-icons-100-var-collapsing-arrow-right: "\f14b";
+$cm-core-icons-100-var-comment-attachment: "\f14c";
+$cm-core-icons-100-var-comment: "\f14d";
+$cm-core-icons-100-var-commerce-catalog: "\f14e";
+$cm-core-icons-100-var-content-hub: "\f14f";
+$cm-core-icons-100-var-content-set: "\f150";
+$cm-core-icons-100-var-context-menu: "\f151";
+$cm-core-icons-100-var-copy: "\f152";
+$cm-core-icons-100-var-coremedia-connector: "\f153";
+$cm-core-icons-100-var-coremedia: "\f154";
+$cm-core-icons-100-var-create-column-left-of-selection: "\f155";
+$cm-core-icons-100-var-create-column-right-of-selection: "\f156";
+$cm-core-icons-100-var-create-content-set: "\f157";
+$cm-core-icons-100-var-create-content: "\f158";
+$cm-core-icons-100-var-create-document-not-allowed: "\f159";
+$cm-core-icons-100-var-create-local-site: "\f15a";
+$cm-core-icons-100-var-create-new-folder: "\f15b";
+$cm-core-icons-100-var-create-project: "\f15c";
+$cm-core-icons-100-var-create-rule: "\f15d";
+$cm-core-icons-100-var-create-table: "\f15e";
+$cm-core-icons-100-var-create-type-360-view: "\f15f";
+$cm-core-icons-100-var-create-type-article: "\f160";
+$cm-core-icons-100-var-create-type-category-teaser: "\f161";
+$cm-core-icons-100-var-create-type-category: "\f162";
+$cm-core-icons-100-var-create-type-download: "\f163";
+$cm-core-icons-100-var-create-type-external-page: "\f164";
+$cm-core-icons-100-var-create-type-image-gallery: "\f165";
+$cm-core-icons-100-var-create-type-image-map: "\f166";
+$cm-core-icons-100-var-create-type-marketing-spot: "\f167";
+$cm-core-icons-100-var-create-type-picture: "\f168";
+$cm-core-icons-100-var-create-type-product-teaser: "\f169";
+$cm-core-icons-100-var-create-type-product: "\f16a";
+$cm-core-icons-100-var-create-type-video: "\f16b";
+$cm-core-icons-100-var-cut: "\f16c";
+$cm-core-icons-100-var-dam-1: "\f16d";
+$cm-core-icons-100-var-dam-2: "\f16e";
+$cm-core-icons-100-var-dashboard: "\f16f";
+$cm-core-icons-100-var-decentral-translation: "\f170";
+$cm-core-icons-100-var-dictionary-attributes: "\f171";
+$cm-core-icons-100-var-dictionary: "\f172";
+$cm-core-icons-100-var-differencing-summary: "\f173";
+$cm-core-icons-100-var-divide-cells-horizontally: "\f174";
+$cm-core-icons-100-var-divide-cells-vertically: "\f175";
+$cm-core-icons-100-var-download: "\f176";
+$cm-core-icons-100-var-dropbox: "\f177";
+$cm-core-icons-100-var-duplicate: "\f178";
+$cm-core-icons-100-var-edited-by-user: "\f179";
+$cm-core-icons-100-var-enlarge-image: "\f17a";
+$cm-core-icons-100-var-envelope: "\f17b";
+$cm-core-icons-100-var-error: "\f17c";
+$cm-core-icons-100-var-exclamation-mark: "\f17d";
+$cm-core-icons-100-var-exit: "\f17e";
+$cm-core-icons-100-var-expand: "\f17f";
+$cm-core-icons-100-var-exposition: "\f180";
+$cm-core-icons-100-var-external-library: "\f181";
+$cm-core-icons-100-var-external-preview: "\f182";
+$cm-core-icons-100-var-facebook: "\f183";
+$cm-core-icons-100-var-favorites-folder: "\f184";
+$cm-core-icons-100-var-file-system: "\f185";
+$cm-core-icons-100-var-finished-workflow: "\f186";
+$cm-core-icons-100-var-finished: "\f187";
+$cm-core-icons-100-var-folder-open: "\f188";
+$cm-core-icons-100-var-folder: "\f189";
+$cm-core-icons-100-var-fontsize: "\f18a";
+$cm-core-icons-100-var-forbidden: "\f18b";
+$cm-core-icons-100-var-format-text-bold: "\f18c";
+$cm-core-icons-100-var-format-text-inline: "\f18d";
+$cm-core-icons-100-var-format-text-italic: "\f18e";
+$cm-core-icons-100-var-forward: "\f18f";
+$cm-core-icons-100-var-fragment-preview: "\f190";
+$cm-core-icons-100-var-help: "\f191";
+$cm-core-icons-100-var-hidden-channel: "\f192";
+$cm-core-icons-100-var-home: "\f193";
+$cm-core-icons-100-var-in-production: "\f194";
+$cm-core-icons-100-var-inbox: "\f195";
+$cm-core-icons-100-var-indent: "\f196";
+$cm-core-icons-100-var-information: "\f197";
+$cm-core-icons-100-var-inherit: "\f198";
+$cm-core-icons-100-var-insert-row-above-selection: "\f199";
+$cm-core-icons-100-var-insert-row-below-selection: "\f19a";
+$cm-core-icons-100-var-instagram: "\f19b";
+$cm-core-icons-100-var-kit: "\f19c";
+$cm-core-icons-100-var-lamp: "\f19d";
+$cm-core-icons-100-var-language-comparison: "\f19e";
+$cm-core-icons-100-var-library: "\f19f";
+$cm-core-icons-100-var-linkedin: "\f1a0";
+$cm-core-icons-100-var-list-view: "\f1a1";
+$cm-core-icons-100-var-loaded-video-placeholder: "\f1a2";
+$cm-core-icons-100-var-long-arrow-down: "\f1a3";
+$cm-core-icons-100-var-long-arrow-left: "\f1a4";
+$cm-core-icons-100-var-long-arrow-right: "\f1a5";
+$cm-core-icons-100-var-long-arrow-up: "\f1a6";
+$cm-core-icons-100-var-mark-comment-button: "\f1a7";
+$cm-core-icons-100-var-mark-comment-flag: "\f1a8";
+$cm-core-icons-100-var-mimetype-doc: "\f1a9";
+$cm-core-icons-100-var-mimetype-pdf: "\f1aa";
+$cm-core-icons-100-var-mimetype-ppt: "\f1ab";
+$cm-core-icons-100-var-mimetype-swf: "\f1ac";
+$cm-core-icons-100-var-mimetype-tiff: "\f1ad";
+$cm-core-icons-100-var-mimetype-txt: "\f1ae";
+$cm-core-icons-100-var-mimetype-xls: "\f1af";
+$cm-core-icons-100-var-mimetype-zip: "\f1b0";
+$cm-core-icons-100-var-mimetype: "\f1b1";
+$cm-core-icons-100-var-minus: "\f1b2";
+$cm-core-icons-100-var-moderation: "\f1b3";
+$cm-core-icons-100-var-move-down: "\f1b4";
+$cm-core-icons-100-var-move-up: "\f1b5";
+$cm-core-icons-100-var-navigation-tree: "\f1b6";
+$cm-core-icons-100-var-no-rights: "\f1b7";
+$cm-core-icons-100-var-no-selection-item: "\f1b8";
+$cm-core-icons-100-var-not-valid-anymore: "\f1b9";
+$cm-core-icons-100-var-not-valid-yet: "\f1ba";
+$cm-core-icons-100-var-numbered-list: "\f1bb";
+$cm-core-icons-100-var-one-drive: "\f1bc";
+$cm-core-icons-100-var-open-in-browser: "\f1bd";
+$cm-core-icons-100-var-open-wcs-in-tab: "\f1be";
+$cm-core-icons-100-var-original-size: "\f1bf";
+$cm-core-icons-100-var-outdent: "\f1c0";
+$cm-core-icons-100-var-paragraph-style: "\f1c1";
+$cm-core-icons-100-var-paste-as-plain-text: "\f1c2";
+$cm-core-icons-100-var-paste-from-word: "\f1c3";
+$cm-core-icons-100-var-paste: "\f1c4";
+$cm-core-icons-100-var-path-dots: "\f1c5";
+$cm-core-icons-100-var-pencil: "\f1c6";
+$cm-core-icons-100-var-pending: "\f1c7";
+$cm-core-icons-100-var-persona-in-preview: "\f1c8";
+$cm-core-icons-100-var-personal-folder-article: "\f1c9";
+$cm-core-icons-100-var-personal-folder-flame: "\f1ca";
+$cm-core-icons-100-var-personal-folder-picture: "\f1cb";
+$cm-core-icons-100-var-personalized-task: "\f1cc";
+$cm-core-icons-100-var-pinterest: "\f1cd";
+$cm-core-icons-100-var-placement-view: "\f1ce";
+$cm-core-icons-100-var-plus: "\f1cf";
+$cm-core-icons-100-var-portal: "\f1d0";
+$cm-core-icons-100-var-preview-overview: "\f1d1";
+$cm-core-icons-100-var-preview-responsive: "\f1d2";
+$cm-core-icons-100-var-print: "\f1d3";
+$cm-core-icons-100-var-prioritize-down-button: "\f1d4";
+$cm-core-icons-100-var-prioritize-down: "\f1d5";
+$cm-core-icons-100-var-prioritize-up-button: "\f1d6";
+$cm-core-icons-100-var-prioritize-up: "\f1d7";
+$cm-core-icons-100-var-product-picture: "\f1d8";
+$cm-core-icons-100-var-project: "\f1d9";
+$cm-core-icons-100-var-publish: "\f1da";
+$cm-core-icons-100-var-quotes: "\f1db";
+$cm-core-icons-100-var-radio-checked: "\f1dc";
+$cm-core-icons-100-var-radio-unchecked: "\f1dd";
+$cm-core-icons-100-var-read-only: "\f1de";
+$cm-core-icons-100-var-redo: "\f1df";
+$cm-core-icons-100-var-reference-folder: "\f1e0";
+$cm-core-icons-100-var-reference-to-page: "\f1e1";
+$cm-core-icons-100-var-reference-to-portal-site: "\f1e2";
+$cm-core-icons-100-var-reference-to-template: "\f1e3";
+$cm-core-icons-100-var-reflect-horizontal: "\f1e4";
+$cm-core-icons-100-var-reflect-vertical: "\f1e5";
+$cm-core-icons-100-var-reload-all: "\f1e6";
+$cm-core-icons-100-var-reload: "\f1e7";
+$cm-core-icons-100-var-remove-external-link: "\f1e8";
+$cm-core-icons-100-var-remove-formatting: "\f1e9";
+$cm-core-icons-100-var-remove-link: "\f1ea";
+$cm-core-icons-100-var-remove-quotes: "\f1eb";
+$cm-core-icons-100-var-remove-selected-columns: "\f1ec";
+$cm-core-icons-100-var-remove-selected-rows: "\f1ed";
+$cm-core-icons-100-var-remove-small: "\f1ee";
+$cm-core-icons-100-var-remove-table: "\f1ef";
+$cm-core-icons-100-var-remove: "\f1f0";
+$cm-core-icons-100-var-research: "\f1f1";
+$cm-core-icons-100-var-reset-focal-point: "\f1f2";
+$cm-core-icons-100-var-reset-focal-points: "\f1f3";
+$cm-core-icons-100-var-reset: "\f1f4";
+$cm-core-icons-100-var-resizer-horizontal: "\f1f5";
+$cm-core-icons-100-var-restore-version: "\f1f6";
+$cm-core-icons-100-var-restricted-document: "\f1f7";
+$cm-core-icons-100-var-restricted-folder: "\f1f8";
+$cm-core-icons-100-var-restricted-picture: "\f1f9";
+$cm-core-icons-100-var-restricted-video: "\f1fa";
+$cm-core-icons-100-var-return-item: "\f1fb";
+$cm-core-icons-100-var-revert-approve: "\f1fc";
+$cm-core-icons-100-var-revert: "\f1fd";
+$cm-core-icons-100-var-review: "\f1fe";
+$cm-core-icons-100-var-rotate-left: "\f1ff";
+$cm-core-icons-100-var-rotate-right: "\f200";
+$cm-core-icons-100-var-rotate: "\f201";
+$cm-core-icons-100-var-rss-feed: "\f202";
+$cm-core-icons-100-var-rss-item: "\f203";
+$cm-core-icons-100-var-s3-buckets: "\f204";
+$cm-core-icons-100-var-save-as: "\f205";
+$cm-core-icons-100-var-save: "\f206";
+$cm-core-icons-100-var-search-folder: "\f207";
+$cm-core-icons-100-var-search-product-variant: "\f208";
+$cm-core-icons-100-var-search: "\f209";
+$cm-core-icons-100-var-select-column: "\f20a";
+$cm-core-icons-100-var-select-row: "\f20b";
+$cm-core-icons-100-var-send-link-to-content-set: "\f20c";
+$cm-core-icons-100-var-set-width: "\f20d";
+$cm-core-icons-100-var-shared-content-set: "\f20e";
+$cm-core-icons-100-var-shared-folder: "\f20f";
+$cm-core-icons-100-var-sharpening: "\f210";
+$cm-core-icons-100-var-show-html: "\f211";
+$cm-core-icons-100-var-show-in-library: "\f212";
+$cm-core-icons-100-var-site-link: "\f213";
+$cm-core-icons-100-var-site-synchronized: "\f214";
+$cm-core-icons-100-var-site-translated: "\f215";
+$cm-core-icons-100-var-site: "\f216";
+$cm-core-icons-100-var-sort-asc: "\f217";
+$cm-core-icons-100-var-sort-desc: "\f218";
+$cm-core-icons-100-var-spacer: "\f219";
+$cm-core-icons-100-var-star: "\f21a";
+$cm-core-icons-100-var-start-workflow: "\f21b";
+$cm-core-icons-100-var-status-comment: "\f21c";
+$cm-core-icons-100-var-status-draft: "\f21d";
+$cm-core-icons-100-var-status-like: "\f21e";
+$cm-core-icons-100-var-status-not-synchronized: "\f21f";
+$cm-core-icons-100-var-status-retweets: "\f220";
+$cm-core-icons-100-var-status-shares: "\f221";
+$cm-core-icons-100-var-status-synchronized: "\f222";
+$cm-core-icons-100-var-swap: "\f223";
+$cm-core-icons-100-var-table: "\f224";
+$cm-core-icons-100-var-tag: "\f225";
+$cm-core-icons-100-var-task: "\f226";
+$cm-core-icons-100-var-taxonomy: "\f227";
+$cm-core-icons-100-var-template: "\f228";
+$cm-core-icons-100-var-text-alignment: "\f229";
+$cm-core-icons-100-var-text-on-image-lb: "\f22a";
+$cm-core-icons-100-var-text-on-image-lm: "\f22b";
+$cm-core-icons-100-var-text-on-image-lu: "\f22c";
+$cm-core-icons-100-var-text-on-image-mb: "\f22d";
+$cm-core-icons-100-var-text-on-image-mm: "\f22e";
+$cm-core-icons-100-var-text-on-image-mu: "\f22f";
+$cm-core-icons-100-var-text-on-image-rb: "\f230";
+$cm-core-icons-100-var-text-on-image-rm: "\f231";
+$cm-core-icons-100-var-text-on-image-ru: "\f232";
+$cm-core-icons-100-var-thumb-down: "\f233";
+$cm-core-icons-100-var-thumbnail-view: "\f234";
+$cm-core-icons-100-var-thumb-up: "\f235";
+$cm-core-icons-100-var-time: "\f236";
+$cm-core-icons-100-var-todo-drag: "\f237";
+$cm-core-icons-100-var-trash-bin: "\f238";
+$cm-core-icons-100-var-tree-view-spinner: "\f239";
+$cm-core-icons-100-var-tree-view: "\f23a";
+$cm-core-icons-100-var-twitter: "\f23b";
+$cm-core-icons-100-var-type-360-view: "\f23c";
+$cm-core-icons-100-var-type-article: "\f23d";
+$cm-core-icons-100-var-type-asset-audio: "\f23e";
+$cm-core-icons-100-var-type-asset-document: "\f23f";
+$cm-core-icons-100-var-type-asset-interactive: "\f240";
+$cm-core-icons-100-var-type-asset-object: "\f241";
+$cm-core-icons-100-var-type-asset-picture: "\f242";
+$cm-core-icons-100-var-type-asset-video: "\f243";
+$cm-core-icons-100-var-type-audio: "\f244";
+$cm-core-icons-100-var-type-augmented-category: "\f245";
+$cm-core-icons-100-var-type-augmented-page: "\f246";
+$cm-core-icons-100-var-type-augmented-product: "\f247";
+$cm-core-icons-100-var-type-category: "\f248";
+$cm-core-icons-100-var-type-collection: "\f249";
+$cm-core-icons-100-var-type-css: "\f24a";
+$cm-core-icons-100-var-type-download: "\f24b";
+$cm-core-icons-100-var-type-dynamic-list: "\f24c";
+$cm-core-icons-100-var-type-external-page: "\f24d";
+$cm-core-icons-100-var-type-external-category: "\f24e";
+$cm-core-icons-100-var-type-external-content: "\f24f";
+$cm-core-icons-100-var-type-external-link: "\f250";
+$cm-core-icons-100-var-type-external-product: "\f251";
+$cm-core-icons-100-var-type-html-fragment: "\f252";
+$cm-core-icons-100-var-type-image-gallery: "\f253";
+$cm-core-icons-100-var-type-image-map: "\f254";
+$cm-core-icons-100-var-type-interactive: "\f255";
+$cm-core-icons-100-var-type-javascript: "\f256";
+$cm-core-icons-100-var-type-marketing-spot: "\f257";
+$cm-core-icons-100-var-type-media: "\f258";
+$cm-core-icons-100-var-type-object: "\f259";
+$cm-core-icons-100-var-type-page: "\f25a";
+$cm-core-icons-100-var-type-personalized-content: "\f25b";
+$cm-core-icons-100-var-type-picture: "\f25c";
+$cm-core-icons-100-var-type-preferences: "\f25d";
+$cm-core-icons-100-var-type-product-list: "\f25e";
+$cm-core-icons-100-var-type-product-teaser: "\f25f";
+$cm-core-icons-100-var-type-product-variant: "\f260";
+$cm-core-icons-100-var-type-product: "\f261";
+$cm-core-icons-100-var-type-query: "\f262";
+$cm-core-icons-100-var-type-resource-bundle: "\f263";
+$cm-core-icons-100-var-type-settings: "\f264";
+$cm-core-icons-100-var-type-site-indicator: "\f265";
+$cm-core-icons-100-var-type-sitemap: "\f266";
+$cm-core-icons-100-var-type-symbol: "\f267";
+$cm-core-icons-100-var-type-teaser: "\f268";
+$cm-core-icons-100-var-type-theming: "\f269";
+$cm-core-icons-100-var-type-video: "\f26a";
+$cm-core-icons-100-var-type-viewtype: "\f26b";
+$cm-core-icons-100-var-undelete: "\f26c";
+$cm-core-icons-100-var-undo: "\f26d";
+$cm-core-icons-100-var-unify-cells: "\f26e";
+$cm-core-icons-100-var-unknown-mimetype: "\f26f";
+$cm-core-icons-100-var-upload: "\f270";
+$cm-core-icons-100-var-user-administration: "\f271";
+$cm-core-icons-100-var-user-personalization: "\f272";
+$cm-core-icons-100-var-user: "\f273";
+$cm-core-icons-100-var-users-personalization: "\f274";
+$cm-core-icons-100-var-validator-attention: "\f275";
+$cm-core-icons-100-var-validator-check: "\f276";
+$cm-core-icons-100-var-validator-error: "\f277";
+$cm-core-icons-100-var-version-comparison: "\f278";
+$cm-core-icons-100-var-view-crops: "\f279";
+$cm-core-icons-100-var-view-menu: "\f27a";
+$cm-core-icons-100-var-warning: "\f27b";
+$cm-core-icons-100-var-wcs-management: "\f27c";
+$cm-core-icons-100-var-widget-drag: "\f27d";
+$cm-core-icons-100-var-window-settings: "\f27e";
+$cm-core-icons-100-var-withdraw: "\f27f";
+$cm-core-icons-100-var-workflow-accepted-by-me: "\f280";
+$cm-core-icons-100-var-workflow-started-by-me: "\f281";
+$cm-core-icons-100-var-workflow: "\f282";
+$cm-core-icons-100-var-xliff: "\f283";
+$cm-core-icons-100-var-youtube-channel-youtube-video: "\f284";
+$cm-core-icons-100-var-youtube: "\f285";
+$cm-core-icons-100-var-zoom-in: "\f286";
+$cm-core-icons-100-var-zoom-out: "\f287";
+
+//# fashion warn +elevation

@@ -1,0 +1,13 @@
+@if $cm-include-drop-zone-indicator-fix {
+  .#{$prefix}grid-drop-indicator {
+    z-index: 1 !important;
+    background-color: $cm-drop-zone-indicator-color;
+
+    @if not $cm-drop-zone-show-arrows {
+      .#{$prefix}grid-drop-indicator-left,
+      .#{$prefix}grid-drop-indicator-right {
+        display: none;
+      }
+    }
+  }
+}

@@ -1,0 +1,93 @@
+@if $cm-resizer-custom-styles {
+  // no skins available for resizers, so plain styles here
+  .#{$prefix}resizable-handle {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    border-style: solid;
+    border-color: $resizer-handle-glyph-color;
+    border-width: 0;
+
+    @include cm-resizer-gradient($resizer-handle-glyph-color);
+
+    @if $cm-resizer-enable-icon-background {
+      &:after {
+        content: "";
+        z-index: -1;
+        position: absolute;
+        background-color: $resizer-handle-background-color;
+      }
+      // direction specific
+      &.#{$prefix}resizable-handle-south {
+        &:after {
+          width: $cm-glyph-font-size-100;
+          height: $resizer-handle-size - 2px;
+          top: 0;
+          left: 50%;
+          transform: translateX(-50%);
+        }
+      }
+    }
+    // highlighted state
+    &.cm-highlighted {
+      border-color: $cm-highlight-color;
+
+      @include cm-resizer-gradient($cm-highlight-color);
+
+      &:before {
+        color: $cm-highlight-color;
+      }
+    }
+    // validation map
+    $state-map: (
+      "error" : (
+        color: $cm-validation-color-error),
+      "warning" : (
+        color: $cm-validation-color-warning),
+      "info" : (
+        color: $cm-validation-color-info),
+      "success" : (
+        color: $cm-validation-color-success)
+    );
+    @each $state, $map in $state-map {
+      &.cm-validation-state-#{$state} {
+        border-color: map_get($map, color);
+
+        @include cm-resizer-gradient(map_get($map, color));
+
+        &:before {
+          color: map_get($map, color);
+        }
+      }
+    }
+
+    // special case: append
+    // we need to add borders to the sides
+    &.cm-resizable-handle--append {
+      $_cm-resizer-border-width: $cm-border-width;
+      $_cm-resizer-validation-border-left-width: 5px;
+
+      // direction specific
+      &.#{$prefix}resizable-handle-south {
+        border-width: 0 right($_cm-resizer-border-width) 0 left($_cm-resizer-border-width);
+
+        // validation states
+        &.cm-validation-state-error,
+        &.cm-validation-state-warning,
+        &.cm-validation-state-info,
+        &.cm-validation-state-success {
+          border-left-width: $_cm-resizer-validation-border-left-width;
+
+          // prevent moving the center of the resize icon when border is added
+          padding-right: $_cm-resizer-validation-border-left-width;
+
+          @if $cm-resizer-enable-icon-background {
+            &:after {
+              // is positioned absolute and needs readjustment because of the added border
+              margin-left: ceil(-$_cm-resizer-validation-border-left-width / 2);
+            }
+          }
+        }
+      }
+    }
+  }
+}

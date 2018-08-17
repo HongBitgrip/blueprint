@@ -1,0 +1,68 @@
+/**
+ * Only to be used in after {@link #extjs-window-ui} mixin has been included.
+ *
+ * CoreMedia UI Mixin for a Window.
+ * Parameters do not have a default value, so if omitted the styling rule is not applied.
+ *
+ * @param {string} $ui
+ * The name of the UI being created. May not include spaces or special punctuation as string is used as part of
+ * CSS class names.
+ *
+ * @param {number/list} [$body-padding=$cm-window-body-padding]
+ * If not null defines the body padding of the window.
+ *
+ * @param {boolean} [$fix-header-border-radius=$cm-window-fix-header-border-radius]
+ * If true applies a fix for rounded corners (the background-color of the window shines through the header).
+ *
+ * @param {number/list} [$used-header-background-color=$window-header-background-color]
+ * If {@link #fix-border-radius} is true, this parameter is required to provide the used header-background-color param
+ * in the prior include of {@link #extjs-window-ui}.
+ *
+ * @param {number/list} [$used-header-padding=$window-header-padding]
+ * If {@link #fix-border-radius} is true, this parameter is required to provide the used header-padding param in the
+ * prior include of {@link #extjs-window-ui}.
+ *
+ * @member Ext.window.Window
+ */
+@mixin cm-window-ui(
+  $ui,
+  $body-padding: $cm-window-body-padding,
+  $fix-header-border-radius: $cm-window-fix-header-border-radius,
+  $used-header-background-color: $window-header-background-color,
+  $used-header-padding: $window-header-padding
+) {
+  @if $body-padding != null {
+    .#{$prefix}window-body-#{$ui} {
+      padding: $body-padding;
+    }
+  }
+  @if $fix-header-border-radius {
+    .#{$prefix}window-header-#{$ui} {
+      overflow: hidden;
+      border-width: 1px !important;
+      border-color: $used-header-background-color;
+      padding-top: top($used-header-padding) - 1;
+      padding-right: right($used-header-padding) - 1;
+      padding-bottom: bottom($used-header-padding) - 1;
+      padding-left: left($used-header-padding) - 1;
+    }
+    .#{$prefix}window-header-#{$ui} {
+      &-top {
+        border-top-left-radius: 0;
+        border-top-right-radius: 0;
+      }
+      &-right {
+        border-top-right-radius: 0;
+        border-bottom-right-radius: 0;
+      }
+      &-bottom {
+        border-bottom-left-radius: 0;
+        border-bottom-right-radius: 0;
+      }
+      &-left {
+        border-top-left-radius: 0;
+        border-bottom-left-radius: 0;
+      }
+    }
+  }
+}

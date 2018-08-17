@@ -1,0 +1,41 @@
+@if $cm-include-draggable-item {
+  $_block: "cm-draggable-item";
+  .#{$_block} {
+    &__dnd {
+      position: relative;
+      border-left: $cm-grid-100 solid $cm-grey-2;
+      width: $cm-grid-600;
+      cursor: move; /* fallback if grab is not supported */
+      cursor: grab;
+
+      &:before {
+        display: block;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-family: $cm-core-icons-100-font-name;
+        font-size: $cm-glyph-font-size-100;
+        color: $cm-grey-2;
+        width: $cm-glyph-font-size-100;
+        height: $cm-glyph-font-size-100;
+        content: $cm-core-icons-100-var-todo-drag;
+      }
+    }
+
+    &--state-done {
+      .#{$_block}__dnd {
+        border-left-color: transparent;
+      }
+    }
+
+    &--disabled {
+      .#{$_block}__dnd {
+        cursor: default;
+        &:before {
+          display: none;
+        }
+      }
+    }
+  }
+}

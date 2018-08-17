@@ -1,0 +1,30 @@
+@if $cm-include-lander {
+
+  .cm-lander {
+    position: relative;
+
+    &__border {
+      position: absolute;
+      left: 0;
+      top: 0;
+      z-index: 40000;
+      background: transparent url(get-resource-path("images/lander/background.jpg")) no-repeat;
+    }
+
+    &__name {
+      font-family: "sans-serif";
+    }
+
+    &__portal {
+      background: transparent url(get-resource-path("images/lander/portal-0.svg")) no-repeat;
+      width: 16px;
+      height: 16px;
+    }
+
+    &__previous-portal {
+      background: transparent url(get-resource-path("images/lander/portal-1.svg")) no-repeat;
+      width: 16px;
+      height: 16px;
+    }
+  }
+}

@@ -1,0 +1,9 @@
+/**
+ * @var {boolean}
+ * Enables styles for the FavoritesToolbarUserItemsArea.
+ *
+ * see {@link #cm-include-draggable-items-utils}
+ *
+ * @member com.coremedia.cms.editor.sdk.desktop.FavoritesToolbarUserItemsArea
+ */
+$cm-include-favorites-toolbar-utils: dynamic($cm-include-draggable-items-utils);

@@ -1,0 +1,399 @@
+/**
+ * @var {number}
+ * Overrides the background color for the native CKEditor mask.
+ *
+ * @member com.coremedia.ui.ckeditor.RichTextArea
+ */
+$cm-richtextarea-mask-background-color: dynamic($loadmask-page-background-color);
+
+/**
+ * @var {number}
+ * Overrides the native CKEditor mask opacity.
+ *
+ * @member com.coremedia.ui.ckeditor.RichTextArea
+ */
+$cm-richtextarea-mask-opacity: dynamic($loadmask-page-opacity);
+
+/**
+ * @var {color}
+ * Sets the background color of the RichTextArea.
+ *
+ * @member com.coremedia.ui.ckeditor.RichTextArea
+ */
+$cm-richtextarea-background-color: dynamic($form-text-field-background-color);
+
+/**
+ * @var {color}
+ * Sets the border color of the RichTextArea.
+ *
+ * @member com.coremedia.ui.ckeditor.RichTextArea
+ */
+$cm-richtextarea-border-color: dynamic($form-text-field-border-color);
+
+/**
+ * @var {color}
+ * Sets the border color of the RichTextArea on focus.
+ *
+ * @member com.coremedia.ui.ckeditor.RichTextArea
+ */
+$cm-richtextarea-focus-border-color: dynamic($form-text-field-focus-border-color);
+
+/**
+ * @var {number/list}
+ * Sets the shadow color of the RichTextArea on focus.
+ *
+ * @member com.coremedia.ui.ckeditor.RichTextArea
+ */
+$cm-richtextarea-shadow-focus: dynamic($cm-text-field-input-shadow-focus);
+
+/**
+ * @var {number/list}
+ * Sets the shadow transition property of the RichTextArea on focus.
+ *
+ * @member com.coremedia.ui.ckeditor.RichTextArea
+ */
+$cm-richtextarea-field-input-transition: dynamic($cm-shadow-transition);
+
+/**
+ * @var {number/list}
+ * Sets the border width of the RichTextArea.
+ *
+ * @member com.coremedia.ui.ckeditor.RichTextArea
+ */
+$cm-richtextarea-border-width: dynamic($cm-border-width);
+
+/**
+ * @var {string}
+ * Sets the border style of the RichTextArea.
+ *
+ * @member com.coremedia.ui.ckeditor.RichTextArea
+ */
+$cm-richtextarea-border-style: dynamic($cm-border-style);
+
+/**
+ * @var {number/list}
+ * Sets the border radius of the RichTextArea.
+ *
+ * @member com.coremedia.ui.ckeditor.RichTextArea
+ */
+$cm-richtextarea-border-radius: dynamic($cm-border-radius);
+
+/**
+ * @var {number/list}
+ * Sets the padding of the content editable.
+ *
+ * @member com.coremedia.ui.ckeditor.RichTextArea
+ */
+$cm-richtextarea-inner-padding: dynamic($cm-grid-100);
+
+/**
+ * @var {string}
+ * The font-family for the RichTextArea dialog component and the content editable component.
+ *
+ * @member com.coremedia.ui.ckeditor.RichTextArea
+ */
+$cm-richtextarea-dialog-font-family: dynamic($font-family);
+
+/**
+ * @var {number}
+ * The font-size for the RichTextArea dialog component and the content editable component.
+ *
+ * @member com.coremedia.ui.ckeditor.RichTextArea
+ */
+$cm-richtextarea-dialog-text-font-size: dynamic($form-text-field-font-size);
+
+/**
+ * @var {number}
+ * The font-weight for the RichTextArea dialog component and the content editable component.
+ *
+ * @member com.coremedia.ui.ckeditor.RichTextArea
+ */
+$cm-richtextarea-dialog-text-font-weight: dynamic($form-text-field-font-weight);
+
+/**
+ * @var {color}
+ * The color for the RichTextArea dialog component and the content editable component.
+ *
+ * @member com.coremedia.ui.ckeditor.RichTextArea
+ */
+$cm-richtextarea-dialog-text-font-color: dynamic($cm-font-color);
+
+/**
+ * @var {number}
+ * The font-size of the RichTextArea dialog title.
+ *
+ * @member com.coremedia.ui.ckeditor.RichTextArea
+ */
+$cm-richtextarea-dialog-title-font-size: dynamic($window-header-font-size);
+
+/**
+ * @var {number}
+ * The line-height of the RichTextArea dialog title.
+ *
+ * @member com.coremedia.ui.ckeditor.RichTextArea
+ */
+$cm-richtextarea-dialog-title-line-height: dynamic($window-header-line-height);
+
+/**
+ * @var {number/list}
+ * Sets the padding of the RichTextArea dialog title.
+ *
+ * @member com.coremedia.ui.ckeditor.RichTextArea
+ *
+ */
+$cm-richtextarea-dialog-title-padding: dynamic($cm-grid-100);
+
+/**
+ * @var {number}
+ * The line-height for the RichTextArea dialog component and the content editable component.
+ *
+ * @member com.coremedia.ui.ckeditor.RichTextArea
+ */
+$cm-richtextarea-dialog-text-line-height: dynamic($cm-line-height);
+
+/**
+ * @var {color}
+ * The color for the RichTextArea dialog window title.
+ *
+ * @member com.coremedia.ui.ckeditor.RichTextArea
+ */
+$cm-richtextarea-dialog-title-font-color: dynamic($window-header-color);
+
+/**
+ * @var {string}
+ * The font-weight for the RichTextArea dialog window title.
+ *
+ * @member com.coremedia.ui.ckeditor.RichTextArea
+ */
+$cm-richtextarea-dialog-title-font-weight: dynamic($window-header-font-weight);
+
+/**
+ * @var {color}
+ * Sets the theme color for the dialog window and border.
+ *
+ * @member com.coremedia.ui.ckeditor.RichTextArea
+ */
+$cm-richtextarea-dialog-background-color: dynamic($window-header-background-color);
+
+/**
+ * @var {number/list}
+ * Sets the standard padding of the content editable component as other form elements in the Studio.
+ *
+ * @member com.coremedia.ui.ckeditor.RichTextArea
+ *
+ */
+$cm-richtextarea-dialog-body-padding: dynamic(0 right($cm-grid-200) bottom($cm-grid-200));
+
+/**
+ * @var {number/list}
+ * Sets the standard padding of items of the dialog.
+ *
+ * @member com.coremedia.ui.ckeditor.RichTextArea
+ */
+$cm-richtextarea-dialog-items-padding: dynamic(top($cm-grid-200) 0 0);
+
+/**
+ * @var {string}
+ * Sets the font-weight of the label.
+ *
+ * @member com.coremedia.ui.ckeditor.RichTextArea
+ */
+$cm-richtextarea-dialog-label-font-weight: dynamic($form-label-font-weight);
+
+/**
+ * @var {number/list}
+ * Sets the border-radius of the content editable component and input fields.
+ *
+ */
+$cm-richtextarea-dialog-border-radius: dynamic($cm-border-radius);
+
+/**
+ * @var {number/list}
+ * Sets the border width of the RichTextArea dialog component and the content editable component.
+ *
+ * @member com.coremedia.ui.ckeditor.RichTextArea
+ */
+$cm-richtextarea-dialog-border-width: dynamic(0);
+
+/**
+ * @var {string}
+ * Sets the border style of the RichTextArea dialog component the content editable component.
+ *
+ * @member com.coremedia.ui.ckeditor.RichTextArea
+ */
+$cm-richtextarea-dialog-border-style: dynamic($cm-border-style);
+
+/**
+ * @var {color}
+ * Sets the border color of the RichTextArea dialog component and the content editable component.
+ *
+ * @member com.coremedia.ui.ckeditor.RichTextArea
+ */
+$cm-richtextarea-dialog-border-color: dynamic(transparent);
+
+/**
+ * @var {number/list}
+ * Sets the margin of the RichTextArea dialog footer.
+ *
+ * @member com.coremedia.ui.ckeditor.RichTextArea
+ */
+$cm-richtextarea-dialog-footer-margin: dynamic(7px);
+
+/**
+ * @var {color}
+ * Sets the background color of the RichTextArea dialog footer component.
+ *
+ * @member com.coremedia.ui.ckeditor.RichTextArea
+ */
+$cm-richtextarea-dialog-footer-background-color: dynamic($toolbar-footer-background-color);
+
+/**
+ * @var {string}
+ * Sets the font weight of the RichTextArea dialog footer button.
+ *
+ * @member com.coremedia.ui.ckeditor.RichTextArea
+ */
+$cm-richtextarea-dialog-footer-button-font-weight: dynamic($_cm-button-basic-font-weight);
+
+/**
+ * @var {color}
+ * Sets the background color of the RichTextArea dialog footer button if hovered.
+ *
+ * @member com.coremedia.ui.ckeditor.RichTextArea
+ */
+$cm-richtextarea-dialog-footer-button-background-color-hover: dynamic($_cm-button-basic-background-color-over);
+
+/**
+ * @var {color}
+ * Sets the background color of the RichTextArea dialog footer button focus state.
+ *
+ * @member com.coremedia.ui.ckeditor.RichTextArea
+ */
+$cm-richtextarea-dialog-footer-button-background-color-focus: dynamic($_cm-button-footer-background-color);
+
+/**
+ * @var {color}
+ * Sets the background color of the RichTextArea dialog footer button focus and hover style.
+ *
+ * @member com.coremedia.ui.ckeditor.RichTextArea
+ */
+$cm-richtextarea-dialog-footer-button-background-color-focus-hover: dynamic($_cm-button-basic-background-color-over);
+
+/**
+ * @var {color}
+ * Sets the background color of the RichTextArea dialog footer button if pressed.
+ *
+ * @member com.coremedia.ui.ckeditor.RichTextArea
+ */
+$cm-richtextarea-dialog-footer-button-background-color-pressed: dynamic($_cm-button-basic-background-color-pressed);
+
+/**
+ * @var {color}
+ * The color for the RichTextArea dialog primary footer button.
+ *
+ * @member com.coremedia.ui.ckeditor.RichTextArea
+ */
+$cm-richtextarea-dialog-button-font-color-primary: dynamic($_cm-button-basic-primary-color);
+
+/**
+ * @var {list}
+ * Sets the focus style of the RichTextArea dialog primary footer button.
+ *
+ * @member com.coremedia.ui.ckeditor.RichTextArea
+ */
+$cm-richtextarea-dialog-footer-button-focus-primary: dynamic($_cm-button-basic-primary-color);
+
+/**
+ * @var {list}
+ * Sets the focus and hover style of the RichTextArea dialog primary footer button.
+ *
+ * @member com.coremedia.ui.ckeditor.RichTextArea
+ */
+$cm-richtextarea-dialog-footer-button-focus-hover-primary: dynamic($_cm-button-basic-color-pressed);
+
+/**
+ * @var {color}
+ * The color for the RichTextArea dialog secondary footer button text.
+ *
+ * @member com.coremedia.ui.ckeditor.RichTextArea
+ */
+$cm-richtextarea-dialog-button-font-color-secondary: dynamic($_cm-button-basic-secondary-color);
+
+/**
+ * @var {list}
+ * Sets the focus style of the RichTextArea dialog secondary footer button.
+ *
+ * @member com.coremedia.ui.ckeditor.RichTextArea
+ */
+$cm-richtextarea-dialog-footer-button-focus-secondary: dynamic($_cm-button-basic-secondary-color);
+
+/**
+ * @var {list}
+ * Sets the focus and hover style of the RichTextArea dialog secondary footer button.
+ *
+ * @member com.coremedia.ui.ckeditor.RichTextArea
+ */
+$cm-richtextarea-dialog-footer-button-focus-hover-secondary: dynamic($_cm-button-basic-color-pressed);
+
+/**
+ * @var {color}
+ * The color for the RichTextArea dialog footer button text if hovered or pressed.
+ *
+ * @member com.coremedia.ui.ckeditor.RichTextArea
+ */
+$cm-richtextarea-dialog-button-font-color-hover-pressed: dynamic($cm-font-light-coloured);
+
+/**
+ * @var {number/list}
+ * Sets the border-radius of the RichTextArea dialog footer button.
+ *
+ */
+$cm-richtextarea-dialog-footer-button-border-radius: dynamic($_cm-button-basic-border-radius);
+
+/**
+ * @var {string}
+ * The close icon.
+ *
+ * @member com.coremedia.ui.ckeditor.RichTextArea
+ */
+$cm-richtextarea-dialog-close-glyph-name: dynamic($cm-core-icons-100-var-remove-small);
+
+/**
+ * @var {color}
+ * The color of the close icon.
+ *
+ * @member com.coremedia.ui.ckeditor.RichTextArea
+ */
+$cm-richtextarea-dialog-close-glyph-color: dynamic($cm-icon-color-neg);
+
+/**
+ * @var {number}
+ * The size of the close icon.
+ *
+ * @member com.coremedia.ui.ckeditor.RichTextArea
+ */
+$cm-richtextarea-dialog-close-glyph-size: dynamic($cm-glyph-font-size-100);
+
+/**
+ * @var {string}
+ * The font-family of the icon.
+ *
+ * @member com.coremedia.ui.ckeditor.RichTextArea
+ */
+$cm-richtextarea-dialog-close-glyph-font-family: dynamic($cm-core-icons-100-font-name);
+
+/**
+ * @var {boolean}
+ * Enables styles for the RichTextArea component.
+ *
+ * @member com.coremedia.ui.ckeditor.RichTextArea
+ */
+$cm-include-richtextarea: dynamic(true);
+
+/**
+ * @var {boolean}
+ * Enables styles for the RichTextArea CKEditor Dialogs.
+ *
+ * @member com.coremedia.ui.ckeditor.RichTextArea
+ */
+$cm-include-richtextarea-dialog: dynamic(true);

@@ -1,0 +1,22 @@
+/**
+ * Generates a gradient used on resizer handles.
+ *
+ * Currently only supports "south".
+ *
+ * @param {color} the color of the lines the gradient generates.
+ *
+ * @see #cm-resizer-enable-gradient-background
+ */
+@mixin cm-resizer-gradient($color) {
+  @if $cm-resizer-enable-gradient-background {
+    &.#{$prefix}resizable-handle-south {
+      background: repeating-linear-gradient(
+          0deg,
+          $color,
+          $color 1px,
+          $resizer-handle-background-color 1px,
+          $resizer-handle-background-color 2px
+      );
+    }
+  }
+}

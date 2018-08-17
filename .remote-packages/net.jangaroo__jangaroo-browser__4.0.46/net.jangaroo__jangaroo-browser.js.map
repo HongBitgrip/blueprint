@@ -1,0 +1,8 @@
+{
+"version":3,
+"file":"net.jangaroo__jangaroo-browser.js",
+"lineCount":1,
+"mappings":"AAAAA,GAAAC,OAAA,CAAW,YAAX,CAAyB,QAAQ,CAACC,OAAD,CAAU,CAsBvC,MAAO,EAtBgC,CAA3C,C,CCAAF,GAAAC,OAAA,CAAW,UAAX,CAAuB,QAAQ,CAACE,KAAD,CAAQ,CAYnC,MAAO,EAZ4B,CAAvC;",
+"sources":["src/js/Storage.js","src/js/IJSON.js"],
+"names":["Ext","define","Storage","IJSON"]
+}

@@ -1,0 +1,120 @@
+/**
+ * CoreMedia UI Mixin for a Checkbox.
+ *
+ * @param {string} $ui
+ * The name of the UI being created. May not include spaces or special punctuation as string is used as part of
+ * CSS class names.
+ *
+ * @param {color} [$background-color-checked=null]
+ * If not null defines the background-color when the checkbox is checked.
+ *
+ * @param {color} [$border=$cm-checkbox-border]
+ * If not null defines the border of the checkbox.
+ *
+ * @param {color} [$border-focused=$cm-checkbox-border-focused]
+ * If not null defines the border of the checkbox in focused state.
+ *
+ * @param {color} [$box-label-color-checked=null]
+ * If not null defines the label color when readonly state is active.
+ *
+ * @param {color} [$box-label-color-readonly=$cm-label-color-readonly]
+ * If not null defines the label color when readonly state is active.
+ *
+ * @param {color} [$glyph-color-readonly=$cm-label-color-readonly]
+ * If not null defines the glyph color when readonly state is active.
+ *
+ * @param {color} [$color-error=$cm-validation-color-error]
+ * If not null defines the color to be applied when the error state is active.
+ *
+ * @param {color} [$color-warning=$cm-validation-color-warning]
+ * If not null defines the color to be applied when the warning state is active.
+ *
+ * @param {color} [$color-info=$cm-validation-color-info]
+ * If not null defines the color to be applied when the info state is active.
+ *
+ * @param {color} [$color-success=$cm-validation-color-success]
+ * If not null defines the color to be applied when the success state is active.
+ *
+ * @member Ext.form.field.Checkbox
+ */
+@mixin cm-checkbox-ui(
+  $ui,
+  $background-color-checked: null,
+  $border: $cm-checkbox-border,
+  $border-focused: $cm-checkbox-border-focused,
+  $box-label-color-checked: null,
+  $box-label-color-readonly: $cm-label-color-readonly,
+  $glyph-color-readonly: $cm-label-color-readonly,
+  // validation parameters:
+  $color-error: $cm-validation-color-error,
+  $color-warning: $cm-validation-color-warning,
+  $color-info: $cm-validation-color-info,
+  $color-success: $cm-validation-color-success
+) {
+  .#{$prefix}field-#{$ui} {
+
+    .#{$prefix}form-checkbox, .#{$prefix}form-radio {
+      @if $border != null {
+        border: $border;
+      }
+    }
+
+    &.#{$prefix}form-cb-checked {
+      @if $background-color-checked != null {
+        background-color: $background-color-checked;
+      }
+      .#{$prefix}form-cb-label {
+        @if $box-label-color-checked != null {
+          color: $box-label-color-checked;
+        }
+      }
+    }
+    &.#{$prefix}item-disabled {
+      .#{$prefix}form-cb-label {
+        @if $box-label-color-readonly != null {
+          color: $box-label-color-readonly;
+        }
+      }
+
+      .#{$prefix}form-cb,
+      .#{$prefix}form-radio {
+        @if $glyph-color-readonly != null {
+          color: $glyph-color-readonly;
+        }
+      }
+    }
+
+   .#{$prefix}form-checkbox-focus {
+     @if $border-focused != null {
+       border: $border-focused;
+     }
+    }
+
+    $state-map: (
+      "error" : (
+        color: $color-error),
+      "warning" : (
+        color: $color-warning),
+      "info" : (
+        color: $color-info),
+      "success" : (
+        color: $color-success)
+    );
+
+    @each $state, $map in $state-map {
+      &.cm-validation-state-#{$state} {
+        .#{$prefix}form-cb,
+        .#{$prefix}form-radio {
+          @if map_get($map, color) != null {
+            color: map_get($map, color);
+          }
+        }
+        .#{$prefix}form-cb-label {
+          @if map_get($map, color) != null {
+            color: map_get($map, color);
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,41 @@
+@if $cm-image-link-list-renderer {
+  $_block: "cm-thumbnail-image";
+  .#{$_block} {
+    &--link-list {
+
+      color: $cm-black;
+      border: 1px solid $cm-grey-4;
+      background-color: $cm-grey-0;
+      padding-top: 4px;
+      width: 88px;
+      height: 62px;
+      text-align: center;
+      border-collapse: separate;
+      margin: 2px 0;
+      display: table;
+      -moz-box-shadow: 0 1px 2px -2px $cm-grey-4;
+      -webkit-box-shadow: 0 1px 2px -2px $cm-grey-4;
+      box-shadow: 0 1px 2px -2px $cm-grey-4;
+
+      .#{$_block}__image {
+        height: 54px;
+        max-width: 80px;
+        display: block;
+        margin: 0 auto;
+      }
+    }
+
+    &--empty {
+      &:before {
+        display: table-cell;
+        vertical-align: middle;
+        content: $cm-core-icons-100-var-type-picture;
+        font-family: $cm-core-icons-100-font-name;
+        font-size: 36px;
+        color: $grid-row-cell-color;
+        font-style: normal;
+        height: 54px; // giving the empty thumbnail the same height as the wrapper (height + margin) prevents need to re-layout
+      }
+    }
+  }
+}

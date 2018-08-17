@@ -1,0 +1,40 @@
+@if $cm-include-window-default-ui {
+  $_ui: "default";
+  @include cm-window-ui(
+    $ui: $_ui
+  );
+}
+
+@if $cm-include-window-grid-200-ui {
+  $_ui: "window-grid-200";
+  @include extjs-window-ui(
+    $ui: $_ui
+  );
+  @include cm-window-ui(
+    $ui: $_ui,
+    $body-padding: $cm-grid-200
+  );
+}
+
+@if $cm-include-window-grid-200-dark-ui {
+  $_ui: "window-grid-200-dark";
+  @include extjs-window-ui(
+    $ui: $_ui,
+    $ui-body-background-color: $cm-grey-1
+  );
+  @include cm-window-ui(
+    $ui: $_ui,
+    $body-padding: $cm-grid-200
+  );
+}
+
+@if $cm-include-window-grid-200-light-ui {
+  $_ui: "window-grid-200-light";
+  @include extjs-window-ui(
+    $ui: $_ui
+  );
+  @include cm-window-ui(
+    $ui: $_ui,
+    $body-padding: $cm-grid-200
+  );
+}

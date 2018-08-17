@@ -1,0 +1,50 @@
+/**
+ * @var {number}
+ *
+ * The padding-left of menu-buttons. This value needs to be set to the initial left padding + width of the arrow element to center the content correctly.
+ *
+ * @member com.coremedia.cms.editor.sdk.desktop.FavoritesToolbar
+ */
+$cm-favorites-toolbar-menu-button-padding-left: dynamic(8px);
+
+/**
+ * @var {number/list}
+ *
+ * The padding of the icon, displayed at the bottom left in the studio favorites toolbar.
+ */
+$cm-favorites-toolbar-icon-padding: dynamic(20px 0);
+
+/**
+ * @var {string}
+ *
+ * The url of the icon, displayed at the bottom left in the studio favorites toolbar.
+ *
+ * @member com.coremedia.cms.editor.sdk.desktop.FavoritesToolbar
+ */
+$cm-favorites-toolbar-icon-url: dynamic('images/studio-logo.svg');
+
+/**
+ * @var {number}
+ *
+ * The width of the icon.
+ *
+ * @member com.coremedia.cms.editor.sdk.desktop.FavoritesToolbar
+ */
+$cm-favorites-toolbar-icon-width: dynamic(48px);
+
+/**
+ * @var {number}
+ *
+ * The height of the icon.
+ *
+ * @member com.coremedia.cms.editor.sdk.desktop.FavoritesToolbar
+ */
+$cm-favorites-toolbar-icon-height: dynamic(48px);
+
+/**
+ * @var {boolean}
+ * Enables styles for the FavoritesToolbar.
+ *
+ * @member com.coremedia.cms.editor.sdk.desktop.FavoritesToolbar
+ */
+$cm-include-favorites-toolbar: dynamic(true);

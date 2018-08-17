@@ -1,0 +1,177 @@
+@if $cm-include-display-field-default-ui {
+  $_ui: "default";
+  @include cm-display-field-ui(
+    $ui: $_ui
+  );
+}
+
+@if $cm-include-display-field-number-ui {
+  $_ui: "number";
+  @include extjs-display-field-ui (
+    $ui: $_ui
+  );
+  @include cm-display-field-ui(
+    $ui: $_ui,
+    $value-text-align: right
+  );
+}
+
+@if $cm-include-display-field-inverted-ui {
+  $_ui: "inverted";
+  @include extjs-display-field-ui (
+    $ui: $_ui,
+    $ui-color: $cm-font-light-coloured,
+    $ui-focus-border-color: $cm-font-light-coloured
+  );
+  @include cm-display-field-ui(
+    $ui: $_ui
+  );
+}
+
+@if $cm-include-display-field-mouseprint-ui {
+  $_ui: "mouseprint";
+  @include extjs-display-field-ui (
+    $ui: $_ui,
+    $ui-font-size: $cm-font-size-small,
+    $ui-color: $cm-grey-1,
+    $ui-focus-border-color: $cm-grey-1
+  );
+  @include cm-display-field-ui(
+    $ui: $_ui
+  );
+}
+
+@if $cm-include-display-field-bold-ui {
+  $_ui: "bold";
+  @include extjs-display-field-ui (
+    $ui: $_ui,
+    $ui-font-weight: $cm-font-weight-bold
+  );
+  @include cm-display-field-ui (
+    $ui: $_ui
+  );
+}
+
+@if $cm-include-display-field-italic-ui {
+  $_ui: "italic";
+  @include extjs-display-field-ui (
+    $ui: $_ui
+  );
+  @include cm-display-field-ui (
+    $ui: $_ui,
+    $font-style: italic
+  );
+}
+
+@if $cm-include-display-field-underline-ui {
+  $_ui: "underline";
+  @include extjs-display-field-ui (
+    $ui: $_ui
+  );
+  @include cm-display-field-ui (
+    $ui: $_ui,
+    $text-decoration: underline
+  );
+}
+
+@if $cm-include-display-field-workarea-ui {
+  $_ui: "workarea";
+  @include extjs-display-field-ui(
+    $ui: $_ui,
+    $ui-font-weight: $cm-font-weight-bold
+  );
+  @include cm-display-field-ui (
+    $ui: $_ui
+  );
+}
+
+@if $cm-include-display-field-info-ui {
+  $_ui: "info";
+  @include extjs-display-field-ui(
+    $ui: $_ui,
+    $ui-color: $cm-darkgrey,
+    $ui-focus-border-color: $cm-darkgrey,
+    $ui-font-size: $cm-font-size-medium,
+    $ui-field-height: 18px,
+    $ui-line-height: 18px,
+    $ui-font-weight: $cm-font-weight
+  );
+  @include cm-display-field-ui(
+    $ui: $_ui,
+    $fix-field-height: false
+  );
+}
+
+@if $cm-include-display-field-double-ui {
+  $_ui: "double";
+  @include extjs-display-field-ui(
+    $ui: $_ui
+  );
+  @include cm-display-field-ui(
+    $ui: $_ui,
+    $fix-field-height: false
+  );
+}
+
+@if $cm-include-display-field-logo-ui {
+  $_ui: "logo";
+  @include extjs-display-field-ui(
+    $ui: $_ui,
+    $ui-field-height: 21px,
+    $ui-line-height: 21px
+  );
+  @include cm-display-field-ui(
+    $ui: $_ui,
+    $first-line-font-size: 19px,
+    $fix-field-height: false
+  );
+}
+
+@if $cm-include-display-field-license-warning-ui {
+  $_ui: "license-warning";
+  @include extjs-display-field-ui(
+    $ui: $_ui,
+    $ui-field-height: 20px,
+    $ui-line-height: 20px,
+    $ui-color: $cm-grey-4,
+    $ui-focus-border-color: $cm-grey-4
+  );
+  @include cm-display-field-ui(
+    $ui: $_ui,
+    $first-line-font-size: 18px,
+    $first-line-font-weight: $cm-font-weight-bold,
+    $fix-field-height: false
+  );
+}
+
+@if $cm-include-display-field-embedded-ui {
+  $_ui: "embedded";
+  @include extjs-display-field-ui(
+    $ui: $_ui,
+    $ui-color: $cm-grey-7,
+    $ui-focus-border-color: $cm-grey-7
+  );
+  @include cm-display-field-ui(
+    $ui: $_ui,
+    $font-style: italic,
+    $color-disabled: $cm-spot-grey-2,
+    $fix-field-height: true
+  );
+}
+
+@if $cm-include-display-field-light-ui {
+  $_ui: "light";
+  @include extjs-display-field-ui(
+    $ui: $_ui,
+    $ui-color: $cm-font-light-coloured,
+    $ui-focus-border-color: $cm-font-light-coloured,
+    $ui-font-size: $cm-font-size-medium,
+    $ui-field-height: $cm-font-size-extra-large,
+    $ui-line-height: $cm-font-size-extra-large,
+    $ui-font-weight: $cm-font-weight
+  );
+  @include cm-display-field-ui(
+    $ui: $_ui,
+    $fix-field-height: false
+  );
+}

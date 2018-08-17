@@ -99,6 +99,7 @@
   <modules>
     <module>blueprint-parent</module>
     <module>modules</module>
+    <module>spring-boot</module>
     <module>test-data</module>
     <module>deployment</module>
   </modules>

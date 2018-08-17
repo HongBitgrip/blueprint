@@ -1,0 +1,15 @@
+@if $cm-include-statusproxy-default-ui {
+  @include cm-statusproxy-ui(
+    $ui: "default"
+  );
+}
+
+@if $cm-include-statusproxy-simple-ui {
+  @include cm-statusproxy-ui(
+    $ui: "simple",
+    $opacity: 0.6,
+    $padding: 0,
+    $allow-pointer-events: false,
+    $show-icon: false
+  );
+}

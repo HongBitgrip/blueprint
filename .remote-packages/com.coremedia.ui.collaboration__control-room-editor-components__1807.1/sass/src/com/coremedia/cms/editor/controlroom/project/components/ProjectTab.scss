@@ -1,0 +1,8 @@
+@if $cm-include-project-tab {
+  .cm-project-tab-body {
+    // prevent shadows of inner containers to be cut off
+    > .#{$prefix}box-inner {
+      overflow: visible;
+    }
+  }
+}

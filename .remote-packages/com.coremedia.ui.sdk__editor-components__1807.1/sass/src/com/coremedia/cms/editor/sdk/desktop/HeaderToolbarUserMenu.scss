@@ -1,0 +1,9 @@
+@if $cm-include-header-toolbar-user-menu {
+
+  // field
+  .cm-user-menu {
+    &__field {
+      margin-bottom: $cm-grid-100;
+    }
+  }
+}

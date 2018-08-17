@@ -1,0 +1,5 @@
+.#{$prefix}view-item-focused {
+  @if $cm-view-item-outline-focused != null {
+    outline: $cm-view-item-outline-focused !important;
+  }
+}

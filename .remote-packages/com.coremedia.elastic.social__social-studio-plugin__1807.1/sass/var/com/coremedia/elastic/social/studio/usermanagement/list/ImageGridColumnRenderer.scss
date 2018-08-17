@@ -1,0 +1,14 @@
+/**
+ * @var {list} Specifies a glyph to use for the ImageGridColumnRenderer if the image is empty.
+ *
+ * @member com.coremedia..elastic.social.studio.usermanagement.list.ImageGridColumnRenderer
+ */
+$cm-image-grid-column-renderer-empty-icon: dynamic($cm-core-icons-200-var-user-personalization $cm-glyph-font-size-200 $cm-core-icons-200-font-name);
+
+/**
+ * @var {boolean}
+ * Enables styles for the ImageGridColumnRenderer.
+ *
+ * @member com.coremedia..elastic.social.studio.usermanagement.list.ImageGridColumnRenderer
+ */
+$cm-include-image-grid-column-renderer: dynamic(true);

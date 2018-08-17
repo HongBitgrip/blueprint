@@ -1,0 +1,112 @@
+/**
+ * @var {number}
+ *
+ * The margin for the thumbnail preview (icon or picture).
+ *
+ * @member com.coremedia.cms.editor.sdk.collectionview.thumbnail.ThumbDataView
+ */
+$cm-thumbnail-margin: dynamic(6px 6px 10px);
+
+/**
+ * @var {number}
+ *
+ * The width for the thumbnail preview (only affects the picture).
+ * For the icon the actual font-width is used based on the font-size.
+ *
+ * @member com.coremedia.cms.editor.sdk.collectionview.thumbnail.ThumbDataView
+ */
+$cm-thumbnail-preview-width: dynamic($cm-glyph-font-size-400);
+
+/**
+ * @var {number}
+ *
+ * The height for the thumbnail preview (icon or picture).
+ * For the icon this value is used as the font-size.
+ *
+ * @member com.coremedia.cms.editor.sdk.collectionview.thumbnail.ThumbDataView
+ */
+$cm-thumbnail-preview-height: dynamic($cm-glyph-font-size-400);
+
+/**
+ * @var {color}
+ *
+ * The default background-color of the thumbnail preview
+ */
+$cm-thumbnail-background-color: dynamic($cm-white);
+
+/**
+ * @var {color}
+ *
+ * The hover-color of the thumbnail preview
+ */
+$cm-thumbnail-background-color-hover: dynamic($cm-blue-0);
+
+/**
+ * @var {color}
+ *
+ * The selected-background-color of the thumbnail preview
+ *
+ * @member com.coremedia.cms.editor.sdk.collectionview.thumbnail.ThumbDataView
+ */
+$cm-thumbnail-background-color-selected: dynamic($cm-blue-4);
+
+/**
+ * @var {number}
+ *
+ * The padding for the thumbnail preview (icon or picture).
+ *
+ * @member com.coremedia.cms.editor.sdk.collectionview.thumbnail.ThumbDataView
+ */
+$cm-thumbnail-preview-padding: dynamic(10px 10px 0 10px);
+
+/**
+ * @var {number}
+ *
+ * The font-size for the thumbnail text.
+ *
+ * @member com.coremedia.cms.editor.sdk.collectionview.thumbnail.ThumbDataView
+ */
+$cm-thumbnail-text-font-size: dynamic($cm-font-size);
+
+/**
+ * @var {number}
+ *
+ * The line-height for the thumbnail text.
+ *
+ * @member com.coremedia.cms.editor.sdk.collectionview.thumbnail.ThumbDataView
+ */
+$cm-thumbnail-text-line-height: dynamic($cm-thumbnail-text-font-size + 1px);
+
+/**
+ * @var {number}
+ *
+ * The maximum line count for the thumbnail text. The rest of the text will be cut off.
+ *
+ * @member com.coremedia.cms.editor.sdk.collectionview.thumbnail.ThumbDataView
+ */
+$cm-thumbnail-text-line-count: dynamic(2);
+
+/**
+ * @var {number/list}
+ *
+ * The padding for the thumbnail text.
+ *
+ * @member com.coremedia.cms.editor.sdk.collectionview.thumbnail.ThumbDataView
+ */
+$cm-thumbnail-text-padding: dynamic(6px 6px 2px);
+
+/**
+ * @var {boolean}
+ * Enables styles for the thumb data view.
+ *
+ * @member com.coremedia.cms.editor.sdk.collectionview.thumbnail.ThumbDataView
+ */
+$cm-include-thumb-data-view: dynamic(true);
+
+/**
+ * @var {boolean}
+ * Enables styles for the thumbnails of the thumb data view.
+ *
+ * @member com.coremedia.cms.editor.sdk.collectionview.thumbnail.ThumbDataView
+ */
+$cm-include-thumbnail: dynamic(true);

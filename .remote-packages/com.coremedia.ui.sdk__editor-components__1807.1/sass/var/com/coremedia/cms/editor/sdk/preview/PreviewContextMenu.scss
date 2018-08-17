@@ -1,0 +1,70 @@
+/**
+ * @var {number}
+ *
+ * Sets the margin-bottom of the title menu item.
+ *
+ * @member com.coremedia.cms.editor.sdk.preview.PreviewContextMenu
+ */
+$cm-preview-context-menu-title-margin-bottom: dynamic($cm-grid-25);
+
+/**
+ * @var {color}
+ *
+ * Sets the background-color of the title menu item.
+ *
+ * @member com.coremedia.cms.editor.sdk.preview.PreviewContextMenu
+ */
+$cm-preview-context-menu-title-background-color: dynamic($cm-grey-5);
+
+/**
+ * @var {string}
+ *
+ * Sets the display property of the icon in the title menu item.
+ *
+ * @member com.coremedia.cms.editor.sdk.preview.PreviewContextMenu
+ */
+$cm-preview-context-menu-title-icon-display: dynamic(block);
+
+/**
+ * @var {color}
+ *
+ * Sets the color of the title menu text.
+ *
+ * @member com.coremedia.cms.editor.sdk.preview.PreviewContextMenu
+ */
+$cm-preview-context-menu-title-text-color: dynamic($cm-font-light-coloured);
+
+/**
+ * @var {number}
+ *
+ * Sets the margin-left of the title menu text.
+ *
+ * @member com.coremedia.cms.editor.sdk.preview.PreviewContextMenu
+ */
+$cm-preview-context-menu-title-text-margin-left: dynamic($cm-grid-500);
+
+/**
+ * @var {number}
+ *
+ * Sets the margin-left of all menu items.
+ *
+ * @member com.coremedia.cms.editor.sdk.preview.PreviewContextMenu
+ */
+$cm-preview-context-menu-item-text-margin-left: dynamic($cm-grid-100);
+
+/**
+ * @var {string}
+ *
+ * Sets the display property of all icons in the menu items.
+ *
+ * @member com.coremedia.cms.editor.sdk.preview.PreviewContextMenu
+ */
+$cm-preview-context-menu-item-icon-display: dynamic(none);
+
+/**
+ * @var {boolean}
+ * Enables styles of the PreviewContextMenu.
+ *
+ * @member com.coremedia.cms.editor.sdk.preview.PreviewContextMenu
+ */
+$cm-include-preview-context-menu: dynamic(true);

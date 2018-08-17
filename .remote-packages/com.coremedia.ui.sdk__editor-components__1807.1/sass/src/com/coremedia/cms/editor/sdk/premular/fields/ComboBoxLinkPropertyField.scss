@@ -1,0 +1,49 @@
+@if $cm-include-combo-box-link-property-field {
+
+  $_block: "cm-combo-box-item";
+  .#{$_block} {
+    display: flex;
+    flex-direction: row;
+    padding: 5px;
+    line-height: 10px;
+
+    &__left {
+      padding-right: 6px;
+    }
+
+    &__right {
+      flex: 1;
+      text-align: left;
+      vertical-align: top;
+    }
+
+    &__thumbnail {
+      width: 82px;
+      height: 50px;
+      background-image: url(get-resource-path("images/combo-box-no-thumbnail.png"));
+      background-position: center;
+      background-repeat: no-repeat;
+      background-color: transparent;
+    }
+
+    &__name {
+      display: block;
+      font-weight: bold;
+      padding-top: 2px;
+      padding-bottom: 7px;
+    }
+
+    &__description {
+      display: block;
+      padding-bottom: 4px;
+      line-height: 12px;
+    }
+
+    &__site {
+      display: block;
+      font-style: italic;
+      font-size: 10px;
+      float: right;
+    }
+  }
+}

@@ -1,0 +1,7 @@
+@if $cm-include-extensions-menu {
+  $_block: "cm-extensions-menu";
+  .#{$_block} {
+    max-height: $cm-extensions-menu-height;
+    overflow-y: auto;
+  }
+}

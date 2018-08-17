@@ -1,0 +1,8 @@
+{
+"version":3,
+"file":"com.coremedia.ui.sdk__notification-studio-client-overrides-ja.js",
+"lineCount":1,
+"mappings":"AAGAA,GAAAC,OAAA,CAAW,mEAAX,CAAgF,CAC9EC,SAAU,gEADoE,CAAhF,CAGG,QAAQ,EAAG,EAHd;",
+"sources":["locale/ja/com/coremedia/cms/editor/notification/Notifications_properties.js"],
+"names":["Ext","define","override"]
+}

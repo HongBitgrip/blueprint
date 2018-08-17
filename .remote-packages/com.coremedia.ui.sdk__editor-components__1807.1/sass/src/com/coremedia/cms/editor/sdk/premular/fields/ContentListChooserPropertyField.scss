@@ -1,0 +1,75 @@
+@if $cm-include-content-list-chooser {
+  .cm-bean-list-chooser {
+    &__item {
+      display: inline-block;
+      vertical-align: top;
+      margin: $cm-content-list-chooser-margin;
+    }
+  }
+
+  $_block: "cm-bean-list-chooser-item";
+  $_content-list-chooser-preview-box-width: $cm-content-list-chooser-preview-width
+                                  + left($cm-content-list-chooser-preview-padding)
+                                  + right($cm-content-list-chooser-preview-padding);
+  $_content-list-chooser-preview-box-height: $cm-content-list-chooser-preview-height
+                                   + top($cm-content-list-chooser-preview-padding)
+                                   + bottom($cm-content-list-chooser-preview-padding);
+  $_content-list-chooser-text-box-width: $cm-content-list-chooser-text-line-height
+                               + left($cm-content-list-chooser-text-padding)
+                               + right($cm-content-list-chooser-text-padding);
+  $_content-list-chooser-text-box-height: $cm-content-list-chooser-text-line-height
+                                + top($cm-content-list-chooser-text-padding)
+                                + bottom($cm-content-list-chooser-text-padding)
+                                - 1px;  //Fix for mac os to prevent the third row in the text-box from being displayed
+  .#{$_block} {
+    width: max($_content-list-chooser-preview-box-width, $_content-list-chooser-text-box-width);
+    height: $_content-list-chooser-preview-box-height + $_content-list-chooser-text-box-height;
+    line-height: 1;
+    text-align: center;
+    border-radius: $cm-border-radius;
+    z-index: 1;
+    position: relative;
+
+    &__icon {
+      box-sizing: content-box;
+      padding: $cm-content-list-chooser-preview-padding;
+      text-align: center;
+      font-size: 128px;
+      line-height: 1;
+
+      &.no-selection-item {
+        &::before {
+          content: $cm-core-icons-300-var-no-selection-item;
+          font-family: $cm-core-icons-300-font-name;
+        }
+      }
+    }
+
+    &__text {
+      margin: 0;
+      padding: $cm-content-list-chooser-text-padding;
+      color: $cm-grey-5;
+      font-style: italic;
+      text-align: center;
+      overflow: hidden;
+      font-size: $cm-content-list-chooser-text-font-size;
+      line-height: $cm-content-list-chooser-text-line-height;
+      height: $_content-list-chooser-text-box-height;
+      word-wrap: break-word;
+    }
+
+    &.#{$prefix}item-selected {
+      background-color: $cm-blue-0;
+      border: 1px solid $cm-blue-4;
+    }
+
+    &.merged-item {
+      background-color: $cm-grey-0;
+      border: 1px solid $cm-spot-grey-2;
+
+      .#{$_block}__icon {
+        opacity: 0.3;
+      }
+    }
+  }
+}

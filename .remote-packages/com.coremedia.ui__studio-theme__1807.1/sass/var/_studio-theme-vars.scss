@@ -1,0 +1,174 @@
+/**
+ * styleguide colors
+ */
+$cm-blue-0: #D8E7F8;
+$cm-blue-1: #B3D0F1;
+$cm-blue-2: #8DB9EB;
+$cm-blue-3: #67A1E4;
+$cm-blue-4: #4189DD;
+$cm-blue-5: #2771C5;
+$cm-blue-6: #165AA8;
+$cm-blue-7: #0A4282;
+$cm-blue-8: #032A57;
+$cm-blue-9: #001730;
+
+$cm-grey-0: #F1F1F1;
+$cm-grey-1: #DCDBDB;
+$cm-grey-2: #C8C6C6;
+$cm-grey-3: #B3B1B1; // standard border color & and trigger color for fields for non animated textfields
+$cm-grey-4: #9F9C9C;
+$cm-grey-5: #8A8686;
+$cm-grey-6: #757171;
+$cm-grey-7: #646060;
+$cm-grey-8: #524F4F;
+$cm-grey-9: #403E3E;
+
+$cm-white: #FFFFFF;
+$cm-black: #000000;
+$cm-red: #C41313;
+$cm-orange: #ED9B03;
+$cm-green: #5CA03F;
+$cm-darkgrey: #3D4242;
+
+/**
+ * spot colors
+ */
+$cm-spot-grey-0: #F6F6F6;
+$cm-spot-grey-1: #EDEDED;
+$cm-spot-grey-2: #BCBCBC;
+
+$cm-spot-orange-1: #C58002;
+$cm-spot-orange-2: #A66C02;
+$cm-spot-red-1: #A11010;
+$cm-spot-red-2: #850D0D;
+$cm-spot-green-1: #4D8735;
+$cm-spot-green-2: #3A6728;
+
+/**
+ * grids
+ */
+$cm-grid-25: 2px;
+$cm-grid-50: 3px;
+$cm-grid-100: 6px;
+$cm-grid-200: 12px;
+$cm-grid-300: 18px;
+$cm-grid-400: 24px;
+$cm-grid-500: 30px;
+$cm-grid-600: 36px;
+$cm-grid-700: 42px;
+$cm-grid-800: 48px;
+$cm-grid-900: 54px;
+$cm-grid-1000: 60px;
+
+$cm-workarea-toolbar-height: 40px;
+
+/**
+ * fonts
+ */
+$cm-font-size-small: 9px;
+$cm-font-size: 13px;
+$cm-font-size-medium: 15px;
+$cm-font-size-medium-large: 16px;
+$cm-font-size-large: 17px;
+$cm-font-size-extra-large: 19px;
+$cm-font-family: 'Roboto','Segoe UI', 'Trebuchet MS', 'Lucida Grande', 'Helvetica', sans-serif;
+$cm-font-weight: 400;
+$cm-font-weight-semi-bold: 600;
+$cm-font-weight-bold: 700;
+$cm-line-height: floor($cm-font-size * 1.33);
+
+/**
+ * glyph font sizes
+ */
+$cm-glyph-font-size-50: 12px;
+$cm-glyph-font-size-100: 16px;
+$cm-glyph-font-size-100-pressed: 18px;
+$cm-glyph-font-size-200: 24px;
+$cm-glyph-font-size-200-pressed: 26px;
+$cm-glyph-font-size-300: 32px;
+$cm-glyph-font-size-350: 48px;
+$cm-glyph-font-size-300-pressed: 34px;
+$cm-glyph-font-size-400: 64px;
+
+/**
+ * elevation shadows
+ */
+$cm-elevation-box-shadow-50: 0 0px 3px 0 transparentize($cm-black, .4);
+$cm-elevation-box-shadow-75: 0 1px 6px 0 transparentize($cm-black, .5);
+$cm-elevation-box-shadow-100: 0 1px 3px 0 transparentize($cm-black, .4);
+$cm-elevation-box-shadow-200: 0 2px 6px 0 transparentize($cm-black, .4);
+
+/**
+ * transitions
+ */
+$cm-shadow-transition: box-shadow 0.25s;
+$cm-background-color-transition: background-color 0.25s ease;
+
+/**
+ * font colors for button, menus, tips etc.
+ */
+$cm-font-color: $cm-black;
+$cm-font-light-coloured: $cm-white;
+$cm-font-over-color: $cm-black;
+$cm-font-over-light-coloured: $cm-white;
+$cm-font-pressed-color: $cm-black;
+$cm-font-pressed-light-coloured: $cm-white;
+$cm-font-selected-color: $cm-white;
+$cm-font-focus-color: $cm-white;
+$cm-font-disabled-color: $cm-grey-5;
+$cm-font-tip-color: $cm-blue-5;
+
+/**
+ * icon colors
+ */
+$cm-icon-color-pos: $cm-darkgrey;
+$cm-icon-color-neg: $cm-white;
+
+/**
+ * border design
+ */
+$cm-border-width: 1px;
+$cm-border-radius: 2px;
+$cm-border-style: solid;
+
+/**
+ * form components
+ */
+$cm-field-height: 23px;
+$cm-slider-thumb-radius: 6px;
+
+/**
+ * validation states
+ */
+$cm-validation-color-error: $cm-red;
+$cm-validation-color-error-over: $cm-spot-red-1;
+$cm-validation-color-error-pressed: $cm-spot-red-2;
+
+$cm-validation-color-warning: $cm-orange;
+$cm-validation-color-warning-over: $cm-spot-orange-1;
+$cm-validation-color-warning-pressed: $cm-spot-orange-2;
+
+$cm-validation-color-success: $cm-green;
+$cm-validation-color-success-over: $cm-spot-green-1;
+$cm-validation-color-success-pressed: $cm-spot-green-2;
+
+$cm-validation-color-info: $cm-blue-4;
+$cm-validation-color-info-over: $cm-blue-5;
+$cm-validation-color-info-pressed: $cm-blue-6;
+
+$cm-validation-border-width: 4px;
+
+/**
+ * readonly variables
+ */
+$cm-color-readonly: $cm-font-color;
+$cm-label-color-readonly: $cm-grey-4;
+$cm-background-color-readonly: $cm-grey-0;
+$cm-background-color-over-readonly: $cm-grey-1;
+$cm-background-color-selected-readonly: $cm-grey-3;
+
+/**
+ * highlighting
+ */
+$cm-highlight-color: $cm-blue-4;
+$cm-highlight-shadow: cm-inner-shadow($cm-blue-4);

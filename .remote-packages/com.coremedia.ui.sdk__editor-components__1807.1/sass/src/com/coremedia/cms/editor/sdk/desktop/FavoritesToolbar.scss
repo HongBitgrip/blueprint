@@ -1,0 +1,23 @@
+@if $cm-include-favorites-toolbar {
+  $_block: "cm-favorites-toolbar";
+  $_arrow_button_element: "arrow-button";
+  $_logo_element: "logo-box";
+  .#{$_block} {
+    &__#{$_arrow_button_element} {
+      padding-left: $cm-favorites-toolbar-menu-button-padding-left;
+    }
+    &__#{$_logo_element} {
+      padding: $cm-favorites-toolbar-icon-padding;
+      &:before {
+        content: "";
+        display: block;
+        margin: auto;
+        width: $cm-favorites-toolbar-icon-width;
+        height: $cm-favorites-toolbar-icon-height;
+        background-image: url(get-resource-path($cm-favorites-toolbar-icon-url));
+        background-repeat: no-repeat;
+        background-position: 50% 50%;
+      }
+    }
+  }
+}

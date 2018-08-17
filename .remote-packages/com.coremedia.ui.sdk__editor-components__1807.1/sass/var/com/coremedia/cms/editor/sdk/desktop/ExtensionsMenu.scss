@@ -1,0 +1,16 @@
+/**
+ * @var {number}
+ *
+ * The height of the menu.
+ *
+ * @member com.coremedia.cms.editor.sdk.desktop.ExtensionsMenu
+ */
+$cm-extensions-menu-height: dynamic(70%);
+
+/**
+ * @var {boolean}
+ * Enables styles for the ExtensionsMenu.
+ *
+ * @member com.coremedia.cms.editor.sdk.desktop.ExtensionsMenu
+ */
+$cm-include-extensions-menu: dynamic(true);

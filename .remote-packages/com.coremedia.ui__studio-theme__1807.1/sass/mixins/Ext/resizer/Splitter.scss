@@ -1,0 +1,111 @@
+/**
+ * CoreMedia UI Mixin for a Splitter.
+ * Some Parameters do not have a default value, so if omitted the styling rule is not applied.
+ *
+ * @param {string} $ui
+ * The name of the UI being created. May not include spaces or special punctuation as string is used as part of
+ * CSS class names.
+ *
+ * @param {number/list} [$margin=null]
+ * If not null defines the margin of the splitter.
+ *
+ * @param {number/list} [$border-width=null]
+ * If not null defines the border-width of the splitter.
+ *
+ * @param {string} [$border-style=null]
+ * If not null defines the border-style of the splitter.
+ *
+ * @param {color} [$border-color=null]
+ * If not null defines the border-color of the splitter.
+ *
+ * @param {color} [$background-color=$cm-splitter-background-color]
+ * If not null defines the background-color of the splitter.
+ *
+ * @param {color} [$background-color-active=null]
+ * If not null defines the active-background-color of the splitter.
+ *
+ * @param {boolean} [$hide-mask=$cm-splitter-hide-mask]
+ * If true sets the masks background-color to transparent.
+ * This can be used to correctly display the splitters background-color, even if it is disabled and a mask is applied.
+ *
+ * @param {number/list} [$click-area-extension=null]
+ * If not null extends the clickable area of the resizer by the given amount.
+ * For horizontal resizers only the top/bottom values are taken into account, while for vertical resizers the left/right
+ * values are used.
+ *
+ * @param {boolean} [$on-top=$cm-splitter-on-top]
+ * If true forces the splitter to be on top while being dragged.
+ *
+ * @member Ext.resizer.Splitter
+ */
+@mixin cm-splitter-ui(
+  $ui,
+  $margin: null,
+  $border-width: null,
+  $border-style: null,
+  $border-color: null,
+  $background-color: $cm-splitter-background-color,
+  $background-color-active: null,
+  $hide-mask: $cm-splitter-hide-mask,
+  $click-area-extension: null,
+  $on-top: $cm-splitter-on-top
+) {
+  .#{$prefix}splitter-#{$ui} {
+    @if $background-color != null {
+      background-color: $background-color;
+    }
+    @if $background-color-active != null {
+      &.#{$prefix}splitter-active {
+        background-color: $background-color-active;
+      }
+    }
+    @if $on-top {
+      &.#{$prefix}splitter-active {
+        z-index: 18000;
+      }
+    }
+    @if $border-width != null {
+      border-width: $border-width;
+    }
+    @if $border-color != null {
+      border-color: $border-color;
+    }
+    @if $border-style != null {
+      border-style: $border-style;
+    }
+    @if $margin != null {
+      margin: $margin;
+    }
+    @if $hide-mask {
+      .#{$prefix}mask {
+        background-color: transparent;
+      }
+    }
+
+    @if $click-area-extension != null {
+      position: relative;
+      &::before {
+        content: "";
+        position: absolute;
+        // this seems to override most of the z-indexes other components can have, e.g. panel headers
+        z-index: 3;
+      }
+      &.#{$prefix}splitter-horizontal {
+        &::before {
+          left: 0;
+          right: 0;
+          top: - top($click-area-extension);
+          bottom: - bottom($click-area-extension);
+        }
+      }
+      &.#{$prefix}splitter-vertical {
+        &::before {
+          left: - left($click-area-extension);
+          right: - right($click-area-extension);
+          top: 0;
+          bottom: 0;
+        }
+      }
+    }
+  }
+}

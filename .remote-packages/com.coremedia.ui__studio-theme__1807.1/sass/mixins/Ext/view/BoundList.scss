@@ -1,0 +1,22 @@
+/**
+ * CoreMedia UI Mixin for a BoundList.
+ *
+ * @param {string} $ui
+ * The name of the UI being created. May not include spaces or special punctuation as string is used as part of
+ * CSS class names.
+ *
+ * @param {number/list} [$border-radius=$cm-border-radius]
+ * If not null defines the border-radius for the BoundList.
+ *
+ * @member Ext.view.BoundList
+ */
+@mixin cm-view-boundlist-ui(
+  $ui,
+  $border-radius: $cm-border-radius
+) {
+  .#{$prefix}boundlist {
+    @if $border-radius != null {
+      border-radius: $border-radius;
+    }
+  }
+}

@@ -1,0 +1,65 @@
+/**
+ * Helper mixin to generate styles for an additional loadmask ui.
+ *
+ * @param {string} $ui
+ * The name of the UI being created. May not include spaces or special punctuation as string is used as part of
+ * CSS class names.
+ *
+ * @param {color} [$mask-background-color=$loadmask-background-color]
+ * If not null defines the background-color of the mask.
+ *
+ * @param {number} [$mask-opacity=$loadmask-opacity]
+ * If not null defines the opacity of the mask.
+ *
+ * @param {color} [$msg-background-color=loadmask-msg-background-color]
+ * If not null defines the background color of the message.
+ *
+ * @param {number/list} [$msg-padding=$loadmask-msg-padding]
+ * If not null defines the padding of the message.
+ *
+ * @param {number} [$icon-width=$cm-loadmask-icon-width]
+ * If not null defines the icon min width.
+ *
+ * @param {number} [$icon-height=$cm-loadmask-icon-height]
+ * If not null defines the icon min height.
+ *
+ *
+ */
+@mixin cm-loadmask-ui(
+  $ui,
+  $mask-background-color: $loadmask-background-color,
+  $mask-opacity: $loadmask-opacity,
+  $msg-background-color: $loadmask-msg-background-color,
+  $msg-padding: $loadmask-msg-padding,
+  $icon-width: $cm-loadmask-icon-width,
+  $icon-height: $cm-loadmask-icon-height
+) {
+  .cm-loadmask-#{$ui} {
+    &.#{$prefix}mask {
+      @if $mask-background-color != null {
+        background-color: $mask-background-color;
+      }
+      @if $mask-opacity != null {
+        opacity: $mask-opacity;
+      }
+    }
+
+    > .#{$prefix}mask-msg {
+      @if $msg-padding != null {
+        padding: $msg-padding;
+      }
+      @if $msg-background-color != null {
+        background-color: $msg-background-color;
+      }
+    }
+
+    .#{$prefix}mask-msg-text {
+      @if $icon-width != null {
+        min-width: $icon-width;
+      }
+      @if $icon-height != null {
+        min-height: $icon-height;
+      }
+    }
+  }
+}

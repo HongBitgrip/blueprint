@@ -1,0 +1,317 @@
+/**
+ * CoreMedia UI Mixin for a Table View (most likely used in grids).
+ *
+ * @param {string} $ui
+ * The name of the UI being created. May not include spaces or special punctuation as string is used as part of
+ * CSS class names.
+ *
+ * @param {color} [$row-body-background-color=$cm-grid-row-body-background-color]
+ * If not null defines the color of the grid-row-body.
+ *
+ * @param {number/list} [$row-body-cell-padding=$cm-grid-row-body-cell-padding]
+ * If not null defines the padding of the grid-row-body-cells.
+ *
+ * @param {color} [$row-body-table-row-border-color-over=$cm-grid-row-body-table-row-border-color-over]
+ * If not null defines the border-color of the <tr> element of the row added by the RowBody feature on hover.
+ *
+ * @param {color} [$row-body-table-row-border-color-selected=$cm-grid-row-body-table-row-border-color-selected]
+ * If not null defines the border-color of the <tr> element of the row added by the RowBody feature if selected.
+ *
+ * @param {string} [$row-cell-vertical-align=$cm-grid-row-cell-vertical-align]
+ * If not null defines the vertical-alignment of grid-cells.
+ *
+ * @param {color} [$row-cell-background-color-readonly=$cm-grid-row-cell-background-color-readonly]
+ * If not null defines the background-color to be applied to grid items when the read only state is active.
+ *
+ * @param {color} [$row-cell-background-color-readonly-over=$cm-grid-row-cell-background-color-readonly-over]
+ * If not null defines the background-color to be applied to grid items on hover when the read only state is active.
+ *
+ * @param {color} [$row-cell-background-color-readonly-selected=$cm-grid-row-cell-background-color-readonly-selected]
+ * If not null defines the background-color to be applied to grid items on selection when the read only state is active.
+ *
+ * @param {color} [$row-cell-border-color=$grid-row-cell-border-color]
+ * If not null defines the border color of grid-cells if the grid's rowLines config is set.
+ *
+ * @param {color} [$row-cell-border-color-over=$grid-row-cell-over-border-color]
+ * If not null defines the border over-color of grid-cells if the grid's rowLines config is set.
+ *
+ * @param {color} [$row-cell-border-color-selected=$grid-row-cell-selected-border-color]
+ * If not null defines the border selected-color of grid-cells if the grid's rowLines config is set.
+ *
+ * @param {color} [$row-cell-border-color-readonly=$cm-grid-row-cell-border-color-readonly]
+ * If not null defines the border color of grid-cells if the grid's rowLines config is set and the read only state is active.
+ *
+ * @param {color} [$row-cell-border-color-readonly-over=$cm-grid-row-cell-border-color-readonly-over]
+ * If not null defines the border over-color of grid-cells if the grid's rowLines config is set and the read only state is
+ * active.
+ *
+ * @param {color} [$row-cell-border-color-readonly-selected=$cm-grid-row-cell-border-color-readonly-selected]
+ * If not null defines the border selected-color of grid-cells if the grid's rowLines config is set and the read only state is
+ * active.
+ *
+ * @param {string} [$row-cell-empty-font-style=$cm-grid-row-cell-empty-font-style]
+ * If not null defines the font-style of the empty text.
+ *
+ * @param {number} [$row-cell-line-height=$grid-row-cell-line-height]
+ * If not null defines the line-height of grid-cells.
+ *
+ * @param {color} [$row-expander-border-color-focus=$cm-grid-row-expander-border-color-focus]
+ * If not null defines the focus border color of grid-row-expander.
+ *
+ * @param {color} [$row-expander-border-color-focus-selected=$cm-grid-row-expander-border-color-focus-selected]
+ * If not null defines the focus border color of grid-row-expander if selected.
+ *
+ * @param {color} [$row-expander-collapse-glyph-color-selected=$cm-grid-row-expander-collapse-glyph-color-selected]
+ * If not null defines the color of the row expander collapse glyph if selected.
+ *
+ * @param {color} [$row-inner-cell-border-color-focus=$cm-row-inner-cell-border-color-focus]
+ * If not null defines the focus border color of grid-inner-cells.
+ *
+ * @param {color} [$row-inner-cell-border-color-focus-selected=$cm-row-inner-cell-border-color-focus-selected]
+ * If not null defines the focus border color of grid-inner-cells if selected.
+ *
+ * @param {boolean} [$use-row-line-fix=$cm-grid-use-row-line-fix]
+ * If true sets the border-top-width of the first grid-item and the border-bottom-width of the last grid-item to 0.
+ *
+ * @member Ext.view.Table
+ */
+@mixin cm-table-view-ui(
+  $ui,
+  $row-body-background-color: $cm-grid-row-body-background-color,
+  $row-body-cell-padding: $cm-grid-row-body-cell-padding,
+  $row-body-table-row-border-color-over: $cm-grid-row-body-table-row-border-color-over,
+  $row-body-table-row-border-color-selected: $cm-grid-row-body-table-row-border-color-selected,
+  $row-cell-vertical-align: $cm-grid-row-cell-vertical-align,
+  $row-cell-background-color-readonly: $cm-grid-row-cell-background-color-readonly,
+  $row-cell-background-color-readonly-over: $cm-grid-row-cell-background-color-readonly-over,
+  $row-cell-background-color-readonly-selected: $cm-grid-row-cell-background-color-readonly-selected,
+  $row-cell-border-color: $grid-row-cell-border-color,
+  $row-cell-border-color-over: $grid-row-cell-over-border-color,
+  $row-cell-border-color-selected: $grid-row-cell-selected-border-color,
+  $row-cell-border-color-readonly: $cm-grid-row-cell-border-color-readonly,
+  $row-cell-border-color-readonly-over: $cm-grid-row-cell-border-color-readonly-over,
+  $row-cell-border-color-readonly-selected: $cm-grid-row-cell-border-color-readonly-selected,
+  $row-cell-empty-font-style: $cm-grid-row-cell-empty-font-style,
+  $row-cell-line-height: $grid-row-cell-line-height,
+  $row-expander-border-color-focus: $cm-grid-row-expander-border-color-focus,
+  $row-expander-border-color-focus-selected: $cm-grid-row-expander-border-color-focus-selected,
+  $row-expander-collapse-glyph-color-selected:$cm-grid-row-expander-collapse-glyph-color-selected,
+  $row-inner-cell-border-color-focus: $cm-row-inner-cell-border-color-focus,
+  $row-inner-cell-border-color-focus-selected: $cm-row-inner-cell-border-color-focus-selected,
+  $use-row-line-fix: $cm-grid-use-row-line-fix
+) {
+  // ExtJS has an inner logic that switches the base css class of a view when the view is declared as tree. Sadly they
+  // still share most of their styles. In order to not duplicate the mixin, also generate styling rules for the tree
+  // here.
+  .#{$prefix}grid-view-#{$ui},
+  .#{$prefix}tree-view-#{$ui} {
+
+    .#{$prefix}grid-item {
+      @if $row-cell-line-height != null {
+        line-height: $row-cell-line-height
+      }
+      .#{$prefix}grid-cell {
+        @if $row-cell-vertical-align != null {
+          vertical-align: $row-cell-vertical-align;
+        }
+        &-rowbody{
+          padding: $row-body-cell-padding;
+        }
+      }
+      .#{$prefix}grid-rowbody {
+        background-color: $row-body-background-color;
+        &-tr {
+          background-color: $row-body-background-color;
+          border: 2px solid transparent;
+        }
+      }
+      &.#{$prefix}grid-item-over {
+        & .#{$prefix}grid-rowbody-tr {
+          border-color: $row-body-table-row-border-color-over;
+        }
+      }
+      &.#{$prefix}grid-item-selected {
+        & .#{$prefix}grid-checkcolumn:after {
+          color: $grid-row-cell-selected-color;
+        }
+        & .#{$prefix}grid-rowbody-tr {
+          border-color: $row-body-table-row-border-color-selected;
+        }
+        & .#{$prefix}grid-row-expander {
+          @if $enable-font-icons {
+            color: $row-expander-collapse-glyph-color-selected;
+          }
+        }
+        & .#{$prefix}grid-item-focused {
+          & .#{$prefix}grid-row-expander {
+            outline: 1px solid $cm-grid-row-expander-border-color-focus-selected;
+          }
+        }
+      }
+      .#{$prefix}grid-item-focused {
+        & .#{$prefix}grid-row-expander {
+          outline: 1px solid $cm-grid-row-expander-border-color-focus;
+        }
+        // disable focus coming from cell
+        &  .#{$prefix}grid-cell-inner-row-expander {
+          &:before {
+            content: none;
+          }
+        }
+      }
+    }
+
+    .#{$prefix}grid-no-row-lines &,
+    &.#{$prefix}grid-with-row-lines{
+
+      .#{$prefix}grid-item-focused {
+        .#{$prefix}grid-cell-inner:before {
+          @if $row-inner-cell-border-color-focus != null {
+            border: 2px solid transparent;
+            border-radius: 4px;
+            box-shadow: cm-focus-box-shadow($row-inner-cell-border-color-focus);
+          }
+        }
+      }
+
+      .#{$prefix}grid-item-selected {
+        .#{$prefix}grid-item-focused {
+          .#{$prefix}grid-cell-inner:before {
+            @if $row-inner-cell-border-color-focus-selected != null {
+              border: 2px solid transparent;
+              border-radius: 4px;
+              box-shadow: cm-focus-box-shadow($row-inner-cell-border-color-focus-selected);
+            }
+          }
+        }
+      }
+    }
+
+    &.#{$prefix}grid-with-row-lines {
+
+      .#{$prefix}grid-item {
+        @if $row-cell-border-color != null {
+          border-color: top($row-cell-border-color);
+        }
+      }
+
+      .#{$prefix}grid-item {
+        @if $row-cell-border-color != null {
+          border-color: top($row-cell-border-color);
+        }
+      }
+
+      .#{$prefix}grid-item:first-child {
+        border-top-color: $grid-row-cell-background-color;
+      }
+
+      @if $row-cell-border-color-over != null {
+        .#{$prefix}grid-item.#{$prefix}grid-item-over {
+          border-color: $row-cell-border-color-over;
+        }
+
+        .#{$prefix}grid-item-over + .#{$prefix}grid-item {
+          border-top-color: $row-cell-border-color-over;
+        }
+      }
+
+      @if $row-cell-border-color-selected != null {
+        .#{$prefix}grid-item.#{$prefix}grid-item-selected {
+          border-color: $row-cell-border-color-selected;
+        }
+
+        .#{$prefix}grid-item-selected + .#{$prefix}grid-item {
+          border-top-color: $row-cell-border-color-selected;
+        }
+      }
+
+      .#{$prefix}grid-item:first-child {
+        @if $use-row-line-fix {
+          border-top-width: 0;
+        }
+      }
+
+      .#{$prefix}grid-item:last-child {
+        @if $use-row-line-fix {
+          border-bottom-width: 0;
+        }
+      }
+    }
+
+    // Column lines on leading edge where there may be whitespace following
+    .#{$prefix}grid-with-col-lines {
+      .#{$prefix}grid-cell {
+        border-color: $grid-col-border-color;
+      }
+
+      .#{$prefix}grid-item-over .#{$prefix}grid-cell {
+        @if $row-cell-border-color-over != null {
+          border-color: $row-cell-border-color-over;
+        }
+      }
+
+      .#{$prefix}grid-item-selected .#{$prefix}grid-cell {
+        @if $row-cell-border-color-selected != null {
+          border-color: $row-cell-border-color-selected;
+        }
+      }
+    }
+
+    > .#{$prefix}grid-empty {
+      @if $row-cell-empty-font-style != null {
+        font-style: $row-cell-empty-font-style;
+      }
+    }
+
+    &.cm-read-only {
+
+      .#{$prefix}grid-item,
+      .#{$prefix}grid-empty {
+        @if $row-cell-background-color-readonly != null {
+          background-color: $row-cell-background-color-readonly;
+        }
+      }
+
+      .#{$prefix}grid-item-over {
+        @if $row-cell-background-color-readonly-over != null {
+          background-color: $row-cell-background-color-readonly-over;
+        }
+      }
+
+      .#{$prefix}grid-item-selected {
+        @if $row-cell-background-color-readonly-selected != null {
+          background-color: $row-cell-background-color-readonly-selected;
+        }
+      }
+
+      &.#{$prefix}grid-with-row-lines {
+
+        .#{$prefix}grid-item {
+          @if $row-cell-border-color-readonly != null {
+            border-color: top($row-cell-border-color-readonly);
+          }
+        }
+
+        @if $row-cell-border-color-readonly-over != null {
+          .#{$prefix}grid-item.#{$prefix}grid-item-over {
+            border-color: $row-cell-border-color-readonly-over;
+          }
+
+          .#{$prefix}grid-item-over + .#{$prefix}grid-item {
+            border-top-color: $row-cell-border-color-readonly-over;
+          }
+        }
+
+        @if $row-cell-border-color-readonly-selected != null {
+          .#{$prefix}grid-item.#{$prefix}grid-item-selected {
+            border-color: $row-cell-border-color-readonly-selected;
+          }
+
+          .#{$prefix}grid-item-selected + .#{$prefix}grid-item {
+            border-top-color: $row-cell-border-color-readonly-selected;
+          }
+        }
+      }
+    }
+  }
+}

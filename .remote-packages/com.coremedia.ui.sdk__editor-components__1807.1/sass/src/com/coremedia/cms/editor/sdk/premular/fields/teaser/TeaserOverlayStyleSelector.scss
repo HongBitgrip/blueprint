@@ -1,0 +1,11 @@
+@if $cm-include-teaser-overlay-style-selector {
+  $_block: "cm-teaser-overlay-preview";
+  .#{$_block} {
+    border: 1px solid black;
+    padding: $cm-grid-100;
+
+    &__text {
+      font-size: $cm-font-size;
+    }
+  }
+}

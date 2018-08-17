@@ -1,0 +1,594 @@
+@if $cm-include-button-default-ui {
+  $_ui: "default";
+  @include cm-button-ui(
+    $ui: $_ui + "-small"
+  );
+  @include cm-button-ui(
+    $ui: $_ui + "-medium"
+  );
+  @include cm-button-ui(
+    $ui: $_ui + "-large"
+  );
+}
+
+@if $cm-include-button-highlight-ui {
+  $_ui: "highlight";
+  @include extjs-button-medium-ui(
+    $ui: $_ui,
+    $padding: 4px 2px,
+    $font-size: $cm-font-size,
+    $line-height: $cm-line-height,
+    $text-padding: 0,
+    $icon-spacing: 4px,
+    $border-width: $_cm-button-basic-standard-focus-border-width,
+    $border-radius: $cm-border-radius,
+    $border-color: $cm-white,
+    $border-color-over: $cm-grey-1,
+    $border-color-pressed: $cm-grey-3,
+    $background-color-over: $cm-grey-1,
+    $background-color-focus-over: $cm-grey-1,
+    $background-color-pressed: $cm-grey-3,
+    $background-color-focus-pressed: $cm-grey-3,
+    $arrow-glyph: $cm-button-arrow-glyph-right,
+    $arrow-width: 6px,
+    $inner-border-color-focus: $cm-grey-9,
+    $inner-border-color-focus-pressed: $cm-grey-9,
+    $inner-border-color-focus-over: $cm-grey-9
+  );
+  @include cm-button-ui(
+    $ui: $_ui + "-medium",
+    $enable-multiline: true
+  );
+}
+
+@if $cm-include-button-simple-highlight-ui {
+  $_ui: "simple-highlight";
+  @include extjs-button-small-ui(
+    $ui: $_ui,
+    $padding: 2px,
+    $border-width: $_cm-button-basic-standard-focus-border-width,
+    $border-color: $_cm-button-basic-standard-focus-border-color,
+    $inner-border-color-focus: $cm-grey-9,
+    $inner-border-color-focus-pressed: $cm-grey-9,
+    $inner-border-color-focus-over: $cm-grey-9
+  );
+  @include cm-button-ui(
+    $ui: $_ui + "-small",
+    $icon-color-over: $cm-blue-2
+  );
+  @include extjs-button-medium-ui(
+    $ui: $_ui,
+    $padding: 2px,
+    $border-width: $_cm-button-basic-standard-focus-border-width,
+    $border-color: $_cm-button-basic-standard-focus-border-color,
+    $inner-border-color-focus: $cm-grey-9,
+    $inner-border-color-focus-pressed: $cm-grey-9,
+    $inner-border-color-focus-over: $cm-grey-9
+  );
+  @include cm-button-ui(
+    $ui: $_ui + "-medium",
+    $icon-color-over: $cm-blue-2
+  );
+}
+
+@if $cm-include-button-inverted-ui {
+  $_ui: "inverted";
+  @include extjs-button-small-ui(
+    $ui: $_ui,
+    $background-color: transparent,
+    $color: $cm-font-light-coloured,
+    $glyph-color: $cm-icon-color-neg,
+    $text-padding: 0,
+    $font-size: $cm-font-size,
+    $line-height: $cm-grid-400,
+    $arrow-glyph: $cm-button-arrow-glyph-right,
+    $arrow-glyph-color: $cm-icon-color-neg,
+    $icon-spacing: 0,
+    $padding: 2px,
+    $arrow-width: 6px,
+    $inner-border-color-focus: $cm-font-light-coloured,
+    $inner-border-color-focus-pressed: $cm-font-light-coloured,
+    $inner-border-color-focus-over: $cm-font-light-coloured
+  );
+  @include cm-button-ui(
+    $ui: $_ui + "-small",
+    $icon-color-over: $cm-blue-2
+  );
+
+  @include extjs-button-medium-ui(
+    $ui: $_ui,
+    $background-color: $_cm-button-inverted-background-color,
+    $color: $_cm-button-inverted-color,
+    $glyph-color: $_cm-button-inverted-glyph-color,
+    $text-padding: $_cm-button-inverted-text-padding,
+    $font-size: $_cm-button-inverted-font-size,
+    $line-height: $_cm-button-inverted-line-height,
+    $arrow-glyph: $_cm-button-inverted-arrow-glyph,
+    $arrow-glyph-color: $_cm-button-inverted-arrow-glyph-color,
+    $icon-spacing: $_cm-button-inverted-icon-spacing,
+    $padding: 4px,
+    $arrow-width: $_cm-button-inverted-arrow-width,
+    $inner-border-color-focus: $cm-font-light-coloured,
+    $inner-border-color-focus-pressed: $cm-font-light-coloured,
+    $inner-border-color-focus-over: $cm-font-light-coloured
+  );
+  @include cm-button-ui(
+    $ui: $_ui + "-medium",
+    $icon-color-over: $_cm-button-inverted-icon-color-over
+  );
+}
+
+@if $cm-include-button-main-navigation-ui {
+  $_ui: "main-navigation";
+  @include extjs-button-small-ui(
+    $ui: $_ui,
+    $color: $_cm-button-main-navigation-color,
+    $background-color: $_cm-button-main-navigation-background-color,
+    $background-color-over: $_cm-button-main-navigation-background-color-over,
+    $background-color-focus: $_cm-button-main-navigation-background-color,
+    $background-color-focus-over: $_cm-button-main-navigation-background-color-over,
+    $background-color-pressed: $_cm-button-main-navigation-background-color-pressed,
+    $glyph-color: $_cm-button-main-navigation-glyph-color,
+    $padding: 9px 12px 10px,
+    $border-width: $_cm-button-basic-standard-focus-border-width,
+    $border-color: $_cm-button-basic-standard-focus-border-color,
+    $inner-border-color-focus: $_cm-button-main-navigation-inner-border-color,
+    $inner-border-color-focus-pressed: $_cm-button-main-navigation-inner-border-color,
+    $inner-border-color-focus-over: $_cm-button-main-navigation-inner-border-color,
+    $arrow-glyph-color: $_cm-button-main-navigation-glyph-color
+  );
+  @include cm-button-ui(
+    $ui: $_ui + "-small"
+  );
+}
+
+@if $cm-include-button-main-navigation-ui {
+  $_ui: "main-navigation";
+  @include extjs-button-medium-ui(
+    $ui: $_ui,
+    $color: $_cm-button-main-navigation-color,
+    $background-color: $_cm-button-main-navigation-background-color,
+    $background-color-over: $_cm-button-main-navigation-background-color-over,
+    $background-color-focus: $_cm-button-main-navigation-background-color,
+    $background-color-focus-over: $_cm-button-main-navigation-background-color-over,
+    $background-color-pressed: $_cm-button-main-navigation-background-color-pressed,
+    $glyph-color: $_cm-button-main-navigation-glyph-color,
+    $padding: 6px 11px 6px 12px,
+    $border-width: $_cm-button-basic-standard-focus-border-width,
+    $border-color: $_cm-button-basic-standard-focus-border-color,
+    $inner-border-color-focus: $_cm-button-main-navigation-inner-border-color,
+    $inner-border-color-focus-pressed: $_cm-button-main-navigation-inner-border-color,
+    $inner-border-color-focus-over: $_cm-button-main-navigation-inner-border-color,
+    $arrow-glyph-color: $_cm-button-main-navigation-glyph-color
+  );
+  @include cm-button-ui(
+    $ui: $_ui + "-medium"
+  );
+}
+
+@if $cm-include-button-toolbar-ui {
+  $_ui: "toolbar";
+  @include extjs-button-small-ui(
+    $ui: $_ui,
+    $color: $_cm-button-toolbar-color,
+    $padding: $_cm-button-toolbar-padding,
+    $border-width: $_cm-button-basic-small-focus-border-width,
+    $border-color: $_cm-button-basic-standard-focus-border-color,
+    $border-color-focus: $_cm-button-toolbar-glyph-color,
+    $border-color-focus-pressed: $_cm-button-toolbar-glyph-color,
+    $border-color-focus-over: $_cm-button-toolbar-glyph-color,
+    $background-color: $_cm-button-toolbar-background-color,
+    $background-color-over: $_cm-button-toolbar-background-color-over,
+    $background-color-pressed: $_cm-button-toolbar-background-color-pressed,
+    $inner-opacity-disabled: $_cm-button-toolbar-inner-opacity-disabled,
+    $border-radius: $cm-border-radius,
+    $glyph-color: $_cm-button-toolbar-glyph-color,
+    $arrow-glyph-color: $_cm-button-toolbar-arrow-glyph-color,
+    $split-width: $cm-grid-200
+  );
+  @include cm-button-ui(
+    $ui: $_ui + "-small",
+    $split-divider-height: 95%
+  );
+}
+
+@if $cm-include-button-toolbar-grouped-ui {
+  $_ui: "toolbar-grouped";
+  @include extjs-button-small-ui(
+    $ui: $_ui,
+    $color: $_cm-button-toolbar-color,
+    $color-pressed: $cm-icon-color-neg,
+    $padding: 2px,
+    $border-width: $_cm-button-basic-small-focus-border-width,
+    $border-color: $_cm-button-basic-standard-focus-border-color,
+    $background-color: $_cm-button-toolbar-background-color,
+    $background-color-over: $_cm-button-toolbar-background-color-over,
+    $background-color-pressed: $cm-grey-8,
+    $inner-opacity-disabled: $_cm-button-toolbar-inner-opacity-disabled,
+    $border-radius: 0,
+    $glyph-color: $_cm-button-toolbar-glyph-color,
+    $arrow-glyph-color: $_cm-button-toolbar-arrow-glyph-color,
+    $split-line-width: 0,
+    $split-width: $cm-glyph-font-size-100,
+    $text-padding: 0,
+    $inner-border-color-focus: $_cm-button-toolbar-glyph-color,
+    $inner-border-color-focus-pressed: $cm-icon-color-neg,
+    $inner-border-color-focus-over: $_cm-button-toolbar-glyph-color
+  );
+  @include cm-button-ui(
+    $ui: $_ui + "-small",
+    $icon-color-pressed: $cm-icon-color-neg,
+    $arrow-glyph-color-pressed: $cm-icon-color-neg
+  );
+}
+
+@if $cm-include-button-toolbar-dark-ui {
+  $_ui: "toolbar-dark";
+  @include extjs-button-small-ui(
+    $ui: $_ui,
+    $color: $_cm-button-toolbar-color,
+    $color-pressed: $cm-icon-color-neg,
+    $padding: $_cm-button-toolbar-padding,
+    $border-width: $_cm-button-basic-small-focus-border-width,
+    $border-color: $_cm-button-basic-standard-focus-border-color,
+    $border-color-focus: $_cm-button-toolbar-glyph-color,
+    $border-color-focus-pressed: $cm-icon-color-neg,
+    $border-color-focus-over: $_cm-button-toolbar-glyph-color,
+    $background-color: $_cm-button-toolbar-background-color,
+    $background-color-over: $_cm-button-toolbar-dark-background-color-over,
+    $background-color-pressed: $_cm-button-toolbar-dark-background-color-pressed,
+    $inner-opacity-disabled: $_cm-button-toolbar-inner-opacity-disabled,
+    $border-radius: $cm-border-radius,
+    $glyph-color: $_cm-button-toolbar-glyph-color,
+    $arrow-glyph-color: $_cm-button-toolbar-arrow-glyph-color
+  );
+  @include cm-button-ui(
+    $ui: $_ui + "-small",
+    $icon-color-pressed: $cm-icon-color-neg,
+    $split-divider-height: 95%
+  );
+}
+
+@if $cm-include-button-toolbar-dark-grouped-ui {
+  $_ui: "toolbar-dark-grouped";
+  @include extjs-button-small-ui(
+    $ui: $_ui,
+    $color: $_cm-button-toolbar-color,
+    $color-pressed: $cm-icon-color-neg,
+    $padding: $_cm-button-toolbar-padding,
+    $border-width: $_cm-button-basic-small-focus-border-width,
+    $border-color: $_cm-button-basic-standard-focus-border-color,
+    $background-color: $_cm-button-toolbar-background-color,
+    $background-color-over: $_cm-button-toolbar-dark-background-color-over,
+    $background-color-pressed: $_cm-button-toolbar-dark-background-color-pressed,
+    $inner-opacity-disabled: $_cm-button-toolbar-inner-opacity-disabled,
+    $border-radius: 0,
+    $glyph-color: $_cm-button-toolbar-glyph-color,
+    $arrow-glyph-color: $_cm-button-toolbar-arrow-glyph-color,
+    $split-width: $cm-grid-200,
+    $text-padding: 2px,
+    $inner-border-color-focus: $_cm-button-toolbar-glyph-color,
+    $inner-border-color-focus-pressed: $cm-icon-color-neg,
+    $inner-border-color-focus-over: $_cm-button-toolbar-glyph-color
+  );
+  @include cm-button-ui(
+    $ui: $_ui + "-small",
+    $icon-color-pressed: $cm-icon-color-neg,
+    $arrow-glyph-color-pressed: $cm-icon-color-neg,
+    $arrow-glyph-border-color-focus-pressed: $cm-icon-color-neg,
+    $arrow-right-padding: 0,
+    $split-divider-height: 95%
+  );
+}
+
+@if $cm-include-button-workarea-ui {
+  $_ui: "workarea";
+  @include extjs-button-medium-ui(
+    $ui: $_ui,
+    $color: $cm-grey-9,
+    $border-width: $_cm-button-basic-standard-focus-border-width,
+    $border-radius: $cm-border-radius,
+    $border-color: $cm-white,
+    $border-color-over: $cm-grey-1,
+    $border-color-pressed: $cm-grey-3,
+    $background-color: $cm-white,
+    $background-color-over: $cm-grey-1,
+    $background-color-pressed: $cm-grey-3,
+    $glyph-color: $cm-grey-9,
+    $text-padding: 6px,
+    $font-size: $cm-font-size,
+    $arrow-glyph-color: $cm-grey-9,
+    $inner-border-color-focus: $cm-grey-9,
+    $inner-border-color-focus-pressed: $cm-grey-9,
+    $inner-border-color-focus-over: $cm-grey-9,
+    $split-width: $cm-grid-200
+  );
+  @include cm-button-ui(
+    $ui: $_ui + "-medium",
+    $padding: 2px,
+    $arrow-right-padding: 0,
+    $split-divider-height: 95%
+  );
+}
+
+@if $cm-include-button-simple-ui {
+  $_ui: "simple";
+  @include extjs-button-small-ui(
+    $ui: $_ui,
+    $color: $cm-font-color,
+    $border-width: $_cm-button-basic-standard-focus-border-width,
+    $border-color: $_cm-button-basic-standard-focus-border-color,
+    $padding: 2px,
+    $glyph-color: $cm-darkgrey,
+    $font-weight: $cm-font-weight,
+    $inner-border-color-focus: $cm-font-color,
+    $inner-border-color-focus-pressed: $cm-font-color,
+    $inner-border-color-focus-over: $cm-font-color
+  );
+  @include cm-button-ui(
+    $ui: $_ui + "-small",
+    $text-decoration: underline
+  );
+}
+
+@if $cm-include-button-simple-inverted-ui {
+  $_ui: "simple-inverted";
+  @include extjs-button-small-ui(
+    $ui: $_ui,
+    $color: $cm-white,
+    $border-width: $_cm-button-basic-standard-focus-border-width,
+    $border-color: $_cm-button-basic-standard-focus-border-color,
+    $padding: 2px,
+    $glyph-color: $cm-white,
+    $inner-border-color-focus: $cm-white,
+    $inner-border-color-focus-pressed: $cm-white,
+    $inner-border-color-focus-over: $cm-white
+  );
+  @include cm-button-ui(
+    $ui: $_ui + "-small"
+  );
+}
+// render behaviour as text, underlined
+@if $cm-include-button-link-ui {
+  $_ui: "link";
+  @include extjs-button-small-ui(
+    $ui: $_ui,
+    $color: $cm-font-color,
+    $border-width: $_cm-button-basic-small-focus-border-width,
+    $border-color: $_cm-button-basic-standard-focus-border-color,
+    $border-color-focus: $cm-font-color,
+    $border-color-focus-over: $cm-font-color,
+    $border-color-focus-pressed: $cm-font-color,
+    $padding: 2px,
+    $text-padding: 0
+  );
+  @include cm-button-ui(
+    $ui: $_ui + "-small",
+    $icon-rendering-disabled: true,
+    $text-decoration: underline,
+    $text-max-width: inherit,
+    $text-word-break: break-all,
+    $text-white-space: pre-wrap,
+    $text-float: left,
+    $text-align: left
+  );
+}
+
+@if $cm-include-button-footer-primary-ui {
+  $_ui: "footer-primary";
+  @include extjs-button-small-ui(
+    $ui: $_ui,
+    $color: $_cm-button-basic-primary-color,
+    $color-over: $_cm-button-basic-color-over,
+    $color-pressed: $_cm-button-basic-color-pressed,
+    $color-disabled: $_cm-button-basic-color-disabled,
+    $background-color: $_cm-button-footer-background-color,
+    $background-color-over: $_cm-button-basic-background-color-over,
+    $background-color-pressed: $_cm-button-basic-background-color-pressed,
+    $padding: $_cm-button-basic-padding,
+    $font-weight: $_cm-button-basic-font-weight,
+    $border-width: $_cm-button-basic-standard-focus-border-width,
+    $border-color: $_cm-button-basic-standard-focus-border-color,
+    $border-radius: $_cm-button-basic-border-radius,
+    $inner-border-color-focus: $_cm-button-basic-primary-color,
+    $inner-border-color-focus-pressed: $_cm-button-basic-color-pressed,
+    $inner-border-color-focus-over: $_cm-button-basic-color-over
+  );
+  @include cm-button-ui(
+    $ui: $_ui + "-small"
+  );
+}
+
+@if $cm-include-button-footer-secondary-ui {
+  $_ui: "footer-secondary";
+  @include extjs-button-small-ui(
+    $ui: $_ui,
+    $color: $_cm-button-basic-secondary-color,
+    $color-over: $_cm-button-basic-color-over,
+    $color-pressed: $_cm-button-basic-color-pressed,
+    $color-disabled: $_cm-button-basic-color-disabled,
+    $background-color: $_cm-button-footer-background-color,
+    $background-color-over: $_cm-button-basic-background-color-over,
+    $background-color-pressed: $_cm-button-basic-background-color-pressed,
+    $padding: $_cm-button-basic-padding,
+    $font-weight: $_cm-button-basic-font-weight,
+    $border-width: $_cm-button-basic-standard-focus-border-width,
+    $border-color: $_cm-button-basic-standard-focus-border-color,
+    $border-radius: $_cm-button-basic-border-radius,
+    $inner-border-color-focus: $_cm-button-basic-secondary-color,
+    $inner-border-color-focus-pressed: $_cm-button-basic-color-pressed,
+    $inner-border-color-focus-over: $_cm-button-basic-color-over
+  );
+  @include cm-button-ui(
+    $ui: $_ui + "-small"
+  );
+}
+
+@if $cm-include-button-inline-ui {
+  $_ui: "inline";
+  @include extjs-button-small-ui(
+    $ui: $_ui,
+    $color: $_cm-button-basic-secondary-color,
+    $color-over: $_cm-button-basic-color-over,
+    $color-pressed: $_cm-button-basic-color-pressed,
+    $color-disabled: $_cm-button-basic-color-disabled,
+    $background-color: $_cm-button-inline-background-color,
+    $background-color-over: $_cm-button-basic-background-color-over,
+    $background-color-pressed: $_cm-button-basic-background-color-pressed,
+    $padding: $_cm-button-basic-padding,
+    $font-weight: $_cm-button-basic-font-weight,
+    $border-radius: $_cm-button-basic-border-radius,
+    $border-width: $_cm-button-basic-standard-focus-border-width,
+    $border-color: $_cm-button-basic-standard-focus-border-color,
+    $inner-border-color-focus: $_cm-button-basic-secondary-color,
+    $inner-border-color-focus-pressed: $_cm-button-basic-color-over,
+    $inner-border-color-focus-over: $_cm-button-basic-color-pressed
+  );
+  @include cm-button-ui(
+    $ui: $_ui + "-small",
+    //$box-shadow: $_cm-button-inline-box-shadow,
+    $icon-color-pressed: $_cm-button-basic-color-pressed,
+    $icon-color-over: $_cm-button-basic-color-over,
+    $arrow-glyph-color-pressed: $_cm-button-basic-color-pressed,
+    $arrow-glyph-color-over: $_cm-button-basic-color-over
+  );
+}
+
+// breadcrumb toolbar button in library
+@if $cm-include-button-breadcrumb-ui {
+  $_ui: "breadcrumb";
+  @include extjs-button-small-ui(
+    $ui: $_ui,
+    $color: $cm-font-color,
+    $color-over: $cm-font-over-color,
+    $color-pressed: $cm-font-pressed-color,
+    $glyph-color: $cm-darkgrey,
+    $background-color-over: $cm-grey-2,
+    $background-color-focus: transparent,
+    $background-color-pressed: $cm-grey-3,
+    $background-color-focus-over: $cm-grey-2,
+    $background-color-focus-pressed: $cm-grey-3,
+    $arrow-glyph-color: $cm-darkgrey,
+    $arrow-glyph: $cm-button-arrow-glyph-right,
+    $split-line-width: 1px,
+    $split-line-color: transparent,
+    $border-radius: $cm-border-radius,
+    $padding: 2px 0,
+    $border-width: $_cm-button-basic-standard-focus-border-width,
+    $border-color: $_cm-button-basic-standard-focus-border-color,
+    $font-weight: $cm-font-weight,
+    $opacity-disabled: 1,
+    $inner-border-color-focus: $cm-font-color,
+    $inner-border-color-focus-pressed: $cm-font-color,
+    $inner-border-color-focus-over: $cm-font-color
+  );
+  @include cm-button-ui(
+    $ui: $_ui + "-small",
+    $arrow-glyph-menu-active: $cm-button-arrow-glyph-down,
+    $split-divider-height: 95%
+  );
+}
+
+@if $cm-include-button-user-menu-ui {
+  $_ui: "user-menu";
+  @include extjs-button-small-ui(
+    $ui: $_ui,
+    $color: $cm-white,
+    $color-over: $cm-blue-5,
+    $color-pressed: $cm-blue-5,
+    $background-color: transparent,
+    $background-color-over: $cm-white,
+    $background-color-pressed: $cm-white,
+    $border-radius: $cm-border-radius,
+    $border-width: $_cm-button-basic-standard-focus-border-width,
+    $border-color: $_cm-button-basic-standard-focus-border-color,
+    $padding: 1px 1px,
+    $font-weight: $cm-font-weight,
+    $arrow-glyph-color: $cm-white,
+    $inner-border-color-focus: $cm-white,
+    $inner-border-color-focus-pressed: $cm-blue-5,
+    $inner-border-color-focus-over: $cm-blue-5
+  );
+  @include cm-button-ui(
+    $ui: $_ui + "-small",
+    $arrow-right-font-size: 10px,
+    $arrow-right-padding: 0 6px 0 0,
+    $arrow-glyph-color-over: $cm-blue-5,
+    $arrow-glyph-color-pressed: $cm-blue-5
+  );
+}
+
+@if $cm-include-button-vivid-ui {
+  $_ui: "vivid";
+  @include extjs-button-small-ui(
+    $ui: $_ui,
+    $color: $cm-font-light-coloured,
+    $color-over: $cm-white,
+    $color-pressed: $cm-white,
+    $background-color: $cm-blue-5,
+    $background-color-over: $cm-blue-4,
+    $background-color-pressed: $cm-blue-7,
+    $padding: 3px 13px,
+    $font-weight: $cm-font-weight-bold,
+    $border-radius: $cm-border-radius,
+    $border-width: $_cm-button-basic-standard-focus-border-width,
+    $border-color: $_cm-button-basic-standard-focus-border-color,
+    $inner-border-color-focus: $cm-font-light-coloured,
+    $inner-border-color-focus-pressed: $cm-white,
+    $inner-border-color-focus-over: $cm-white
+  );
+  @include cm-button-ui(
+    $ui: $_ui + "-small"
+  );
+}
+
+@if $cm-include-button-vivid-toolbar-ui {
+  $_ui: "vivid-toolbar";
+  @include extjs-button-small-ui(
+    $ui: $_ui,
+    $color: $cm-blue-5,
+    $color-over: $cm-white,
+    $color-pressed: $cm-blue-5,
+    $color-focus-pressed: $cm-blue-5,
+    $background-color: $cm-white,
+    $background-color-over: $cm-blue-3,
+    $background-color-pressed: $cm-white,
+    $padding: 1px,
+    $font-weight: $cm-font-weight-bold,
+    $border-radius: $cm-border-radius,
+    $border-width: $_cm-button-basic-standard-focus-border-width,
+    $border-color: $_cm-button-basic-standard-focus-border-color,
+    $inner-border-color-focus: $cm-blue-5,
+    $inner-border-color-focus-pressed: $cm-blue-5,
+    $inner-border-color-focus-over: $cm-blue-5
+  );
+  @include cm-button-ui(
+    $ui: $_ui + "-small",
+    $arrow-right-font-size: 10px,
+    $arrow-right-padding: 0 6px 0 0,
+    $enable-color-state-fix: true,
+    $used-color-over: $cm-blue-5,
+    $used-color-pressed: $cm-blue-5
+  );
+}
+
+@if $cm-include-button-logo-ui {
+  $_ui: "logo";
+  @include extjs-button-medium-ui(
+    $ui: $_ui,
+    $color: $cm-blue-4,
+    $color-over: $cm-blue-4,
+    $color-pressed: $cm-blue-4,
+    $background-color: $cm-white,
+    $background-color-over: $cm-white,
+    $background-color-pressed: $cm-white,
+    $glyph-color: $cm-blue-4,
+    $padding: 2px,
+    $inner-border-color-focus: $cm-blue-4,
+    $inner-border-color-focus-pressed: $cm-blue-4,
+    $inner-border-color-focus-over: $cm-blue-4
+  );
+  @include cm-button-ui(
+    $ui: $_ui + "-medium"
+  );
+}

@@ -1,0 +1,194 @@
+// sets the button focus style
+@mixin cm-standard-inner-border ($inner-border-color: $cm-font-focus-color) {
+  box-shadow: $inner-border-color 0 1px 0 0 inset,
+              $inner-border-color 0 -1px 0 0 inset,
+              $inner-border-color -1px 0 0 0 inset,
+              $inner-border-color 1px 0 0 0 inset;
+}
+
+@if $cm-include-richtextarea-dialog {
+  $_cke-mask: "cke_dialog_background_cover";
+  // reset dialog
+  $_cke-reset-all: "cke_reset_all";
+  // dialog window
+  $_cke-dialog: "cke_dialog";
+  // button e.g. footer button
+  $_cke-button: "cke_dialog_ui_button";
+
+  // modal mask
+  div.#{$_cke-mask} {
+    background-color: $cm-richtextarea-mask-background-color !important;
+    opacity: $cm-richtextarea-mask-opacity !important;
+  }
+
+  // change the order of the dialogs bottom toolbar's buttons (Cancel button needs to be on the right side)
+  .#{$_cke-dialog} {
+    &.cke_ltr .cke_dialog_footer_buttons .cke_dialog_ui_hbox_last,
+    &.cke_ltr .cke_dialog_footer_buttons .cke_dialog_ui_hbox_child {
+      float: left;
+    }
+
+    &.cke_ltr .cke_dialog_footer_buttons .cke_dialog_ui_hbox_first,
+    &.cke_ltr .cke_dialog_footer_buttons .cke_dialog_ui_hbox_child {
+      float: right;
+      padding-right: 0;
+      padding-left: 5px;
+    }
+  }
+
+  div.#{$_cke-reset-all} {
+    // sets the standard studio font
+    *,
+    a,
+    textarea {
+      font-family: $cm-richtextarea-dialog-font-family;
+      font-size: $cm-richtextarea-dialog-text-font-size;
+      font-weight: $cm-richtextarea-dialog-text-font-weight;
+      line-height: $cm-richtextarea-dialog-text-line-height;
+      color: $cm-richtextarea-dialog-text-font-color;
+    }
+    .#{$_cke-dialog} {
+      border-radius: $cm-richtextarea-dialog-border-radius;
+      //shadow for dialog with same color as Coremedia ExtJS theme
+      box-shadow: $cm-elevation-box-shadow-75;
+      // the inner boundary container
+      &_body {
+        border-style: $cm-richtextarea-dialog-border-style;
+        border-width: $cm-richtextarea-dialog-border-width;
+        border-radius: $cm-richtextarea-dialog-border-radius;
+        border-color: $cm-richtextarea-dialog-border-color;
+        overflow: hidden;
+      }
+      // the dialog title
+      &_title {
+        background-color: $cm-richtextarea-dialog-background-color;
+        background-image: none;
+        padding: top($cm-richtextarea-dialog-title-padding) right($cm-richtextarea-dialog-title-padding * 2) bottom($cm-richtextarea-dialog-title-padding) left($cm-richtextarea-dialog-title-padding * 2);
+        font-size: $cm-richtextarea-dialog-title-font-size;
+        font-weight: $cm-richtextarea-dialog-title-font-weight;
+        line-height: $cm-richtextarea-dialog-title-line-height;
+        color: $cm-richtextarea-dialog-title-font-color;
+        text-shadow: none;
+        border-bottom: none;
+        border-radius: 0;
+        box-shadow: none;
+      }
+      // The contents body part, which will hold all elements available in the dialog.
+      // All cke vbox child have their own padding of 5px so we have to adjust the content body setting.
+      &_contents_body {
+        padding: $cm-richtextarea-dialog-body-padding;
+        margin-top: 22px;
+        height: auto !important;
+        .cke_dialog_ui_vbox_child {
+          padding: $cm-richtextarea-dialog-items-padding;
+        }
+        & iframe.cke_pasteframe {
+          border-radius: $cm-border-radius;
+        }
+      }
+      // The dialog footer, which usually contains the "Ok" and "Cancel" buttons as
+      // well as a resize handler.
+      &_footer {
+        outline: none;
+        background: $cm-richtextarea-dialog-footer-background-color;
+        box-shadow: 0 0 4px 0 transparentize($cm-black, .5);
+        &_buttons {
+          margin: $cm-richtextarea-dialog-footer-margin;
+        }
+      }
+      .cke_resizer_ltr {
+        display: none;
+      }
+      // labels
+      .cke_dialog_ui_labeled_label {
+        font-weight: $cm-richtextarea-dialog-label-font-weight;
+      }
+      // form fields
+      .#{$_cke-dialog}_ui_input_text,
+      .#{$_cke-dialog}_ui_input_textarea,
+      .#{$_cke-dialog}_ui_input_select,
+      .#{$_cke-dialog}_ui_input_password {
+        border-radius: $cm-richtextarea-dialog-border-radius;
+        border-color: $cm-richtextarea-border-color;
+        box-shadow: none;
+        &:hover {
+          border-color: $cm-richtextarea-border-color;
+        }
+        &:focus {
+          border-color: $cm-richtextarea-focus-border-color;
+          box-shadow: $cm-richtextarea-shadow-focus;
+          transition: $cm-richtextarea-field-input-transition;
+        }
+      }
+    }
+    // close button
+    a {
+      &.#{$_cke-dialog}_close_button {
+        right: 10px;
+        top: 10px;
+        background-image: none;
+        line-height: 1;
+        font-family: $cm-richtextarea-dialog-close-glyph-font-family;
+        font-size: $cm-richtextarea-dialog-close-glyph-size;
+        color: $cm-richtextarea-dialog-close-glyph-color;
+        &:before {
+          content: $cm-richtextarea-dialog-close-glyph-name;
+        }
+      }
+      // standard ui buttons
+      &.#{$_cke-dialog}_ui_button {
+        border-radius: $cm-richtextarea-dialog-footer-button-border-radius;
+        background: transparent;
+        padding: 4px 0;
+        min-width: 68px;
+        height: 18px;
+        outline: 0 none;
+        text-shadow: none;
+        border-width: 2px;
+        border-color: transparent;
+        color: $cm-richtextarea-dialog-button-font-color-secondary;
+        box-shadow: none;
+        box-sizing: content-box;
+        &:hover {
+          background-color: $cm-richtextarea-dialog-footer-button-background-color-hover;
+          color: $cm-richtextarea-dialog-button-font-color-hover-pressed;
+        }
+        &:focus {
+          background-color: $cm-richtextarea-dialog-footer-button-background-color-focus;
+          @include cm-standard-inner-border($cm-richtextarea-dialog-footer-button-focus-secondary);
+          &:hover {
+            background-color: $cm-richtextarea-dialog-footer-button-background-color-focus-hover;
+            @include cm-standard-inner-border($cm-richtextarea-dialog-footer-button-focus-hover-secondary);
+            &:active {
+              background-color: $cm-richtextarea-dialog-footer-button-background-color-pressed;
+            }
+          }
+        }
+      }
+      // special class appended to the as suggestion Ok button
+      &.#{$_cke-dialog}_ui_button {
+        &.#{$_cke-dialog}_ui_button_ok {
+          color: $cm-richtextarea-dialog-button-font-color-primary;
+          &:hover {
+            color: $cm-richtextarea-dialog-button-font-color-hover-pressed;
+            box-shadow: none;
+          }
+          &:focus {
+            @include cm-standard-inner-border($_cm-button-basic-primary-color);
+            &:hover {
+              @include cm-standard-inner-border($cm-richtextarea-dialog-footer-button-focus-hover-primary);
+              color: $cm-richtextarea-dialog-button-font-color-hover-pressed;
+            }
+          }
+        }
+      }
+      // text in buttons
+      span.#{$_cke-dialog}_ui_button {
+        font-size: $cm-richtextarea-dialog-text-font-size;
+        font-weight: $cm-richtextarea-dialog-footer-button-font-weight;
+        text-shadow: none;
+        padding: 0 8px;
+      }
+    }
+  }
+}

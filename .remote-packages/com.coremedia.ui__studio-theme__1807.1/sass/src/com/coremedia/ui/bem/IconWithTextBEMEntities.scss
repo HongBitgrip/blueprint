@@ -1,0 +1,70 @@
+@if $cm-include-icon-with-text {
+  $_block: "cm-icon-with-text";
+  .#{$_block} {
+    line-height: $cm-icon-with-text-line-height;
+    @include cm-ellipsis;
+
+    &__icon {
+      display: inline-block;
+      color: $cm-icon-with-text-icon-color;
+      text-align: center;
+      vertical-align: middle;
+      width: $cm-icon-with-text-icon-font-size;
+      height: $cm-icon-with-text-icon-font-size;
+      font-size: $cm-icon-with-text-icon-font-size;
+      line-height: 1;
+    }
+
+    &__text {
+      color: $cm-icon-with-text-text-color;
+      margin-left: $cm-grid-100;
+      vertical-align: middle;
+      font-size: $cm-icon-with-text-text-font-size;
+    }
+
+    &--disabled {
+      opacity: 0.3;
+    }
+
+    &--icon-only {
+      .#{$_block}__text {
+        display: none;
+      }
+    }
+
+    &--disclosing {
+      opacity: 0;
+      cursor: pointer;
+
+      .#{$prefix}grid-row:hover &,
+      .#{$prefix}grid-item-focused & {
+        opacity: 1;
+      }
+    }
+
+    &--error {
+      margin-left: -5px;
+
+      .#{$_block}__icon {
+        color: $cm-validation-color-error;
+      }
+    }
+
+    // combination of modifiers
+    .#{$_block}--disabled.#{$_block}--disclosing {
+      .#{$prefix}grid-row:hover &,
+      .#{$prefix}grid-item-focused & {
+        opacity: 0.3;
+      }
+    }
+
+    .#{$prefix}grid-item-selected & {
+      .#{$_block}__icon {
+        color: $cm-icon-with-text-icon-color-selected;
+      }
+      .#{$_block}__text {
+        color: $cm-icon-with-text-text-color-selected;
+      }
+    }
+  }
+}

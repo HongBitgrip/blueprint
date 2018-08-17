@@ -1,0 +1,167 @@
+/**
+ * Only to be used in after #extjs-display-field-ui mixin has been included.
+ *
+ * CoreMedia UI Mixin for a Display-Field.
+ * Some parameters do not have a default value, so if omitted the styling rule is not applied.
+ *
+ * @param {string} $ui
+ * The name of the UI being created. May not include spaces or special punctuation as string is used as part of
+ * CSS class names.
+ *
+ * @param {string} [$font-style=null]
+ * If not null, defines the font-style of the value (e.g. italic).
+ *
+ * @param {color} [$color-disabled=null]
+ * If not null defines the disabled color of the display-field.
+ *
+ * @param {color} [$color-error=$cm-validation-color-error]
+ * If not null defines the color to be applied when the error state is active.
+ *
+ * @param {color} [$color-warning=$cm-validation-color-warning]
+ * If not null defines the color to be applied when the warning state is active.
+ *
+ * @param {color} [$color-info=$cm-validation-color-info]
+ * If not null defines the color to be applied when the info state is active.
+ *
+ * @param {color} [$color-success=$cm-validation-color-success]
+ * If not null defines the color to be applied when the success state is active.
+ *
+ * @param {string} [$text-decoration=null]
+ * If not null, defines the text-decoration of the value (e.g. underline).
+ *
+ * @param {string} [$value-text-align=null]
+ * If not null defines the text-align of the value.
+ *
+ * @param {number} [$first-line-font-size=null]
+ * If not null, defines the font-size of the first line of the value.
+ *
+ * @param {string} [$first-line-font-weight=null]
+ * If not null, defines the font-weight of the first line of the value.
+ *
+ * @param {boolean} [$fix-field-height=$cm-display-field-fix-field-height]
+ * Defines if the field-height fix should be applied for display-fields. Requires parameters $used-field-height and
+ * $used-line-height to be set.
+ *
+ * @param {number} [$used-field-height=$form-field-height]
+ * Only applies if $fix-field-height is true. Defines the used value for $ui-field-height in the prior
+ * inclusion of the #extjs-display-field-ui mixin.
+ *
+ * @param {number} [$used-line-height=$form-display-field-line-height]
+ * Only applies if $fix-field-height is true. Defines the used value for $ui-line-height in the prior
+ * inclusion of the #extjs-display-field-ui mixin.
+ *
+ * @member Ext.form.field.Display
+ */
+@mixin cm-display-field-ui(
+  $ui,
+  $font-style: null,
+  $color-disabled: null,
+  $color-error: $cm-validation-color-error,
+  $color-warning: $cm-validation-color-warning,
+  $color-info: $cm-validation-color-info,
+  $color-success: $cm-validation-color-success,
+  $text-decoration: null,
+  $value-text-align: null,
+  $first-line-font-size: null,
+  $first-line-font-weight: null,
+  $fix-field-height: $cm-display-field-fix-field-height,
+  $used-field-height: $form-field-height,
+  $used-line-height: $form-display-field-line-height
+) {
+  .#{$prefix}form-display-field-#{$ui} {
+    @if $font-style != null {
+      font-style: $font-style;
+    }
+    @if $text-decoration != null {
+      text-decoration: $text-decoration;
+    }
+    @if $value-text-align != null {
+      text-align: $value-text-align;
+    }
+    @if $fix-field-height and $used-field-height != null and $used-line-height != null {
+      margin-top: 0;
+      padding-top: round(($used-field-height - $used-line-height) / 2);
+    }
+
+    &::first-line {
+      @if $first-line-font-size != null {
+        font-size: $first-line-font-size;
+      }
+      @if $first-line-font-weight {
+        font-weight: $first-line-font-weight;
+      }
+    }
+  }
+
+  .#{$prefix}field-#{$ui} {
+    // Mixed in CSS STATEs
+    &.cm-overflow-behavior {
+      // currently only affects the value part of the display field
+      &--ellipsis {
+        .#{$prefix}form-display-field-#{$ui} {
+          text-overflow: ellipsis;
+          white-space: nowrap;
+          overflow: hidden;
+        }
+      }
+      &--break-all {
+        .#{$prefix}form-display-field-#{$ui} {
+          word-break: break-all;
+        }
+      }
+      &--break-word {
+        .#{$prefix}form-display-field-#{$ui} {
+          word-break: normal;
+        }
+      }
+    }
+
+    &.cm-text-align {
+      &--left {
+        .#{$prefix}form-display-field-#{$ui} {
+          text-align: left;
+        }
+      }
+      &--center {
+        .#{$prefix}form-display-field-#{$ui} {
+          text-align: center;
+        }
+      }
+      &--right {
+        .#{$prefix}form-display-field-#{$ui} {
+          text-align: right;
+        }
+      }
+      &--justify {
+        .#{$prefix}form-display-field-#{$ui} {
+          text-align: justify;
+        }
+      }
+    }
+
+    &.#{$prefix}item-disabled {
+      .#{$prefix}form-display-field-#{$ui} {
+        @if $color-disabled != null {
+          color: $color-disabled;
+        }
+      }
+    }
+
+    $state-map: (
+      "error"   : (color: $color-error),
+      "warning" : (color: $color-warning),
+      "info"    : (color: $color-info),
+      "success" : (color: $color-success)
+    );
+
+    @each $state, $map in $state-map {
+      &.cm-validation-state-#{$state} {
+        .#{$prefix}form-display-field-#{$ui} {
+          @if map_get($map, color) != null {
+            color: map_get($map, color);
+          }
+        }
+      }
+    }
+  }
+}

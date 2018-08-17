@@ -1,0 +1,47 @@
+@import '../studio-theme-vars';
+
+$enable-font-open-sans: dynamic(false);
+$font-family: dynamic($cm-font-family);
+$font-size: dynamic($cm-font-size);
+$font-weight: dynamic($cm-font-weight);
+$font-weight-bold: dynamic($cm-font-weight-bold);
+
+$body-background-color: dynamic($cm-white);
+$enable-font-icons: dynamic(true);
+$enable-font-smoothing: dynamic(false);
+
+$css-shadow-border-radius: dynamic($cm-border-radius);
+
+/**
+ * we only support "modern" ie browsers
+ */
+$include-ie: dynamic(false);
+/**
+ * only one usage which cause alignment bugs in text fields
+ */
+$include-webkit: dynamic(false);
+
+/**
+ * we only support "modern" ie browsers
+ */
+$include-ie: dynamic(false);
+/**
+ * only one usage which cause alignment bugs in text fields
+ */
+$include-webkit: dynamic(false);
+
+/**
+ * @var {list}
+ * Default arrow glyph when the button menu pops up to the bottom
+ *
+ * @member Ext.Component
+ */
+$cm-spinner-animation: dynamic(cm-spin 2s infinite linear);
+
+/**
+ * @var {boolean}
+ * Enables font-smoothing for font-awesome, cm-core-icons and cm-collaboration-icons. This prevents blurry icons e.g. on Mac OS.
+ *
+ * @member Ext.Component
+ */
+$cm-enable-icon-font-smoothing:dynamic(true);

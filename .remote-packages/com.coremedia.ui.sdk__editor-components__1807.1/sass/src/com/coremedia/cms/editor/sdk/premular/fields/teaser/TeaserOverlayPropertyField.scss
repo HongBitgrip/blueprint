@@ -1,0 +1,17 @@
+@if $cm-include-teaser-overlay-property-field {
+  $_block: "cm-position-chooser";
+  .#{$_block} {
+
+    &__group {
+      border: 1px solid $cm-grey-4;
+
+      & .#{$prefix}form-cb-label {
+        display: block;
+        & > div {
+          width: 36px;
+          height: 36px;
+        }
+      }
+    }
+  }
+}

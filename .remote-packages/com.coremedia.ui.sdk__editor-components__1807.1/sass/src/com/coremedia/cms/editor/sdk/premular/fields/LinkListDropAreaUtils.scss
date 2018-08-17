@@ -1,0 +1,36 @@
+@if $cm-include-link-list-drop-area-with-content-suggestions {
+
+  $_link_list_drop_area_block: "cm-link-list-drop-area--with-suggestions";
+  $_link_list_drop_area_element: $_link_list_drop_area_block + "__button";
+
+  .#{$_link_list_drop_area_block} {
+    cursor: default;
+    .#{$_link_list_drop_area_element} {
+      width: 32px;
+      height: $cm-field-height;
+      .#{$prefix}btn-icon {
+        top: -2px;
+      }
+    }
+  }
+
+  $_boundlist_block: "cm-link-list-drop-area-content-suggestions-boundlist";
+  $_boundlist_element: $_boundlist_block + "__empty";
+  $_icon_with_text-bem_entities_block: "cm-icon-with-text";
+  $_icon_with_text-bem_entities_element_text: $_icon_with_text-bem_entities_block + "__text";
+
+  .#{$_boundlist_block} {
+    &.#{$_icon_with_text-bem_entities_block} {
+      display: flex;
+      padding: $cm-grid-25 0;
+    }
+    .#{$_icon_with_text-bem_entities_element_text} {
+      margin-right: $cm-grid-100;
+      width: 100%;
+      @include  cm-ellipsis;
+    }
+    .#{$_boundlist_element} {
+      padding: 0 $cm-grid-25;
+    }
+  }
+}

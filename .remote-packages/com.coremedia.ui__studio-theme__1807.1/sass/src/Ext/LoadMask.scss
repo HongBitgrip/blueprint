@@ -1,0 +1,34 @@
+@if $cm-include-loadmask-default-ui {
+  $_ui: "default";
+  @include cm-loadmask-ui(
+    $ui: $_ui
+  );
+}
+
+@if $cm-include-loadmask-light-ui {
+  $_ui: "light";
+  @include cm-loadmask-ui(
+    $ui: $_ui,
+    $mask-background-color: $cm-white,
+    $msg-padding: 5px,
+    $msg-background-color: $cm-white,
+    $mask-opacity: 1
+  );
+}
+
+@if $cm-include-loadmask-opaque-ui {
+  $_ui: "opaque";
+  @include cm-loadmask-ui(
+    $ui: $_ui,
+    $mask-opacity: 1
+  );
+}
+
+@if $cm-include-loadmask-transparent-ui {
+  $_ui: "transparent";
+  @include cm-loadmask-ui(
+    $ui: $_ui,
+    $msg-background-color: transparent,
+    $mask-opacity: 1
+  );
+}

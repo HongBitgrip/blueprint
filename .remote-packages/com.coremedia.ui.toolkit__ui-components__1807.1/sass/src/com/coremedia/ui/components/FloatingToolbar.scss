@@ -1,0 +1,11 @@
+@if $cm-include-floating-toolbar {
+  .cm-fixed {
+    position: fixed !important;
+    //needs to be set in a css class to avoid docked elements from battling with us for the highest z-index
+    z-index: 4 !important;
+  }
+
+  .cm-floating-toolbar-shadow {
+    box-shadow: $cm-floating-toolbar-box-shadow;
+  }
+}

@@ -1,0 +1,20 @@
+.cm-grid-item-is-annotated {
+
+  .#{$prefix}grid-row-expander {
+    @include font-icon(
+            $glyph: ($cm-core-icons-100-var-arrow-circle-down $cm-glyph-font-size-100 $cm-core-icons-100-font-name),
+              // do not set line-height
+            $line-height: null
+    );
+  }
+
+  &.#{$prefix}grid-row-collapsed {
+    .#{$prefix}grid-row-expander {
+      @include font-icon(
+              $glyph: ($cm-core-icons-100-var-arrow-circle-right $cm-glyph-font-size-100 $cm-core-icons-100-font-name),
+                // do not set line-height
+              $line-height: null
+      );
+    }
+  }
+}

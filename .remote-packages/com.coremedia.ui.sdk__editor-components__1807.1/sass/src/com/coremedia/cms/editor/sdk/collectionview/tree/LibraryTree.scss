@@ -1,0 +1,9 @@
+@if $cm-include-library-tree-overflow-fix {
+  .cm-library-tree {
+    // Its necessary to do this, because we use a custom column in the library tree. 
+    // Therefore the scrollable config gets reverted by updateLayout(). The library has to have the .x-autowidth-table class for the same reason. (see CollectionView.mxml)
+    .x-tree-view {
+      overflow:auto !important;
+    }
+  }
+}

@@ -1,0 +1,126 @@
+@if $cm-include-container-default-ui {
+  $_ui: "default";
+  @include cm-container-ui(
+    $ui: $_ui
+  );
+}
+
+@if $cm-include-container-group-ui {
+  $_ui: "group";
+  @include cm-container-ui(
+    $ui: $_ui,
+    $border-radius: $cm-border-radius,
+    $border-color: $cm-grey-8,
+    $border-width: $cm-border-width,
+    $border-style: solid
+  );
+}
+
+@if $cm-include-container-grid-100-ui {
+  $_ui: "grid-100";
+  @include cm-container-ui(
+    $ui: $_ui,
+    $padding: $cm-grid-100
+  );
+}
+
+@if $cm-include-container-grid-200-ui {
+  $_ui: "grid-200";
+  @include cm-container-ui(
+    $ui: $_ui,
+    $padding: $cm-grid-200
+  );
+}
+
+@if $cm-include-container-frame-ui {
+  $_ui: "frame";
+  @include cm-container-ui(
+    $ui: $_ui,
+    $border-color: $_cm-container-frame-border-color,
+    $border-width: $_cm-container-frame-border-width,
+    $border-style: $_cm-container-frame-border-style,
+    $border-radius: $_cm-container-frame-border-radius,
+    $force-border-when-docked: $_cm-container-frame-force-border-when-docked,
+    $border-color-highlighted: $cm-highlight-color,
+    $box-shadow-highlighted: $cm-highlight-shadow,
+    $border-color-focused: $cm-highlight-color,
+    $box-shadow-focused: $cm-highlight-shadow
+  );
+}
+
+@if $cm-include-container-frame-grid-200-ui {
+  $_ui: "frame-grid-200";
+  @include cm-container-ui(
+    $ui: $_ui,
+    $border-color: $_cm-container-frame-border-color,
+    $border-width: $_cm-container-frame-border-width,
+    $border-style: $_cm-container-frame-border-style,
+    $border-radius: $_cm-container-frame-border-radius,
+    $padding: $cm-grid-200,
+    $force-border-when-docked: $_cm-container-frame-force-border-when-docked
+  );
+}
+
+@if $cm-include-container-special-translation-chart-ui {
+  $_ui: "special-translation-chart";
+  @include cm-container-ui(
+    $ui: $_ui,
+    $cursor: pointer,
+    $border-radius: $cm-border-radius,
+    $background-color-over: $cm-blue-0,
+    $text-align: right
+  );
+}
+
+@if $cm-include-container-selected-100-ui {
+  $_ui: "selected-100";
+  @include cm-container-ui(
+    $ui: $_ui,
+    $background-color: $cm-blue-0,
+    $padding: $cm-grid-100
+  );
+}
+
+@if $cm-include-container-dark-200-ui {
+  $_ui: "dark-200";
+  @include cm-container-ui(
+    $ui: $_ui,
+    $background-color: $cm-grey-0,
+    $padding: $cm-grid-200
+  );
+}
+
+@if $cm-include-card-collapsible-200-ui {
+  $_ui: "card-200";
+  @include cm-container-ui(
+    $ui: $_ui,
+    $background-color: $_cm-panel-card-background-color,
+    $border-radius: $_cm-panel-card-border-radius,
+    $padding: $cm-grid-200,
+    $box-shadow: $cm-elevation-box-shadow-100
+  );
+}
+
+@if $cm-include-container-highlighted-ui {
+  $_ui: "highlighted";
+  @include cm-container-ui(
+    $ui: $_ui,
+    $background-color: $cm-highlight-color
+  );
+}
+
+@if $cm-include-container-vivid-ui {
+  $_ui: "vivid";
+  @include cm-container-ui(
+    $ui: $_ui,
+    $background-color: $cm-blue-5
+  );
+}
+
+@if $cm-include-container-light-ui {
+  $_ui: "light";
+  @include cm-container-ui(
+    $ui: $_ui,
+    $background-color: $cm-white
+  );
+}

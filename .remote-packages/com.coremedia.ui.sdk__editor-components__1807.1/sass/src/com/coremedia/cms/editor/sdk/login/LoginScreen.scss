@@ -1,0 +1,60 @@
+@if $cm-include-login-screen {
+  $_block: "cm-login-screen";
+  .#{$_block} {
+
+    background-image: url(get-resource-path("images/login-screen.svg"));
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    background-blend-mode: overlay;
+
+    &.#{$prefix}container {
+      background-color: $cm-blue-6;
+    }
+
+    &__logo {
+      $_logo-size: 130px;
+      $_top: $cm-grid-200;
+      $_right: 102px;
+
+      position: relative;
+
+      &:after {
+        content: $cm-core-icons-100-var-coremedia;
+        position: absolute;
+        top: $_top;
+        right: $_right;
+        background-color: transparent;
+        font-size: $_logo-size;
+        font-family: $cm-core-icons-100-font-name;
+        line-height: 1;
+        color: $cm-blue-4;
+      }
+    }
+
+    &__title {
+      .#{$prefix}form-display-field-bold {
+        font-size: $cm-font-size-extra-large;
+      }
+    }
+
+    &__form {
+      margin: 0 120px 0 11px;
+    }
+
+    &__username,
+    &__password {
+      margin-top: $cm-grid-100;
+    }
+
+    &__domain {
+      margin-top: $cm-grid-200;
+    }
+
+    &__button {
+      margin-top: $cm-grid-400;
+      text-align: right;
+    }
+  }
+}

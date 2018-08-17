@@ -1,0 +1,26 @@
+/**
+ * @var {color}
+ * Defines the color for the drop zone indicator.
+ *
+ * @member Ext.view.DropZone
+ */
+$cm-drop-zone-indicator-color: dynamic($cm-highlight-color);
+
+/**
+ * @var {boolean}
+ * Defines if drop zone indicator arrows are shown.
+ * Only applied if {@link #cm-include-drop-zone-indicator-fix} is true.
+ *
+ * @member Ext.view.DropZone
+ */
+$cm-drop-zone-show-arrows: dynamic(false);
+
+/**
+ * @var {boolean}
+ * Defines if the drop-zone indicator fix css styles will be generated.
+ * Sets the indicator color to {@link #cm-drop-zone-indicator-color} and
+ * hides the indicator arrows if {@link #cm-drop-zone-show-arrows} is set to false.
+ *
+ * @member Ext.view.DropZone
+ */
+$cm-include-drop-zone-indicator-fix: dynamic(true);

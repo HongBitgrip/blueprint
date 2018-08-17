@@ -1,0 +1,35 @@
+/**
+ * @var {number}
+ *
+ * Sets the max-height for the DocTypeMenu.
+ *
+ * @member com.coremedia.cms.editor.sdk.collectionview.DocTypeMenu
+ */
+$cm-include-doctype-menu-max-height: dynamic(250px);
+
+/**
+ * @var {String}
+ *
+ * Sets the overflow-x for the DocTypeMenu.
+ *
+ * @member com.coremedia.cms.editor.sdk.collectionview.DocTypeMenu
+ */
+$cm-include-doctype-menu-overflow-x: dynamic(hidden);
+
+/**
+ * @var {String}
+ *
+ * Sets the overflow-y for the DocTypeMenu.
+ *
+ * @member com.coremedia.cms.editor.sdk.collectionview.DocTypeMenu
+ */
+$cm-include-doctype-menu-overflow-y: dynamic(auto);
+
+/**
+ * @var {boolean}
+ *
+ * Enables styles for the DocTypeMenu.
+ *
+ * @member com.coremedia.cms.editor.sdk.collectionview.DocTypeMenu
+ */
+$cm-include-doctype-menu: dynamic(true);

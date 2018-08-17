@@ -1,0 +1,20 @@
+@if $cm-include-open-workflow-issues-window-button {
+  .x-btn.cm-loading {
+    position: relative !important;
+  }
+
+  .cm-loading::before {
+    content: "";
+    display: block;
+    position: absolute;
+    background-color: $cm-open-workflow-issues-window-button-load-mask-background-color;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    z-index: 1;
+    background-image: $cm-open-workflow-issues-window-button-load-mask-background-image;
+    background-repeat: no-repeat;
+    background-position: center center;
+  }
+}

@@ -1,0 +1,5 @@
+@if $cm-include-checkboxgroup-default-ui {
+   @include cm-checkbox-group-ui(
+    $ui: "default"
+  );
+}

@@ -1,0 +1,6 @@
+@if $cm-include-tree-view-default-ui {
+  $_ui: "default";
+  @include cm-tree-view-ui(
+    $ui: $_ui
+  );
+}

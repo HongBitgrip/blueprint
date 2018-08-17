@@ -1,0 +1,83 @@
+@if $cm-include-text-field-default-ui {
+  $_ui: "default";
+  @include cm-text-field-ui(
+    $ui: $_ui
+  );
+}
+
+@if $cm-include-text-field-centered-ui {
+  $_ui: "centered";
+  @include extjs-text-field-ui(
+    $ui: $_ui
+  );
+  @include cm-text-field-ui(
+    $ui: $_ui,
+    $input-text-align: center
+  );
+}
+
+@if $cm-include-text-field-embedded-ui {
+  $_ui: "embedded";
+  @include extjs-text-field-ui(
+    $ui: $_ui,
+    $ui-border-color: transparent,
+    $ui-padding: 1px 5px 1px 2px
+  );
+  @include cm-text-field-ui(
+    $ui: $_ui,
+    $input-background-color-disabled: $cm-grey-0,
+    $input-trigger-wrap-border-radius: 0,
+    $input-trigger-wrap-border-color-focus: $cm-text-field-trigger-wrap-border-color-focus,
+    $input-border: $cm-border-width $cm-border-style transparent,
+    $input-box-shadow-focus: cm-focus-box-shadow($cm-highlight-color),
+    $hide-inner-box-shadow-on-validation: false,
+    $is-animated-text-field: false
+  );
+}
+
+@if $cm-include-text-field-window-header-ui {
+  $_ui: "window-header";
+  @include extjs-text-field-ui(
+    $ui: $_ui,
+    $ui-background-color: $cm-white,
+    $ui-padding: $cm-grid-50 $cm-grid-100,
+    $ui-trigger-background-color: $cm-grey-3,
+    $ui-invalid-background-color: $cm-white
+  );
+  @include cm-text-field-ui(
+    $ui: $_ui,
+    $input-border: $cm-border-width $cm-border-style transparent,
+    $input-trigger-wrap-border-radius: $cm-border-radius,
+    $input-box-shadow-focus: cm-focus-box-shadow($cm-highlight-color),
+    $hide-inner-box-shadow-on-validation: false,
+    $is-animated-text-field: false
+  );
+}
+
+@if $cm-include-text-field-plain-label-ui {
+  $_ui: "plain-label";
+  @include extjs-text-field-ui(
+    $ui: $_ui
+  );
+  @include cm-text-field-ui(
+    $ui: $_ui
+  );
+}
+
+@if $cm-include-text-field-opaque-ui {
+  $_ui: "opaque";
+  @include extjs-text-field-ui(
+    $ui: $_ui,
+    $ui-background-color: $cm-white,
+    $ui-trigger-background-color: $cm-white,
+    $ui-invalid-background-color: $cm-white
+  );
+  @include extjs-spinner-trigger-ui(
+    $ui: $_ui,
+    $ui-trigger-background-color: $cm-white
+  );
+  @include cm-text-field-ui(
+    $ui: $_ui,
+    $is-animated-text-field: false
+  );
+}

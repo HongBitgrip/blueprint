@@ -1,0 +1,52 @@
+/**
+ * CoreMedia UI Mixin for a StatusProxy.
+ *
+ * @param {string} $ui
+ * The name of the UI being created. May not include spaces or special punctuation as string is used as part of
+ * CSS class names.
+ *
+ * @param {number/list} [$padding=$statusproxy-padding]
+ * If not null defines the padding of the icon and ghost element.
+ *
+ * @param {list} [$box-shadow=$cm-statusproxy-box-shadow]
+ * If not null defines the box-shadow.
+ *
+ * @param {number} [$opacity=$cm-statusproxy-opacity]
+ * If not null defines the opacity.
+ *
+ * @param {number} [$allow-pointer-events=$cm-statusproxy-allow-pointer-events]
+ * If false pointer events will be disabled (set to none).
+ *
+ * @param {boolean} [$show-icon=$cm-statusproxy-show-icon]
+ * If false the icon element will be hidden.
+ *
+ * @member Ext.dd.StatusProxy
+ */
+@mixin cm-statusproxy-ui(
+  $ui,
+  $padding: $statusproxy-padding,
+  $box-shadow: $cm-statusproxy-box-shadow,
+  $opacity: $cm-statusproxy-opacity,
+  $allow-pointer-events: $cm-statusproxy-allow-pointer-events,
+  $show-icon: $cm-statusproxy-show-icon
+) {
+  .#{$prefix}component-#{$ui}.#{$prefix}dd-drag-proxy {
+    @if $box-shadow != null {
+      box-shadow: $box-shadow;
+    }
+    @if $padding != null {
+      padding: $padding;
+    }
+    @if $opacity != null {
+      opacity: $opacity;
+    }
+    @if not $allow-pointer-events {
+      pointer-events: none;
+    }
+    .#{$prefix}dd-drop-icon {
+      @if not $show-icon {
+        display: none;
+      }
+    }
+  }
+}

@@ -1,0 +1,24 @@
+@if $cm-include-dashboard {
+  $_source-block: "cm-draggable-items-source-placeholder";
+  $_target-block: "cm-draggable-items-target-placeholder";
+
+  $_source-dashboard-placeholder-color: transparent;
+  $_target-dashboard-placeholder-color: $cm-blue-5;
+
+  .#{$_source-block} {
+    &--dashboard {
+      background-color: $_source-dashboard-placeholder-color;
+      border: 2px dashed $_target-dashboard-placeholder-color;
+    }
+  }
+
+  .#{$_target-block} {
+    &--dashboard {
+      border: 2px dashed $_target-dashboard-placeholder-color;
+
+      &.#{$_target-block}--source-position {
+        background-color: $_source-dashboard-placeholder-color;
+      }
+    }
+  }
+}

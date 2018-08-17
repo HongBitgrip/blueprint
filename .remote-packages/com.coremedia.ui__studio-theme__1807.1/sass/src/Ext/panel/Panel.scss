@@ -1,0 +1,396 @@
+@if $cm-include-panel-default-ui {
+  $_ui: "default";
+  @include cm-panel-ui(
+    $ui: $_ui
+  );
+}
+
+@if $cm-include-panel-no-validation-ui {
+  $_ui: "no-validation";
+  @include cm-panel-ui(
+    $ui: $_ui,
+    $show-validation: false
+  );
+}
+
+@if $cm-include-panel-frame-200-no-top-border-ui {
+  $_ui: "frame-200-no-top-border";
+  @include extjs-panel-ui(
+    $ui: $_ui,
+    $ui-body-border-width: 0 $_cm-panel-framed-body-border-width $_cm-panel-framed-body-border-width $_cm-panel-framed-body-border-width,
+    $ui-border-radius: 0 0 $cm-border-radius $cm-border-radius
+  );
+  @include cm-panel-ui(
+    $ui: $_ui,
+    $body-padding: $cm-grid-200
+  );
+}
+
+// docked panel as control room and library
+@if $cm-include-panel-docked-ui {
+  $_ui: "docked";
+  @include extjs-panel-ui(
+    $ui: $_ui,
+    $ui-header-background-color: $cm-white,
+    $ui-header-color: $cm-font-color,
+    $ui-header-font-weight: $cm-font-weight-bold,
+    $ui-header-line-height: $cm-workarea-toolbar-height,
+    $ui-header-padding: 0 $cm-grid-200
+  );
+  @include cm-panel-ui(
+    $ui: $_ui,
+    $background-color: $cm-white
+  );
+}
+
+// displays an accordion panel
+@if $cm-include-panel-accordion-ui {
+  $_ui: "accordion";
+  @include extjs-panel-ui(
+    $ui: $_ui,
+    $ui-header-background-color: $cm-grey-2,
+    $ui-header-color: $cm-font-color,
+    $ui-header-padding: 10px $cm-grid-100 9px,
+    $ui-tool-glyph-color: $cm-font-color,
+    $ui-header-line-height: $panel-header-line-height + 4
+  );
+  @include cm-panel-ui(
+    $ui: $_ui,
+    $background-color: $cm-white
+  );
+}
+
+@if $cm-include-panel-card-ui {
+  $_ui: "card";
+  @include extjs-panel-ui(
+    $ui: $_ui,
+    $ui-body-color: $_cm-panel-card-color,
+    $ui-border-radius: $_cm-panel-card-border-radius,
+    $ui-header-color: $_cm-panel-card-color,
+    $ui-header-background-color: $_cm-panel-card-background-color,
+    $ui-header-font-weight: $_cm-panel-card-header-font-weight,
+    $ui-header-padding: $_cm-panel-card-header-padding,
+    $ui-tool-glyph-color: $_cm-panel-card-color
+  );
+  @include cm-panel-ui(
+    $ui: $_ui,
+    $background-color: $_cm-panel-card-background-color,
+    $background-color-collapsed: $_cm-panel-card-background-color-collapsed,
+    $body-background-color: $_cm-panel-card-background-color,
+    $header-transition-collapsed: $_cm-panel-card-header-transition-collapsed,
+    $header-background-color-over: $_cm-panel-card-background-color,
+    $header-background-color-collapsed: $_cm-panel-card-header-background-color-collapsed,
+    $box-shadow-transition: $cm-shadow-transition
+  );
+}
+
+@if $cm-include-panel-card-200-ui {
+  $_ui: "card-200";
+  @include extjs-panel-ui(
+    $ui: $_ui,
+    $ui-body-color: $_cm-panel-card-color,
+    $ui-border-radius: $_cm-panel-card-border-radius,
+    $ui-header-background-color: $_cm-panel-card-background-color,
+    $ui-header-color: $_cm-panel-card-color,
+    $ui-header-font-weight: $_cm-panel-card-header-font-weight,
+    $ui-header-padding: $_cm-panel-card-header-padding,
+    $ui-tool-glyph-color: $_cm-panel-card-color
+  );
+  @include cm-panel-ui(
+    $ui: $_ui,
+    $background-color: $_cm-panel-card-background-color,
+    $background-color-collapsed: $_cm-panel-card-background-color-collapsed,
+    $body-background-color: $_cm-panel-card-background-color,
+    $body-padding: $_cm-panel-card-body-padding,
+    $header-transition-collapsed: $_cm-panel-card-header-transition-collapsed,
+    $header-background-color-over: $_cm-panel-card-background-color,
+    $header-background-color-collapsed: $_cm-panel-card-header-background-color-collapsed,
+    $box-shadow-transition: $cm-shadow-transition
+  );
+}
+
+@if $cm-include-panel-card-nested-ui {
+  $_ui: "card-nested";
+  @include extjs-panel-ui(
+    $ui: $_ui,
+    $ui-body-color: $_cm-panel-card-color,
+    $ui-body-background-color: $_cm-panel-card-background-color,
+    $ui-border-radius: $_cm-panel-card-border-radius,
+    $ui-header-background-color: $_cm-panel-card-background-color,
+    $ui-header-color: $_cm-panel-card-color,
+    $ui-header-font-weight: $_cm-panel-card-header-font-weight,
+    $ui-header-padding: $cm-grid-100 0,
+    $ui-tool-glyph-color: $_cm-panel-card-color
+  );
+  @include cm-panel-ui(
+    $ui: $_ui,
+    $body-padding: 0 0 bottom($_cm-panel-card-body-padding),
+    $header-transition-collapsed: $_cm-panel-card-header-transition-collapsed,
+    $header-background-color-over: $_cm-panel-card-background-color,
+    $header-background-color-collapsed: $_cm-panel-card-header-background-color-collapsed,
+    $use-sub-collapsible-separator: true,
+    $sub-collapsible-separator-color: $cm-spot-grey-2,
+    $sub-collapsible-separator-margin: top((floor($panel-header-line-height/2)) + 2) 0 0 left($cm-grid-200)
+  );
+}
+
+@if $cm-include-panel-embedded-ui {
+  $_ui: "embedded";
+  @include extjs-panel-ui(
+    $ui: $_ui,
+    $ui-header-background-color: $cm-grey-1,
+    $ui-header-color: $cm-font-color,
+    $ui-header-line-height: $cm-line-height,
+    $ui-header-font-weight: $cm-font-weight,
+    $ui-header-padding: 4px $cm-grid-50 4px 5px,
+    $ui-tool-glyph-color: $cm-font-color,
+    $ui-body-color: $cm-font-color,
+    $ui-body-background-color: $cm-white
+  );
+  @include cm-panel-ui(
+    $ui: $_ui,
+    $header-padding-collapsed-vertical: 0 5px 4px 5px,
+    $header-padding-collapsed-horizontal: 4px,
+    $header-font-size-collapsed: $cm-font-size-medium,
+    $header-font-weight-collapsed: $cm-font-weight-bold,
+    $header-inner-border-width-collapsed: $cm-border-width,
+    $header-inner-border-color-collapsed: $cm-grey-2,
+    $header-inner-border-style-collapsed: solid,
+    $header-transition-collapsed: $cm-background-color-transition,
+    $header-text-padding-collapsed-vertical: $cm-grid-25 $cm-grid-25 $cm-grid-50 $cm-grid-25,
+    $header-text-padding-collapsed-horizontal: $cm-grid-50 0 $cm-grid-50 $cm-grid-100,
+    $header-background-color-collapsed: $cm-white,
+    $header-inner-background-color-over-collapsed: $cm-blue-0,
+    $header-inner-background-color-collapsed: $cm-grey-0
+  );
+}
+
+// panel with with black semi transparent backgound color and white text color
+@if $cm-include-panel-inverted-ui {
+  $_ui: "inverted";
+  @include extjs-panel-ui(
+    $ui: $_ui,
+    $ui-border-radius: $cm-border-radius,
+    $ui-body-color: $cm-white,
+    $ui-padding: $cm-grid-200,
+    $ui-header-color: $cm-font-light-coloured,
+    $ui-header-padding: 0 0 $cm-grid-100,
+    $ui-header-font-size: $cm-font-size-large,
+    $ui-header-font-weight: $cm-font-weight-bold,
+    $ui-header-background-color: transparent
+  );
+  @include cm-panel-ui(
+    $ui: $_ui,
+    $background-color: transparentize($cm-black, .3)
+  );
+}
+
+// panel with CI background image without repeating
+@if $cm-include-panel-corporate-identity-ui {
+  $_ui: "corporate-identity";
+  @include extjs-panel-ui(
+    $ui: $_ui
+  );
+  @include cm-panel-ui(
+    $ui: $_ui,
+    $background-color: $cm-blue-3,
+    $body-background-image: url(get-resource-path("images/ci/background.svg")),
+    $body-background-image-repeat: no-repeat,
+    $body-background-image-position: center center,
+    $body-background-size: cover,
+    $body-background-blend-mode: overlay
+  );
+}
+
+// panel with huge title font and special padding
+@if $cm-include-panel-special-welcome-outer-ui {
+  $_ui: "special-welcome-outer";
+  @include extjs-panel-ui(
+    $ui: $_ui,
+    $ui-header-background-color: transparent,
+    $ui-header-color: $cm-font-light-coloured,
+    $ui-header-font-size: 70px,
+    $ui-header-padding: 0 0 21px,
+    $ui-header-font-weight: $cm-font-weight,
+    $ui-header-line-height: 1
+  );
+  @include cm-panel-ui(
+    $ui: $_ui,
+    $body-padding: 0 0 0 140px
+  );
+}
+
+// panel with large title for grouped icon labels
+@if $cm-include-panel-special-welcome-inner-ui {
+  $_ui: "special-welcome-inner";
+  @include extjs-panel-ui(
+    $ui: $_ui,
+    $ui-header-background-color: transparent,
+    $ui-header-color: $cm-font-light-coloured,
+    $ui-header-font-size: 18px,
+    $ui-header-padding: 0 0 10px,
+    $ui-header-font-weight: $cm-font-weight-bold,
+    $ui-header-line-height: 1
+  );
+  @include cm-panel-ui(
+    $ui: $_ui
+  );
+}
+
+// widget panel on the dashboard
+@if $cm-include-panel-widget-ui {
+  $_ui: "widget";
+  // state normal
+  @include extjs-panel-ui(
+    $ui: $_ui,
+    $ui-border-width: $_cm-panel-widget-border-width,
+    $ui-border-radius: $_cm-panel-widget-border-radius,
+    $ui-border-color: $cm-blue-5,
+    $ui-body-background-color: $_cm-panel-widget-body-background-color
+  );
+  @include cm-panel-ui(
+    $ui: $_ui,
+    $body-padding: $_cm-panel-widget-body-padding,
+    $body-line-height: $_cm-panel-widget-body-line-height
+  );
+}
+
+// widget panel on the dashboard
+@if $cm-include-panel-widget-highlighted-ui {
+  $_ui: "widget-highlighted";
+  // hover state
+  @include extjs-panel-ui(
+    $ui: $_ui,
+    $ui-border-width: $_cm-panel-widget-border-width,
+    $ui-border-radius: $_cm-panel-widget-border-radius,
+    $ui-border-color: $cm-blue-6,
+    $ui-body-background-color: $_cm-panel-widget-body-background-color
+  );
+  @include cm-panel-ui(
+    $ui: $_ui,
+    $body-padding: $_cm-panel-widget-body-padding,
+    $body-line-height: $_cm-panel-widget-body-line-height
+  );
+}
+
+// standard padding panel
+@if $cm-include-panel-grid-200-ui {
+  $_ui: "grid-200";
+  @include extjs-panel-ui(
+    $ui: $_ui
+  );
+  @include cm-panel-ui(
+    $ui: $_ui,
+    $body-padding: $cm-grid-200
+  );
+}
+
+// panel with surrounding border
+@if $cm-include-panel-frame-ui {
+  $_ui: "frame";
+  @include extjs-panel-ui(
+    $ui: $_ui,
+    $ui-body-border-width: $_cm-panel-framed-body-border-width,
+    $ui-header-background-color: $_cm-panel-framed-header-background-color,
+    $ui-header-color: $_cm-panel-framed-header-color,
+    $ui-header-padding: $_cm-panel-framed-header-padding,
+    $ui-tool-glyph-color: $_cm-panel-framed-tool-glyph-color
+  );
+  @include cm-panel-ui(
+    $ui: $_ui
+  );
+}
+
+@if $cm-include-panel-frame-100-ui {
+  $_ui: "frame-100";
+  @include extjs-panel-ui(
+    $ui: $_ui,
+    $ui-body-border-width: $_cm-panel-framed-body-border-width,
+    $ui-header-background-color: $_cm-panel-framed-header-background-color,
+    $ui-header-color: $_cm-panel-framed-header-color,
+    $ui-header-padding: $_cm-panel-framed-header-padding,
+    $ui-tool-glyph-color: $_cm-panel-framed-tool-glyph-color,
+    $ui-border-radius: $cm-border-radius
+  );
+  @include cm-panel-ui(
+    $ui: $_ui,
+    $body-padding: $cm-grid-100
+  );
+}
+
+@if $cm-include-panel-dark-ui {
+  $_ui: "dark";
+  @include extjs-panel-ui(
+    $ui: $_ui,
+    $ui-header-border-width: 0,
+    $ui-header-inner-border-width: 0
+  );
+  @include cm-panel-ui(
+    $ui: $_ui,
+    $background-color: $cm-grey-0
+  )
+}
+
+// panel with same grey background-color as in forms
+@if $cm-include-panel-dark-100-ui {
+  $_ui: "dark-100";
+  @include extjs-panel-ui(
+    $ui: $_ui,
+    $ui-padding: $cm-grid-100,
+    $ui-border-radius: $cm-border-radius
+  );
+  @include cm-panel-ui(
+    $ui: $_ui,
+    $background-color: $cm-grey-0
+  )
+}
+
+// panel with same grey background-color as in forms
+@if $cm-include-panel-dark-200-ui {
+  $_ui: "dark-200";
+  @include extjs-panel-ui(
+    $ui: $_ui
+  );
+  @include cm-panel-ui(
+    $ui: $_ui,
+    $body-padding: $cm-grid-200,
+    $background-color: $cm-grey-1
+  )
+}
+
+@if $cm-include-panel-plain-ui {
+  $_ui: "plain";
+  @include extjs-panel-ui(
+    $ui: $_ui,
+    $ui-border-radius: $cm-border-radius
+  );
+  @include cm-panel-ui(
+    $ui: $_ui
+  );
+}
+
+@if $cm-include-panel-filter-ui {
+  $_ui: "filter";
+  @include extjs-panel-ui(
+    $ui: $_ui,
+    $ui-tool-glyph-color: $cm-icon-color-pos,
+    $ui-body-background-color: $cm-grey-0,
+    $ui-header-padding: 0 $cm-grid-25,
+    $ui-header-line-height: 20px,
+    $ui-border-radius: $cm-border-radius
+  );
+  @include cm-panel-ui(
+    $ui: $_ui,
+    $box-shadow: null,
+    $show-validation: false,
+    $body-padding: $cm-grid-100,
+    $background-color: transparent,
+    $remove-body-padding-beneath-header: false
+  );
+}
+
+.#{$prefix}panel-ghost {
+  @if $cm-panel-ghost-background-color != null {
+    background-color: $cm-panel-ghost-background-color;
+  }
+}

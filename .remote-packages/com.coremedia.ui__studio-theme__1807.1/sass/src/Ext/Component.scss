@@ -1,0 +1,12 @@
+.cm-spin {
+  animation: $cm-spinner-animation;
+}
+
+@if $cm-enable-icon-font-smoothing {
+  .x-fa,
+  .cm-core-icons,
+  .cm-collaboration-icons {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+}

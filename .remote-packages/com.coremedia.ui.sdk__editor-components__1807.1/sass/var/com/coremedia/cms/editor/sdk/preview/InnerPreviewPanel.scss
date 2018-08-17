@@ -1,0 +1,43 @@
+/**
+ * @var {string}
+ *
+ * Sets the shadow of all devices in the preview panel.
+ *
+ * @member com.coremedia.cms.editor.sdk.preview.InnerPreviewPanel
+ */
+$cm-inner-preview-panel-device-box-shadow: dynamic($cm-elevation-box-shadow-200);
+
+/**
+ * @var {color}
+ *
+ * Sets the frame color of all devices in the preview panel.
+ *
+ * @member com.coremedia.cms.editor.sdk.preview.InnerPreviewPanel
+ */
+$cm-inner-preview-panel-device-color: dynamic($cm-black);
+
+/**
+ * @var {color}
+ *
+ * Sets the background color of all scrollbars on device frames in the preview panel.
+ *
+ * @member com.coremedia.cms.editor.sdk.preview.InnerPreviewPanel
+ */
+$cm-inner-preview-panel-device-scrollbar-color: dynamic($cm-white);
+
+/**
+ * @var {number/list}
+ *
+ * Sets the border-radius of all devices in the preview panel.
+ *
+ * @member com.coremedia.cms.editor.sdk.preview.InnerPreviewPanel
+ */
+$cm-inner-preview-panel-device-border-radius: dynamic(20px);
+
+/**
+ * @var {boolean}
+ * Enables styles of the InnerPreviewPanel.
+ *
+ * @member com.coremedia.cms.editor.sdk.preview.InnerPreviewPanel
+ */
+$cm-include-inner-preview-panel: dynamic(true);

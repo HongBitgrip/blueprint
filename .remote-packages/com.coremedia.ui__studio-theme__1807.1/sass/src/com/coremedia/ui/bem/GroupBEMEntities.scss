@@ -1,0 +1,19 @@
+@if $cm-include-group-wrapper {
+  $_block: "cm-group-wrapper";
+
+  .#{$_block} {
+    &__left {
+      .#{$prefix}form-trigger-wrap {
+        border-top-right-radius: 0;
+        border-bottom-right-radius: 0;
+      }
+    }
+
+    &__right {
+      .#{$prefix}form-trigger-wrap {
+        border-top-left-radius: 0;
+        border-bottom-left-radius: 0;
+      }
+    }
+  }
+}

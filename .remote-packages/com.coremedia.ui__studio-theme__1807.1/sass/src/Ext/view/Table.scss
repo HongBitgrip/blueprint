@@ -1,0 +1,25 @@
+@if $cm-include-table-view-default-ui {
+  $_ui: "default";
+  @include cm-table-view-ui(
+    $ui: $_ui
+  );
+}
+
+@if $cm-include-table-view-light-ui {
+  $_ui: "light";
+  @include cm-table-view-ui(
+    $ui: $_ui,
+    $row-cell-border-color: $cm-spot-grey-1,
+    $row-cell-border-color-over: $cm-grey-2,
+    $row-cell-border-color-selected: $cm-blue-4,
+    $use-row-line-fix: false
+  );
+}
+
+@if $cm-include-table-view-large-cells-ui {
+  $_ui: "large-cells";
+  @include cm-table-view-ui(
+    $ui: $_ui,
+    $row-cell-line-height: 19px
+  );
+}

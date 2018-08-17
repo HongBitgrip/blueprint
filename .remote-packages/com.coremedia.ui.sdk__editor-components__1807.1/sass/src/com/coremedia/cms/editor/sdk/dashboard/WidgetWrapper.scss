@@ -1,0 +1,38 @@
+@if $cm-include-widget-wrapper {
+  $_block: "cm-widget";
+  .#{$_block} {
+
+    &__tool {
+      opacity: 0;
+    }
+
+    &:hover,
+    &--focus,
+    &--edit-mode {
+      .#{$_block}__tool {
+        opacity: 1;
+      }
+    }
+  }
+
+  $_block: "cm-widget-drag-icon";
+  .#{$_block} {
+    position: relative;
+
+    &__handle {
+      color: $cm-blue-7;
+    }
+
+  }
+
+  $_block: "cm-widget-resizer";
+  .#{$_block} {
+    border-radius: 0;
+
+    @include cm-resizer-gradient($cm-blue-6);
+
+    &:before {
+      color: $cm-blue-6;
+    }
+  }
+}

@@ -1,0 +1,70 @@
+@if $cm-include-richtextarea {
+  @import "cm-dialog";
+
+  div.cke_editable {
+    background-color: $cm-richtextarea-background-color;
+    border-width: $cm-richtextarea-border-width;
+    border-style: $cm-richtextarea-border-style;
+    border-color: $cm-richtextarea-border-color;
+    border-radius: $cm-richtextarea-border-radius;
+    transition:$cm-shadow-transition;
+
+    padding: $cm-richtextarea-inner-padding;
+    cursor: default;
+    > * {
+      cursor: text;
+    }
+
+    .#{$prefix}resizable > & {
+      border-bottom-left-radius: 0;
+      border-bottom-right-radius: 0;
+    }
+
+    .#{$prefix}form-focus > &,
+    .cm-highlighted > & {
+      border: $cm-text-field-border-width-highlighted $cm-text-field-border-style-highlighted $cm-text-field-border-color-highlighted;
+    }
+
+    .#{$prefix}form-focus > & {
+      box-shadow: $cm-text-field-input-shadow-focus;
+      transition: $cm-text-field-input-transition;
+    }
+
+    .cm-validation-state-error > &,
+    .cm-validation-state-warning > &,
+    .cm-validation-state-info > &,
+    .cm-validation-state-success > & {
+      padding: 6px 6px 6px 2px;
+      border-width: 1px 1px 1px 5px;
+    }
+
+    .cm-validation-state-error > & {
+      border-color: $cm-validation-color-error;
+    }
+
+    .cm-validation-state-warning > & {
+      border-color: $cm-validation-color-warning;
+    }
+
+    .cm-validation-state-info > & {
+      border-color: $cm-validation-color-info;
+    }
+
+    .cm-validation-state-success > & {
+      border-color: $cm-validation-color-success;
+    }
+  }
+
+  .#{$prefix}container.cm-read-only .cke_editable {
+    background-color: $cm-text-field-background-color-readonly;
+  }
+
+  .cke_editable--display-default-text > .cke_editable {
+    @if $cm-text-field-default-text-color != null {
+      color: $cm-text-field-default-text-color;
+    }
+    @if $cm-text-field-default-text-font-style != null {
+      font-style: $cm-text-field-default-text-font-style;
+    }
+  }
+}

@@ -1,0 +1,39 @@
+/**
+ * Only to be used in after {@link #extjs-label-ui} mixin has been included.
+ *
+ * CoreMedia UI Mixin for a Labelable component.
+ * Just like {@link #extjs-label-ui} this mixin does not style Ext.form.Label components but the surrounding Labelable
+ * component.
+ *
+ * Parameters do not have a default value, so if omitted the styling rule is not applied.
+ *
+ * @param {string} $ui
+ * The name of the UI being created. Can not included spaces or special punctuation
+ * (used in CSS class names).
+ *
+ * @param {color} [$background-color-over=null]
+ * The background color of the component when it is hovered.
+ *
+ * @param {color} [$background-color-disabled=null]
+ * The background color of the component when it is disabled.
+ *
+ * @member Ext.form.Labelable
+ */
+@mixin cm-label-ui(
+  $ui,
+  $background-color-over: null,
+  $background-color-disabled: null
+) {
+  .#{$prefix}form-item-#{$ui} {
+    &:hover {
+      @if $background-color-over != null {
+        background-color: $background-color-over;
+      }
+    }
+    &.#{$prefix}item-disabled {
+      @if $background-color-disabled != null {
+        background-color: $background-color-disabled;
+      }
+    }
+  }
+}

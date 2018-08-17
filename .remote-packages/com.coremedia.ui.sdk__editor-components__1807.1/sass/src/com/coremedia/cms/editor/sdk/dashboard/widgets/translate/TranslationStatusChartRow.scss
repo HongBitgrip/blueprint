@@ -1,0 +1,16 @@
+@if $cm-include-translation-status-chart-bar {
+  $_block: "translation-status-chart-bar";
+  .#{$_block} {
+    border-radius: 2px;
+    background-color: $cm-grey-6;
+
+    &--highlighted {
+      background-color: $cm-highlight-color;
+    }
+
+    &--animated {
+      -webkit-transition: width ease-in-out 0.5s; /*For Safari 3.1 to 6.0*/
+      transition: width ease-in-out 0.5s;
+    }
+  }
+}

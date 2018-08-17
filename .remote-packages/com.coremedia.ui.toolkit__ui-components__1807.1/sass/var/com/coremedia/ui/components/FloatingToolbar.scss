@@ -1,0 +1,16 @@
+/**
+ * @var {boolean}
+ * Enables styles for the FloatingToolbar.
+ *
+ * @member com.coremedia.cms.editor.sdk.premular.FloatingToolbar
+ */
+$cm-include-floating-toolbar: dynamic(true);
+
+/**
+ * @var {list}
+ *
+ * The box shadow of the toolbar, that appears while floating
+ *
+ * @member com.coremedia.cms.editor.sdk.desktop.FloatingToolbar
+ */
+$cm-floating-toolbar-box-shadow: dynamic(-3px 0 0 0 $_cm-panel-card-background-color, 3px 0 0 0 $_cm-panel-card-background-color, 0 1px 2px 0 transparentize($cm-black, .4));

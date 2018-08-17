@@ -1,0 +1,93 @@
+@if $cm-include-focus-point-image-area {
+
+  $_focus-point-point-width: 4px;
+  $_focus-point-radius: 20px;
+  $_focus-point-border-width: 1px;
+  $_focus-point-block: "cm-focus-point-image-area";
+  $_image-area-block: "image-area";
+  $_image-area-inner-block: "image-area-inner";
+  $_image-editor-stage-block: "image-editor-stage";
+  $_crop-container-block: "crop-container";
+
+  .cm-image-editor-property-field {
+
+    .#{$_image-editor-stage-block} {
+      &--show-crops {
+        & .#{$_focus-point-block} {
+          & .#{$_image-area-block} {
+            & .#{$_image-area-inner-block} {
+              visibility: visible !important;
+            }
+          }
+        }
+      }
+      &--show-single-crop {
+        & .#{$_focus-point-block} {
+          & .#{$_image-area-block} {
+            & .#{$_image-area-inner-block} {
+              visibility: hidden !important;
+            }
+          }
+          &.#{$_crop-container-block} {
+            &.solo {
+              visibility: hidden !important;
+            }
+          }
+        }
+      }
+    }
+
+    & .#{$_focus-point-block} {
+      &.#{$_crop-container-block} {
+        position: absolute;
+        cursor: all-scroll;
+        z-index: 604 !important;
+
+        &.hover .#{$_image-area-inner-block} {
+          border-image: none !important;
+        }
+
+        &.solo {
+          box-shadow: none;
+        }
+      }
+
+      & .#{$_image-area-block} {
+        box-shadow: inset 0 0 0 1px #EEE;
+        background-color: rgba(255, 255, 255, 0.5);
+        perspective-origin: 50% 50%;
+        pointer-events: auto;
+        display: block;
+        border: $_focus-point-border-width solid #555;
+        opacity: 1;
+        overflow: visible;
+        transform-origin: 50% 50% 0;
+        color: rgb(255, 255, 255);
+        border-radius: 100%;
+        transform-style: preserve-3d;
+        backface-visibility: visible;
+        $_focus-point-length: ($_focus-point-radius * 2) + ($_focus-point-border-width * 2) - if($_focus-point-border-width == 0, 0, 1);
+        width: $_focus-point-length;
+        height: $_focus-point-length;
+
+        & .#{$_image-area-inner-block} {
+          $_focus-point-transform: $_focus-point-radius - ($_focus-point-point-width/2);
+          background-color: rgb(0, 0, 0);
+          perspective-origin: 50% 50%;
+          pointer-events: none;
+          width: $_focus-point-point-width;
+          height: $_focus-point-point-width;
+          display: block;
+          opacity: 1;
+          overflow: visible;
+          transform-origin: 50% 50% 0;
+          transform: translate3d($_focus-point-transform, $_focus-point-transform, 0px) scale3d(1, 1, 1) skew(0deg, 0deg) skewX(0deg) skewY(0deg) translateZ(0px) rotateX(0deg) rotateY(0deg) rotateZ(0deg) translateZ(0px);
+          color: rgb(255, 255, 255);
+          border-radius: 100%;
+          transform-style: preserve-3d;
+          backface-visibility: visible;
+        }
+      }
+    }
+  }
+}

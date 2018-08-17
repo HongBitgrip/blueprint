@@ -1,0 +1,49 @@
+@if $cm-include-blob-property-field {
+  .cm-blob-property-field-blob {
+    position: relative;
+
+    &:before {
+      display: none;
+      content: "";
+      position: absolute;
+      z-index: 3;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      border-left: $cm-validation-border-width solid transparent;
+    }
+
+    &.cm-highlighted {
+      position: relative;
+
+      &:before {
+        display: block;
+        border-left-color: $cm-highlight-color;
+      }
+    }
+
+    $state-map: (
+      "error" : (
+        color: $cm-validation-color-error
+      ),
+      "warning" : (
+        color: $cm-validation-color-warning
+      ),
+      "info" : (
+        color: $cm-validation-color-info
+      ),
+      "success" : (
+        color: $cm-validation-color-success
+      )
+    );
+
+    @each $state, $map in $state-map {
+      &.cm-validation-state-#{$state} {
+        &:before {
+          display: block;
+          border-left-color: map_get($map, color);
+        }
+      }
+    }
+  }
+}

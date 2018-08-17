@@ -1,0 +1,29 @@
+@if $cm-include-preview-context-menu {
+  $_block: "cm-preview-context-menu";
+  .#{$_block} {
+    .#{$prefix}menu-item-text {
+      margin-left: $cm-preview-context-menu-item-text-margin-left;
+    }
+    .#{$prefix}menu-item-icon {
+      display: $cm-preview-context-menu-item-icon-display;
+    }
+    &__title {
+      &.#{$prefix}menu-item {
+        background-color: $cm-preview-context-menu-title-background-color;
+        margin-bottom: $cm-preview-context-menu-title-margin-bottom;
+        .#{$prefix}menu-item-link {
+          cursor: default;
+          .#{$prefix}menu-item-text,
+          .#{$prefix}menu-item-icon {
+            display: $cm-preview-context-menu-title-icon-display;
+            color: $cm-preview-context-menu-title-text-color;
+          }
+          .#{$prefix}menu-item-text {
+            cursor: default;
+            margin-left: $cm-preview-context-menu-title-text-margin-left;
+          }
+        }
+      }
+    }
+  }
+}

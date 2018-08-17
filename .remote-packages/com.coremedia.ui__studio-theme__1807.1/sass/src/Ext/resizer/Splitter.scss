@@ -1,0 +1,45 @@
+@if $cm-include-splitter-default-ui {
+  $_ui: "default";
+  @include cm-splitter-ui(
+    $ui: $_ui
+  );
+}
+
+@if $cm-include-splitter-premular-ui {
+  $_ui: "premular";
+  @include cm-splitter-ui(
+    $ui: $_ui,
+    $background-color: $cm-grey-6,
+    $border-width: 40px 0 0 0,
+    $border-style: solid,
+    $border-color: $_cm-splitter-top-background-color
+  );
+}
+
+@if $cm-include-splitter-dark-ui {
+  $_ui: "dark";
+  @include cm-splitter-ui(
+    $ui: $_ui,
+    $background-color: $cm-grey-6,
+    $hide-mask: true
+  );
+}
+
+@if $cm-include-splitter-light-ui {
+  $_ui: "light";
+  @include cm-splitter-ui(
+    $ui: $_ui,
+    $background-color: $_cm-splitter-top-background-color,
+    $hide-mask: true
+  );
+}
+
+@if $cm-include-splitter-accordion-ui {
+  $_ui: "accordion";
+  @include cm-splitter-ui(
+    $ui: $_ui,
+    $background-color: transparent,
+    $background-color-active: $cm-grey-6,
+    $click-area-extension: 3px
+  );
+}

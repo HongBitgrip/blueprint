@@ -1,0 +1,162 @@
+@if $cm-include-tab-default-ui {
+  $_ui: "default";
+  @include cm-tab-ui(
+    $ui: $_ui
+  );
+}
+
+@if $cm-include-tab-side-ui {
+  $_ui: "side";
+  @include extjs-tab-ui (
+    $ui: $_ui,
+    $ui-margin: $cm-grid-50 1px,
+    $ui-background-color: $_cm-tab-side-background-color,
+    $ui-background-color-active: $_cm-tab-side-background-color-active,
+    $ui-background-color-focus: $_cm-tab-side-background-color,
+    $ui-background-color-over: $_cm-tab-side-background-color-over,
+    $ui-background-color-focus-over: $_cm-tab-side-background-color-over,
+    $ui-background-color-focus-active: $_cm-tab-side-background-color-active,
+    $ui-padding: $cm-grid-50,
+    $ui-glyph-color: $cm-icon-color-pos,
+    $ui-glyph-color-focus: $cm-icon-color-pos,
+    $ui-glyph-color-over: $cm-icon-color-pos,
+    $ui-glyph-color-active: $cm-icon-color-pos,
+    $ui-glyph-color-focus-over: $cm-icon-color-pos,
+    $ui-icon-width: $cm-glyph-font-size-100,   // width of .x-tab-icon-el-ui
+    $ui-icon-height: $cm-glyph-font-size-100,  // line-height+font-size+min-height of .x-tab-icon-el-ui
+    $ui-border-radius: $cm-border-radius,
+    $ui-outline-color-focus: transparent,
+    $ui-border-color: $_cm-tab-side-background-color,
+    $ui-border-color-focus: $cm-icon-color-pos,
+    $ui-border-color-over: $_cm-tab-side-background-color-over,
+    $ui-border-color-active: $_cm-tab-side-background-color-active,
+    $ui-border-color-focus-over: $cm-icon-color-pos,
+    $ui-border-color-focus-active: $cm-icon-color-pos,
+    $ui-border-color-disabled: false,
+    $ui-border-width: 1px,
+    $ui-inner-border-color: transparent,
+    $ui-inner-border-color-focus: transparent,
+    $ui-inner-border-color-focus-over: transparent,
+    $ui-inner-border-color-focus-active: transparent
+  );
+  @include cm-tab-ui(
+    $ui: $_ui,
+    $icon-span-height: $cm-line-height,
+    $overflow: visible
+  );
+}
+
+@if $cm-include-tab-workarea-ui {
+  $_ui: "workarea";
+  @include extjs-tab-ui(
+    $ui: $_ui,
+    $ui-background-color: $_cm-tab-workarea-background-color,
+    $ui-background-color-over: $cm-blue-3,
+    $ui-background-color-active: $_cm-tab-workarea-background-color-active,
+    $ui-background-color-focus: $_cm-tab-workarea-background-color,
+    $ui-background-color-focus-over: $cm-blue-3,
+    $ui-background-color-focus-active: $_cm-tab-workarea-background-color-active,
+    $ui-color: $_cm-tab-workarea-color,
+    $ui-color-focus: $_cm-tab-workarea-color,
+    $ui-color-over: $_cm-tab-workarea-color,
+    $ui-color-active: $_cm-tab-workarea-color-active,
+    $ui-color-focus-over: $_cm-tab-workarea-color,
+    $ui-color-focus-active: $_cm-tab-workarea-color-active,
+    $ui-outline-width-focus: 0,
+    $ui-opacity: $_cm-tab-workarea-opacity,
+    $ui-opacity-over: $_cm-tab-workarea-opacity,
+    $ui-opacity-focus: $_cm-tab-workarea-opacity,
+    $ui-opacity-focus-over: $_cm-tab-workarea-opacity,
+    $ui-opacity-active: $_cm-tab-workarea-opacity,
+    $ui-opacity-focus-active: $_cm-tab-workarea-opacity,
+    $ui-glyph-color: $_cm-tab-workarea-color,
+    $ui-glyph-color-over: $_cm-tab-workarea-color,
+    $ui-glyph-color-focus: $_cm-tab-workarea-color,
+    $ui-glyph-color-focus-over: $_cm-tab-workarea-color,
+    $ui-glyph-color-active: $_cm-tab-workarea-color-active,
+    $ui-glyph-color-focus-active: $_cm-tab-workarea-color-active,
+    $ui-closable-icon-glyph-color: transparent,
+    $ui-closable-icon-glyph-color-over: $_cm-tab-workarea-color,
+    $ui-closable-icon-glyph-color-focus-over: $_cm-tab-workarea-color-active,
+    $ui-closable-icon-glyph-color-active: $_cm-tab-workarea-color-active,
+    $ui-closable-icon-glyph-color-focus-active: $_cm-tab-workarea-color-active,
+    $ui-closable-icon-top: 11px,
+    $ui-closable-icon-right: 0,
+    $ui-background-opacity-over: 1,
+    $ui-margin: 0,
+    $ui-padding: 0 3px,  // the padding (as observed in the browser) also depends on the border-radius, border-width and inner-border-width (see frame.scss)
+    $ui-border-width: 2px,
+    $ui-border-color: $_cm-tab-workarea-background-color,
+    $ui-border-color-over: $cm-blue-3,
+    $ui-border-color-active: $_cm-tab-workarea-background-color-active,
+    $ui-border-color-focus: $_cm-tab-workarea-background-color,
+    $ui-border-color-focus-over: $cm-blue-3,
+    $ui-border-color-focus-active: $_cm-tab-workarea-background-color-active,
+    $ui-cursor: default,
+    $ui-font-size: $cm-font-size,
+    $ui-line-height: 36px,
+    $ui-inner-border-color-focus: $_cm-tab-workarea-color,
+    $ui-inner-border-color-focus-over: $_cm-tab-workarea-color,
+    $ui-inner-border-color-focus-active: $_cm-tab-workarea-color-active
+  );
+  @include cm-tab-ui(
+    $ui: $_ui,
+    $max-width: 157px,
+    $icon-max-height: $cm-glyph-font-size-100,
+    $background-color-highlighted: $cm-blue-4,
+    $color-highlighted: $cm-white,
+    $closable-icon-glyph-color-over: $cm-blue-0,
+    $closable-icon-glyph-color-pressed: $cm-blue-1,
+    $closable-icon-glyph-color-over-active: $cm-blue-2,
+    $closable-icon-glyph-color-pressed-active: $cm-blue-3
+  );
+}
+
+@if $cm-include-tab-workarea-light-ui {
+  $_ui: "workarea-light";
+  @include extjs-tab-ui(
+    $ui: $_ui,
+    $ui-color-over: $cm-white,
+    $ui-background-color-over:  transparent,
+    $ui-background-color-active: $_cm-tab-workarea-light-background-color,
+    $ui-background-color-focus-active: $_cm-tab-workarea-light-background-color,
+    $ui-outline-width-focus: 0,
+    $ui-border-width: 2px,
+    $ui-border-color: $cm-grey-3,
+    $ui-border-color-over: $cm-grey-3,
+    $ui-border-color-focus: $_cm-tab-workarea-light-background-color,
+    $ui-border-color-focus-over: $_cm-tab-workarea-light-background-color,
+    $ui-inner-border-color-focus: $cm-black,
+    $ui-inner-border-color-focus-active: $cm-black,
+    $ui-inner-border-color-focus-over: $cm-black
+  );
+  @include cm-tab-ui(
+    $ui: $_ui,
+    $color-active-over: $_cm-tab-default-color,
+    $color-highlighted: $cm-white
+  );
+}
+
+@if $cm-include-tab-workarea-panel-ui {
+  $_ui: "workarea-panel";
+  @include extjs-tab-ui(
+    $ui: $_ui,
+    $ui-background-color-over:  transparent,
+    $ui-background-color-active: transparent,
+    $ui-background-color-focus-active: transparent,
+    $ui-margin: 4px 4px 0 0,
+    $ui-line-height: 32px,
+    $ui-border-width: 0 0 4px,
+    $ui-border-color: transparent,
+    $ui-border-color-over: $cm-grey-6,
+    $ui-border-color-active: $cm-black,
+    $ui-outline-width-focus: 0,
+    $ui-inner-border-color-focus: $cm-black,
+    $ui-inner-border-color-focus-active: $cm-black,
+    $ui-inner-border-color-focus-over: $cm-black
+  );
+  @include cm-tab-ui(
+    $ui: $_ui,
+    $padding: 0 10px
+  );
+}

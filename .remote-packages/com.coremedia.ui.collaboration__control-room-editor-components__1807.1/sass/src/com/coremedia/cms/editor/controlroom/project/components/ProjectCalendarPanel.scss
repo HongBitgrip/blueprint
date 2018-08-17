@@ -1,0 +1,71 @@
+@if $cm-include-project-calendar-panel {
+  /* adjust header padding */
+  .calendar-day-name__text {
+    padding-right: 23px;
+  }
+
+  $_block: "calendar-day";
+  .#{$_block} {
+    &--has-open-todos,
+    &--has-finished-todos,
+    &--has-overdue-todos {
+      &:after {
+        content: "";
+        position: absolute;
+        top: 9px;
+        left: 9px;
+        right: 9px;
+        bottom: 9px;
+        border-radius: 50%;
+      }
+    }
+
+    &--before-project-start,
+    &--after-project-end {
+      &:not(.#{$_block}--selectable):hover {
+        background-color: $cm-grey-0;
+      }
+      &:not(.#{$_block}--selected):not(:hover) {
+        background-color: $cm-grey-0;
+      }
+    }
+
+    /* after pseudo element is used to set circle background colors */
+    &--has-open-todos {
+      &:after {
+        background-color: $cm-blue-5;
+      }
+    }
+
+    &--has-finished-todos {
+      &:after {
+        background-color: $cm-grey-4;
+      }
+    }
+
+    &--has-overdue-todos {
+      &:after {
+        background-color: $cm-red;
+      }
+    }
+
+    &--selected.#{$_block}--has-finished-todos,
+    &--selected.#{$_block}--has-open-todos,
+    &--selected.#{$_block}--has-overdue-todos {
+      &:after {
+        background-color: white;
+      }
+    }
+
+    &--has-open-todos div.#{$_block}__number,
+    &--has-finished-todos div.#{$_block}__number,
+    &--has-overdue-todos div.#{$_block}__number {
+      color: white;
+    }
+    &--selected.#{$_block}--has-finished-todos div.#{$_block}__number,
+    &--selected.#{$_block}--has-open-todos div.#{$_block}__number,
+    &--selected.#{$_block}--has-overdue-todos div.#{$_block}__number {
+      color: $cm-blue-5;
+    }
+  }
+}

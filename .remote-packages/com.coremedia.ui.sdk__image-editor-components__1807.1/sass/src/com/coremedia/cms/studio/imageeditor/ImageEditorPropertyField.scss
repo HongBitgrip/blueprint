@@ -1,0 +1,199 @@
+@if $cm-include-image-editor-property-field {
+  $_image-editor-stage-block: "image-editor-stage";
+  $_image-editor-stage-image: "image-editor-image";
+  $_focus-area-block: "focus-area";
+  $_image-area-block: "image-area";
+  $_image-area-inner-block: "image-area-inner";
+  $_crop-container-block: "crop-container";
+
+  .cm-image-editor-property-field {
+
+    .#{$_image-editor-stage-block} {
+      overflow: hidden;
+
+      .#{$_crop-container-block} {
+        visibility: hidden;
+
+        &.solo {
+          visibility: visible;
+        }
+      }
+
+      &--show-crops {
+        & .#{$_crop-container-block} {
+          visibility: visible;
+        }
+      }
+    }
+
+    .#{$_image-editor-stage-image} {
+      display: block;
+
+      &.cm-validation-state-error {
+        border: 1px solid red;
+      }
+    }
+
+    & .#{$_image-area-block} {
+      position: absolute;
+      box-shadow: inset 0 0 0 2px white;
+      width: 100%;
+      height: 100%;
+    }
+
+    & .#{$_image-area-inner-block} {
+      position: absolute;
+      border: 2px dashed black;
+      width: 100%;
+      height: 100%;
+    }
+
+    & .#{$_crop-container-block} {
+      box-shadow: none;
+      z-index: 601;
+      visibility: hidden;
+      background-repeat: no-repeat;
+      background-position: 50% 50%;
+      position: absolute;
+
+      &.#{$prefix}resizable-pinned {
+        cursor: all-scroll;
+        &.cm-read-only {
+          cursor: default;
+        }
+      }
+
+      & .#{$prefix}resizable-handle-north,
+      & .#{$prefix}resizable-handle-south,
+      & .#{$prefix}resizable-handle-east,
+      & .#{$prefix}resizable-handle-west {
+        opacity: 0;
+      }
+
+      & .#{$prefix}resizable-handle-northeast,
+      & .#{$prefix}resizable-handle-northwest,
+      & .#{$prefix}resizable-handle-southeast,
+      & .#{$prefix}resizable-handle-southwest {
+        color: black;
+        font-size: 6px;
+        &::before {
+          border: 1px solid white;
+          background-color: black;
+        }
+      }
+
+      & .#{$prefix}resizable-handle-northeast {
+        right: $_cm-crop-container-handle-position-change;
+        top: $_cm-crop-container-handle-position-change;
+      }
+
+      & .#{$prefix}resizable-handle-northwest {
+        left: $_cm-crop-container-handle-position-change;
+        top: $_cm-crop-container-handle-position-change;
+      }
+
+      & .#{$prefix}resizable-handle-southeast {
+        bottom: $_cm-crop-container-handle-position-change;
+        right: $_cm-crop-container-handle-position-change;
+      }
+
+      & .#{$prefix}resizable-handle-southwest {
+        bottom: $_cm-crop-container-handle-position-change;
+        left: $_cm-crop-container-handle-position-change;
+      }
+
+    }
+
+    & .#{$_focus-area-block} {
+
+      &.#{$_crop-container-block} {
+        position: absolute;
+        z-index: 602;
+      }
+
+      & > .#{$_image-area-block} >.#{$_image-area-inner-block} {
+        visibility: hidden;
+      }
+    }
+
+    .#{$_crop-container-block} {
+
+      &.hover .#{$_image-area-inner-block} {
+        border-image: url(get-resource-path("images/crop_border_hover-default.gif")) 2 round;
+      }
+
+      &.hover {
+        z-index: 603;
+        &.solo {
+          z-index: 600;
+        }
+      }
+
+      &.solo {
+        box-shadow: 0 0 0 2000px rgba(0, 0, 0, 0.4);
+      }
+    }
+
+    $_state-map: (
+      "error" : (
+        color: $cm-validation-color-error),
+      "warning" : (
+        color: $cm-validation-color-warning),
+      "info" : (
+        color: $cm-validation-color-info),
+      "success" : (
+        color: $cm-validation-color-success)
+    );
+
+    @each $state, $map in $_state-map {
+      & .cm-validation-state-#{$state} {
+        & .upload-image-container {
+          background-color: $cm-white;
+          border-bottom-color: map_get($map, color);
+          border-radius: 0 0 2px 2px;
+
+          -webkit-box-shadow: inset -2px -1px 0 0 map_get($map, color),inset 2px 2px 0 0 map_get($map, color);
+          -moz-box-shadow: inset -2px -1px 0 0 map_get($map, color),inset 2px 2px 0 0 map_get($map, color);
+          box-shadow: inset -2px -1px 0 0 map_get($map, color),inset 2px 2px 0 0 map_get($map, color);
+        }
+
+        & .x-panel-body {
+          border: none;
+          background-color: $cm-grey-0;
+        }
+
+        &.#{$_crop-container-block} {
+          &.hover {
+            & .#{$_image-area-inner-block} {
+              border-image: url(get-resource-path("images/crop_border_hover-" + #{$state} + ".gif")) 2 round;
+            }
+          }
+          & .#{$_image-area-block} {
+            box-shadow: inset 0 0 0 2px map_get($map, color);
+          }
+          & .#{$prefix}resizable-handle {
+            border-color: map_get($map, color);
+          }
+          & .#{$prefix}resizable-handle-northeast,
+          & .#{$prefix}resizable-handle-northwest,
+          & .#{$prefix}resizable-handle-southeast,
+          & .#{$prefix}resizable-handle-southwest {
+            background-color: map_get($map, color);
+          }
+        }
+
+        &.#{$prefix}tab {
+          -webkit-box-shadow: inset 0 -3px 0 0 map_get($map, color);
+          -moz-box-shadow: inset 0 -3px 0 0 map_get($map, color);
+          box-shadow: inset 0 -3px 0 0 map_get($map, color);
+
+          &.#{$prefix}focus {
+            -webkit-box-shadow: inset 1px 0 0 0 map_get($map, color), inset 0 -3px 0 0 map_get($map, color), inset 0 0 1px 0 map_get($map, color), inset 0 0 0 1px map_get($map, color);
+            -moz-box-shadow: inset 1px 0 0 0 map_get($map, color), inset 0 -3px 0 0 map_get($map, color), inset 0 0 1px 0 map_get($map, color), inset 0 0 0 1px map_get($map, color);
+            box-shadow: inset 1px 0 0 0 map_get($map, color), inset 0 -3px 0 0 map_get($map, color), inset 0 0 1px 0 map_get($map, color), inset 0 0 0 1px map_get($map, color);
+          }
+        }
+      }
+    }
+  }
+}

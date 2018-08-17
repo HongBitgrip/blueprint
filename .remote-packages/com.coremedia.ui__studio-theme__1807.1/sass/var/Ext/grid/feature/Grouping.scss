@@ -1,0 +1,6 @@
+// Default variables for Ext.grid.feature.Grouping
+$grid-grouped-header-background-color: dynamic($cm-grey-0);
+$grid-grouped-title-color: dynamic($cm-font-color);
+$grid-grouped-title-glyph-color: dynamic($cm-icon-color-pos);
+$grid-grouped-title-expand-glyph: dynamic($cm-core-icons-100-var-arrow-right $tool-glyph-font-size $cm-core-icons-100-font-name);
+$grid-grouped-title-collapse-glyph: dynamic($cm-core-icons-100-var-arrow-down $tool-glyph-font-size $cm-core-icons-100-font-name);

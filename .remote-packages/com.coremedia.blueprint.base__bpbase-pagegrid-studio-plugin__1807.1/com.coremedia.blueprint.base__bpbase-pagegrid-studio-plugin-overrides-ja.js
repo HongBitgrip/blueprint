@@ -1,0 +1,2 @@
+Ext.define("com.coremedia.blueprint.base.pagegrid.PageGridLayouts_properties_ja",{override:"com.coremedia.blueprint.base.pagegrid.PageGridLayouts_properties"},function(){});Ext.define("com.coremedia.blueprint.base.pagegrid.PageGridPropertyField_properties_ja",{override:"com.coremedia.blueprint.base.pagegrid.PageGridPropertyField_properties","PageLayout_title":"ページレイアウト"},function(){});
+//# sourceMappingURL=com.coremedia.blueprint.base__bpbase-pagegrid-studio-plugin-overrides-ja.js.map

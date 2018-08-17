@@ -1,0 +1,8 @@
+{
+"version":3,
+"file":"com.coremedia.ui.sdk__todo-studio-client-overrides-de.js",
+"lineCount":1,
+"mappings":"AAGAA,GAAAC,OAAA,CAAW,kDAAX,CAA+D,CAC7DC,SAAU,+CADmD,CAE7D,8BAA+B,wCAF8B,CAG7D,8BAA+B,qBAH8B,CAI7D,kBAAmB,eAJ0C,CAK7D,0BAA2B,eALkC,CAM7D,mBAAoB,KANyC,CAO7D,kBAAmB,0BAP0C,CAQ7D,yBAA0B,OARmC,CAS7D,iBAAkB,MAT2C,CAA/D,CAUG,QAAQ,EAAG,EAVd;",
+"sources":["locale/de/com/coremedia/cms/editor/todo/Todo_properties.js"],
+"names":["Ext","define","override"]
+}

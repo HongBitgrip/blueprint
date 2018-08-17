@@ -1,0 +1,25 @@
+/**
+ * @var {color}
+ *
+ * The background color of ContributionStatusContainer
+ *
+ * @member com.coremedia.elastic.social.studio.moderation.shared.details.base
+ */
+$cm-contribution-status-container-background-color: dynamic($cm-grey-0);
+
+/**
+ * @var {list}
+ *
+ * The shadow of ContributionStatusContainer
+ *
+ * @member com.coremedia.elastic.social.studio.moderation.shared.details.base
+ */
+$cm-contribution-status-container-box-shadow: dynamic($_cm-toolbar-footer-box-shadow);
+
+/**
+ * @var {boolean}
+ * Enables styles for ContributionStatusContainer.
+ *
+ * @member com.coremedia.elastic.social.studio.moderation.shared.details.base
+ */
+$cm-include-contribution-status-container: dynamic(true);

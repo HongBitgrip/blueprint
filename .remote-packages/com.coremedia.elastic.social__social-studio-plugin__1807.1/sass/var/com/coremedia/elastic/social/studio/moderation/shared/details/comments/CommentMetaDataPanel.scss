@@ -1,0 +1,34 @@
+/**
+ * @var {number}
+ *
+ * The border width of the items inside the CommentMetaDataPanel
+ *
+ * @member com.coremedia.elastic.social.studio.moderation.shared.details.comments
+ */
+$cm-comment-metadata-panel-item-border-width: dynamic($cm-border-width);
+
+/**
+ * @var {color}
+ *
+ * The border color of the items inside the CommentMetaDataPanel
+ *
+ * @member com.coremedia.elastic.social.studio.moderation.shared.details.comments
+ */
+$cm-comment-metadata-panel-item-border-color: dynamic($cm-grey-3);
+
+/**
+ * @var {number/list}
+ *
+ * The border radius of the items inside the CommentMetaDataPanel
+ *
+ * @member com.coremedia.elastic.social.studio.moderation.shared.details.comments
+ */
+$cm-comment-metadata-panel-item-border-radius: dynamic($cm-border-radius);
+
+/**
+ * @var {boolean}
+ * Enables styles for the CommentMetaDataPanel.
+ *
+ * @member com.coremedia.elastic.social.studio.moderation.shared.details.comments
+ */
+$cm-include-comment-metadata-panel: dynamic(true);

@@ -1,0 +1,30 @@
+@if $cm-include-tabbed-workflow-panel {
+  $_block: "cm-tabbed-workflow-panel";
+  $_element: $_block + "__tab-bar-element";
+  $_body_element: $_block + "__body-element";
+
+  .#{$_block} {
+    // left tab bar with buttons
+    .#{$_element} {
+      z-index: 1;
+      > .#{$prefix}tab-bar-body-side {
+        overflow: visible;
+        &:before {
+          content: "";
+          position: absolute;
+          top: 2px;
+          right: 0;
+          height: 100%;
+          border-right: $cm-border-width $cm-border-style $cm-grey-3;
+        }
+      }
+      .#{$prefix}tab-side-left {
+        z-index: 0;
+      }
+    }
+    // tab panels
+    .#{$_body_element} {
+      z-index: 0;
+    }
+  }
+}

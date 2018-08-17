@@ -1,0 +1,8 @@
+{
+"version":3,
+"file":"com.coremedia.blueprint.base__bpbase-notification-studio-plugin.js",
+"lineCount":3,
+"mappings":"AAAAA,GAAAC,OAAA,CAAW,0DAAX,CAAuE,QAAQ,CAACC,yBAAD,CAA4B,CAQ/FC,QAASA,2BAA0B,CAACC,MAAD,CAA6C,CAAC,GAAGC,SAAAC,OAAH,EAAqB,CAArB,CAAuBF,MAAA,CAAO,IACvH,KAAIG,UAAmEC,GAAAC,KAAA,CAASC,GAAAC,UAAAC,IAAAC,OAAAC,cAAAC,aAAT,CAA6D,EAA7D,CACvE,KAAIC,YAA2CR,GAAAC,KAAA,CAASP,yBAAT,CAAmC,EAAnC,CAC/CE,OAAA,CAASa,GAAAC,SAAAC,IAAAC,KAAAC,MAAA,CAA4BL,WAA5B,CAAwCZ,MAAxC,CACT,KAAIkB,gDAAqHd,GAAAC,KAAA,CAASC,GAAAC,UAAAC,IAAAC,OAAAU,aAAArB,0BAAT,CAAyE,EAAzE,CACzHM;GAAAgB,YAAA,CAAgBjB,SAAhB,CAA0B,eAA1B,CAA4C,CAAC,IAAIG,GAAAC,UAAAC,IAAAC,OAAAU,aAAArB,0BAAJ,CAAoEoB,+CAApE,CAAD,CAA5C,CACAL,IAAAC,SAAAC,IAAAC,KAAAC,MAAA,CAA4Bd,SAA5B,CAAsCH,MAAtC,CACA,KAAAqB,WAAA,CAAgBlB,SAAhB,CAPwF,CAWxF,MAAO,CACLmB,OAAQ,qDADH,CAELC,MAAO,qFAFF,CAGLC,YAAazB,0BAHR,CAILsB,WAAYA,QAAQ,EAAG,CACrBf,GAAAC,UAAAC,IAAAC,OAAAC,cAAAC,aAAAc,UAAAD,YAAAP,MAAA,CAAgF,IAAhF;AAAsFhB,SAAtF,CADqB,CAJlB,CAOLyB,SAAU,CACR,qDADQ,CAER,iEAFQ,CAGR,uBAHQ,CAPL,CAnBgG,CAA3G;",
+"sources":["src/com/coremedia/blueprint/studio/NotificationsStudioPlugin.js"],
+"names":["Ext","define","NotificationsStudioPlugin","NotificationsStudioPlugin$","config","arguments","length","config_$1","AS3","cast","com","coremedia","cms","editor","configuration","StudioPlugin","defaults_$1","net","jangaroo","ext","Exml","apply","notifications_NotificationsStudioPlugin_16_5_$1","notification","setBindable","super$ZsUg","extend","alias","constructor","prototype","requires"]
+}

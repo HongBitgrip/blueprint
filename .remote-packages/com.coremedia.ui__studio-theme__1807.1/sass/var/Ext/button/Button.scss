@@ -1,0 +1,675 @@
+/**
+ * @var {list}
+ *
+ * Default arrow glyph when the button menu pops up to the bottom
+ *
+ * @member Ext.button.Button
+ */
+$cm-button-arrow-glyph-down: dynamic($cm-core-icons-100-var-arrow-down $cm-glyph-font-size-50 $cm-core-icons-100-font-name);
+
+/**
+ * @var {list}
+ *
+ * Default arrow glyph when the button menu pops up to the right
+ *
+ * @member Ext.button.Button
+ */
+$cm-button-arrow-glyph-right: dynamic($cm-core-icons-100-var-arrow-right $cm-glyph-font-size-50 $cm-core-icons-100-font-name);
+
+/**
+ * @var {boolean}
+ *
+ * Specifies if pointer events are enabled (e.g. used to enable tooltips for disabled buttons)
+ *
+ * @member Ext.button.Button
+ */
+$cm-button-enable-pointer-events: dynamic(true);
+
+/**
+ * @var {boolean}
+ *
+ * If set to true no icon is visible.
+ * This also renders the button as clickable text link and breaks long text instead of ellipsis.
+ *
+ * @member Ext.button.Button
+ */
+$cm-button-icon-rendering-disabled: dynamic(false);
+
+/**
+ * @var {boolean}
+ *
+ * If true enables a fix that assures to generate the styles for color in over and pressed state.
+ * (ExtJS will not generate the styles for colors in different states if there is no difference between this color and the default color.)
+ *
+ * @member Ext.button.Button
+ */
+$cm-button-enable-color-state-fix: dynamic(false);
+
+/**
+ * @var {boolean}
+ *
+ * If true enables multiline for text elements in buttons. (The text will not be ellipsed anymore)
+ *
+ * @member Ext.button.Button
+ */
+$cm-button-enable-multiline: dynamic(false);
+
+/**
+ * @var {color}
+ *
+ * If not null defines the background-color to be applied when the error state is active.
+ *
+ * @member Ext.button.Button
+ */
+$cm-button-background-color-error: dynamic($cm-validation-color-error);
+
+/**
+ * @var {color}
+ *
+ * If not null defines the background-color to be applied when the warning state is active.
+ *
+ * @member Ext.button.Button
+ */
+$cm-button-background-color-warning: dynamic($cm-validation-color-warning);
+
+/**
+ * @var {color}
+ *
+ * If not null defines the background-color to be applied when the info state is active.
+ *
+ * @member Ext.button.Button
+ */
+$cm-button-background-color-info: dynamic($cm-validation-color-info);
+
+/**
+ * @var {color}
+ *
+ * If not null defines the background-color to be applied when the success state is active.
+ *
+ * @member Ext.button.Button
+ */
+$cm-button-background-color-success: dynamic($cm-validation-color-success);
+
+/**
+ * @var {color}
+ *
+ * If not null defines the background-color to be applied when the error state is active and the button is hovered.
+ *
+ * @member Ext.button.Button
+ */
+$cm-button-background-color-error-over: dynamic($cm-validation-color-error-over);
+
+/**
+ * @var {color}
+ *
+ * If not null defines the background-color to be applied when the warning state is active and the button is hovered.
+ *
+ * @member Ext.button.Button
+ */
+$cm-button-background-color-warning-over: dynamic($cm-validation-color-warning-over);
+
+/**
+ * @var {color}
+ *
+ * If not null defines the background-color to be applied when the info state is active and the button is hovered.
+ *
+ * @member Ext.button.Button
+ */
+$cm-button-background-color-info-over: dynamic($cm-validation-color-info-over);
+
+/**
+ * @var {color}
+ *
+ * If not null defines the background-color to be applied when the success state is active and the button is hovered.
+ *
+ * @member Ext.button.Button
+ */
+$cm-button-background-color-success-over: dynamic($cm-validation-color-success-over);
+
+/**
+ * @var {color}
+ *
+ * If not null defines the background-color to be applied when the error state is active and the button is pressed.
+ *
+ * @member Ext.button.Button
+ */
+$cm-button-background-color-error-pressed: dynamic($cm-validation-color-error-pressed);
+
+/**
+ * @var {color}
+ *
+ * If not null defines the background-color to be applied when the warning state is active and the button is pressed.
+ *
+ * @member Ext.button.Button
+ */
+$cm-button-background-color-warning-pressed: dynamic($cm-validation-color-warning-pressed);
+
+/**
+ * @var {color}
+ *
+ * If not null defines the background-color to be applied when the info state is active and the button is pressed.
+ *
+ * @member Ext.button.Button
+ */
+$cm-button-background-color-info-pressed: dynamic($cm-validation-color-info-pressed);
+
+/**
+ * @var {color}
+ *
+ * If not null defines the background-color to be applied when the success state is active and the button is pressed.
+ *
+ * @member Ext.button.Button
+ */
+$cm-button-background-color-success-pressed: dynamic($cm-validation-color-success-pressed);
+
+/**
+ * @var {color}
+ *
+ * If not null defines the border-color to be applied when the error state is active.
+ *
+ * @member Ext.button.Button
+ */
+$cm-button-border-color-error: dynamic($cm-validation-color-error);
+
+/**
+ * @var {color}
+ *
+ * If not null defines the border-color to be applied when the warning state is active.
+ *
+ * @member Ext.button.Button
+ */
+$cm-button-border-color-warning: dynamic($cm-validation-color-warning);
+
+/**
+ * @var {color}
+ *
+ * If not null defines the border-color to be applied when the info state is active.
+ *
+ * @member Ext.button.Button
+ */
+$cm-button-border-color-info: dynamic($cm-validation-color-info);
+
+/**
+ * @var {color}
+ *
+ * If not null defines the border-color to be applied when the success state is active.
+ *
+ * @member Ext.button.Button
+ */
+$cm-button-border-color-success: dynamic($cm-validation-color-success);
+
+/**
+ * @var {color}
+ *
+ * If not null defines the border-color to be applied when the error state is active and the button is hovered.
+ *
+ * @member Ext.button.Button
+ */
+$cm-button-border-color-error-over: dynamic($cm-validation-color-error-over);
+
+/**
+ * @var {color}
+ *
+ * If not null defines the border-color to be applied when the warning state is active and the button is hovered.
+ *
+ * @member Ext.button.Button
+ */
+$cm-button-border-color-warning-over: dynamic($cm-validation-color-warning-over);
+
+/**
+ * @var {color}
+ *
+ * If not null defines the border-color to be applied when the info state is active and the button is hovered.
+ *
+ * @member Ext.button.Button
+ */
+$cm-button-border-color-info-over: dynamic($cm-validation-color-info-over);
+
+/**
+ * @var {color}
+ *
+ * If not null defines the border-color to be applied when the success state is active and the button is hovered.
+ *
+ * @member Ext.button.Button
+ */
+$cm-button-border-color-success-over: dynamic($cm-validation-color-success-over);
+
+/**
+ * @var {color}
+ *
+ * If not null defines the border-color to be applied when the error state is active and the button is pressed.
+ *
+ * @member Ext.button.Button
+ */
+$cm-button-border-color-error-pressed: dynamic($cm-validation-color-error-pressed);
+
+/**
+ * @var {color}
+ *
+ * If not null defines the border-color to be applied when the warning state is active and the button is pressed.
+ *
+ * @member Ext.button.Button
+ */
+$cm-button-border-color-warning-pressed: dynamic($cm-validation-color-warning-pressed);
+
+/**
+ * @var {color}
+ *
+ * If not null defines the border-color to be applied when the info state is active and the button is pressed.
+ *
+ * @member Ext.button.Button
+ */
+$cm-button-border-color-info-pressed: dynamic($cm-validation-color-info-pressed);
+
+/**
+ * @var {color}
+ *
+ * If not null defines the border-color to be applied when the success state is active and the button is pressed.
+ *
+ * @member Ext.button.Button
+ */
+$cm-button-border-color-success-pressed: dynamic($cm-validation-color-success-pressed);
+
+/**
+ * @var {color}
+ *
+ * If not null defines the box-shadow to be applied when the error state is active.
+ *
+ * @member Ext.button.Button
+ */
+$cm-button-box-shadow-error: dynamic(cm-focus-box-shadow($cm-font-light-coloured));
+
+/**
+ * @var {color}
+ *
+ * If not null defines the box-shadow to be applied when the warning state is active.
+ *
+ * @member Ext.button.Button
+ */
+$cm-button-box-shadow-warning: dynamic(cm-focus-box-shadow($cm-font-light-coloured));
+
+/**
+ * @var {color}
+ *
+ * If not null defines the box-shadow to be applied when the info state is active.
+ *
+ * @member Ext.button.Button
+ */
+$cm-button-box-shadow-info: dynamic(cm-focus-box-shadow($cm-font-light-coloured));
+
+/**
+ * @var {color}
+ *
+ * If not null defines the box-shadow to be applied when the success state is active.
+ *
+ * @member Ext.button.Button
+ */
+$cm-button-box-shadow-success: dynamic(cm-focus-box-shadow($cm-font-light-coloured));
+
+/**
+ * @var {color}
+ *
+ * If not null defines the color of the icon to be applied when the error state is active.
+ *
+ * @member Ext.button.Button
+ */
+$cm-button-icon-color-error: dynamic($cm-font-light-coloured);
+
+/**
+ * @var {color}
+ *
+ * If not null defines the color of the icon to be applied when the warning state is active.
+ *
+ * @member Ext.button.Button
+ */
+$cm-button-icon-color-warning: dynamic($cm-font-light-coloured);
+
+/**
+ * @var {color}
+ *
+ * If not null defines the color of the icon to be applied when the info state is active.
+ *
+ * @member Ext.button.Button
+ */
+$cm-button-icon-color-info: dynamic($cm-font-light-coloured);
+
+/**
+ * @var {color}
+ *
+ * If not null defines the color of the icon to be applied when the success state is active.
+ *
+ * @member Ext.button.Button
+ */
+$cm-button-icon-color-success: dynamic($cm-font-light-coloured);
+
+// CoreMedia specific vars, vars beginning with underscore are not meant to be changed!
+$_cm-button-basic-color-over: $cm-white;
+$_cm-button-basic-color-pressed: $cm-white;
+$_cm-button-basic-color-disabled: $cm-grey-4;
+$_cm-button-basic-background-color-over: $cm-grey-6;
+$_cm-button-basic-background-color-pressed: $cm-grey-9;
+$_cm-button-basic-border-radius: $cm-border-radius;
+$_cm-button-basic-padding: 5px;
+$_cm-button-basic-font-weight: $cm-font-weight-bold;
+$_cm-button-basic-primary-color: $cm-blue-4;
+$_cm-button-basic-secondary-color: $cm-black;
+
+$_cm-button-basic-standard-focus-border-width: 2px;
+$_cm-button-basic-small-focus-border-width: 1px;
+$_cm-button-basic-standard-focus-border-color: transparent;
+
+
+$_cm-button-footer-background-color: transparent;
+
+$_cm-button-inline-background-color: $cm-grey-0;
+$_cm-button-inline-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.2), inset -1px -1px 1px rgba(0, 0, 0, 0.2);
+
+$_cm-button-inverted-background-color: transparent;
+$_cm-button-inverted-color: $cm-font-light-coloured;
+$_cm-button-inverted-glyph-color: $cm-icon-color-neg;
+$_cm-button-inverted-text-padding: 0;
+$_cm-button-inverted-font-size: $cm-font-size;
+$_cm-button-inverted-line-height: $cm-grid-400;
+// special arrow glyph for inverted
+$_cm-button-inverted-arrow-glyph: $cm-button-arrow-glyph-right;
+$_cm-button-inverted-arrow-glyph-color: $cm-icon-color-neg;
+$_cm-button-inverted-icon-spacing: 0;
+$_cm-button-inverted-arrow-width: 6px;
+$_cm-button-inverted-icon-color-over: $cm-blue-2;
+
+$_cm-button-toolbar-color: $button-default-color;
+$_cm-button-toolbar-padding: 3px;
+$_cm-button-toolbar-background-color: transparent;
+$_cm-button-toolbar-background-color-over: $cm-grey-2;
+$_cm-button-toolbar-background-color-pressed: $cm-grey-3;
+$_cm-button-toolbar-inner-opacity-disabled: 0.5;
+$_cm-button-toolbar-glyph-color: $cm-darkgrey;
+$_cm-button-toolbar-arrow-glyph-color: $cm-darkgrey;
+
+
+$_cm-button-toolbar-dark-background-color-over: $cm-grey-4;
+$_cm-button-toolbar-dark-background-color-pressed: $cm-grey-8;
+
+$_cm-button-upload-glyph-color: $cm-grey-7;
+$_cm-button-upload-padding: 2px;
+
+$_cm-button-main-navigation-color: $cm-white;
+$_cm-button-main-navigation-background-color: transparent;
+$_cm-button-main-navigation-background-color-over: $cm-blue-6;
+$_cm-button-main-navigation-background-color-pressed: $cm-blue-7;
+$_cm-button-main-navigation-glyph-color: $cm-icon-color-neg;
+$_cm-button-main-navigation-border-width: $_cm-button-basic-standard-focus-border-width;
+$_cm-button-main-navigation-border-color: $_cm-button-basic-standard-focus-border-color;
+$_cm-button-main-navigation-inner-border-color: $cm-icon-color-neg;
+
+$button-default-base-color: dynamic(transparent);
+$button-default-color: dynamic($cm-grey-9);
+$button-default-inner-border-width-focus: dynamic(0);
+$button-opacity-disabled: dynamic(0.4);
+$button-small-font-size: dynamic($cm-font-size);
+$button-small-line-height: dynamic($cm-line-height);
+$button-small-border-width: dynamic(0);
+$button-small-icon-size: dynamic($cm-glyph-font-size-100);
+$button-small-glyph-font-size: dynamic($cm-glyph-font-size-100);
+$button-small-arrow-width: dynamic($cm-glyph-font-size-50);
+$button-small-arrow-height: dynamic($cm-glyph-font-size-50);
+$button-small-arrow-glyph: dynamic($cm-button-arrow-glyph-down);
+$button-medium-border-width: dynamic(0);
+$button-medium-font-size: dynamic($cm-font-size);
+$button-medium-line-height: dynamic($cm-line-height);
+$button-medium-icon-size: dynamic($cm-glyph-font-size-200);
+$button-medium-glyph-font-size: dynamic($cm-glyph-font-size-200);
+$button-medium-arrow-width: dynamic($cm-glyph-font-size-50);
+$button-medium-arrow-height: dynamic($cm-glyph-font-size-50);
+$button-medium-arrow-glyph: dynamic($cm-button-arrow-glyph-down);
+$button-medium-padding: dynamic(4px);
+$button-large-font-size: dynamic($cm-font-size);
+$button-large-line-height: dynamic($cm-line-height);
+$button-large-border-width: dynamic(0);
+$button-large-icon-size: dynamic($cm-glyph-font-size-300);
+$button-large-glyph-font-size: dynamic($cm-glyph-font-size-300);
+$button-large-arrow-width: dynamic($cm-glyph-font-size-50);
+$button-large-arrow-height: dynamic($cm-glyph-font-size-50);
+$button-large-arrow-glyph: dynamic($cm-button-arrow-glyph-down);
+$button-split-width: dynamic($cm-glyph-font-size-50);
+$button-split-height: dynamic($cm-glyph-font-size-50);
+
+$button-default-inner-border-width-focus: dynamic(1px);
+$button-default-inner-border-width-focus-over: dynamic($button-default-inner-border-width-focus);
+$button-default-inner-border-width-focus-pressed: dynamic($button-default-inner-border-width-focus);
+
+/**
+ * @var {boolean}
+ * Enables additional styles for the "default" skin.
+ *
+ * Available {@link #scale}s: small
+ *
+ * It is assumed that the default skin is already generated by extjs, so it will not be generated again.
+ *
+ * see {@link #include-button-default-small-ui}
+ *
+ * @member Ext.button.Button
+ */
+$cm-include-button-default-ui: dynamic($include-button-default-small-ui);
+
+/**
+ * @var {boolean}
+ * Enables styles for the corresponding skin used for default medium buttons with hover effect on the icon
+ *
+ * Available {@link #scale}s: medium
+ *
+ * @member Ext.button.Button
+ */
+$cm-include-button-highlight-ui: dynamic(true);
+
+/**
+ * @var {boolean}
+ * Enables styles for the corresponding skin used for default buttons with hover effect on the icon
+ *
+ * Available {@link #scale}s: small, medium
+ *
+ * @member Ext.button.Button
+ */
+$cm-include-button-simple-highlight-ui: dynamic(true);
+
+/**
+ * @var {boolean}
+ * Enables styles for the corresponding skin used for buttons on inverted backgrounds.
+ *
+ * Available {@link #scale}s: small, medium
+ *
+ * @member Ext.button.Button
+ */
+$cm-include-button-inverted-ui: dynamic(true);
+
+/**
+ * @var {boolean}
+ * Enables styles for the corresponding skin used for main navigation. Can be toggled.
+ *
+ * Available {@link #scale}s: medium
+ *
+ * @member Ext.button.Button
+ */
+$cm-include-button-main-navigation-ui: dynamic(true);
+
+/**
+ * @var {boolean}
+ * Enables styles for the corresponding skin used for toolbar buttons.
+ *
+ * Available {@link #scale}s: small
+ *
+ * @member Ext.button.Button
+ */
+$cm-include-button-toolbar-ui: dynamic(true);
+
+/**
+ * @var {boolean}
+ * Enables styles for the corresponding skin used for toolbar buttons.
+ *
+ * Available {@link #scale}s: small
+ *
+ * @member Ext.button.Button
+ */
+$cm-include-button-toolbar-dark-ui: dynamic(true);
+
+/**
+ * @var {boolean}
+ * Enables styles for the corresponding skin used for grouped toolbar buttons.
+ *
+ * Available {@link #scale}s: small
+ *
+ * @member Ext.button.Button
+ */
+$cm-include-button-toolbar-grouped-ui: dynamic(true);
+
+/**
+ * @var {boolean}
+ * Enables styles for the corresponding skin used for grouped toolbar buttons.
+ *
+ * Available {@link #scale}s: small
+ *
+ * @member Ext.button.Button
+ */
+$cm-include-button-toolbar-dark-grouped-ui: dynamic(true);
+
+/**
+ * @var {boolean}
+ * Enables styles for the corresponding skin used for preview toolbar buttons.
+ *
+ * Available {@link #scale}s: small
+ *
+ * @member Ext.button.Button
+ */
+$cm-include-button-preview-toolbar-ui: dynamic(true);
+
+/**
+ * @var {boolean}
+ * Enables styles for the corresponding skin used for grouped preview toolbar buttons.
+ *
+ * Available {@link #scale}s: small
+ *
+ * @member Ext.button.Button
+ */
+$cm-include-button-preview-toolbar-grouped-ui: dynamic(true);
+
+/**
+ * @var {boolean}
+ * Enables styles for the corresponding skin used for workarea toolbar buttons.
+ *
+ * Available {@link #scale}s: medium
+ *
+ * Also generates skins for error and warn states.
+ *
+ * @member Ext.button.Button
+ */
+$cm-include-button-workarea-ui: dynamic(true);
+
+/**
+ * @var {boolean}
+ * Enables styles for the corresponding skin used for simple buttons without any effects.
+ *
+ * Available {@link #scale}s: small
+ *
+ * @member Ext.button.Button
+ */
+$cm-include-button-simple-ui: dynamic(true);
+
+/**
+ * @var {boolean}
+ * Enables styles for the corresponding skin used for simple buttons without any effects on inverted backgrounds.
+ *
+ * Available {@link #scale}s: small
+ *
+ * @member Ext.button.Button
+ */
+$cm-include-button-simple-inverted-ui: dynamic(true);
+
+/**
+ * @var {boolean}
+ * Specifies if the custom UI "link" will be generated.
+ *
+ * Available {@link #scale}s: small
+ *
+ * @member Ext.button.Button
+ */
+$cm-include-button-link-ui: dynamic(true);
+
+/**
+ * @var {boolean}
+ * Enables styles for the corresponding skin used for footer primary buttons.
+ *
+ * Available {@link #scale}s: small
+ *
+ * @member Ext.button.Button
+ */
+$cm-include-button-footer-primary-ui: dynamic(true);
+
+/**
+ * @var {boolean}
+ * Enables styles for the corresponding skin used for footer secondary buttons.
+ *
+ * Available {@link #scale}s: small
+ *
+ * @member Ext.button.Button
+ */
+$cm-include-button-footer-secondary-ui: dynamic(true);
+
+/**
+ * @var {boolean}
+ * Enables styles for the corresponding skin used for inline secondary buttons.
+ *
+ * Available {@link #scale}s: small
+ *
+ * @member Ext.button.Button
+ */
+$cm-include-button-inline-ui: dynamic(true);
+
+/**
+ * @var {boolean}
+ * Specifies if the custom UI "breadcrumb" will be generated.
+ *
+ * Available {@link #scale}s: small
+ *
+ * @member Ext.button.Button
+ */
+$cm-include-button-breadcrumb-ui: dynamic(true);
+
+/**
+ * @var {boolean}
+ * Specifies if the custom UI "user-menu" will be generated.
+ *
+ * Available {@link #scale}s: small
+ *
+ * @member Ext.button.Button
+ */
+$cm-include-button-user-menu-ui: dynamic(true);
+
+/**
+ * @var {boolean}
+ * Enables styles for the corresponding skin used for vivid buttons.
+ *
+ * Available {@link #scale}s: small
+ *
+ * @member Ext.button.Button
+ */
+$cm-include-button-vivid-ui: dynamic(true);
+
+/**
+ * @var {boolean}
+ * Enables styles for the corresponding skin used for vivid toolbar buttons.
+ *
+ * Available {@link #scale}s: small
+ *
+ * @member Ext.button.Button
+ */
+$cm-include-button-vivid-toolbar-ui: dynamic(true);
+
+/**
+ * @var {boolean}
+ * Enables styles for the corresponding skin used for logo buttons.
+ *
+ * Available {@link #scale}s: small
+ *
+ * @member Ext.button.Button
+ */
+$cm-include-button-logo-ui: dynamic(true);

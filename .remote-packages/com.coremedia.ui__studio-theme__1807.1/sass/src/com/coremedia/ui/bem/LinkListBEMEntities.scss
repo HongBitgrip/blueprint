@@ -1,0 +1,176 @@
+@if $cm-include-link-list-wrapper {
+  $_block: "cm-link-list-wrapper";
+
+  .#{$_block} {
+    &__list,
+    &__tail {
+      position: relative;
+    }
+
+    &__list {
+      background-color: $cm-link-list-wrapper-background-color;
+      border-width: top($cm-link-list-wrapper-border-width) right($cm-link-list-wrapper-border-width) 0 left($cm-link-list-wrapper-border-width);
+      border-style: $cm-link-list-wrapper-border-style;
+      border-color: $cm-link-list-wrapper-border-color;
+      border-radius: top($cm-link-list-wrapper-border-radius) right($cm-link-list-wrapper-border-radius) 0 0;
+
+      .#{$prefix}grid-cell-first {
+        padding-left: $cm-link-list-wrapper-validation-indicator-width;
+      }
+
+      .#{$prefix}grid-item {
+        border-collapse: collapse;
+      }
+    }
+
+    &__tail {
+      border-top-left-radius: 0;
+      border-top-right-radius: 0;
+      &.#{$prefix}item-disabled {
+        background-color: $cm-grey-0;
+      }
+    }
+
+    &__list:after,
+    &__tail:after {
+      content: "";
+      display: none;
+      box-sizing: border-box;
+      position: absolute;
+      border-left: $cm-link-list-wrapper-validation-indicator-width solid transparent;
+    }
+
+    &__list:after {
+      border-radius: top($cm-link-list-wrapper-border-radius) 0 0 0;
+      z-index: 2; // because the items of a grid also have a z-index of 1
+      top: - top($cm-link-list-wrapper-border-width);
+      bottom: - bottom($cm-link-list-wrapper-border-width);
+      left: - left($cm-link-list-wrapper-border-width);
+    }
+
+    &__tail:after {
+      border-radius: 0 0 0 left($cm-link-list-wrapper-border-radius);
+      top: - top($cm-link-list-wrapper-border-width);
+      bottom: - bottom($cm-link-list-wrapper-border-width);
+      left: - left($cm-link-list-wrapper-border-width);
+    }
+
+    &--no-tail {
+      .#{$_block}__list {
+        border-bottom-right-radius: bottom($cm-link-list-wrapper-border-radius);
+        border-bottom-left-radius: left($cm-link-list-wrapper-border-radius);
+        border-bottom-width: bottom($cm-link-list-wrapper-border-width);
+
+        &:after {
+          border-bottom-left-radius: left($cm-link-list-wrapper-border-radius);
+        }
+      }
+
+      .#{$_block}__tail {
+        display: none;
+      }
+    }
+
+    &--empty {
+      .#{$_block}__list {
+        display: none;
+      }
+
+      .#{$_block}__tail {
+        border-top-left-radius: left($cm-link-list-wrapper-border-radius);
+        border-top-right-radius: right($cm-link-list-wrapper-border-radius);
+
+        &:after {
+          border-top-left-radius: left($cm-link-list-wrapper-border-radius);
+        }
+      }
+
+      &.#{$_block}--no-tail {
+        .#{$_block}__list {
+          display: block;
+        }
+      }
+    }
+
+    &--embedded {
+      .#{$_block}__list {
+        border-top-width: 0;
+        border-right-width: 0;
+        border-left-width: 0;
+      }
+
+      &.#{$_block}--no-tail {
+        .#{$_block}__list {
+          border-bottom-width: 0;
+        }
+      }
+    }
+
+    &--with-header {
+      .#{$_block}__header {
+        border-radius: top($cm-link-list-wrapper-border-radius) right($cm-link-list-wrapper-border-radius) 0 0;
+      }
+      .#{$_block}__list {
+        border-radius: 0 0 bottom($cm-link-list-wrapper-border-radius) left($cm-link-list-wrapper-border-radius);
+        border-width: top($cm-link-list-wrapper-border-width) right($cm-link-list-wrapper-border-width) bottom($cm-link-list-wrapper-border-width) left($cm-link-list-wrapper-border-width);
+      }
+    }
+
+    &--no-validation {
+      .#{$_block}__list {
+        .#{$prefix}grid-cell-first {
+          padding-left: 0;
+        }
+      }
+    }
+
+    &.cm-highlighted {
+      .#{$_block}__list {
+        border-top-color: $cm-link-list-wrapper-highlight-color;
+        border-right-color: $cm-link-list-wrapper-highlight-color;
+        border-left-color: $cm-link-list-wrapper-highlight-color;
+      }
+
+      .#{$_block}__list:after,
+      .#{$_block}__tail:after {
+        display: block;
+        border-color: $cm-link-list-wrapper-highlight-color;
+      }
+
+      &.#{$_block}--no-tail {
+        .#{$_block}__list {
+          border-bottom-color: $cm-link-list-wrapper-highlight-color;
+        }
+      }
+    }
+
+    $_state-colors: (
+      "error": $cm-link-list-wrapper-validation-color-error,
+      "warning": $cm-link-list-wrapper-validation-color-warning,
+      "info": $cm-link-list-wrapper-validation-color-info,
+      "success": $cm-link-list-wrapper-validation-color-success
+    );
+
+    @each $_state, $_state-color in $_state-colors {
+      &.cm-validation-state-#{$_state} {
+        .#{$_block}__list {
+          border-top-color: $_state-color;
+          border-right-color: $_state-color;
+          border-left-color: $_state-color;
+        }
+
+        .#{$_block}__list:after,
+        .#{$_block}__tail:after {
+          display: block;
+          border-color: $_state-color;
+        }
+
+        &.#{$_block}--no-tail {
+          .#{$_block}__list {
+            border-bottom-color: $_state-color;
+          }
+        }
+      }
+    }
+  }
+}

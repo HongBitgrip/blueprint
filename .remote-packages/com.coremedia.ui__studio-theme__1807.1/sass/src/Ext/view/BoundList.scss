@@ -1,0 +1,6 @@
+@if $cm-include-view-boundlist-default-ui {
+  $_ui : "default";
+  @include cm-view-boundlist-ui(
+    $ui: $_ui
+  );
+}

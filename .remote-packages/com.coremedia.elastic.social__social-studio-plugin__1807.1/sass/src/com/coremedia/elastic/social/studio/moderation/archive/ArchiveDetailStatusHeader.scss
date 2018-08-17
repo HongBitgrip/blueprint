@@ -1,0 +1,13 @@
+@if $cm-include-archive-detail-status-header {
+  .cm-archive-detail-status-header {
+    border-top: 1px solid $cm-grey-3;
+    border-bottom: 1px solid $cm-grey-3;
+    border-bottom-width: 1px !important; // .x-docked-top uses !important
+    padding-left: $cm-grid-200;
+    background-color: $cm-grey-1;
+
+    &.cm-highlighted {
+      background-color: $cm-blue-2;
+    }
+  }
+}

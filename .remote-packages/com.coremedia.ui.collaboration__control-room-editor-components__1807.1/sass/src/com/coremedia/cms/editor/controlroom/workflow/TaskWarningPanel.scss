@@ -1,0 +1,6 @@
+@if $cm-include-task-warning-panel {
+  .task-warning-panel {
+    border: $cm-task-warning-panel-border-width $cm-task-warning-panel-border-style $cm-task-warning-panel-border-color;
+    box-shadow: 0 1px 3px 0 transparentize($cm-task-warning-panel-border-color, .4);
+  }
+}

@@ -1,0 +1,387 @@
+/*
+Copyright (c) 2003-2010, CKSource - Frederico Knabben. All rights reserved.
+For licensing, see LICENSE.html or http://ckeditor.com/license
+*/
+
+.cke_editable {
+  line-height: 1.4;
+}
+
+.cke_editable ul {
+  list-style-type: disc;
+  /*list-style-position: inside;*/
+  display: block;
+  margin: 1em 0;
+  padding: 0 0 0 40px;
+}
+.cke_editable ol {
+  list-style-type: decimal;
+  /*list-style-position: inside;*/
+  display: block;
+  margin: 1em 0;
+  padding: 0 0 0 40px;
+}
+.cke_editable ul ul, .cke_editable ol ul {
+  list-style-type: circle;
+  list-style-position: inside;
+}
+.cke_editable ul ul, .cke_editable ol ul, .cke_editable ol ol, .cke_editable ul ol {
+  margin: 0;
+}
+.cke_editable ul ul ul, .cke_editable ol ul ul, .cke_editable ol ol ul, .cke_editable ul ol ul {
+  list-style-type: square;
+  list-style-position: inside;
+}
+
+.cke_editable em {
+  font-style: italic;
+}
+.cke_editable strong {
+  font-weight: bold;
+}
+.cke_editable em strong {
+  font-style: italic;
+  font-weight: bold;
+}
+.cke_editable strong em {
+  font-weight: bold;
+  font-style: italic;
+}
+
+.cke_editable a:link {
+  color: #0000EE;
+}
+.cke_editable a:visited {
+  color: #551A8B;
+}
+
+.cke_editable img:-moz-broken {
+  -moz-force-broken-image-icon : 1;
+  width : 24px;
+  height : 24px;
+}
+.cke_editable img,
+.cke_editable input,
+.cke_editable textarea {
+  cursor: default;
+}
+
+/*
+  The following standard setting and these paragraph styles rules
+  should be listed before the alignment rules. Otherwise,
+  the alignment rules won't overwrite the standard setting.
+*/
+.cke_editable .language--en-gb { background-color: #9090AE; }
+.cke_editable .language--en-us { background-color: #7070AE; }
+.cke_editable .language--de    { background-color: #FEDE01; }
+.cke_editable .language--fr    { background-color: #8080B5; }
+.cke_editable .language--es    { background-color: #FFFF00; }
+.cke_editable .language--ja    { background-color: #FF8080; }
+
+.cke_editable p.language--en-gb { border-width: 0 0 0 2px; border-style: solid; border-color: #9090AE; }
+.cke_editable p.language--en-us { border-width: 0 0 0 2px; border-style: solid; border-color: #7070AE; }
+.cke_editable p.language--de    { border-width: 0 0 0 2px; border-style: solid; border-color: #FEDE01; }
+.cke_editable p.language--fr    { border-width: 0 0 0 2px; border-style: solid; border-color: #8080B5; }
+.cke_editable p.language--es    { border-width: 0 0 0 2px; border-style: solid; border-color: #FFFF00; }
+.cke_editable p.language--ja    { border-width: 0 0 0 2px; border-style: solid; border-color: #FF8080; }
+
+.cke_editable blockquote {
+  background-color: #EBEBEB;
+  margin-top: 12px;
+  margin-bottom: 12px;
+  padding: 12px;
+  -moz-border-radius: 2px; /* firefox rounded corners */
+  -webkit-border-radius: 2px; /* webkit rounded corners */
+  border-radius: 2px; /* ie9 rounded corners */
+}
+.cke_editable cite {
+  background-color: #EBEBEB;
+  font-style: italic;
+}
+.cke_editable tt,
+.cke_editable acronym {
+  background-color: yellow;
+}
+.cke_editable samp,
+.cke_editable abbr {
+  background-color: red;
+}
+.cke_editable p,
+.cke_editable .p-implied {
+  margin-top:1px;
+  margin-bottom:10px
+}
+.cke_editable .p--standard {
+  font-size:12pt;
+  font-family:arial,helvetica;
+  font-weight: normal;
+  margin-bottom: 10px;
+}
+.cke_editable .p--heading-1:first-child,
+.cke_editable h1:first-child,
+.cke_editable .p--heading-2:first-child,
+.cke_editable h2:first-child,
+.cke_editable .p--heading-3:first-child,
+.cke_editable h3:first-child,
+.cke_editable .p--heading-4:first-child,
+.cke_editable h4:first-child,
+.cke_editable .p--heading-5:first-child,
+.cke_editable h5:first-child,
+.cke_editable .p--heading-6:first-child,
+.cke_editable h6:first-child {
+  margin-top: 0px;
+}
+.cke_editable .p--heading-1,
+.cke_editable h1 {
+  font-size:22pt;
+  font-family:arial,helvetica;
+  margin-top: 18px;
+  margin-bottom: 6px;
+  line-height: 1.4;
+}
+.cke_editable .p--heading-2,
+.cke_editable h2 {
+  font-size:18pt;
+  font-family:arial,helvetica;
+  margin-top: 18px;
+  margin-bottom: 6px;
+  line-height: 1.4;
+}
+.cke_editable .p--heading-3,
+.cke_editable h3 {
+  font-size:14pt;
+  font-family:arial,helvetica;
+  margin-top: 18px;
+  margin-bottom: 6px;
+  line-height: 1.4;
+}
+.cke_editable .p--heading-4,
+.cke_editable h4 {
+  font-size:13pt;
+  font-family:arial,helvetica;
+  margin-top: 18px;
+  margin-bottom: 6px;
+  line-height: 1.4;
+}
+.cke_editable .p--heading-5,
+.cke_editable h5 {
+  font-size:12pt;
+  font-family:arial,helvetica;
+  font-weight: bold;
+  margin-top: 18px;
+  margin-bottom: 6px;
+  line-height: 1.4;
+}
+.cke_editable .p--heading-6,
+.cke_editable h6 {
+  font-size:12pt;
+  font-family:arial,helvetica;
+  font-style: italic;
+  margin-top: 18px;
+  margin-bottom: 6px;
+  line-height: 1.4;
+}
+.cke_editable .align--left {
+  text-align: left;
+}
+.cke_editable .align--center  {
+  text-align: center;
+}
+.cke_editable .align--right {
+  text-align: right;
+}
+.cke_editable .align--justify {
+  text-align: justify;
+}
+.cke_editable .float--left {
+  float: left;
+  margin-right: 6px;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+.cke_editable .float--right {
+  float: right;
+  margin-left: 6px;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+.cke_editable .float--none {
+  float: none;
+}
+.cke_editable .underline  {
+  text-decoration: underline
+}
+.cke_editable .strike  {
+  text-decoration: line-through
+}
+.cke_editable .font-name--arial { font-family:Arial; }
+.cke_editable .font-name--arial-black { font-family:Arial Black; }
+.cke_editable .font-name--arial-narrow { font-family:Arial Narrow; }
+.cke_editable .font-name--century { font-family:Century; }
+.cke_editable .font-name--courier { font-family:Courier; }
+.cke_editable .font-name--lucida-console { font-family:Lucida Console; }
+.cke_editable .font-name--lucida-sans-unicode { font-family:Lucida Sans Unicode; }
+.cke_editable .font-name--times-new-roman { font-family:Times New Roman; }
+.cke_editable .font-name--verdana { font-family:Verdana; }
+
+.cke_editable .font-size--8  { font-size:8pt; }
+.cke_editable .font-size--9  { font-size:9pt; }
+.cke_editable .font-size--10 { font-size:10pt; }
+.cke_editable .font-size--11 { font-size:11pt; }
+.cke_editable .font-size--12 { font-size:12pt; }
+.cke_editable .font-size--14 { font-size:14pt; }
+.cke_editable .font-size--16 { font-size:16pt; }
+.cke_editable .font-size--18 { font-size:18pt; }
+.cke_editable .font-size--20 { font-size:20pt; }
+.cke_editable .font-size--24 { font-size:24pt; }
+.cke_editable .font-size--26 { font-size:26pt; }
+.cke_editable .font-size--28 { font-size:28pt; }
+.cke_editable .font-size--36 { font-size:36pt; }
+.cke_editable .font-size--48 { font-size:48pt; }
+.cke_editable .font-size--72 { font-size:72pt; }
+
+.cke_editable .color--black { color: black; }
+.cke_editable .color--green { color: green; }
+.cke_editable .color--silver { color: silver; }
+.cke_editable .color--lime { color: lime; }
+.cke_editable .color--gray { color: gray; }
+.cke_editable .color--olive { color: olive; }
+.cke_editable .color--white { color: white; }
+.cke_editable .color--yellow { color: yellow; }
+.cke_editable .color--maroon { color: maroon; }
+.cke_editable .color--navy { color: navy; }
+.cke_editable .color--red { color: red; }
+.cke_editable .color--blue { color: blue; }
+.cke_editable .color--purple { color: purple; }
+.cke_editable .color--teal { color: teal; }
+.cke_editable .color--fuchsia { color: fuchsia; }
+.cke_editable .color--aqua { color: aqua; }
+
+.cke_editable .background-color--black { background-color: black; }
+.cke_editable .background-color--green { background-color: green; }
+.cke_editable .background-color--silver { background-color: silver; }
+.cke_editable .background-color--lime { background-color: lime; }
+.cke_editable .background-color--gray { background-color: gray; }
+.cke_editable .background-color--olive { background-color: olive; }
+.cke_editable .background-color--white { background-color: white; }
+.cke_editable .background-color--yellow { background-color: yellow; }
+.cke_editable .background-color--maroon { background-color: maroon; }
+.cke_editable .background-color--navy { background-color: navy; }
+.cke_editable .background-color--red { background-color: red; }
+.cke_editable .background-color--blue { background-color: blue; }
+.cke_editable .background-color--purple { background-color: purple; }
+.cke_editable .background-color--teal { background-color: teal; }
+.cke_editable .background-color--fuchsia { background-color: fuchsia; }
+.cke_editable .background-color--aqua { background-color: aqua; }
+
+.cke_editable .border-collapse--collapse { border-collapse:collapse; }
+
+.cke_editable blockquote { background-color: #EBEBEB; }
+
+.cke_editable .q { background-color: #EBEBEB; }
+
+.cke_editable .list-item--coremedia 			{ color: blue; display: list-item; }
+.cke_editable .list-item--none                        { list-style-type: none; }
+.cke_editable .list-item--square                      { list-style-type: square; }
+.cke_editable .list-item--circle                      { list-style-type: circle; }
+.cke_editable .list-item--disc                        { list-style-type: disc; }
+
+/* Replace the following example entries by your favorite bullet icons. */
+
+/*.list-item--coremedia-logo 		{ list-style: url("/editor/icons/hox/corem/editor/icons-16x16/cm-16x16.ico"); }*/
+/*.list-item--coremedia-arrow-blue  	{ list-style: url("/editor/icons/hox/corem/editor/icons-16x16/arrow-cm-blue.gif"); }*/
+/*.list-item--coremedia-arrow-black  	{ list-style: url("/editor/icons/hox/corem/editor/icons-16x16/arrow-cm-black.gif"); }*/
+/*.list-item--arrow-whiteonblue		{ list-style: url("/editor/icons/hox/corem/editor/icons-16x16/arrow-whiteonblue.gif"); }*/
+/*.list-item--hand-pointing    		{ list-style: url("/editor/icons/hox/corem/editor/icons-16x16/hand-pointing.gif"); }*/
+/*.list-item--hand-stop   		{ list-style: url("/editor/icons/hox/corem/editor/icons-16x16/hand-stop.gif"); }*/
+/*.list-item--checkmark    		{ list-style: url("/editor/icons/hox/corem/editor/icons-16x16/checkmark-green.gif"); }*/
+/*.list-item--coffecup    		{ list-style: url("/editor/icons/hox/corem/editor/icons-16x16/coffecup.gif"); }*/
+
+
+
+/* Styles for elements transformed during paste
+*/
+
+.cke_editable .dl {
+  margin: 1.33em 0
+}
+.cke_editable .blockquote {
+  padding: 12px;
+}
+.cke_editable .cite,
+.cke_editable .em,
+.cke_editable .var,
+.cke_editable .address {
+  font-style: italic;
+}
+.cke_editable .tt,
+.cke_editable .code,
+.cke_editable .kbd,
+.cke_editable .samp {
+  font-family: monospace;
+}
+.cke_editable .dt,
+.cke_editable .dd {
+  margin-left: 40px;
+  list-style-type: none;
+}
+.cke_editable .dd {
+  margin-left: 40px;
+}
+.cke_editable .ins { text-decoration: underline }
+.cke_editable .center { text-align: center }
+.cke_editable .abbr,
+.cke_editable .acronym {
+  font-variant: small-caps;
+  letter-spacing: 0.1em
+}
+.cke_editable table {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+.cke_editable td {
+  min-width: 40px;
+  padding: 4px;
+}
+.cke_editable xdiff\:span[xdiff\:class="diff-html-added"] {
+  color: rgba(92, 160, 63, 1);
+  text-decoration: underline;
+}
+.cke_editable p > xdiff\:span[xdiff\:class="diff-html-added"]:empty::before {
+  content: url('../images/return_16.svg');
+  height: 16px;
+  position: absolute;
+  margin-left: 3px;
+}
+.cke_editable xdiff\:span[xdiff\:class="diff-html-removed"] {
+  color: rgba(196, 19, 19, 1);
+  text-decoration: line-through;
+}
+.cke_editable xdiff\:span[xdiff\:class="diff-html-changed"] {
+  color: rgba(255, 255, 255, 1);
+  background-color: rgba(92, 160, 63, 1);
+}
+.cke_editable xdiff\:span[xdiff\:class="diff-html-conflict"] {
+  color: rgba(255, 255, 255, 1);
+  background-color: rgba(196, 19, 19, 1);
+}
+.cke_editable img[xdiff\:changetype="diff-added-image"] {
+  box-sizing: border-box;
+  outline: 2px solid rgba(92, 160, 63, 1);
+  outline-offset: -2px;
+}
+.cke_editable img[xdiff\:changetype="diff-removed-image"] {
+  box-sizing: border-box;
+  outline: 2px solid rgba(196, 19, 19, 1);
+  outline-offset: -2px;
+}
+.cke_editable xdiff\:span[xdiff\:class="diff-html-changed"] img {
+  box-sizing: border-box;
+  outline: 4px dashed rgba(92, 160, 63, 1);
+  outline-offset: -4px;
+}
+.cke_editable img[xdiff\:changetype="diff-conflict-image"] {
+  box-sizing: border-box;
+  outline: 4px dashed rgba(196, 19, 19, 1);
+  outline-offset: -4px;
+}

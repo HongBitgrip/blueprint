@@ -1,0 +1,78 @@
+@if $cm-include-project-todos-widget-project {
+
+  .cm-projects-todos-widget-project {
+    cursor: pointer;
+
+    &__icon + &__name {
+      padding-left: 9px;
+    }
+
+    &__name {
+      white-space: nowrap;
+      font-weight: bold;
+      text-decoration: none;
+      color: $cm-grey-7;
+      text-overflow: ellipsis;
+      overflow: hidden;
+      vertical-align: middle;
+      cursor: inherit;
+    }
+
+    &__due-date {
+      text-align: right;
+    }
+
+    &__todos {
+      margin-top: $cm-grid-100;
+    }
+
+    &__todo + &__todo {
+      margin-top: $cm-grid-50;
+    }
+  }
+
+  $_block: "cm-projects-todos-widget-todo";
+  .#{$_block} {
+    width: 100%;
+
+    &__check,
+    &__description,
+    &__due-date {
+      display: inline-block;
+      vertical-align: middle;
+      margin: 0;
+    }
+
+    &__description {
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      cursor: inherit;
+      border: 2px;
+      border-radius: 3px;
+      padding: 2px;
+    }
+
+    &__description::before {
+      content: "\25CF"; /* bullet point */
+      margin-left: 4px;
+      margin-right: 14px;
+    }
+
+    &__assignees {
+      font-style: italic;
+    }
+
+    &__assignees:before {
+      content: "-";
+      margin-left: 5px;
+      margin-right: 5px;
+    }
+
+    &.#{$prefix}view-item-focused {
+      .#{$_block}__description {
+        box-shadow: cm-focus-box-shadow($cm-grey-7);
+      }
+    }
+  }
+}

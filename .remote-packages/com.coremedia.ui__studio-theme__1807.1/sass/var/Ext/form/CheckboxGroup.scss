@@ -1,0 +1,42 @@
+/**
+ * @var {color}
+ * Default color of the checkbox group when validation state is set to error.
+ *
+ * @member Ext.form.CheckboxGroup
+ */
+$cm-checkboxgroup-validation-color-error: dynamic($cm-validation-color-error);
+
+/**
+ * @var {color}
+ * Default color of the checkbox group when validation state is set to warning.
+ *
+ * @member Ext.form.CheckboxGroup
+ */
+$cm-checkboxgroup-validation-color-warning: dynamic($cm-validation-color-warning);
+
+/**
+ * @var {color}
+ * Default color of the checkbox group when validation state is set to info.
+ *
+ * @member Ext.form.CheckboxGroup
+ */
+$cm-checkboxgroup-validation-color-info: dynamic($cm-validation-color-info);
+
+/**
+ * @var {color}
+ * Default color of the checkbox group when validation state is set to success.
+ *
+ * @member Ext.form.CheckboxGroup
+ */
+$cm-checkboxgroup-validation-color-success: dynamic($cm-validation-color-success);
+
+/**
+ * @var {boolean}
+ *
+ * Enables styles for the checkboxGropu
+ *
+ * @member Ext.form.CheckboxGroup
+ */
+$cm-include-checkboxgroup-default-ui: dynamic($cm-include-checkbox-default-ui);
+
+$form-checkboxgroup-body-padding: dynamic(0);

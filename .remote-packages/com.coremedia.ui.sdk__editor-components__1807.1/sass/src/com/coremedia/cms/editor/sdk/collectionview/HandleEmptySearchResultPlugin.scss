@@ -1,0 +1,19 @@
+@if $cm-include-empty-search-result {
+  $_block: "cm-empty-search-result";
+  .#{$_block} {
+    padding: $cm-grid-200;
+    color: $cm-grey-7;
+
+    &__paragraph {
+      margin: 0;
+    }
+
+    &__paragraph + &__paragraph {
+      margin-top: $cm-grid-200;
+    }
+
+    &__link {
+      color: $cm-grey-7;
+    }
+  }
+}

@@ -1,0 +1,16 @@
+// Default variables for Ext.grid.header.Container
+$grid-header-background-color: dynamic($cm-grey-1);
+$grid-header-over-background-color: dynamic($cm-grey-3);
+$grid-header-sorted-background-color: dynamic($cm-grey-3);
+$grid-header-padding: dynamic(3px 3px 2px 5px);
+$grid-header-border-color: dynamic($cm-spot-grey-2);
+$grid-header-trigger-width: dynamic(14px);
+$grid-header-trigger-background-color: dynamic($cm-grey-1);
+$grid-header-trigger-background-color-open: dynamic($cm-grey-0);
+$grid-header-trigger-glyph-color: dynamic($cm-black);
+$grid-header-trigger-glyph-font-size: dynamic($cm-font-size);
+
+$grid-header-sort-asc-glyph: dynamic($cm-core-icons-100-var-sort-asc $cm-glyph-font-size-50 $cm-core-icons-100-font-name);
+$grid-header-sort-desc-glyph: dynamic($cm-core-icons-100-var-sort-desc $cm-glyph-font-size-50 $cm-core-icons-100-font-name);
+
+$grid-header-sort-glyph-color: dynamic($cm-black);

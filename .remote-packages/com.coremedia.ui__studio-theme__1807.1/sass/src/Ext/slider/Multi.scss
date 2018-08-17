@@ -1,0 +1,6 @@
+@if $cm-include-slider-default-ui {
+  $_ui: "default";
+  @include cm-slider-ui(
+    $ui: $_ui
+  );
+}

@@ -1,0 +1,41 @@
+@mixin cm-core-icons-200-base-styles {
+  font-family:"cm-core-icons-200";
+  @if $cm-core-icons-200-extended-base-styles {
+    display:inline-block;
+    line-height:1;
+    font-weight:normal;
+    font-style:normal;
+    speak:none;
+    text-decoration:inherit;
+    text-transform:none;
+    text-rendering:auto;
+    -webkit-font-smoothing:antialiased;
+    -moz-osx-font-smoothing:grayscale;
+  }
+}
+
+@mixin cm-core-icons-200-icon-selector($glyph) {
+  @if $cm-core-icons-200-bem-syntax {
+    .#{$cm-core-icons-200-css-prefix}--#{$glyph} {
+      @content;
+    }
+  } @else {
+    .#{$cm-core-icons-200-css-prefix}-#{$glyph} {
+      @content;
+    }
+  }
+}
+
+@mixin cm-core-icons-200-icon-rule($glyph) {
+  @include cm-core-icons-200-icon-selector($glyph) {
+    @if (not $cm-core-icons-200-bem-syntax and not $cm-core-icons-200-base-styles-in-before) {
+      @include cm-core-icons-200-base-styles();
+    }
+    &:before {
+      @content;
+      @if (not $cm-core-icons-200-bem-syntax and $cm-core-icons-200-base-styles-in-before) {
+        @include cm-core-icons-200-base-styles();
+      }
+    }
+  }
+}

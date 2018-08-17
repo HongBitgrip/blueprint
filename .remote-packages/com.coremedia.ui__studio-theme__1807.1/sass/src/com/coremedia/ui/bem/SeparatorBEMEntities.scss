@@ -1,0 +1,8 @@
+@if $cm-include-vertical-separator {
+  $_block: "cm-vertical-separator";
+  .#{$_block} {
+    &__item + &__item {
+      border-top: 1px solid $cm-grey-1;
+    }
+  }
+}

@@ -1,0 +1,17 @@
+@if $cm-include-version-comparison-menu-item {
+  .cm-version-selector-menu {
+    &__item {
+      .was-published {
+        opacity: 0.2;
+      }
+
+      &.selected-version {
+        background-color: $cm-blue-4;
+        .#{$prefix}menu-item-text,
+        .#{$prefix}menu-item-icon {
+          color: white;
+        }
+      }
+    }
+  }
+}

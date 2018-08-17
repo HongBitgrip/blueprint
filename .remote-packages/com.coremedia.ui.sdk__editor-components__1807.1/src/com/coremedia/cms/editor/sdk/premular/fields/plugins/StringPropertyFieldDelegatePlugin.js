@@ -1,0 +1,32 @@
+Ext.define("com.coremedia.cms.editor.sdk.premular.fields.plugins.StringPropertyFieldDelegatePlugin", function(StringPropertyFieldDelegatePlugin) {/*package com.coremedia.cms.editor.sdk.premular.fields.plugins{
+import com.coremedia.cms.editor.sdk.premular.fields.plugins.*;
+import net.jangaroo.ext.Exml;
+[PublicApi]
+/**
+ Uses the value from another text field to display as default if
+ the field itself does not contain a value.
+ * /
+public class StringPropertyFieldDelegatePlugin extends StringPropertyFieldDelegatePluginBase{
+
+    public*/function StringPropertyFieldDelegatePlugin$(config/*:StringPropertyFieldDelegatePlugin = null*/){if(arguments.length<=0)config=null;
+    var config_$1/*: com.coremedia.cms.editor.sdk.premular.fields.plugins.StringPropertyFieldDelegatePluginBase*/ =AS3.cast(com.coremedia.cms.editor.sdk.premular.fields.plugins.StringPropertyFieldDelegatePluginBase,{});
+    var defaults_$1/*:StringPropertyFieldDelegatePlugin*/ =AS3.cast(StringPropertyFieldDelegatePlugin,{});
+    config = net.jangaroo.ext.Exml.apply(defaults_$1,config);
+    net.jangaroo.ext.Exml.apply(config_$1,config);
+    this.super$Yj$h(config_$1);
+  }/*}}
+
+============================================== Jangaroo part ==============================================*/
+    return {
+      extend: "com.coremedia.cms.editor.sdk.premular.fields.plugins.StringPropertyFieldDelegatePluginBase",
+      metadata: {"": ["PublicApi"]},
+      constructor: StringPropertyFieldDelegatePlugin$,
+      super$Yj$h: function() {
+        com.coremedia.cms.editor.sdk.premular.fields.plugins.StringPropertyFieldDelegatePluginBase.prototype.constructor.apply(this, arguments);
+      },
+      requires: [
+        "com.coremedia.cms.editor.sdk.premular.fields.plugins.StringPropertyFieldDelegatePluginBase",
+        "net.jangaroo.ext.Exml"
+      ]
+    };
+});

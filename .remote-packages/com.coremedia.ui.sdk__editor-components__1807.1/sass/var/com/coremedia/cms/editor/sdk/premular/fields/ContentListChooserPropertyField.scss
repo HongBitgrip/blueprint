@@ -1,0 +1,71 @@
+/**
+ * @var {boolean}
+ * Enables styles for the content-list-chooser.
+ *
+ * @member com.coremedia.cms.editor.sdk.premular.fields.ContentListChooserPropertyField
+ */
+$cm-include-content-list-chooser: dynamic(true);
+
+/**
+ * @var {number/list}
+ *
+ * The margin for the content-list-chooser preview icon.
+ *
+ * @member com.coremedia.cms.editor.sdk.premular.fields.ContentListChooserPropertyField
+ */
+$cm-content-list-chooser-margin: dynamic(6px 6px 10px);
+
+/**
+ * @var {number}
+ *
+ * The width for the content-list-chooser preview icon.
+ *
+ * @member com.coremedia.cms.editor.sdk.premular.fields.ContentListChooserPropertyField
+ */
+$cm-content-list-chooser-preview-width: dynamic(140px);
+
+/**
+ * @var {number}
+ *
+ * The height for the content-list-chooser preview icon.
+ *
+ * @member com.coremedia.cms.editor.sdk.premular.fields.ContentListChooserPropertyField
+ */
+$cm-content-list-chooser-preview-height: dynamic(140px);
+
+/**
+ * @var {number/list}
+ *
+ * The padding for the content-list-chooser preview icon.
+ *
+ * @member com.coremedia.cms.editor.sdk.premular.fields.ContentListChooserPropertyField
+ */
+$cm-content-list-chooser-preview-padding: dynamic(10px 10px 0 10px);
+
+/**
+ * @var {number}
+ *
+ * The font-size for the content-list-chooser text.
+ *
+ * @member com.coremedia.cms.editor.sdk.premular.fields.ContentListChooserPropertyField
+ */
+$cm-content-list-chooser-text-font-size: dynamic(12px);
+
+/**
+ * @var {number}
+ *
+ * The line-height for the content-list-chooser text.
+ *
+ * @member com.coremedia.cms.editor.sdk.premular.fields.ContentListChooserPropertyField
+ */
+$cm-content-list-chooser-text-line-height: dynamic($cm-content-list-chooser-text-font-size + 1px);
+
+/**
+ * @var {number/list}
+ *
+ * The padding for the content-list-chooser text.
+ *
+ * @member com.coremedia.cms.editor.sdk.premular.fields.ContentListChooserPropertyField
+ */
+$cm-content-list-chooser-text-padding: dynamic(6px 6px 2px);
+

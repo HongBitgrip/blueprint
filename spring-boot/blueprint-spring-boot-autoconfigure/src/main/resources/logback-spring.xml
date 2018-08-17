@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+  <include resource="org/springframework/boot/logging/logback/defaults.xml"/>
+  <!--Workaround to get the property injected. See https://github.com/spring-cloud/spring-cloud-sleuth/issues/330-->
+  <springProperty scope="context" name="springAppName" source="spring.application.name"/>
+  <property name="LOG_FILE" value="${LOG_FILE:-${LOG_PATH:-${LOG_TEMP:-${java.io.tmpdir:-/tmp}}}/${springAppName:-spring}.log}"/>
+  <property name="CONSOLE_LOG_PATTERN"
+            value="%clr(%d{yyyy-MM-dd HH:mm:ss} -){faint} %clr(%7([%level])) %clr(%logger){cyan} [%X{tenant}] %clr(-){faint} %message \\(%thread\\)%n"/>
+  <property name="FILE_LOG_PATTERN"
+            value="%d{yyyy-MM-dd HH:mm:ss} %-7([%level]) %logger [%X{tenant}] - %message \\(%thread\\)%n"/>
+  <property name="ELASTIC_BULK_URL"
+            value="${ELASTIC_BULK_URL:-http://localhost:9200/_bulk}"/>
+  <include resource="org/springframework/boot/logging/logback/console-appender.xml"/>
+  <include resource="org/springframework/boot/logging/logback/file-appender.xml"/>
+
+  <springProfile name="elk">
+    <appender name="ELASTIC" class="com.internetitem.logback.elasticsearch.ElasticsearchAppender">
+      <url>${ELASTIC_BULK_URL}</url>
+      <index>coremedia-%date{yyyy-MM-dd}</index>
+      <type>application-logs</type>
+      <properties>
+        <property>
+          <name>host</name>
+          <value>${HOSTNAME}</value>
+          <allowEmpty>false</allowEmpty>
+        </property>
+        <property>
+          <name>application</name>
+          <value>${springAppName}</value>
+        </property>
+        <property>
+          <name>severity</name>
+          <value>%level</value>
+        </property>
+        <property>
+          <name>environment</name>
+          <value>${environment}</value>
+        </property>
+        <property>
+          <name>thread</name>
+          <value>%thread</value>
+        </property>
+        <property>
+          <name>stacktrace</name>
+          <value>%ex</value>
+        </property>
+        <property>
+          <name>logger</name>
+          <value>%logger</value>
+        </property>
+      </properties>
+      <headers>
+        <header>
+          <name>Content-Type</name>
+          <value>application/json</value>
+        </header>
+      </headers>
+    </appender>
+  </springProfile>
+
+  <root level="WARN">
+    <springProfile name="elk">
+      <appender-ref ref="ELASTIC"/>
+    </springProfile>
+    <appender-ref ref="FILE"/>
+    <appender-ref ref="CONSOLE"/>
+  </root>
+
+</configuration>

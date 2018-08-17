@@ -1,0 +1,47 @@
+@if $cm-include-helper-window {
+  $_block: "cm-helper-window";
+  .#{$_block} {
+    &__body {
+      color: $cm-font-color;
+      background: $cm-white;
+      padding: 0 $cm-grid-200 $cm-grid-200;
+
+      a:link,
+      a:hover,
+      a:visited,
+      a:active {
+        color: $cm-blue-4;
+      }
+      table {
+        border-collapse: collapse;
+      }
+      table,
+      td,
+      th {
+        border: 1px solid $cm-grey-4;
+      }
+      th,
+      td {
+        text-align: left;
+        padding: 3px 5px;
+      }
+      th {
+        font-weight: $cm-font-weight-bold;
+      }
+      p {
+        margin-top: 7px;
+        margin-bottom: 7px;
+      }
+      td dl {
+        margin-top: 3px;
+        margin-bottom: 7px;
+      }
+      dt {
+        font-family: 'courier new', monospace;
+      }
+      dd {
+        padding-left: 20px;
+      }
+    }
+  }
+}

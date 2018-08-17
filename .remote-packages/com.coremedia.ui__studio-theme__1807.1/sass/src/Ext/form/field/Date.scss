@@ -1,0 +1,6 @@
+@if $cm-include-datepicker-default-ui {
+  $_ui: "default";
+  @include cm-datepicker-ui(
+    $ui: $_ui
+  );
+}

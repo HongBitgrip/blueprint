@@ -1,0 +1,56 @@
+/**
+ * CoreMedia UI Mixin to generate styles for an additional CheckboxGroup state.
+ *
+ * @param {string} $ui
+ * The name of the UI that was created. May not include spaces or special punctuation as string is used as part of
+ * CSS class names.
+ *
+ * @param {string} [$color-error=$cm-checkboxgroup-validation-color-error]
+ * If not null defines the color to be applied when the error state is active.
+ *
+ * @param {string} [$color-warning=$cm-checkboxgroup-validation-color-warning]
+ * If not null defines the color to be applied when the warning state is active.
+ *
+ * @param {string} [$color-info=$cm-checkboxgroup-validation-color-info]
+ * If not null defines the color to be applied when the info state is active.
+ *
+ * @param {string} [$color-success=$cm-checkboxgroup-validation-color-success]
+ * If not null defines the color to be applied when the success state is active.
+ *
+ * @member Ext.form.CheckboxGroup
+ * @member Ext.form.RadioGroup
+ */
+@mixin cm-checkbox-group-ui(
+  $ui,
+  $color-error: $cm-checkboxgroup-validation-color-error,
+  $color-warning: $cm-checkboxgroup-validation-color-warning,
+  $color-info: $cm-checkboxgroup-validation-color-info,
+  $color-success: $cm-checkboxgroup-validation-color-success
+) {
+
+  $state-map: (
+    "error"   : (color: $color-error),
+    "warning" : (color: $color-warning),
+    "info"    : (color: $color-info),
+    "success" : (color: $color-success)
+  );
+
+  .#{$prefix}form-checkboxgroup.#{$prefix}container-#{$ui} {
+    .#{$prefix}field-#{$ui} {
+      @each $state, $map in $state-map {
+        &.cm-validation-state-#{$state} {
+          .#{$prefix}form-cb-#{$ui} {
+            @if map-get($map, color) != null {
+              color: map-get($map, color);
+            }
+          }
+          .#{$prefix}form-cb-label-#{$ui} {
+            @if map-get($map, color) != null {
+              color: map-get($map, color);
+            }
+          }
+        }
+      }
+    }
+  }
+}

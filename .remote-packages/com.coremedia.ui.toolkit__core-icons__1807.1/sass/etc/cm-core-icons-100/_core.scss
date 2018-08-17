@@ -1,0 +1,11 @@
+@if $cm-core-icons-100-bem-syntax {
+  .#{$cm-core-icons-100-css-prefix} {
+    @if $cm-core-icons-100-base-styles-in-before {
+      &:before {
+        @include cm-core-icons-100-base-styles();
+      }
+    } @else {
+      @include cm-core-icons-100-base-styles();
+    }
+  }
+}

@@ -1,0 +1,6 @@
+@if $cm-include-progress-default-ui {
+  $_ui: "default";
+  @include cm-progress-ui(
+    $ui: $_ui
+  );
+}

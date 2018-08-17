@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <parent>
+    <groupId>com.coremedia.blueprint.boot</groupId>
+    <artifactId>services</artifactId>
+    <version>1-SNAPSHOT</version>
+    <relativePath>../pom.xml</relativePath>
+  </parent>
+
+  <artifactId>replication-live-server-app</artifactId>
+
+  <description>
+    To start the replication-live-server-app run: mvn spring-boot:run
+  </description>
+
+  <properties>
+    <propertieslocations>classpath:/replication-live-server.properties</propertieslocations>
+  </properties>
+
+  <dependencies>
+    <dependency>
+      <groupId>${project.groupId}</groupId>
+      <artifactId>blueprint-spring-boot-autoconfigure</artifactId>
+      <version>${project.version}</version>
+      <scope>runtime</scope>
+    </dependency>
+    <dependency>
+      <groupId>${blueprint.groupId}</groupId>
+      <artifactId>replication-live-server-blueprint-component</artifactId>
+      <version>${blueprint.version}</version>
+      <scope>runtime</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-autoconfigure</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-actuator</artifactId>
+      <scope>runtime</scope>
+    </dependency>
+    <dependency>
+      <groupId>${blueprint.groupId}</groupId>
+      <artifactId>replication-live-server-blueprint-config</artifactId>
+      <version>${blueprint.version}</version>
+      <type>coremedia-application</type>
+      <scope>runtime</scope>
+    </dependency>
+
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-tomcat</artifactId>
+      <scope>provided</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework.hateoas</groupId>
+      <artifactId>spring-hateoas</artifactId>
+      <scope>runtime</scope>
+    </dependency>
+  </dependencies>
+
+  <build>
+    <finalName>replication-live-server</finalName>
+    <plugins>
+      <plugin>
+        <artifactId>maven-dependency-plugin</artifactId>
+        <executions>
+          <execution>
+            <id>unpack-corem-home</id>
+            <goals>
+              <goal>unpack-dependencies</goal>
+            </goals>
+            <phase>generate-resources</phase>
+            <configuration>
+              <includeGroupIds>${blueprint.groupId}</includeGroupIds>
+              <includeArtifactIds>replication-live-server-blueprint-config</includeArtifactIds>
+              <includeTypes>coremedia-application</includeTypes>
+              <outputDirectory>${project.build.directory}/corem-home</outputDirectory>
+              <excludes>lib</excludes>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
+
+      <plugin>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-maven-plugin</artifactId>
+        <configuration>
+          <mainClass>com.coremedia.blueprint.boot.replicationliveserver.BlueprintBootApp</mainClass>
+          <!--spring boot plugin includes all dependencies, but the corem.home does not need to be excluded-->
+          <excludeArtifactIds>replication-live-server-blueprint-config</excludeArtifactIds>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+
+
+  <profiles>
+    <profile>
+      <id>dev</id>
+      <activation>
+        <property>
+          <name>installation.host</name>
+        </property>
+      </activation>
+      <build>
+        <plugins>
+          <plugin>
+            <groupId>org.codehaus.mojo</groupId>
+            <artifactId>properties-maven-plugin</artifactId>
+            <executions>
+              <execution>
+                <id>set-spring-boot-run-properties</id>
+                <goals>
+                  <goal>set-system-properties</goal>
+                </goals>
+                <phase>initialize</phase>
+                <configuration>
+                  <properties>
+                    <!--
+                     | we need corem.home to be set as a system property, and because of https://issues.apache.org/jira/browse/MNG-5951
+                     | not yet released, we cannot inherit and append a text element
+                     -->
+                    <corem.home>${project.build.directory}/corem-home</corem.home>
+                  </properties>
+                </configuration>
+              </execution>
+            </executions>
+          </plugin>
+        </plugins>
+      </build>
+    </profile>
+  </profiles>
+
+</project>

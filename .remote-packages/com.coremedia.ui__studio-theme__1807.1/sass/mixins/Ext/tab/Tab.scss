@@ -1,0 +1,182 @@
+/**
+ * Only to be used in after #extjs-tab-ui mixin has been included.
+ *
+ * CoreMedia UI Mixin for a Tab-Panel's Tab.
+ * Some Parameters do not have a default value, so if omitted the styling rule is not applied.
+ *
+ * @param {string} $ui
+ * The name of the UI being created. May not include spaces or special punctuation as string is used as part of
+ * CSS class names.
+ *
+ * @param {number/list} [$padding=null]
+ * If not null it overrides the standard padding.
+ *
+ * @param {color} [$color-active-over=null]
+ * If not null defines the over color on an active tab
+ *
+ * @param {number/string} [$icon-max-height=null]
+ * If not null defines the max-height of the tab's icon
+ * Important: This is a fix, used to prevent non-windows systems from using the wrong height for the icon
+ *
+ * @param {number/string} [$icon-span-height=null]
+ * If not null defines the height of the tab icon if the Ext.tab.Bar is on the left or right
+ *
+ * @param {string} [$closable-icon-cursor=$cm-tab-closable-icon-cursor]
+ * If not null defines the tab's cursor when the close-icon is hovered.
+ *
+ * @param {string} [$closable-icon-glyph-color-over=null]
+ * If not null defines the color of the hovered tab's close icon.
+ *
+ * @param {string} [$closable-icon-glyph-color-pressed=null]
+ * If not null defines the color of the tab's close icon when pressed.
+ *
+ * @param {string} [$closable-icon-glyph-color-over-active=null]
+ * If not null defines the color of the hovered active tab's close icon.
+ *
+ * @param {string} [$closable-icon-glyph-color-pressed-active=null]
+ * If not null defines the color of the active tab's close icon when pressed.
+ *
+ * @param {number/string} [$max-width=null]
+ * If not null defines the max width of the tab
+ *
+ * @param {string} [$overflow=null]
+ * If not null defines the overflow of the tab anchor
+ *
+ * @param {string} [$background-color-highlighted=null]
+ * If not null defines the highlight background color of the tab
+ *
+ * @param {string} [$color-highlighted=null]
+ * If not null defines the highlight text color of the tab
+ *
+ * @member Ext.tab.Tab
+ */
+@mixin cm-tab-ui(
+  $ui,
+  $padding: null,
+  $color-active-over: null,
+  $icon-max-height: null,
+  $icon-span-height: null,
+  $closable-icon-cursor: $cm-tab-closable-icon-cursor,
+  $closable-icon-glyph-color-over: null,
+  $closable-icon-glyph-color-pressed: null,
+  $closable-icon-glyph-color-over-active: null,
+  $closable-icon-glyph-color-pressed-active: null,
+  $max-width: null,
+  $overflow: null,
+  $background-color-highlighted: null,
+  $color-highlighted: null
+) {
+
+  .#{$prefix}tab-#{$ui} {
+    & .#{$prefix}tab-close-btn {
+      @if $cm-tab-closable-icon-cursor != null {
+        cursor: $cm-tab-closable-icon-cursor;
+      }
+      &:hover {
+        @if $closable-icon-glyph-color-over != null {
+          color: $closable-icon-glyph-color-over
+        }
+      }
+    }
+
+    &.#{$prefix}tab-pressed {
+      & .#{$prefix}tab-close-btn {
+        &:hover {
+          @if $closable-icon-glyph-color-pressed != null {
+            color: $closable-icon-glyph-color-pressed
+          }
+        }
+      }
+
+      & .#{$prefix}tab-close-btn {
+        &:hover {
+          @if $closable-icon-glyph-color-over-active != null {
+            color: $closable-icon-glyph-color-over-active
+          }
+        }
+      }
+    }
+
+    &.#{$prefix}tab-active {
+      &.#{$prefix}tab-pressed {
+        & .#{$prefix}tab-close-btn {
+          &:hover {
+            @if $closable-icon-glyph-color-pressed-active != null {
+              color: $closable-icon-glyph-color-pressed-active
+            }
+          }
+        }
+      }
+    }
+  }
+
+  @if $max-width != null {
+    .#{$prefix}tab-inner-#{$ui} {
+      .#{$prefix}tab-icon-right > &,
+      .#{$prefix}tab-icon-left > & {
+        max-width: $max-width;
+      }
+    }
+  }
+
+  @if $icon-span-height != null {
+    .#{$prefix}tab-icon-left > .#{$prefix}tab-icon-el-#{$ui},
+    .#{$prefix}tab-icon-right > .#{$prefix}tab-icon-el-#{$ui} {
+      height: $icon-span-height;
+    }
+  }
+
+  @if $overflow != null {
+    .#{$prefix}tab-#{$ui} {
+      overflow: $overflow;
+    }
+    .#{$prefix}tab-icon-left > .#{$prefix}tab-icon-el-#{$ui},
+    .#{$prefix}tab-icon-right > .#{$prefix}tab-icon-el-#{$ui} {
+      overflow: hidden;
+    }
+  }
+
+  @if $icon-max-height != null {
+    .#{$prefix}tab-icon-left > .#{$prefix}tab-icon-el-#{$ui},
+    .#{$prefix}tab-icon-right > .#{$prefix}tab-icon-el-#{$ui} {
+      max-height: $icon-max-height;
+    }
+  }
+
+  @if $color-active-over != null {
+    .#{$prefix}tab-#{$ui} {
+      &.#{$prefix}tab-active.#{$prefix}tab-over {
+        .#{$prefix}tab-inner-#{$ui} {
+          color: $color-active-over;
+        }
+      }
+    }
+  }
+
+  @if $background-color-highlighted != null {
+    .#{$prefix}tab-#{$ui} {
+      &.cm-highlighted {
+        background-color: $background-color-highlighted;
+      }
+    }
+  }
+
+  @if $color-highlighted != null {
+    .#{$prefix}tab-#{$ui} {
+      &.cm-highlighted {
+        .#{$prefix}tab-icon-left > .#{$prefix}tab-icon-el-#{$ui} {
+          color: $color-highlighted;
+        }
+        .#{$prefix}tab-inner-#{$ui} {
+          color: $color-highlighted;
+        }
+      }
+    }
+  }
+  // force padding (gets recalculated on rounded corners)
+  @if $padding != null {
+    .#{$prefix}tab-#{$ui} {
+      padding: $padding;
+    }
+  }
+}

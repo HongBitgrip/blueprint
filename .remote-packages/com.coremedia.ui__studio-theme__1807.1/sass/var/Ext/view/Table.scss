@@ -1,0 +1,213 @@
+/**
+ * @var {string}
+ *
+ * If not null defines the font-style of the empty text in table views.
+ *
+ * @member Ext.view.Table
+ */
+$cm-grid-row-cell-empty-font-style: dynamic(italic);
+
+/**
+ * @var {color}
+ *
+ * The background-color of the row added by the RowBody feature.
+ *
+ * @member Ext.grid.feature.RowBody
+ */
+$cm-grid-row-body-background-color: dynamic($cm-white);
+
+/**
+ * @var {color}
+ *
+ * If not null defines the border-color of the <tr> element of the row added by the RowBody feature on hover.
+ *
+ * @member Ext.grid.feature.RowBody
+ */
+$cm-grid-row-body-table-row-border-color-over: dynamic($cm-blue-0);
+
+/**
+ * @var {color}
+ *
+ * If not null defines the border-color of the <tr> element of the row added by the RowBody feature if selected.
+ *
+ * @member Ext.grid.feature.RowBody
+ */
+$cm-grid-row-body-table-row-border-color-selected: dynamic($cm-blue-4);
+
+/**
+ * @var {number/list}
+ *
+ * The padding for the outer cell of the RowBody feature.
+ *
+ * @member Ext.grid.feature.RowBody
+ */
+$cm-grid-row-body-cell-padding: dynamic(5px);
+
+/**
+ * @var {string}
+ *
+ * If not null defines the vertical-alignment of grid-cells in table views.
+ *
+ * @member Ext.view.Table
+ */
+$cm-grid-row-cell-vertical-align: dynamic(middle);
+
+/**
+ * @var {color}
+ *
+ * If not null defines the background-color of table and tree views to be applied to grid items when the read only state is active.
+ *
+ * @member Ext.view.Table
+ */
+$cm-grid-row-cell-background-color-readonly: dynamic($cm-grey-0);
+
+/**
+ * @var {color}
+ *
+ * If not null defines the background-color of table and tree views to be applied to grid items on hover when the read only state is active.
+ *
+ * @member Ext.view.Table
+ */
+$cm-grid-row-cell-background-color-readonly-over: dynamic($cm-grey-1);
+
+/**
+ * @var {color}
+ *
+ * If not null defines the background-color of table and tree views to be applied to grid items on selection when the read only state is active.
+ *
+ * @member Ext.view.Table
+ */
+$cm-grid-row-cell-background-color-readonly-selected: dynamic($cm-grey-3);
+
+/**
+ * @var {color}
+ *
+ * If not null defines the border color of table and tree views to be applied to grid-cells if the grid's rowLines config is set and the read only state is active.
+ *
+ * @member Ext.view.Table
+ */
+$cm-grid-row-cell-border-color-readonly: dynamic($grid-row-cell-border-color);
+
+/**
+ * @var {color}
+ *
+ * If not null defines the border color of table and tree views to be applied to grid-cells on hover if the grid's rowLines config is set and the read only state is active.
+ *
+ * @member Ext.view.Table
+ */
+$cm-grid-row-cell-border-color-readonly-over: dynamic($grid-row-cell-over-border-color);
+
+/**
+ * @var {color}
+ *
+ * If not null defines the border color of table and tree views to be applied to grid-cells on selection if the grid's rowLines config is set and the read only state is active.
+ *
+ * @member Ext.view.Table
+ */
+$cm-grid-row-cell-border-color-readonly-selected: dynamic($grid-row-cell-selected-border-color);
+
+/**
+ * @var {color}
+ *
+ * If not null defines the focus border color of grid-row-expander.
+ *
+ * @member Ext.grid.plugin.RowExpander
+ */
+$cm-grid-row-expander-border-color-focus: dynamic($cm-font-color);
+
+/**
+ * @var {color}
+ *
+ * If not null defines the focus border color of grid-row-expander if selected.
+ *
+ * @member Ext.grid.plugin.RowExpander
+ */
+$cm-grid-row-expander-border-color-focus-selected: dynamic($cm-white);
+
+/**
+ * @var {color}
+ *
+ * The color of the row expander collapse glyph.
+ *
+ * @member Ext.grid.plugin.RowExpander
+ */
+$cm-grid-row-expander-collapse-glyph-color-selected: dynamic($cm-white);
+
+/**
+ * @var {boolean}
+ *
+ * This fix is used to globally remove the first row top-border and the last row bottom-border for all grids.
+ * The row-line-fix can also be set individually for each view skin.
+ *
+ * @member Ext.view.Table
+ */
+$cm-grid-use-row-line-fix: dynamic(true);
+
+/**
+ * @var {color}
+ *
+ * If not null defines the focus border color of grid-inner-cells.
+ */
+$cm-row-inner-cell-border-color-focus: dynamic($cm-font-color);
+
+/**
+ * @var {color}
+ *
+ * If not null defines the focus border color of grid-inner-cells if selected.
+ */
+$cm-row-inner-cell-border-color-focus-selected: dynamic($cm-white);
+
+$grid-cell-inner-padding: dynamic(3px 4px);
+$grid-row-cell-background-color: dynamic($cm-white);
+$grid-row-cell-alt-background-color: dynamic($cm-spot-grey-0);
+$grid-row-cell-color: dynamic($cm-font-color);
+$grid-row-cell-selected-color: dynamic($cm-font-selected-color);
+$grid-row-cell-over-color: dynamic($cm-font-over-color);
+$grid-row-cell-focus-border-color: dynamic($cm-white);
+$grid-row-cell-focus-border-inset: dynamic(0);
+$grid-row-cell-over-background-color: dynamic($cm-blue-0);
+$grid-row-cell-selected-background-color: dynamic($cm-blue-4);
+$grid-row-cell-font-size: dynamic($cm-font-size);
+$grid-row-cell-font-weight: dynamic($cm-font-weight);
+$grid-row-cell-line-height: dynamic($cm-line-height);
+$grid-row-cell-border-color: dynamic($cm-grey-3);
+$grid-row-cell-over-border-color: dynamic($cm-grey-3);
+$grid-row-cell-selected-border-color: dynamic($cm-grey-3);
+$grid-cell-special-border-width: dynamic(0);
+
+// do not set any focus (background-)color as we do not know if the item that has a focus is selected or not (shift+click)
+// and there is no focus-selected color
+$grid-row-cell-focus-color: dynamic(null);
+$grid-row-cell-focus-background-color: dynamic(null);
+
+$grid-body-border-width: dynamic($cm-border-width);
+
+$grid-empty-padding: dynamic($cm-grid-50);
+$grid-empty-color: dynamic($cm-font-color);
+$grid-empty-background-color: dynamic($cm-white);
+
+/**
+ * @var {boolean}
+ * Enables styles for the "default" skin.
+ *
+ * Sencha has no variable for the default skin, so the css code will always be generated.
+ *
+ * @member Ext.view.Table
+ */
+$cm-include-table-view-default-ui: dynamic(true);
+
+/**
+ * @var {boolean}
+ * Specifies if the custom UI "light" for Ext.view.Table will be generated.
+ *
+ * @member Ext.view.Table
+ */
+$cm-include-table-view-light-ui: dynamic(true);
+
+/**
+ * @var {boolean}
+ * Specifies if the custom UI "large-cells" for Ext.view.Table will be generated.
+ *
+ * @member Ext.view.Table
+ */
+$cm-include-table-view-large-cells-ui: dynamic(true);

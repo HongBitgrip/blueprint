@@ -1,0 +1,71 @@
+{
+  "name" : "com.coremedia.ui.toolkit__ui-components",
+  "version" : "1807.1",
+  "type" : "code",
+  "local" : true,
+  "namespace" : "",
+  "framework" : "ext",
+  "format" : "1",
+  "toolkit" : "classic",
+  "creator" : "CoreMedia AG",
+  "summary" : "Presentation layer of the CoreMedia UI Toolkit",
+  "detailedDescription" : "",
+  "requires" : [ {
+    "name" : "net.jangaroo__jangaroo-browser"
+  }, {
+    "name" : "net.jangaroo__ckeditor4"
+  }, {
+    "name" : "com.coremedia.ui.toolkit__client-core"
+  }, {
+    "name" : "com.coremedia.ui.toolkit__client-core-impl"
+  }, {
+    "name" : "com.coremedia.ui.toolkit__core-icons"
+  }, {
+    "name" : "net.jangaroo__ext-as"
+  } ],
+  "css" : [ ],
+  "js" : [ {
+    "path" : "bundledResources/packageConfig.js",
+    "bundle" : false,
+    "includeInBundle" : true
+  } ],
+  "sass" : {
+    "namespace" : "",
+    "etc" : [ "sass/etc/imports.scss" ],
+    "var" : [ "sass/var" ],
+    "src" : [ "sass/mixins", "sass/src" ]
+  },
+  "production" : {
+    "css" : [ {
+      "path" : "resources/${package.name}/ckeditor/css/coremedia-richtext-1.0.css",
+      "includeInBundle" : false,
+      "bundle" : false
+    } ]
+  },
+  "testing" : {
+    "css" : [ {
+      "path" : "resources/ckeditor/css/coremedia-richtext-1.0.css",
+      "bundle" : false,
+      "includeInBundle" : false
+    } ]
+  },
+  "development" : {
+    "css" : [ {
+      "path" : "resources/ckeditor/css/coremedia-richtext-1.0.css",
+      "bundle" : false,
+      "includeInBundle" : false
+    } ]
+  },
+  "joo-classpath-development" : "${package.dir}/${package.name}.js",
+  "joo-overrides-development" : "${package.dir}/${package.name}-overrides.js,${package.dir}/${package.name}-overrides-${package.locale}.js",
+  "joo-classpath-production" : "${package.dir}/src,${package.dir}/locale/en",
+  "joo-overrides-production" : "${package.dir}/overrides,${package.dir}/locale/${package.locale}",
+  "joo-classpath-testing" : "${package.joo-classpath-development}",
+  "joo-overrides-testing" : "${package.joo-overrides-development}",
+  "classpath" : [ "${package.joo-classpath-${build.environment}}" ],
+  "overrides" : [ "${package.joo-overrides-${build.environment}}" ],
+  "output" : "${package.dir}/build",
+  "resources" : [ {
+    "path" : "${package.dir}/resources"
+  } ]
+}

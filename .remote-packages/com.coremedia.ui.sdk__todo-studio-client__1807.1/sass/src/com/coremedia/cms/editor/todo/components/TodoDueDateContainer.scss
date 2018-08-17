@@ -1,0 +1,44 @@
+@if $cm-include-todo-due-date-container {
+
+  $_block: "cm-todo-due-date-container";
+  .#{$_block} {
+
+    line-height: $form-field-height;
+
+    &__text {
+      display: inline-block;
+      vertical-align: middle;
+    }
+
+    &__field-container {
+      display: none;
+      vertical-align: middle;
+    }
+
+    &__reset {
+      display: inline-block;
+      margin-right: $cm-grid-100;
+      vertical-align: middle;
+    }
+
+    &__field {
+      display: inline-block;
+      vertical-align: middle;
+    }
+
+
+    &:hover,
+    &--editor-mode,
+    &--focus {
+
+      .#{$_block}__text {
+        display: none;
+      }
+
+      .#{$_block}__field-container {
+        display: inline-block;
+      }
+
+    }
+  }
+}

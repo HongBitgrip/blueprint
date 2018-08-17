@@ -1,0 +1,426 @@
+/**
+ * @var {list}
+ *
+ * The border property of the text field.
+ *
+ * @member Ext.form.field.Text
+ */
+$cm-text-field-input-border: dynamic(none);
+
+/**
+ * @var {number/list}
+ *
+ * The box-shadow property of the text field as default.
+ *
+ * @member Ext.form.field.Text
+ */
+$cm-text-field-input-shadow: dynamic(none);
+
+/**
+ * @var {number/list}
+ *
+ * The box-shadow property of the focused text field.
+ *
+ * @member Ext.form.field.Text
+ */
+$cm-text-field-input-shadow-focus: dynamic(null);
+
+/**
+ * @var {list}
+ *
+ * The box-shadow transition property of the text field.
+ *
+ * @member Ext.form.field.Text
+ */
+$cm-text-field-input-transition: dynamic($cm-shadow-transition);
+
+/**
+ * @var {string}
+ *
+ * The overflow property of the text field. It affects the behavior of ellipsis and line breaks.
+ *
+ * @member Ext.form.field.Text
+ */
+$cm-text-field-input-overflow: dynamic(hidden);
+
+/**
+ * @var {string}
+ *
+ * The text-overflow property of the text field to enable or disable ellipsis.
+ *
+ * @member Ext.form.field.Text
+ */
+$cm-text-field-input-text-overflow: dynamic(ellipsis);
+
+/**
+ * @var {string}
+ *
+ * The white-space property of the text field.
+ *
+ * @member Ext.form.field.Text
+ */
+$cm-text-field-input-white-space: dynamic(nowrap);
+
+/**
+ * @var {string}
+ *
+ * The text-align of the text field.
+ *
+ * @member Ext.form.field.Text
+ */
+$cm-text-field-input-text-align: dynamic(null); // do not change text align
+
+/**
+ * @var {number}
+ *
+ * The text field border-width property if highlighted e.g. as focus state.
+ *
+ * @member Ext.form.field.Text
+ */
+$cm-text-field-border-width-highlighted: dynamic($form-text-field-border-width);
+
+/**
+ * @var {string}
+ *
+ * The text field border-style property if highlighted e.g. as focus state.
+ *
+ * @member Ext.form.field.Text
+ */
+$cm-text-field-border-style-highlighted: dynamic($form-text-field-border-style);
+
+/**
+ * @var {color}
+ *
+ * The text field border-color property if highlighted e.g. as focus state.
+ *
+ * @member Ext.form.field.Text
+ */
+$cm-text-field-border-color-highlighted: dynamic($form-text-field-focus-border-color);
+
+/**
+ * @var {string}
+ *
+ * The overflow property of the text area to set the scroll behavior.
+ *
+ * @member Ext.form.field.Text
+ */
+$cm-text-field-textarea-overflow: dynamic(auto);
+
+/**
+ * @var {string}
+ *
+ * The resize property of the text area to enable or disable browser resizing.
+ *
+ * @member Ext.form.field.Text
+ */
+$cm-text-field-textarea-resize: dynamic(none);
+
+/**
+ * @var {string}
+ *
+ * The padding of text areas.
+ * Defaults to the padding of text-fields ($form-text-field-padding) if set to null.
+ *
+ * @member Ext.form.field.Text
+ */
+$cm-text-field-textarea-padding: dynamic(7px 6px);
+
+/**
+ * @var {string}
+ *
+ * The white-space property specifies how white-spaces inside a text area element are handled.
+ *
+ * @member Ext.form.field.Text
+ */
+$cm-text-field-textarea-white-space: dynamic(pre-wrap);
+
+/**
+ * @var {string}
+ *
+ * The text-overflow property specifies how overflowed content that is not displayed should be rendered inside a text area element.
+ * Sets this property to its default value to prevent ellipsis.
+ *
+ * @member Ext.form.field.Text
+ */
+$cm-text-field-textarea-text-overflow: dynamic(clip);
+
+/**
+ * @var {color}
+ *
+ * The text field color property for initial text or augmented text inside a text field element.
+ *
+ * @member Ext.form.field.Text
+ */
+$cm-text-field-default-text-color: dynamic($cm-grey-3);
+
+/**
+ * @var {string}
+ *
+ * The text field font-style property for initial text or augmented text inside a text field element.
+ *
+ * @member Ext.form.field.Text
+ */
+$cm-text-field-default-text-font-style: dynamic(italic);
+
+/**
+ * @var {number/list}
+ *
+ * The text field padding property for text inside a text field element to be applied when any validation state is
+ * active.
+ *
+ * @member Ext.form.field.Text
+ */
+$cm-text-field-validation-padding: dynamic(1px);
+
+/**
+ * @var {number/list}
+ *
+ * The text field border-width property for a text field element to be applied when any validation state is active.
+ *
+ * @member Ext.form.field.Text
+ */
+$cm-text-field-validation-border-width: dynamic(1px 1px 1px 5px);
+
+/**
+ * @var {number/list}
+ *
+ * The text field padding property for text inside a text field element to be applied when error validation state is
+ * active.
+ *
+ * @member Ext.form.field.Text
+ */
+$cm-text-field-validation-padding-error: dynamic($cm-text-field-validation-padding);
+
+/**
+ * @var {number/list}
+ *
+ * The text field border-width property for a text field element to be applied when error validation state is active.
+ *
+ * @member Ext.form.field.Text
+ */
+$cm-text-field-validation-border-width-error: dynamic($cm-text-field-validation-border-width);
+
+/**
+ * @var {number/list}
+ *
+ * The text field border-color property for a text field element to be applied when error validation state is active.
+ *
+ * @member Ext.form.field.Text
+ */
+$cm-text-field-validation-border-color-error: dynamic($cm-validation-color-error);
+
+/**
+ * @var {number/list}
+ *
+ * The text field padding property for text inside a text field element to be applied when warning validation state is
+ * active.
+ *
+ * @member Ext.form.field.Text
+ */
+$cm-text-field-validation-padding-warning: dynamic($cm-text-field-validation-padding);
+
+/**
+ * @var {number/list}
+ *
+ * The text field border-width property for a text field element to be applied when warning validation state is active.
+ *
+ * @member Ext.form.field.Text
+ */
+$cm-text-field-validation-border-width-warning: dynamic($cm-text-field-validation-border-width);
+
+/**
+ * @var {number/list}
+ *
+ * The text field border-color property for a text field element to be applied when warning validation state is active.
+ *
+ * @member Ext.form.field.Text
+ */
+$cm-text-field-validation-border-color-warning: dynamic($cm-validation-color-warning);
+
+/**
+ * @var {number/list}
+ *
+ * The text field padding property for text inside a text field element to be applied when info validation state is
+ * active.
+ *
+ * @member Ext.form.field.Text
+ */
+$cm-text-field-validation-padding-info: dynamic($cm-text-field-validation-padding);
+
+/**
+ * @var {number/list}
+ *
+ * The text field border-width property for a text field element to be applied when info validation state is active.
+ *
+ * @member Ext.form.field.Text
+ */
+$cm-text-field-validation-border-width-info: dynamic($cm-text-field-validation-border-width);
+
+/**
+ * @var {number/list}
+ *
+ * The text field border-color property for a text field element to be applied when info validation state is active.
+ *
+ * @member Ext.form.field.Text
+ */
+$cm-text-field-validation-border-color-info: dynamic($cm-validation-color-info);
+
+/**
+ * @var {number/list}
+ *
+ * The text field padding property for text inside a text field element to be applied when success validation state is
+ * active.
+ *
+ * @member Ext.form.field.Text
+ */
+$cm-text-field-validation-padding-success: dynamic($cm-text-field-validation-padding);
+
+/**
+ * @var {number/list}
+ *
+ * The text field border-width property for a text field element to be applied when success validation state is active.
+ *
+ * @member Ext.form.field.Text
+ */
+$cm-text-field-validation-border-width-success: dynamic($cm-text-field-validation-border-width);
+
+/**
+ * @var {number/list}
+ *
+ * The text field border-color property for a text field element to be applied when success validation state is active.
+ *
+ * @member Ext.form.field.Text
+ */
+$cm-text-field-validation-border-color-success: dynamic($cm-validation-color-success);
+
+/**
+ * @var {number/list}
+ *
+ * The text field border-radius property for a text field element.
+ *
+ * @member Ext.form.field.Text
+ */
+$cm-text-field-trigger-wrap-border-radius: dynamic(null);
+
+/**
+ * @var {string}
+ *
+ * The text field border-color property for a selected text field element.
+ *
+ * @member Ext.form.field.Text
+ */
+$cm-text-field-trigger-wrap-border-color-focus: dynamic(null);
+
+/**
+ * @var {color}
+ *
+ * The trigger wrap border-color property for a text field element.
+ *
+ * @member Ext.form.field.Text
+ */
+$cm-text-field-trigger-wrap-border-color-focus: dynamic(transparent);
+
+/**
+ * @var {color}
+ *
+ * Default background color for readonly text-fields.
+ *
+ * @member Ext.form.field.Text
+ */
+$cm-text-field-background-color-readonly: dynamic($cm-background-color-readonly);
+
+/**
+ * @var {color}
+ *
+ * Default color for readonly text-fields.
+ *
+ * @member Ext.form.field.Text
+ */
+$cm-text-field-color-readonly: dynamic($cm-color-readonly);
+
+
+// Default variables for Ext.form.field.Text
+$form-text-field-color: dynamic($cm-font-color);
+$form-text-field-background-color: dynamic(transparent);
+$form-field-invalid-background-color: dynamic(transparent);
+$form-text-field-border-color: dynamic($cm-grey-3);
+$form-text-field-focus-border-color: dynamic($cm-blue-4);
+$form-text-field-height: dynamic($cm-field-height);
+$form-text-field-padding: dynamic($cm-grid-50 $cm-grid-100 $cm-grid-50 0);
+$form-text-field-font-size: dynamic($cm-font-size);
+$form-text-field-font-weight: dynamic($cm-font-weight);
+$form-trigger-background-color: dynamic(transparent);
+$form-trigger-glyph: dynamic($cm-core-icons-100-var-arrow-down $cm-glyph-font-size-50 $cm-core-icons-100-font-name);
+$form-trigger-glyph-color: dynamic($cm-grey-9);
+$form-trigger-width: dynamic(18px);
+
+/*
+ *   Sets the max-width and min-width width of formfields. This is needed to keep these elements inside their container.
+ *   (e.g. the edit-mode combo-boxes inside the dashboard's widgets)
+ *   Must be min 100px to offer enough space for DateFields
+ */
+$form-text-field-body-width: dynamic(100px);
+
+
+/**
+ * @var {boolean}
+ * Enables styles for the "default" skin.
+ *
+ * If the default skin is already generated by extjs, it will not be generated again.
+ *
+ * see {@link #include-text-field-default-ui}
+ * see {@link #cm-include-labelable-default-ui}
+ *
+ * @member Ext.form.field.Text
+ */
+$cm-include-text-field-default-ui: dynamic($include-text-field-default-ui and $cm-include-labelable-default-ui);
+
+/**
+ * @var {boolean}
+ * Specifies if the custom UI "centered" for Ext.form.field.Text will be generated.
+ *
+ * see {@link #cm-include-labelable-centered-ui}
+ *
+ * @member Ext.form.field.Text
+ */
+$cm-include-text-field-centered-ui: dynamic($cm-include-labelable-centered-ui);
+
+/**
+ * @var {boolean}
+ * Specifies if the custom UI "centered" for Ext.form.field.Text will be generated.
+ *
+ * see {@link #cm-include-labelable-centered-ui}
+ *
+ * @member Ext.form.field.Text
+ */
+$cm-include-text-field-embedded-ui: dynamic($cm-include-labelable-embedded-ui);
+
+/**
+ * @var {boolean}
+ * Specifies if the custom UI "window-header" for Ext.form.field.Text will be generated.
+ *
+ * see {@link #cm-include-labelable-window-header-ui}
+ *
+ * @member Ext.form.field.Text
+ */
+$cm-include-text-field-window-header-ui: dynamic($cm-include-labelable-window-header-ui);
+
+/**
+ * @var {boolean}
+ * Specifies if the custom UI "plain-label" for Ext.form.field.Text will be generated.
+ *
+ * see {@link #cm-include-labelable-plain-label-ui}
+ *
+ * @member Ext.form.field.Text
+ */
+$cm-include-text-field-plain-label-ui: dynamic($cm-include-labelable-plain-label-ui);
+
+/**
+ * @var {boolean}
+ * Specifies if the custom UI "opaque" for Ext.form.field.Text will be generated.
+ *
+ * see {@link #cm-include-labelable-opaque-ui}
+ *
+ * @member Ext.form.field.Text
+ */
+$cm-include-text-field-opaque-ui: dynamic($cm-include-labelable-opaque-ui);

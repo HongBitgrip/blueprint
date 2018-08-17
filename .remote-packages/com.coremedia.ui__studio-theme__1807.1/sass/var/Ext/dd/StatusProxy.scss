@@ -1,0 +1,55 @@
+/**
+ * @var {boolean} defines if the icon element is shown by default.
+ *
+ * @member Ext.dd.StatusProxy
+ */
+$cm-statusproxy-show-icon: dynamic(true);
+
+/**
+ * @var {list} defines the box shadow.
+ *
+ * @member Ext.dd.StatusProxy
+ */
+$cm-statusproxy-box-shadow: dynamic(0 10px 10px rgba(0, 0, 0, 0.3));
+
+/**
+ * @var {boolean} if false pointer-events will be disabled (set to none).
+ *
+ * @member Ext.dd.StatusProxy
+ */
+$cm-statusproxy-allow-pointer-events: dynamic(false);
+
+/**
+ * @var {boolean} defines if pointer-events should be disabled (set to none).
+ *
+ * @member Ext.dd.StatusProxy
+ */
+$cm-statusproxy-opacity: dynamic(null);
+
+$statusproxy-add-glyph-color: dynamic($cm-grey-9);
+$statusproxy-ok-glyph-color: dynamic($cm-grey-9);
+$statusproxy-nodrop-glyph-color: dynamic($cm-grey-9);
+$statusproxy-color: dynamic($cm-grey-9);
+
+$statusproxy-add-glyph: dynamic($cm-core-icons-100-var-plus $cm-glyph-font-size-100 $cm-core-icons-100-font-name);
+$statusproxy-ok-glyph: dynamic($cm-core-icons-100-var-allowed $cm-glyph-font-size-100 $cm-core-icons-100-font-name);
+$statusproxy-nodrop-glyph: dynamic($cm-core-icons-100-var-forbidden $cm-glyph-font-size-100 $cm-core-icons-100-font-name);
+
+$statusproxy-line-height: dynamic(16px);
+$statusproxy-padding: dynamic(1px 2px);
+
+/**
+ * @var {boolean}
+ * Enables additional styles for the "default" skin.
+ *
+ * @member Ext.dd.StatusProxy
+ */
+$cm-include-statusproxy-default-ui: dynamic(true);
+
+/**
+ * @var {boolean}
+ * Defines if the additional skin "simple" will be generated.
+ *
+ * @member Ext.dd.StatusProxy
+ */
+$cm-include-statusproxy-simple-ui: dynamic(true);

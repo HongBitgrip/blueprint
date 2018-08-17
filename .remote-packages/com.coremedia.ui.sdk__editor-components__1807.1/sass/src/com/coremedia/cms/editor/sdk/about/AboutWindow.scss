@@ -1,0 +1,24 @@
+@if $cm-include-about-window {
+  $_block: "cm-about-window-properties";
+  .#{$_block} {
+    padding-left: 4px;
+    table-layout: fixed;
+    width: 100%;
+
+    &__property {
+      // no outline around table rows - override .x-view-item-focused from ExtJS classic theme-base
+      outline: none !important;
+    }
+
+    &__key {
+      vertical-align: top;
+      font-weight: $cm-font-weight-bold;
+      width: 130px;
+    }
+
+    &__value {
+      vertical-align: top;
+      word-break: break-all;
+    }
+  }
+}

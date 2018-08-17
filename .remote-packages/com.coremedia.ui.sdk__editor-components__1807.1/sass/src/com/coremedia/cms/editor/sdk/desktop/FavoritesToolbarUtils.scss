@@ -1,0 +1,18 @@
+@if $cm-include-favorites-toolbar-utils {
+  $_source-block: "cm-draggable-items-source-placeholder";
+  $_target-block: "cm-draggable-items-target-placeholder";
+  $_ghost-block: "cm-drag-ghost";
+
+  .#{$_source-block},
+  .#{$_target-block} {
+    &--favorites-toolbar {
+      margin-bottom: 6px;
+    }
+  }
+
+  .#{$_ghost-block} {
+    &--favorites-toolbar {
+      padding-top: 3px;
+    }
+  }
+}

@@ -1,0 +1,24 @@
+/**
+ * CoreMedia UI Mixin for a Table (most likely used in grids).
+ *
+ * @param {string} $ui
+ * The name of the UI being created. May not include spaces or special punctuation as string is used as part of
+ * CSS class names.
+ *
+ * @param {list} [$header-box-shadow=$cm-datepicker-header-box-shadow]
+ * The box-shadow of the header element.
+ *
+ * @member Ext.picker.Date
+ */
+@mixin cm-datepicker-ui(
+  $ui,
+  $header-box-shadow: $cm-datepicker-header-box-shadow
+) {
+  .#{$prefix}datepicker-#{$ui} {
+    .#{$prefix}datepicker-header {
+      @if $header-box-shadow != null {
+        box-shadow: $header-box-shadow;
+      }
+    }
+  }
+}

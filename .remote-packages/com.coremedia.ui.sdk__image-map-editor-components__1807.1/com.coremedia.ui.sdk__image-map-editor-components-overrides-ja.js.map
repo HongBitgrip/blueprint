@@ -1,0 +1,8 @@
+{
+"version":3,
+"file":"com.coremedia.ui.sdk__image-map-editor-components-overrides-ja.js",
+"lineCount":1,
+"mappings":"AAGAA,GAAAC,OAAA,CAAW,oDAAX,CAAiE,CAC/DC,SAAU,iDADqD,CAAjE,CAGG,QAAQ,EAAG,EAHd;",
+"sources":["locale/ja/com/coremedia/cms/studio/im/ImageMap_properties.js"],
+"names":["Ext","define","override"]
+}

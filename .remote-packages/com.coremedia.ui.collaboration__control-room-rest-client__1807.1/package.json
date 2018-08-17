@@ -1,0 +1,53 @@
+{
+  "name" : "com.coremedia.ui.collaboration__control-room-rest-client",
+  "version" : "1807.1",
+  "type" : "code",
+  "local" : true,
+  "namespace" : "",
+  "framework" : "ext",
+  "format" : "1",
+  "toolkit" : "classic",
+  "creator" : "CoreMedia AG",
+  "summary" : "This pom contains all informations about the coremedia build infrastructure. Every pom that defines this pom as\n    its\n    parent should add or override elements like:\n    * scm (connection and developerConnection) (required)\n    * pluginManagement (required)\n    * distributionManagement/site to enable site deployment (optional)\n    for simple deployment use\n    url =\n    \"dav:https://repository.coremedia.com/nexus/content/sites/download-area/control-room-rest-client/1807.1\"\n    with id = \"coremedia.external.sites\"\n    as id. Be aware that this site repo is public\n    * url (optional)\n    * issueManagement (optional to target a specific Jira Project)\n    * ciManagement (optional to target a specific hudson job)",
+  "detailedDescription" : "",
+  "requires" : [ {
+    "name" : "net.jangaroo__jangaroo-runtime"
+  }, {
+    "name" : "net.jangaroo__jangaroo-browser"
+  }, {
+    "name" : "net.jangaroo__ext-as"
+  }, {
+    "name" : "com.coremedia.ui.toolkit__client-core-impl"
+  }, {
+    "name" : "com.coremedia.ui.sdk__cap-rest-client"
+  }, {
+    "name" : "com.coremedia.ui.sdk__cap-rest-client-impl"
+  } ],
+  "css" : [ ],
+  "js" : [ {
+    "path" : "bundledResources/packageConfig.js",
+    "bundle" : false,
+    "includeInBundle" : true
+  } ],
+  "sass" : {
+    "namespace" : "",
+    "etc" : [ "sass/etc/imports.scss" ],
+    "var" : [ "sass/var" ],
+    "src" : [ "sass/mixins", "sass/src" ]
+  },
+  "production" : { },
+  "testing" : { },
+  "development" : { },
+  "joo-classpath-development" : "${package.dir}/${package.name}.js",
+  "joo-overrides-development" : "${package.dir}/${package.name}-overrides.js,${package.dir}/${package.name}-overrides-${package.locale}.js",
+  "joo-classpath-production" : "${package.dir}/src,${package.dir}/locale/en",
+  "joo-overrides-production" : "${package.dir}/overrides,${package.dir}/locale/${package.locale}",
+  "joo-classpath-testing" : "${package.joo-classpath-development}",
+  "joo-overrides-testing" : "${package.joo-overrides-development}",
+  "classpath" : [ "${package.joo-classpath-${build.environment}}" ],
+  "overrides" : [ "${package.joo-overrides-${build.environment}}" ],
+  "output" : "${package.dir}/build",
+  "resources" : [ {
+    "path" : "${package.dir}/resources"
+  } ]
+}

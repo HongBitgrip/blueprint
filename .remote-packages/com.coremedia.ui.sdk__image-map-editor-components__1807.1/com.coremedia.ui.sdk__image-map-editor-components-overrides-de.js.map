@@ -1,0 +1,8 @@
+{
+"version":3,
+"file":"com.coremedia.ui.sdk__image-map-editor-components-overrides-de.js",
+"lineCount":3,
+"mappings":"AAGAA,GAAAC,OAAA,CAAW,oDAAX,CAAiE,CAC/DC,SAAU,iDADqD,CAE/D,qBAAsB,WAFyC,CAG/D,2BAA4B,iBAHmC,CAI/D,0BAA2B,iCAJoC,CAK/D,wBAAyB,qBALsC,CAM/D,2BAA4B,oBANmC,CAO/D,oCAAqC,+BAP0B,CAQ/D,0BAA2B,iBARoC,CAS/D,yBAA0B,IATqC,CAU/D,qCAAsC,gBAVyB;AAW/D,mCAAoC,sCAX2B,CAY/D,gDAAiD,sBAZc,CAa/D,qCAAsC,QAbyB,CAc/D,sCAAuC,MAdwB,CAe/D,2CAA4C,iBAfmB,CAgB/D,2CAA4C,iBAhBmB,CAiB/D,6BAA8B,aAjBiC,CAkB/D,4BAA6B,MAlBkC,CAmB/D,6BAA8B,MAnBiC,CAoB/D,+BAAgC,oDApB+B,CAAjE;AAqBG,QAAQ,EAAG,EArBd;",
+"sources":["locale/de/com/coremedia/cms/studio/im/ImageMap_properties.js"],
+"names":["Ext","define","override"]
+}

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 19.2.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 16 16" enable-background="new 0 0 16 16" xml:space="preserve">
+<g id="portal-0" display="none">
+	<path display="inline" fill="#BC9C1C" d="M8,0C3.58,0,0,3.58,0,8s3.58,8,8,8s8-3.58,8-8S12.42,0,8,0z M8,15c-3.87,0-7-3.13-7-7
+		c0-3.87,3.13-7,7-7s7,3.13,7,7C15,11.87,11.87,15,8,15z"/>
+	<radialGradient id="SVGID_1_" cx="8" cy="8" r="7" gradientUnits="userSpaceOnUse">
+		<stop  offset="0" style="stop-color:#FFFFFF"/>
+		<stop  offset="1" style="stop-color:#665000"/>
+	</radialGradient>
+	<circle display="inline" fill="url(#SVGID_1_)" cx="8" cy="8" r="7"/>
+	<rect x="5" y="7" display="inline" fill="#B59100" width="1" height="1"/>
+	<rect x="9" y="4" display="inline" fill="#B59100" width="1" height="1"/>
+	<rect x="9" y="12" display="inline" fill="#B59100" width="1" height="1"/>
+	<rect x="4" y="12" display="inline" fill="#B59100" width="1" height="1"/>
+	<rect x="12" y="8" display="inline" fill="#B59100" width="1" height="1"/>
+	<rect x="8" y="6" display="inline" fill="#B59100" width="1" height="1"/>
+	<rect x="4" y="3" display="inline" fill="#FFF1BA" width="1" height="1"/>
+	<rect x="11" y="5" display="inline" fill="#FFF1BA" width="1" height="1"/>
+	<rect x="8" y="2" display="inline" fill="#FFF1BA" width="1" height="1"/>
+	<rect x="3" y="9" display="inline" fill="#FFF1BA" width="1" height="1"/>
+	<rect x="7" y="10" display="inline" fill="#FFF1BA" width="1" height="1"/>
+	<rect x="11" y="11" display="inline" fill="#FFF1BA" width="1" height="1"/>
+</g>
+<g id="portal-1">
+	<path fill="#1C75BC" d="M8,0C3.58,0,0,3.58,0,8s3.58,8,8,8s8-3.58,8-8S12.42,0,8,0z M8,15c-3.87,0-7-3.13-7-7c0-3.87,3.13-7,7-7
+		s7,3.13,7,7C15,11.87,11.87,15,8,15z"/>
+	<radialGradient id="SVGID_2_" cx="8" cy="8" r="7" gradientUnits="userSpaceOnUse">
+		<stop  offset="0" style="stop-color:#FFFFFF"/>
+		<stop  offset="1" style="stop-color:#000466"/>
+	</radialGradient>
+	<circle fill="url(#SVGID_2_)" cx="8" cy="8" r="7"/>
+	<rect x="5" y="7" fill="#003DB5" width="1" height="1"/>
+	<rect x="9" y="4" fill="#003DB5" width="1" height="1"/>
+	<rect x="9" y="12" fill="#003DB5" width="1" height="1"/>
+	<rect x="4" y="12" fill="#003DB5" width="1" height="1"/>
+	<rect x="12" y="8" fill="#003DB5" width="1" height="1"/>
+	<rect x="8" y="6" fill="#003DB5" width="1" height="1"/>
+	<rect x="4" y="3" fill="#BABDFF" width="1" height="1"/>
+	<rect x="11" y="5" fill="#BABDFF" width="1" height="1"/>
+	<rect x="8" y="2" fill="#BABDFF" width="1" height="1"/>
+	<rect x="3" y="9" fill="#BABDFF" width="1" height="1"/>
+	<rect x="7" y="10" fill="#BABDFF" width="1" height="1"/>
+	<rect x="11" y="11" fill="#BABDFF" width="1" height="1"/>
+</g>
+</svg>

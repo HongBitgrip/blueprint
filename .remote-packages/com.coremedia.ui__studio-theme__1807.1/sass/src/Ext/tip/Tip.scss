@@ -1,0 +1,20 @@
+@if $cm-include-tip-default-ui {
+  $_ui: "default";
+  @include cm-tip-ui(
+    $ui: $_ui
+  );
+}
+@if $cm-include-tip-embedding-ui {
+  $_ui: "embedding";
+  @include extjs-tip-ui(
+    $ui: $_ui,
+    $ui-background-color: $cm-white,
+    $ui-header-color: $cm-font-color,
+    $ui-body-padding: 0,
+    $ui-body-color: $cm-font-color
+  );
+  @include cm-tip-ui(
+    $ui: $_ui,
+    $padding: 0
+  );
+}

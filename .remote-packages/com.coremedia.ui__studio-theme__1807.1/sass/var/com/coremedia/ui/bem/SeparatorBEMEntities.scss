@@ -1,0 +1,8 @@
+/**
+ * @var {boolean}
+ *
+ * Specifies if the styles for vertical BEM pattern separators for containers will be generated.
+ *
+ * @member com.coremedia.ui.bem.SeparatorBEMEntities
+ */
+$cm-include-vertical-separator: dynamic(true);

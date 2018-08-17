@@ -1,0 +1,67 @@
+/**
+ * @var {color} Defines the color of the tree arrows when the row is selected.
+ *
+ * @member Ext.tree.View
+ */
+$cm-tree-arrow-glyph-color-selected: dynamic($cm-white);
+
+/**
+ * @var {color} Defines the color of the tree icon when the row is selected.
+ *
+ * @member Ext.tree.View
+ */
+$cm-tree-icon-glyph-color-selected: dynamic($cm-white);
+
+/**
+ * @var {color} Defines the color of the tree checkbox when the row is selected.
+ *
+ * @member Ext.tree.View
+ */
+$cm-tree-checkbox-glyph-color-selected: dynamic($cm-white);
+
+/**
+ * @var {number} Defines the min-height, of the cell's editor.
+ *
+ * @member Ext.tree.View
+ */
+$cm-tree-cell-editor-min-height: dynamic($cm-line-height);
+
+/**
+ * @var {list} Specifies a glyph to use for the icon of a node while loading.
+ *
+ * @member Ext.tree.View
+ */
+$cm-tree-icon-glyph-loading: dynamic($cm-core-icons-100-var-tree-view-spinner $cm-glyph-font-size-100 $cm-core-icons-100-font-name);
+
+/**
+ * @var {list} Specifies an animation to use for the icon of a node while loading.
+ *
+ * @member Ext.tree.View
+ */
+$cm-tree-icon-animation-loading: dynamic($cm-spinner-animation);
+
+$tree-expand-glyph-color: dynamic($cm-black);
+$tree-collapse-glyph-color: dynamic($cm-black);
+$tree-arrow-glyph-color: dynamic($cm-black);
+$tree-checkbox-glyph-color: dynamic($cm-black);
+$tree-glyph-color: dynamic($cm-black);
+
+$tree-leaf-glyph: dynamic($cm-core-icons-100-var-type-object $cm-glyph-font-size-100 $cm-core-icons-100-font-name);
+$tree-folder-glyph: dynamic($cm-core-icons-100-var-folder $cm-glyph-font-size-100 $cm-core-icons-100-font-name);
+$tree-folder-open-glyph: dynamic($cm-core-icons-100-var-folder-open $cm-glyph-font-size-100 $cm-core-icons-100-font-name);
+
+$tree-elbow-spacing: dynamic(0);
+$tree-glyph-color: dynamic($cm-icon-color-pos);
+$tree-icon-spacing: dynamic(5px);
+$tree-checkbox-spacing: dynamic(0);
+$tree-icon-width: dynamic(20px);
+
+/**
+ * @var {boolean}
+ * Enables styles for the "default" skin.
+ *
+ * see {@link #cm-include-table-view-default-ui}
+ *
+ * @member Ext.tree.View
+ */
+$cm-include-tree-view-default-ui: dynamic($cm-include-table-view-default-ui);

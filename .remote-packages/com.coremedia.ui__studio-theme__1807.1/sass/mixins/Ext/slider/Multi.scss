@@ -1,0 +1,91 @@
+/**
+ * CoreMedia UI Mixin for a Slider.
+ *
+ * @param {string} $ui
+ * The name of the UI being created. May not include spaces or special punctuation as string is used as part of
+ * CSS class names.
+ *
+ * @param {color} [$thumb-background-color-focus-over=$cm-slider-thumb-background-color-focus-over]
+ * If not null defines the background color of the thumb when focused.
+ *
+ * @param {number} [$thumb-dot-size=$cm-slider-thumb-dot-size]
+ * Specifies the size (width and hight) of the slider thumbs inner dot.
+ * Set to 0 to disable dot.
+ *
+ * @param {color} [$thumb-dot-background-color=$cm-slider-thumb-dot-background-color]
+ * If not null defines the background-color of the slider thumbs inner dot.
+ *
+ * @param {color} [$thumb-dot-background-color-focus=$cm-slider-thumb-dot-background-color-focus]
+ * If not null defines the background-color of the slider thumbs inner dot when focused.
+ *
+ * @param {boolean} [$enable-thumb-overlapping=$cm-slider-enable-thumb-overlapping]
+ * If not null defines if the thumb should be overlapping the track at start-cap and end-cap.
+ *
+ * @param {number} [$used-horizontal-slider-thumb-width=$horizontal-slider-thumb-width]
+ * If {@link #enable-thumb-overlapping} is true, the used horizontal slider thumb width must be provided.
+ *
+ * @param {number} [$used-vertical-slider-thumb-height=$vertical-slider-thumb-height]
+ * If {@link #enable-thumb-overlapping} is true, the used vertical slider thumb height must be provided.
+ *
+ * @member Ext.slider.Multi
+ */
+@mixin cm-slider-ui(
+  $ui,
+  $thumb-background-color-focus-over: $cm-slider-thumb-background-color-focus-over,
+  $thumb-dot-size: $cm-slider-thumb-dot-size,
+  $thumb-dot-background-color: $cm-slider-thumb-dot-background-color,
+  $thumb-dot-background-color-focus: $cm-slider-thumb-dot-background-color-focus,
+  $enable-thumb-overlapping: $cm-slider-enable-thumb-overlapping,
+  $used-horizontal-slider-thumb-width: $horizontal-slider-thumb-width,
+  $used-vertical-slider-thumb-height: $vertical-slider-thumb-height
+) {
+  .#{$prefix}field-#{$ui} .#{$prefix}slider {
+
+    &.#{$prefix}slider-horz:before {
+      @if $enable-thumb-overlapping {
+        width: auto;
+        left: ceil($used-horizontal-slider-thumb-width / 2);
+        right: ceil($used-horizontal-slider-thumb-width / 2);
+      }
+    }
+
+    &.#{$prefix}slider-vert:before {
+      @if $enable-thumb-overlapping {
+        height: auto;
+        top: ceil($used-vertical-slider-thumb-height / 2);
+        bottom: ceil($used-vertical-slider-thumb-height / 2);
+      }
+    }
+
+    @if $thumb-dot-size != null {
+      .#{$prefix}slider-thumb {
+        &:after {
+          content:"";
+          display: block;
+          width: $thumb-dot-size;
+          height: $thumb-dot-size;
+          position: absolute;
+          border-radius: $thumb-dot-size;
+          background-color: $thumb-dot-background-color;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+        }
+      }
+    }
+
+    &.#{$prefix}slider-focus {
+      .#{$prefix}slider-thumb-over {
+        background-color: $thumb-background-color-focus-over;
+      }
+      .#{$prefix}slider-thumb {
+        &:after {
+          background-color: $thumb-dot-background-color-focus;
+        }
+      }
+    }
+  }
+}
+
+
+

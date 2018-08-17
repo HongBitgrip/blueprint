@@ -1,0 +1,22 @@
+@if $cm-include-auto-logout {
+  .auto-logout-cover {
+    z-index: 9500;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: #201F24;
+    opacity: 0;
+    transition: opacity 2s ease-in-out;
+    -webkit-transition: opacity 2s ease-in-out;
+    -moz-transition: opacity 2s ease-in-out;
+    width: 0;
+    height: 0;
+    display: block;
+    zoom: 1;
+  }
+  .auto-logout-cover-on {
+    opacity: 0.8;
+    width: 100%;
+    height: 100%;
+  }
+}

@@ -1,0 +1,11 @@
+/**
+ * @var {boolean}
+ * By default, drag ghosts are made invisible with "visibility:hidden".
+ * This does not stop them from grabbing screen space, at times causing
+ * the viewport to be scrolled.
+ *
+ * Set to true to make sure they disappear completely when hidden.
+ *
+ * @member Ext.dd.DD
+ */
+$cm-include-dd-proxy-hide-fix: dynamic(true);

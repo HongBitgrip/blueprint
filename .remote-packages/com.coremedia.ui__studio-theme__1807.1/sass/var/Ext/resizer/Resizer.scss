@@ -1,0 +1,31 @@
+// Default ExtJS variables
+$resizer-handle-background-color: dynamic($cm-white);
+$resizer-handle-size: dynamic(6px);
+$resizer-handle-border-radius: dynamic($cm-border-radius);
+$resizer-handle-glyph-font-size: dynamic(9px);
+$resizer-handle-glyph-color: dynamic($cm-grey-3);
+$resizer-handle-horizontal-glyph: dynamic($cm-core-icons-100-var-resizer-horizontal $resizer-handle-glyph-font-size $cm-core-icons-100-font-name);
+
+/**
+ * @var {boolean}
+ * Defines if the custom styles for the resizer are enabled.
+ *
+ * @member Ext.resizer.Resizer
+ */
+$cm-resizer-custom-styles: dynamic(true);
+
+/**
+ * @var {boolean}
+ * Defines if the gradient background for the resizer is enabled.
+ *
+ * @member Ext.resizer.Resizer
+ */
+$cm-resizer-enable-gradient-background: dynamic(true);
+
+/**
+ * @var {boolean}
+ * Defines if the background for the resizer icon is visible.
+ *
+ * @member Ext.resizer.Resizer
+ */
+$cm-resizer-enable-icon-background: dynamic(true);

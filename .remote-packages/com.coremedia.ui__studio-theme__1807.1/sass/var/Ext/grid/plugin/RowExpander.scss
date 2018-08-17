@@ -1,0 +1,7 @@
+$row-expander-collapse-glyph: dynamic($cm-core-icons-100-var-arrow-down $cm-glyph-font-size-100 $cm-core-icons-100-font-name);
+$row-expander-expand-glyph: dynamic($cm-core-icons-100-var-arrow-right $cm-glyph-font-size-100 $cm-core-icons-100-font-name);
+$row-expander-glyph-color: dynamic($cm-font-color);
+$row-expander-width: dynamic(16px);
+$row-expander-height: dynamic(16px);
+$row-expander-cell-spacing-before: dynamic(1px); // leave space for focus box-shadow
+$row-expander-cell-spacing-after: dynamic(1px); // leave space for focus box-shadow

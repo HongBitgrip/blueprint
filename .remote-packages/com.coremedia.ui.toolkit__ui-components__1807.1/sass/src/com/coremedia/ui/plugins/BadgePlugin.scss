@@ -1,0 +1,36 @@
+@if $cm-include-badge-plugin {
+
+  $_block: "cm-badge-plugin";
+  .#{$_block} {
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+
+    width: $cm-badge-size;
+    height: $cm-badge-size;
+    -webkit-box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.15);
+    -moz-box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.15);
+    box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.15);
+    border-radius: 50%;
+    background-color: $cm-blue-4;
+
+    line-height: 1;
+    color: $cm-font-light-coloured;
+    font-size: 9px;
+    font-weight: bold;
+
+    &__number {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    &--inverted {
+      background-color: $cm-white;
+      color: $cm-blue-5;
+    }
+  }
+}
+

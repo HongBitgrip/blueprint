@@ -1,0 +1,26 @@
+@if $cm-include-checkbox-default-ui {
+  $_ui: "default";
+  @include cm-checkbox-ui(
+    $ui: $_ui
+  );
+}
+
+@if $cm-include-checkbox-no-box-ui {
+  $_ui: "no-box";
+
+  @include extjs-checkbox-ui (
+    $ui: $_ui,
+    $ui-checkbox-size: 0,
+    $ui-checkbox-glyph: $_cm-checkbox-no-box-placeholder-glyph,
+    $ui-radio-glyph: $_cm-checkbox-no-box-placeholder-glyph,
+    $ui-field-height: $_cm-checkbox-no-box-height,
+    $ui-label-line-height: $_cm-checkbox-no-box-height,
+    $ui-label-spacing: 0
+  );
+  @include cm-checkbox-ui(
+    $ui: $_ui,
+    $background-color-checked: $cm-blue-4,
+    $box-label-color-checked: $cm-white,
+    $border-focused: null
+  );
+}

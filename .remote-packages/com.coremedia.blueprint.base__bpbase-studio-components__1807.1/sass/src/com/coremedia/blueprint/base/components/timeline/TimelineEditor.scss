@@ -1,0 +1,10 @@
+@if $cm-include-timeline-editor {
+  $_block: "cm-draggable-item";
+  .#{$_block} {
+    .cm-validation-state-error & {
+      .#{$_block}__dnd {
+        border-left-color: $cm-validation-color-error;
+      }
+    }
+  }
+}

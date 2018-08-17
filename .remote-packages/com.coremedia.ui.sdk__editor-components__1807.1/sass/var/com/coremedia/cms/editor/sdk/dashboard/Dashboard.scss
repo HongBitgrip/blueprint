@@ -1,0 +1,9 @@
+/**
+ * @var {boolean}
+ * Enables styles for the dashboard.
+ *
+ * see {@link #cm-include-draggable-items-utils}
+ *
+ * @member com.coremedia.cms.editor.sdk.dashboard.Dashboard
+ */
+$cm-include-dashboard: dynamic($cm-include-draggable-items-utils);

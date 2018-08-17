@@ -1,0 +1,22 @@
+
+@if $cm-include-pagegrid-field {
+
+  $_container-block: "cm-placements-container";
+
+  .#{$_container-block} {
+    &__field {
+      & > .#{$prefix}panel-bodyWrap {
+        & > .#{$prefix}panel-body {
+          padding-bottom: 18px;
+        }
+      }
+      &:last-of-type {
+        & > .#{$prefix}panel-bodyWrap {
+          & > .#{$prefix}panel-body {
+            padding-bottom: 0px;
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,10 @@
+@if $cm-include-p13n-rule-panel{
+  .cm-p13n-dragbar{
+    cursor: move;
+    height: 12px;
+    background-image: url(get-resource-path("dragbar.png"));
+    background-color: transparent;
+    background-repeat: repeat-x;
+    background-position: 0 50%;
+  }
+}

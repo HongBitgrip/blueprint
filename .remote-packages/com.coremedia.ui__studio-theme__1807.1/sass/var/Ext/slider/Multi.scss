@@ -1,0 +1,67 @@
+/**
+ * @var {color}
+ * If not null defines the background color of the thumb when mouse is over and it has the focus.
+ *
+ * @member Ext.slider.Multi
+ */
+$cm-slider-thumb-background-color-focus-over: dynamic($cm-blue-5);
+
+/**
+ * @var {number}
+ * Specifies the size (width and hight) of the slider thumbs inner dot.
+ * Set to 0 to disable dot.
+ *
+ * @member Ext.slider.Multi
+ */
+$cm-slider-thumb-dot-size: dynamic(4px);
+
+/**
+ * @var {color}
+ * If not null defines the background-color of the slider thumbs inner dot.
+ */
+$cm-slider-thumb-dot-background-color: dynamic($cm-darkgrey);
+
+/**
+ * @var {color}
+ * If not null defines the background color of the slider thumbs inner dot when focused.
+ */
+$cm-slider-thumb-dot-background-color-focus: dynamic($cm-white);
+
+/**
+ * @var {boolean}
+ * If not null defines if the sliders thumb should be overlapping the track at start-cap and end-cap.
+ *
+ * @member Ext.slider.Multi
+ */
+$cm-slider-enable-thumb-overlapping: dynamic(true);
+
+$slider-thumb-background-color-over: dynamic(transparentize($cm-darkgrey,.3));
+$slider-thumb-background-color: dynamic(transparentize($cm-grey-8,.3));
+$slider-thumb-background-color-focus: dynamic($cm-slider-thumb-background-color-focus-over);
+$slider-thumb-background-color-drag: dynamic($slider-thumb-background-color-over);
+
+$horizontal-slider-thumb-width: dynamic($cm-slider-thumb-radius * 2);
+$horizontal-slider-thumb-height: dynamic($cm-slider-thumb-radius * 2);
+$vertical-slider-thumb-width: dynamic($cm-slider-thumb-radius * 2);
+$vertical-slider-thumb-height: dynamic($cm-slider-thumb-radius * 2);
+
+$slider-thumb-border-radius: dynamic($cm-slider-thumb-radius);
+$slider-thumb-border-width: dynamic(0);
+$slider-thumb-glyph-font-size: dynamic(0);
+
+$slider-track-border-radius: dynamic(1px);
+$slider-track-border-width: dynamic(0);
+$slider-track-size: dynamic(2px);
+$slider-track-background-color: dynamic($cm-darkgrey);
+
+/**
+ * @var {boolean}
+ * Enables styles for the "default" skin.
+ *
+ * Sencha has no variable for the default skin, so the css code will always be generated.
+ *
+ * see {@link #cm-include-labelable-default-ui}
+ *
+ * @member Ext.slider.Multi
+ */
+$cm-include-slider-default-ui: dynamic($cm-include-labelable-default-ui);

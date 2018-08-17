@@ -1,0 +1,58 @@
+@if $cm-include-issues-panel {
+  $_block: "cm-issues";
+  $_issue_block: "cm-issue";
+  $_issue_link_block: "cm-issue-link";
+  $_border_default: 1px solid transparent;
+  $_padding_default: 2px;
+
+  .#{$_block} {
+    &__item + &__item {
+      margin-top: $cm-grid-50;
+    }
+  }
+  .#{$_issue_block} {
+    cursor: pointer;
+    &__link {
+      color: $cm-font-color;
+      text-decoration: underline;
+      border: $_border_default;
+      padding: $_padding_default;
+    }
+    &__text {
+      color: $cm-font-color;
+      border: $_border_default;
+      padding: $_padding_default;
+      word-wrap: break-word;
+    }
+    &__list {
+      margin: 0;
+      padding: $_padding_default;
+      list-style: none;
+      > li {
+        position: relative;
+        padding: $cm-grid-50 0 0 $cm-grid-200;
+        &:before {
+          position: absolute;
+          left: 1px;
+          top: $cm-grid-50;
+          font-size: $cm-glyph-font-size-200;
+          content: "\2022";
+        }
+      }
+    }
+
+    &--with-list {
+      cursor: inherit;
+      .#{$_issue_block}__link {
+        cursor: pointer;
+        overflow: hidden;
+        word-wrap: break-word;
+      }
+    }
+  }
+  .#{$_issue_link_block} {
+    &--focused {
+      border-color: $cm-black;
+    }
+  }
+}

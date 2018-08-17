@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <parent>
+    <groupId>com.coremedia.blueprint</groupId>
+    <artifactId>blueprint-parent</artifactId>
+    <version>1-SNAPSHOT</version>
+    <!-- remove the relative path if you use this repo in a separate build reactor as the blueprint -->
+    <relativePath>../blueprint/blueprint-parent/pom.xml</relativePath>
+  </parent>
+
+  <groupId>com.coremedia.blueprint.boot</groupId>
+  <artifactId>blueprint-spring-boot</artifactId>
+  <version>1-SNAPSHOT</version>
+  <packaging>pom</packaging>
+
+  <properties>
+    <!-- Version for Spring Boot Apps embedded Tomcat. Tomcat 7 and 8 are supported -->
+    <tomcat.embed.version>8.5.32</tomcat.embed.version>
+    <blueprint.groupId>com.coremedia.blueprint</blueprint.groupId>
+    <!-- keep this version in sync with this poms parent version -->
+    <blueprint.version>1-SNAPSHOT</blueprint.version>
+  </properties>
+
+  <dependencyManagement>
+    <dependencies>
+      <!-- for spring boot -->
+      <dependency>
+        <groupId>org.apache.tomcat.embed</groupId>
+        <artifactId>tomcat-embed-core</artifactId>
+        <version>${tomcat.embed.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.apache.tomcat.embed</groupId>
+        <artifactId>tomcat-embed-el</artifactId>
+        <version>${tomcat.embed.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.apache.tomcat.embed</groupId>
+        <artifactId>tomcat-embed-websocket</artifactId>
+        <version>${tomcat.embed.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.apache.tomcat.embed</groupId>
+        <artifactId>tomcat-embed-jasper</artifactId>
+        <version>${tomcat.embed.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-actuator</artifactId>
+        <version>${spring.boot.version}</version>
+      </dependency>
+      <dependency>
+        <!--
+         | This dependency is necessary for the actuator endpoint that provides a json file with links to all
+         | endpoints.
+         -->
+        <groupId>org.springframework.hateoas</groupId>
+        <artifactId>spring-hateoas</artifactId>
+        <version>0.23.0.RELEASE</version>
+      </dependency>
+    </dependencies>
+  </dependencyManagement>
+
+  <modules>
+    <module>services</module>
+    <module>blueprint-spring-boot-autoconfigure</module>
+  </modules>
+
+</project>

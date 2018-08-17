@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <parent>
+    <groupId>com.coremedia.blueprint.boot</groupId>
+    <artifactId>blueprint-spring-boot</artifactId>
+    <version>1-SNAPSHOT</version>
+    <relativePath>../pom.xml</relativePath>
+  </parent>
+
+  <artifactId>services</artifactId>
+  <packaging>pom</packaging>
+
+  <modules>
+    <module>cae-preview-app</module>
+    <module>cae-live-app</module>
+    <module>studio-rest-service-app</module>
+    <module>content-management-server-app</module>
+    <module>master-live-server-app</module>
+    <module>replication-live-server-app</module>
+    <module>workflow-server-app</module>
+    <module>content-feeder-app</module>
+    <module>caefeeder-live-app</module>
+    <module>caefeeder-preview-app</module>
+    <module>user-changes-app</module>
+    <module>elastic-worker-app</module>
+  </modules>
+
+  <properties>
+    <!--
+     | relative path from the services/module/XYZ maven module to the configuration directory, all files within this dir will be added
+     | to the classpath for the spring-boot:run execution.
+     -->
+    <development-properties.dir>${project.basedir}/../../../blueprint/workspace-configuration/development-properties/default</development-properties.dir>
+    <!--
+     | classpath relative paths to the development properties to be loaded.
+     -->
+    <commonPropertieslocations>classpath:/wcs.properties,classpath:/hybris.properties,classpath:/sfcc.properties</commonPropertieslocations>
+    <propertieslocations>classpath:/development.properties</propertieslocations>
+    <!--By default we do not add extra resources to tomcat -->
+    <spring.boot.tomcat.extraResources></spring.boot.tomcat.extraResources>
+  </properties>
+
+  <build>
+    <pluginManagement>
+      <plugins>
+        <plugin>
+          <groupId>pl.project13.maven</groupId>
+          <artifactId>git-commit-id-plugin</artifactId>
+          <version>2.2.3</version>
+          <executions>
+            <execution>
+              <goals>
+                <goal>revision</goal>
+              </goals>
+            </execution>
+          </executions>
+          <configuration>
+            <failOnNoGitDirectory>false</failOnNoGitDirectory>
+            <verbose>false</verbose>
+            <dateFormat>yyyy-MM-dd'T'HH:mm:ssZ</dateFormat>
+            <generateGitPropertiesFile>true</generateGitPropertiesFile>
+            <generateGitPropertiesFilename>${project.build.outputDirectory}/git.properties</generateGitPropertiesFilename>
+          </configuration>
+        </plugin>
+        <plugin>
+          <groupId>org.springframework.boot</groupId>
+          <artifactId>spring-boot-maven-plugin</artifactId>
+          <version>${spring.boot.version}</version>
+          <executions>
+            <execution>
+              <goals>
+                <goal>repackage</goal>
+                <goal>build-info</goal>
+              </goals>
+            </execution>
+          </executions>
+
+          <configuration>
+            <!--
+             | build executable war that can be run like this:
+             | JAVA_OPTS="<PUT_SYSTEM_PROPS_HERE>" $(PATH_TO_MODULE_ARTIFACT)
+             | only set to 'true' if chef run won't fail on warning when unzipping the webapp
+            -->
+            <executable>false</executable>
+            <!-- common main class -->
+            <addResources>true</addResources>
+            <profiles>
+              <!-- spring profile for local development, activates application-local.properties -->
+              <profile>local</profile>
+              <profile>dev</profile>
+            </profiles>
+            <!--
+             | DO NOT USE jvmArguments, the spring boot plugin will then fork a VM, which is not possible on Windows
+             | hosts due to command line length restrictions.
+             -->
+            <folders>
+              <!--
+               | we use a combination of adding folders to the classpath and classpath references to the property files
+               | to support also windows developer.
+               -->
+              <folder>${development-properties.dir}</folder>
+            </folders>
+          </configuration>
+        </plugin>
+        <plugin>
+          <groupId>org.codehaus.mojo</groupId>
+          <artifactId>properties-maven-plugin</artifactId>
+          <version>1.0.0</version>
+          <configuration>
+            <properties>
+              <spring.config.location>${propertieslocations},${commonPropertieslocations}</spring.config.location>
+              <content-management-server.host>${content-management-server.host}</content-management-server.host>
+              <workflow-server.host>${workflow-server.host}</workflow-server.host>
+              <master-live-server.host>${master-live-server.host}</master-live-server.host>
+              <cae-preview.host>${cae-preview.host}</cae-preview.host>
+              <cae-live.host>${cae-live.host}</cae-live.host>
+              <db.host>${db.host}</db.host>
+              <mongoDb.host>${mongoDb.host}</mongoDb.host>
+              <solr.host>${solr.host}</solr.host>
+              <wcs.host>${wcs.host}</wcs.host>
+              <hybris.host>${hybris.host}</hybris.host>
+              <livecontext.sfcc.host>${livecontext.sfcc.host}</livecontext.sfcc.host>
+              <project.basedir>${project.basedir}</project.basedir>
+              <com.coremedia.transform.blobCache.basePath>${development.blobCache.basePath}/${project.artifactId}</com.coremedia.transform.blobCache.basePath>
+              <spring.boot.tomcat.extraResources>${spring.boot.tomcat.extraResources}</spring.boot.tomcat.extraResources>
+              <!--Only during development will we need the log file-->
+              <logging.file>target/${project.build.finalName}.log</logging.file>
+              <endpoints.logfile.enabled>true</endpoints.logfile.enabled>
+            </properties>
+          </configuration>
+        </plugin>
+      </plugins>
+    </pluginManagement>
+    <plugins>
+      <plugin>
+        <groupId>pl.project13.maven</groupId>
+        <artifactId>git-commit-id-plugin</artifactId>
+      </plugin>
+    </plugins>
+  </build>
+
+  <profiles>
+    <profile>
+      <id>dev</id>
+      <activation>
+        <property>
+          <name>installation.host</name>
+        </property>
+      </activation>
+      <build>
+        <plugins>
+          <plugin>
+            <groupId>org.codehaus.mojo</groupId>
+            <artifactId>properties-maven-plugin</artifactId>
+            <executions>
+              <execution>
+                <id>set-spring-boot-run-properties</id>
+                <goals>
+                  <goal>set-system-properties</goal>
+                </goals>
+                <phase>initialize</phase>
+              </execution>
+            </executions>
+          </plugin>
+          <plugin>
+            <groupId>pl.project13.maven</groupId>
+            <artifactId>git-commit-id-plugin</artifactId>
+            <version>2.2.3</version>
+            <executions>
+              <execution>
+                <goals>
+                  <goal>revision</goal>
+                </goals>
+              </execution>
+            </executions>
+            <configuration>
+              <verbose>false</verbose>
+              <dateFormat>yyyy-MM-dd'T'HH:mm:ssZ</dateFormat>
+              <generateGitPropertiesFile>true</generateGitPropertiesFile>
+              <generateGitPropertiesFilename>${project.build.outputDirectory}/git.properties</generateGitPropertiesFilename>
+            </configuration>
+          </plugin>
+        </plugins>
+      </build>
+    </profile>
+  </profiles>
+</project>

@@ -1,0 +1,8 @@
+@if $cm-include-dd-proxy-hide-fix {
+  .#{$prefix}dd-drag-proxy.cm-hidden {
+    height: 0;
+    display: block;
+    border: none;
+    margin: 0;
+  }
+}

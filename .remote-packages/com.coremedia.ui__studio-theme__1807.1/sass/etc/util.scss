@@ -1,0 +1,86 @@
+/**
+ * Makes the element text overflow to use ellipsis.
+ */
+@mixin cm-ellipsis {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/**
+ * Fake ellipsis for more than one text row using plain css.
+ *
+ * In order to make this possible we need to use two pseudo elements:
+ * - the "before" pseudo element always shows the dots
+ * - the "after" pseudo element hides the dots by covering the "before" element, as its position is based on the text
+ *   flow it will only cover the "before" element if the text is not ellipsified. To be able to cover the "pseudo"
+ *   element it may not be transparent but needs the background-color of the text-box.
+ *
+ * @param {number} [$line-height=$cm-font-size] the line-height to use
+ * @param {number} [$line-count=2] the lines to display before using ellipsis
+ * @param {color} [$background-color=$cm-white] the background-color of the text-box
+ * @param {color} [$color=$cm-font-color] the text color to use
+ * @param {string} [$word-wrap=break-word] the word-wrap behaviour of the text
+ */
+@mixin cm-ellipsis-multiline($line-height: $cm-font-size, $line-count: 2, $background-color: $cm-white, $color: $cm-font-color, $word-wrap: break-word) {
+  color: $color;
+  overflow: hidden;
+  position: relative;
+  line-height: $line-height + 3;
+  max-height: ($line-height + 3) * $line-count;
+  text-align: center;
+  padding-right: 9px;
+  padding-left: 7px;
+  word-wrap: $word-wrap;
+
+  &:before,
+  &:after {
+    content: $cm-core-icons-100-var-path-dots;
+    font-family: $cm-core-icons-100-font-name;
+    position: absolute;
+    right: 1px;
+    font-size: 9px;
+  }
+  // the element showing the ellipsis
+  &:before {
+    bottom: 0;
+    margin-bottom: 3px;
+    line-height: 1;
+  }
+  // the element covering ellipsis if the text is not to be ellipsed
+  // to have the same width as the other element we are using the same content but set the text-color to transparent
+  &:after {
+    background-color: $background-color;
+    color: transparent;
+    line-height: 2;
+  }
+}
+
+
+/**
+ * Generates an inner shadow with the specified color. To be used as a value for the box-shadow property.
+ *
+ * @param {color} $color The color to use.
+ */
+@function cm-inner-shadow($color) {
+  @return inset 0 0 2px $color;
+}
+
+/**
+ * Generates an inner border for with the specified color. To be used as a value for the box-shadow property.
+ *
+ * @param {color} $color The color to use.
+ */
+@function cm-focus-box-shadow($color) {
+  @return 0 1px 0 0 $color inset, 0 -1px 0 0 $color inset, -1px 0 0 0 $color inset, 1px 0 0 0 $color inset;
+}
+
+// icon rotation
+@keyframes cm-spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}

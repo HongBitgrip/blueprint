@@ -1,0 +1,39 @@
+// goal: icons should be used in components without taking care of any actual size
+//
+// achieved by using the B.E.M. pattern, where the smallest icon font is the block, and the larger icon fonts are
+// modifiers of the smallest font. Icons are modifiers anyway, e.g.:
+// cm-collaboration-icons cm-collaboration-icons--cut                             -> base version of the "cut" icon
+// cm-collaboration-icons cm-collaboration-icons--200 cm-collaboration-icons--cut -> medium version of the "cut" icon
+// cm-collaboration-icons cm-collaboration-icons--300 cm-collaboration-icons--cut -> large version of the "cut" icon
+//
+// In case no larger version is defined, it can always fall back to the base version
+
+// use build in get-resource-path to determine the actual path of the resources
+$cm-collaboration-icons-100-font-path: get-resource-path("fonts/cm-collaboration-icons-100");
+$cm-collaboration-icons-200-font-path: get-resource-path("fonts/cm-collaboration-icons-200");
+$cm-collaboration-icons-300-font-path: get-resource-path("fonts/cm-collaboration-icons-300");
+
+// made size 100 the base, the other icons are just modifiers. IconUtils#calculateIconScaleCls knows about this.
+$cm-collaboration-icons-100-css-prefix: "cm-collaboration-icons";
+$cm-collaboration-icons-200-css-prefix: "cm-collaboration-icons--200.cm-collaboration-icons-";
+$cm-collaboration-icons-300-css-prefix: "cm-collaboration-icons--300.cm-collaboration-icons-";
+
+// cm-collaboration-icons-100 is the base font, it should alway exist. This is where the properties file is used from.
+$cm-collaboration-icons-100-bem-syntax: true;
+$cm-collaboration-icons-100-base-styles-in-before: true;
+$cm-collaboration-icons-100-extended-base-styles: false;
+// use base syntax, so font-family is only switched when icon rule exists. base styles are not necessary, as they are
+// inherited by the base font
+$cm-collaboration-icons-200-bem-syntax: false;
+$cm-collaboration-icons-200-base-styles-in-before: true;
+$cm-collaboration-icons-200-extended-base-styles: false;
+// use base syntax, so font-family is only switched when icon rule exists. base styles are not necessary, as they are
+// inherited by the base font
+$cm-collaboration-icons-300-bem-syntax: false;
+$cm-collaboration-icons-300-base-styles-in-before: true;
+$cm-collaboration-icons-300-extended-base-styles: false;
+
+// generate icon css rules
+@import "../../../../etc/cm-collaboration-icons-100/cm-collaboration-icons-100";
+@import "../../../../etc/cm-collaboration-icons-200/cm-collaboration-icons-200";
+@import "../../../../etc/cm-collaboration-icons-300/cm-collaboration-icons-300";

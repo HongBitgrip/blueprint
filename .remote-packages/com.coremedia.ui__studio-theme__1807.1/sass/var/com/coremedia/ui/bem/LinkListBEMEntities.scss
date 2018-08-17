@@ -1,0 +1,107 @@
+/**
+ * @var {color}
+ *
+ * Defines the background color of the link list wrapper.
+ *
+ * @member com.coremedia.ui.bem.LinkListBEMEntities
+ */
+$cm-link-list-wrapper-background-color: dynamic($cm-white);
+
+/**
+ * @var {number/list}
+ *
+ * Defines the border-width of the link list wrapper.
+ *
+ * @member com.coremedia.ui.bem.LinkListBEMEntities
+ */
+$cm-link-list-wrapper-border-width: dynamic($cm-border-width);
+
+/**
+ * @var {string/list}
+ *
+ * Defines the border style of the link list wrapper.
+ *
+ * @member com.coremedia.ui.bem.LinkListBEMEntities
+ */
+$cm-link-list-wrapper-border-style: dynamic($cm-border-style);
+
+/**
+ * @var {color/list}
+ *
+ * Defines the border color of the link list wrapper.
+ *
+ * @member com.coremedia.ui.bem.LinkListBEMEntities
+ */
+$cm-link-list-wrapper-border-color: dynamic($cm-grey-3);
+
+/**
+ * @var {number/list}
+ *
+ * Defines the border radius of the link list wrapper.
+ *
+ * @member com.coremedia.ui.bem.LinkListBEMEntities
+ */
+$cm-link-list-wrapper-border-radius: dynamic($cm-border-radius);
+
+/**
+ * @var {color}
+ *
+ * Defines the base-color when the link list wrapper is highlighted.
+ *
+ * @member com.coremedia.ui.bem.LinkListBEMEntities
+ */
+$cm-link-list-wrapper-highlight-color: dynamic($cm-highlight-color);
+
+/**
+ * @var {number}
+ *
+ * Defines the width of the validation indicator of the link list wrapper.
+ *
+ * @member com.coremedia.ui.bem.LinkListBEMEntities
+ */
+$cm-link-list-wrapper-validation-indicator-width: dynamic($cm-validation-border-width);
+
+/**
+ * @var {color}
+ *
+ * Defines the color of the error validation indicator of the link list wrapper.
+ *
+ * @member com.coremedia.ui.bem.LinkListBEMEntities
+ */
+$cm-link-list-wrapper-validation-color-error: dynamic($cm-validation-color-error);
+
+/**
+ * @var {color}
+ *
+ * Defines the color of the warning validation indicator of the link list wrapper.
+ *
+ * @member com.coremedia.ui.bem.LinkListBEMEntities
+ */
+$cm-link-list-wrapper-validation-color-warning: dynamic($cm-validation-color-warning);
+
+/**
+ * @var {color}
+ *
+ * Defines the color of the info validation indicator of the link list wrapper.
+ *
+ * @member com.coremedia.ui.bem.LinkListBEMEntities
+ */
+$cm-link-list-wrapper-validation-color-info: dynamic($cm-validation-color-info);
+
+/**
+ * @var {color}
+ *
+ * Defines the color of the success validation indicator of the link list wrapper.
+ *
+ * @member com.coremedia.ui.bem.LinkListBEMEntities
+ */
+$cm-link-list-wrapper-validation-color-success: dynamic($cm-validation-color-success);
+
+/**
+ * @var {boolean}
+ *
+ * Enables styles for the link list wrapper.
+ *
+ * @member com.coremedia.ui.bem.LinkListBEMEntities
+ */
+$cm-include-link-list-wrapper: dynamic(true);

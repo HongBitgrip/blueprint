@@ -1,0 +1,78 @@
+/**
+ * Only to be used in after #extjs-tab-bar-ui mixin has been included.
+ *
+ * CoreMedia UI Mixin for a Tab-Panel's Tab-Bar.
+ * Some Parameters do not have a default value, so if omitted the styling rule is not applied.
+ *
+ * @param {string} $ui
+ * The name of the UI being created. May not include spaces or special punctuation as string is used as part of
+ * CSS class names.
+ *
+ * @param {string} [$overflow=null]
+ * If not null defines the overflow of the tab-bar's inner box.
+ * Use overflow: visible in combination with cm-tab-ui's $overflow value if badges or other overlapping elements should be attached to a tab.
+ *
+ * @param {color} [$scroller-glyph-color-disabled=null]
+ * If not null defines the glyph color of the scroller if state is disabled.
+ *
+ * @param {color} [$scroller-glyph-color-hover=null]
+ * If not null defines the glyph color of the scroller if state is hover.
+ *
+ * @param {color} [$scroller-glyph-color-pressed=null]
+ * If not null defines the glyph color of the scroller if state is pressed.
+ *
+ * @param {color} [$scroller-background-color-hover=null]
+ * If not null defines the background-color of the scroller if state is hover.
+ *
+ * @param {color} [$scroller-background-color-pressed=null]
+ * If not null defines the background-color of the scroller if state is pressed.
+ *
+ * @param {color} [$scroller-background-color-disabled=null]
+ * If not null defines the background-color of the scroller if state is disabled.
+ *
+ * @member Ext.tab.Bar
+ */
+@mixin cm-tab-bar-ui(
+  $ui,
+  $overflow: null,
+  $scroller-glyph-color-disabled: null,
+  $scroller-glyph-color-hover: null,
+  $scroller-glyph-color-pressed: null,
+  $scroller-background-color-hover: null,
+  $scroller-background-color-pressed: null,
+  $scroller-background-color-disabled: null
+) {
+  .#{$prefix}tab-bar-body-#{$ui} {
+    > .#{$prefix}box-inner {
+      @if $overflow != null {
+        overflow: $overflow;
+      }
+    }
+    > .#{$prefix}box-scroller-tab-bar-#{$ui} {
+      &.#{$prefix}box-scroller-hover {
+        @if $scroller-glyph-color-hover != null {
+          color: $scroller-glyph-color-hover;
+        }
+        @if $scroller-background-color-hover != null {
+          background-color: $scroller-background-color-hover;
+        }
+      }
+      &.#{$prefix}box-scroller-pressed {
+        @if $scroller-glyph-color-pressed != null {
+          color: $scroller-glyph-color-pressed;
+        }
+        @if $scroller-background-color-pressed != null {
+          background-color: $scroller-background-color-pressed;
+        }
+      }
+      &.#{$prefix}box-scroller-disabled {
+        @if $scroller-glyph-color-disabled != null {
+          color: $scroller-glyph-color-disabled;
+        }
+        @if $scroller-background-color-disabled != null {
+          background-color: $scroller-background-color-disabled;
+        }
+      }
+    }
+  }
+}

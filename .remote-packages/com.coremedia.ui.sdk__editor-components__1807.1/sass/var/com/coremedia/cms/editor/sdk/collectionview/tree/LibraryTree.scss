@@ -1,0 +1,7 @@
+/**
+ * @var {boolean}
+ * Enables the libraryTree fix, that ensures the overflow:auto behaviour of the treeview.
+ *
+ * @member com.coremedia.cmx.editor.sdk.collectionview.tree.LibraryTree
+ */
+$cm-include-library-tree-overflow-fix: dynamic(true);

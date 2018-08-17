@@ -1,0 +1,83 @@
+@if $cm-include-customizable-date-picker {
+
+  $_block-calendar-control: "calendar-control";
+  $_block-calendar-day: "calendar-day";
+
+  .#{$_block-calendar-control} {
+    width: 100%;
+    border: none;
+      .#{$prefix}datepicker-header {
+        &.#{$_block-calendar-control} {
+          &__month-picker {
+            box-shadow: none;
+          }
+        }
+      }
+  }
+
+  /* day names */
+  .calendar-day-name {
+    color: $cm-grey-8;
+    background-color: $cm-white;
+  }
+
+  .#{$_block-calendar-day} {
+    position: relative;
+    text-align: center;
+    border: 1px solid transparent;
+
+    &:before {
+      content: "";
+      display: block;
+      padding-top: 100%;
+    }
+    &__number {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      -ms-transform: translate(-50%, -50%);
+      -webkit-transform: translate(-50%, -50%);
+      transform: translate(-50%, -50%);
+      line-height: 1;
+      padding: 0;
+      z-index: 2;
+    }
+
+    /* set background colors of day fields */
+    &--selectable {
+      cursor: pointer;
+      background-color: $cm-white;
+    }
+
+    &--selectable {
+      &:hover:not(.#{$_block-calendar-day}--selected) {
+        background-color: $cm-blue-0;
+      }
+    }
+
+    &--selected {
+      background-color: $cm-blue-5;
+    }
+    &--today {
+      border-color: $cm-grey-3;
+    }
+
+    /* set day number text colors */
+    &--active div.#{$_block-calendar-day}__number {
+      color: $cm-black;
+    }
+    &--prevday div.#{$_block-calendar-day}__number,
+    &--nextday div.#{$_block-calendar-day}__number {
+      color: $cm-grey-4;
+    }
+    &--selected div.#{$_block-calendar-day}__number {
+      color: $cm-white;
+    }
+
+    /* transparent background color in inner number div element */
+    & div.#{$_block-calendar-day}__number,
+    & div.#{$_block-calendar-day}__number:hover {
+      background-color: transparent;
+    }
+  }
+}

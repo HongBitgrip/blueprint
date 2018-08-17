@@ -1,0 +1,27 @@
+@if $cm-include-thumbnail-image {
+  $_block: "cm-thumbnail-image";
+  .#{$_block} {
+
+    position: relative;
+
+    &:not(.#{$_block}--animating)--animated-gif {
+
+      @include font-icon(
+              $glyph: ($cm-core-icons-100-var-badge-gif $cm-glyph-font-size-100 $cm-core-icons-100-font-name),
+              // do not set line-height
+              $line-height: null
+      );
+
+      &:before {
+        position: absolute;
+        right: 4px;
+        top: 6px;
+        background-color: black;
+        color: white;
+        text-shadow: 0 0 2px #000000;
+        width: 16px;
+        line-height: 10px;
+      }
+    }
+  }
+}

@@ -1,0 +1,101 @@
+/**
+ * Only to be used in after {@link #extjs-menu-ui} mixin has been included.
+ *
+ * CoreMedia UI Mixin for a Menu.
+ * Some Parameters do not have a default value, so if omitted the styling rule is not applied.
+ *
+ * @param {string} $ui
+ * The name of the UI being created. May not include spaces or special punctuation as string is used as part of
+ * CSS class names.
+ *
+ * @param {number/list} [$border-radius=$cm-border-radius]
+ * If not null defines the menu's border-radius.
+ *
+ * @param {number/list} [$item-border-radius=$cm-border-radius]
+ * If not null defines the border-radius of menu items.
+ *
+ * @param {string/number} [$item-active-font-weight=$cm-font-weight]
+ * If not null defines the font-weight of an active item.
+ *
+ * @param {boolean} [$hide-icons-in-plain-menu=$cm-menu-hide-icons-in-plain-menu]
+ * If set to true, hides the icon and margin for the icon on the left side of the menu.
+ * Only applies if {@link Ext.menu.Menu#plain} is set to true and {@link #used-item-icon-horizontal-spacing},
+ * {@link #used-item-text-horizontal-spacing} and {@link #used-separator-size} are given.
+ *
+ * @param {number} [$used-separator-size=$menu-separator-size]
+ * The size of {@link Ext.menu.Separator Menu Separators}
+ * Should be the same as given to the {@link #extjs-menu-ui} include of the {@link #ui}
+ * (for the default skin this is: $menu-separator-size)
+ *
+ * @param {number/list} [$used-item-text-horizontal-spacing=$menu-item-text-horizontal-spacing]
+ * The space to the left and right of {@link Ext.menu.Item Menu Item} text. Can be specified
+ * as a number (e.g. 5px) or as a list with 2 items for different left/right values. e.g.
+ * Should be the same as given to the {@link #extjs-menu-ui} include of the {@link #ui}
+ * (for the default skin this is: $menu-item-text-horizontal-spacing)
+ *
+ * @param {number} [$used-item-icon-horizontal-spacing=$menu-item-icon-horizontal-spacing]
+ * The space to the left and right of {@link Ext.menu.Item Menu Item} icons. Can be specified
+ * as a number (e.g. 5px) or as a list with 2 items for different left/right values. e.g.
+ * Should be the same as given to the {@link #extjs-menu-ui} include of the {@link #ui}
+ * (for the default skin this is: $menu-item-icon-horizontal-spacing)
+ *
+ * @member Ext.menu.Menu
+ */
+@mixin cm-menu-ui(
+  $ui,
+  $border-radius: $cm-border-radius,
+  $item-border-radius: $cm-border-radius,
+  $item-active-font-weight: $cm-font-weight,
+  $hide-icons-in-plain-menu: $cm-menu-hide-icons-in-plain-menu,
+  $used-separator-size: $menu-separator-size,
+  $used-item-text-horizontal-spacing: $menu-item-text-horizontal-spacing,
+  $used-item-icon-horizontal-spacing: $menu-item-icon-horizontal-spacing
+) {
+  .#{$prefix}menu-#{$ui} {
+    @if $border-radius != null {
+      border-radius: $border-radius;
+    }
+    .#{$prefix}menu-item-#{$ui} {
+      @if $item-border-radius != null {
+        border-radius: $item-border-radius;
+      }
+    }
+    .#{$prefix}menu-item-active {
+      .#{$prefix}menu-item-text-#{$ui} {
+        @if $item-active-font-weight != null {
+          font-weight: $item-active-font-weight;
+        }
+      }
+    }
+    // plain menu without icons and standard left-padding
+    @if $hide-icons-in-plain-menu
+        and $used-separator-size
+        and $used-item-text-horizontal-spacing
+        and $used-item-icon-horizontal-spacing {
+      $_item-indent: before($used-item-icon-horizontal-spacing) + $used-separator-size + before($used-item-text-horizontal-spacing);
+      $_item-indent-no-separator: before($used-item-icon-horizontal-spacing);
+      $_item-indent-right-icon: before($used-item-icon-horizontal-spacing) + before($used-item-text-horizontal-spacing);
+
+      &.#{$prefix}menu-plain {
+        .#{$prefix}menu-item-text {
+
+          // Set margin-left as default, to make sure plain menus have the right item-margin if items have no icon
+          margin-left: $_item-indent-no-separator;
+
+          &.#{$prefix}menu-item-indent {
+            margin-left: $_item-indent;
+          }
+          &.#{$prefix}menu-item-indent-no-separator {
+            margin-left: $_item-indent-no-separator;
+          }
+          &.#{$prefix}menu-item-indent-right-icon {
+            margin-right: $_item-indent-right-icon;
+          }
+        }
+        .#{$prefix}menu-item-icon {
+          display: none;
+        }
+      }
+    }
+  }
+}

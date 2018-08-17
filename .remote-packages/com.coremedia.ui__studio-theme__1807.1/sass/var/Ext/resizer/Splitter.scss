@@ -1,0 +1,75 @@
+/**
+ * @var {color}
+ * Default background color for splitters
+ *
+ * @member Ext.resizer.Splitter
+ */
+$cm-splitter-background-color: dynamic($cm-spot-grey-2);
+
+/**
+ * @var {boolean}
+ * If true sets the masks background-color to transparent.
+ * This can be used to correctly display the splitters background-color, even if it is disabled and a mask is applied.
+ *
+ * @member Ext.resizer.Splitter
+ */
+$cm-splitter-hide-mask: dynamic(false);
+
+/**
+ * @var {boolean}
+ * If true forces the splitter to be on top while being dragged.
+ *
+ * @member Ext.resizer.Splitter
+ */
+$cm-splitter-on-top: dynamic(true);
+
+
+$_cm-splitter-top-background-color: $cm-grey-1;
+
+// Default variables for Ext.resizer.Splitter
+$collapse-tool-size: dynamic(0);
+$collapse-tool-opacity: dynamic(0);
+$splitter-active-background-color: dynamic($cm-spot-grey-2);
+$splitter-active-collapse-tool-opacity: dynamic(0);
+
+/**
+ * @var {boolean}
+ * Enables styles for the "default" skin.
+ *
+ * Sencha has no variable for the default skin, so the css code will always be generated.
+ *
+ * @member Ext.resizer.Splitter
+ */
+$cm-include-splitter-default-ui: dynamic(true);
+
+/**
+ * @var {boolean}
+ * Specifies if the custom UI "premular" for the splitter will be generated.
+ *
+ * @member Ext.resizer.Splitter
+ */
+$cm-include-splitter-premular-ui: dynamic(true);
+
+/**
+ * @var {boolean}
+ * Specifies if the custom UI "dark" for the splitter will be generated.
+ *
+ * @member Ext.resizer.Splitter
+ */
+$cm-include-splitter-dark-ui: dynamic(true);
+
+/**
+ * @var {boolean}
+ * Specifies if the custom UI "light" for the splitter will be generated.
+ *
+ * @member Ext.resizer.Splitter
+ */
+$cm-include-splitter-light-ui: dynamic(true);
+
+/**
+ * @var {boolean}
+ * Specifies if the custom UI "accordion" for the splitter will be generated.
+ *
+ * @member Ext.resizer.Splitter
+ */
+$cm-include-splitter-accordion-ui: dynamic(true);

@@ -1,0 +1,8 @@
+{
+"version":3,
+"file":"com.coremedia.ui.collaboration__collaboration-icons.js",
+"lineCount":2,
+"mappings":"AAGAA,GAAAC,OAAA,CAAW,mDAAX,CAAgE,CAE9D,aAAc,2DAFgD,CAG9D,eAAgB,6DAH8C,CAI9D,SAAU,uDAJoD,CAK9D,8BAA+B,4EAL+B,CAM9D,6BAA8B,2EANgC,CAO9D,6BAA8B,2EAPgC,CAAhE;AAQG,QAAQ,EAAG,CAEZC,GAAAC,UAAAC,MAAAC,8BAAAC,SAAA,CAA6D,IAAIJ,GAAAC,UAAAC,MAAAC,8BAFrD,CARd;",
+"sources":["locale/en/com/coremedia/icons/CollaborationIcons_properties.js"],
+"names":["Ext","define","com","coremedia","icons","CollaborationIcons_properties","INSTANCE"]
+}

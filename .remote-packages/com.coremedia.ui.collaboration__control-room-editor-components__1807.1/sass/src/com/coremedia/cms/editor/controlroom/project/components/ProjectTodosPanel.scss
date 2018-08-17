@@ -1,0 +1,16 @@
+@if $cm-include-project-todos-panel {
+  $_block: "cm-draggable-item";
+  .#{$_block} {
+    &--todo-in-progress {
+      .#{$_block}__dnd {
+        border-left-color: $cm-blue-0;
+      }
+    }
+
+    &--todo-done {
+      .#{$_block}__dnd {
+        border-left-color: transparent;
+      }
+    }
+  }
+}

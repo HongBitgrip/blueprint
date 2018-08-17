@@ -1,0 +1,22 @@
+@if $cm-include-comment-metadata-panel {
+  $_block: "cm-comment-metadata-panel";
+  $_element_left: "left";
+  $_element_right: "right";
+
+  .#{$_block} {
+    &__#{$_element_left},
+    &__#{$_element_right} {
+      border-width: $cm-comment-metadata-panel-item-border-width;
+      border-style: solid;
+      border-color: $cm-comment-metadata-panel-item-border-color;
+      border-top: none;
+    }
+    &__#{$_element_left} {
+      border-bottom-left-radius: left($cm-comment-metadata-panel-item-border-radius);
+    }
+    &__#{$_element_right} {
+      border-bottom-right-radius: bottom($cm-comment-metadata-panel-item-border-radius);
+      border-left: none;
+    }
+  }
+}

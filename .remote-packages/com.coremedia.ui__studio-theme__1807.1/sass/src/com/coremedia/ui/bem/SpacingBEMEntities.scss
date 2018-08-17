@@ -1,0 +1,65 @@
+@if $cm-include-horizontal-spacing {
+  $_block: "cm-horizontal-spacing";
+  .#{$_block} {
+    &__item:not(.cm-hidden) ~ &__item {
+      margin-left: $cm-grid-100;
+    }
+
+    &--200 {
+      .#{$_block}__item:not(.cm-hidden) ~ .#{$_block}__item {
+        margin-left: $cm-grid-200;
+      }
+    }
+
+    &--300 {
+      .#{$_block}__item:not(.cm-hidden) ~ .#{$_block}__item {
+        margin-left: $cm-grid-300;
+      }
+    }
+  }
+}
+
+@if $cm-include-vertical-spacing {
+  $_block: "cm-vertical-spacing";
+  .#{$_block} {
+    &__item:not(.cm-hidden) ~ &__item {
+        margin-top: $cm-grid-100;
+    }
+
+    &--25 {
+      &,
+      > .#{$prefix}box-inner > .#{$prefix}box-target,
+      > .#{$prefix}autocontainer-outerCt > .#{$prefix}autocontainer-innerCt,
+      > .#{$prefix}window-bodyWrap > .#{$prefix}window-body > .#{$prefix}autocontainer-outerCt > .#{$prefix}autocontainer-innerCt,
+      > .#{$prefix}window-bodyWrap > .#{$prefix}window-body > .#{$prefix}box-inner > .#{$prefix}box-target {
+        > .#{$_block}__item:not(.cm-hidden) ~ .#{$_block}__item {
+          margin-top: $cm-grid-25;
+        }
+      }
+    }
+
+    &--200 {
+      &,
+      > .#{$prefix}box-inner > .#{$prefix}box-target,
+      > .#{$prefix}autocontainer-outerCt > .#{$prefix}autocontainer-innerCt,
+      > .#{$prefix}window-bodyWrap > .#{$prefix}window-body > .#{$prefix}autocontainer-outerCt > .#{$prefix}autocontainer-innerCt,
+      > .#{$prefix}window-bodyWrap > .#{$prefix}window-body > .#{$prefix}box-inner > .#{$prefix}box-target {
+        > .#{$_block}__item:not(.cm-hidden) ~ .#{$_block}__item {
+          margin-top: $cm-grid-200;
+        }
+      }
+    }
+
+    &--300 {
+      &,
+      > .#{$prefix}box-inner > .#{$prefix}box-target,
+      > .#{$prefix}autocontainer-outerCt > .#{$prefix}autocontainer-innerCt,
+      > .#{$prefix}window-bodyWrap > .#{$prefix}window-body > .#{$prefix}autocontainer-outerCt > .#{$prefix}autocontainer-innerCt,
+      > .#{$prefix}window-bodyWrap > .#{$prefix}window-body > .#{$prefix}box-inner > .#{$prefix}box-target {
+        > .#{$_block}__item:not(.cm-hidden) ~ .#{$_block}__item {
+          margin-top: $cm-grid-300;
+        }
+      }
+    }
+  }
+}

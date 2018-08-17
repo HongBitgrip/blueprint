@@ -1,0 +1,17 @@
+/**
+ * @var {boolean}
+ *
+ * Specifies if the styles for horizontal BEM pattern layouts for containers will be generated.
+ *
+ * @member com.coremedia.ui.bem.SpacingBEMEntities
+ */
+$cm-include-horizontal-spacing: dynamic(true);
+
+/**
+ * @var {boolean}
+ *
+ * Specifies if the styles for vertical BEM pattern layouts for containers will be generated.
+ *
+ * @member com.coremedia.ui.bem.SpacingBEMEntities
+ */
+$cm-include-vertical-spacing: dynamic(true);

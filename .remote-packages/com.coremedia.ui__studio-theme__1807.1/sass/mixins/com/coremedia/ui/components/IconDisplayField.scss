@@ -1,0 +1,230 @@
+/**
+ * Only to be used in after {@link #extjs-label-ui} and {@link #extjs-display-field-ui} mixin have been included.
+ *
+ * Special mixin to be included for icon-display-fields.
+ *
+ * @param {string} $ui
+ * The name of the UI being created. May not include spaces or special punctuation as string is used as part of
+ * CSS class names.
+ *
+ * @param {color} [$icon-color=$cm-icon-display-field-icon-color]
+ * Defines the color of the icon. Defaults to $color if null.
+ *
+ * @param {color} [$icon-color-disabled=$cm-icon-display-field-icon-color-disabled]
+ * Defines the disabled color of the icon.
+ *
+ * @param {number/list} [$icon-spacing=$cm-icon-display-field-icon-spacing]
+ * If not null defines the spacing between the icon and the label/value.
+ * Results in:
+ *
+ * - padding-top on the icon if positioned below the label and value
+ * - padding-top and padding-bottom on the icon if positioned vertically between label and value
+ * - padding-left on the icon if positioned after the value
+ * - padding-left and padding-right on the icon if positioned horizontally between label and value
+ *
+ * @param {number/list} [$icon-outer-spacing=$cm-icon-display-field-icon-outer-spacing]
+ * If not null defines an additional spacing between the icon and the border of the icon-display-field.
+ * Results in:
+ *
+ * - padding-bottom on the icon if positioned below the label/value
+ * - padding-top on the icon if positioned vertically between label and value and label is not visible
+ * - padding-right on the icon if positioned after the value
+ * - padding-left on the icon if positioned horizontally between label and value and label is not visible
+ *
+ * @param {number} [$icon-size-small=$cm-icon-display-field-icon-size-small]
+ * If not null defines the width, height and font-size of the icon element.
+ * Use this parameter if small scale (default) is used for the icon-display-field.
+ *
+ * @param {number} [$icon-size-medium=$cm-icon-display-field-icon-size-medium]
+ * If not null defines the width, height and font-size of the icon element.
+ * Use this parameter if medium scale is used for the icon-display-field.
+ *
+ * @param {number} [$icon-size-large=$cm-icon-display-field-icon-size-large]
+ * If not null defines the width, height and font-size of the icon element.
+ * Use this parameter if large scale is used for the icon-display-field.
+ *
+ * @param {color} [$icon-color-error=$cm-validation-color-error]
+ * Defines the icon and value text color in case of the validation state: error
+ *
+ * @param {color} [$icon-color-warning=$cm-validation-color-warning]
+ * Defines the icon and value text color in case of the validation state: warning
+ *
+ * @param {color} [$icon-color-info=$cm-validation-color-info]
+ * Defines the icon and value text color in case of the validation state: info
+ *
+ * @param {color} [$icon-color-success=$cm-validation-color-success]
+ * Defines the icon and value text color in case of the validation state: success
+ *
+ * @member com.coremedia.ui.components.IconDisplayField
+ */
+@mixin cm-icon-display-field-ui(
+  $ui,
+  $icon-color: $cm-icon-display-field-icon-color,
+  $icon-color-disabled: $cm-icon-display-field-icon-color-disabled,
+  $icon-color-error: $cm-validation-color-error,
+  $icon-color-warning: $cm-validation-color-warning,
+  $icon-color-info: $cm-validation-color-info,
+  $icon-color-success: $cm-validation-color-success,
+  $icon-spacing: $cm-icon-display-field-icon-spacing,
+  $icon-outer-spacing: $cm-icon-display-field-icon-outer-spacing,
+  $icon-size-small: $cm-icon-display-field-icon-size-small,
+  $icon-size-medium: $cm-icon-display-field-icon-size-medium,
+  $icon-size-large: $cm-icon-display-field-icon-size-large
+) {
+  $_block: "cm-icon-display-field-#{$ui}";
+
+  .#{$_block} {
+
+    &__value {
+      display: flex;
+      flex-direction: row;
+      align-items: flex-start;
+    }
+
+    &__icon {
+      cursor: inherit;
+      text-align: center; // while heights of font icons are equal, they can have different width, so always center
+      box-sizing: content-box; // so paddings are calculated on top of the icon size
+      line-height: 1;
+      font-weight: normal;
+      font-style: normal;
+      text-decoration: none;
+      @if $icon-color != null {
+        color: $icon-color;
+      }
+    }
+
+    &--icon-top {
+      .#{$_block}__value {
+        flex-direction: column;
+      }
+      .#{$_block}__icon {
+        @if $icon-spacing != null {
+          padding-top: top($icon-spacing);
+          padding-bottom: bottom($icon-spacing);
+        }
+      }
+      &.#{$prefix}form-item-no-label {
+        .#{$_block}__icon {
+          @if $icon-outer-spacing != null {
+            padding-top: top($icon-outer-spacing);
+          }
+        }
+      }
+      .#{$_block}__label,
+      .#{$_block}__value {
+        text-align: center;
+      }
+    }
+
+    &--icon-before-value {
+      .#{$_block}__icon {
+        @if $icon-spacing != null {
+          padding-left: left($icon-spacing);
+          padding-right: right($icon-spacing);
+        }
+      }
+      &.#{$prefix}form-item-no-label {
+        .#{$_block}__icon {
+          @if $icon-outer-spacing != null {
+            padding-left: left($icon-outer-spacing);
+          }
+        }
+      }
+    }
+
+    &--icon-after-value {
+      .#{$_block}__icon {
+        @if $icon-spacing != null {
+          padding-left: left($icon-spacing);
+        }
+        @if $icon-outer-spacing != null {
+          padding-right: right($icon-outer-spacing);
+        }
+      }
+    }
+
+    &--icon-bottom {
+      .#{$_block}__value {
+        flex-direction: column;
+      }
+
+      .#{$_block}__icon {
+        @if $icon-spacing != null {
+          padding-top: top($icon-spacing);
+        }
+        @if $icon-outer-spacing != null {
+          padding-bottom: bottom($icon-outer-spacing);
+        }
+      }
+      .#{$_block}__label,
+      .#{$_block}__value {
+        text-align: center;
+      }
+    }
+
+    &--small-icon {
+      .#{$_block}__icon {
+        @if $icon-size-small != null {
+          width: $icon-size-small;
+          min-width: $icon-size-small;
+          height: $icon-size-small;
+          font-size: $icon-size-small;
+        }
+      }
+    }
+
+    &--medium-icon {
+      .#{$_block}__icon {
+        @if $icon-size-medium != null {
+          width: $icon-size-medium;
+          min-width: $icon-size-medium;
+          height: $icon-size-medium;
+          font-size: $icon-size-medium;
+        }
+      }
+    }
+
+    &--large-icon {
+      .#{$_block}__icon {
+        @if $icon-size-large != null {
+          width: $icon-size-large;
+          min-width: $icon-size-large;
+          height: $icon-size-large;
+          font-size: $icon-size-large;
+        }
+      }
+    }
+
+    &--no-icon {
+      .#{$_block}__icon {
+        display: none;
+      }
+    }
+
+    &.#{$prefix}item-disabled {
+      .#{$_block}__icon {
+        @if $icon-color-disabled != null {
+          color: $icon-color-disabled;
+        }
+      }
+    }
+
+    $state-map: (
+      "error"   : (color: $icon-color-error),
+      "warning" : (color: $icon-color-warning),
+      "info"    : (color: $icon-color-info),
+      "success" : (color: $icon-color-success)
+    );
+
+    @each $state, $map in $state-map {
+      &.cm-validation-state-#{$state} {
+        > .#{$_block}__icon {
+          @if map_get($map, color) != null {
+            color: map_get($map, color);
+          }
+        }
+      }
+    }
+  }
+}

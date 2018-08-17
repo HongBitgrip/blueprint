@@ -1,0 +1,166 @@
+@if $cm-include-labelable-default-ui {
+  $_ui: "default";
+  // no adjustments for now
+}
+
+@if $cm-include-labelable-form-invalid-ui {
+  $_ui: "form-invalid";
+  @include extjs-label-ui (
+    $ui: $_ui
+  );
+}
+
+@if $cm-include-labelable-inverted-ui {
+  $_ui: "inverted";
+  @include extjs-label-ui(
+    $ui: $_ui,
+    $ui-font-color: $cm-font-light-coloured
+  );
+}
+
+@if $cm-include-labelable-number-ui {
+  $_ui: "number";
+  @include extjs-label-ui(
+    $ui: $_ui
+  );
+}
+
+@if $cm-include-labelable-mouseprint-ui {
+  $_ui: "mouseprint";
+  @include extjs-label-ui(
+    $ui: $_ui
+  );
+}
+
+@if $cm-include-labelable-italic-ui {
+  $_ui: "italic";
+  @include extjs-label-ui(
+    $ui: $_ui
+  );
+}
+
+@if $cm-include-labelable-underline-ui {
+  $_ui: "underline";
+  @include extjs-label-ui(
+    $ui: $_ui
+  );
+}
+
+@if $cm-include-labelable-bold-ui {
+  $_ui: "bold";
+  @include extjs-label-ui(
+    $ui: $_ui
+  );
+}
+
+@if $cm-include-labelable-centered-ui {
+  $_ui: "centered";
+  @include extjs-label-ui(
+    $ui: $_ui
+  );
+}
+
+@if $cm-include-labelable-workarea-ui {
+  $_ui: "workarea";
+  @include extjs-label-ui(
+    $ui: $_ui,
+    $ui-font-color: $cm-font-light-coloured
+  );
+}
+
+@if $cm-include-labelable-info-ui {
+  $_ui: "info";
+  @include extjs-label-ui(
+    $ui: $_ui
+  );
+}
+
+@if $cm-include-labelable-sub-ui {
+  $_ui: "sub";
+  @include extjs-label-ui(
+    $ui: $_ui,
+    $ui-font-weight: $cm-font-weight
+  );
+}
+
+@if $cm-include-labelable-double-ui {
+  $_ui: "double";
+  @include extjs-label-ui(
+    $ui: $_ui
+  );
+}
+
+@if $cm-include-labelable-logo-ui {
+  $_ui: "logo";
+  @include extjs-label-ui(
+    $ui: $_ui
+  );
+}
+
+@if $cm-include-labelable-license-warning-ui {
+  $_ui: "license-warning";
+  @include extjs-label-ui(
+    $ui: $_ui
+  );
+}
+
+@if $cm-include-labelable-embedded-ui {
+  $_ui: "embedded";
+  @include extjs-label-ui(
+    $ui: $_ui
+  );
+  @include cm-label-ui(
+    $ui: $_ui,
+    $background-color-disabled: $cm-grey-0
+  )
+}
+
+@if $cm-include-labelable-light-ui {
+  $_ui: "light";
+  @include extjs-label-ui(
+    $ui: $_ui,
+    $ui-font-color: $cm-font-light-coloured
+  );
+}
+
+@if $cm-include-labelable-no-box-ui {
+  $_ui: "no-box";
+  @include extjs-label-ui(
+    $ui: $_ui
+  );
+  @include cm-label-ui(
+    $ui: $_ui,
+    $background-color-over: $cm-blue-1
+  );
+}
+
+@if $cm-include-labelable-window-header-ui {
+  $_ui: "window-header";
+  @include extjs-label-ui(
+    $ui: $_ui
+  );
+  @include cm-label-ui(
+    $ui: $_ui
+  );
+}
+
+@if $cm-include-labelable-plain-label-ui {
+  $_ui: "plain-label";
+  @include extjs-label-ui(
+    $ui: $_ui,
+    $ui-font-weight: normal
+  );
+  @include cm-label-ui(
+    $ui: $_ui
+  );
+}
+
+@if $cm-include-labelable-opaque-ui {
+  $_ui: "opaque";
+  @include extjs-label-ui(
+    $ui: $_ui
+  );
+  @include cm-label-ui(
+    $ui: $_ui
+  );
+}

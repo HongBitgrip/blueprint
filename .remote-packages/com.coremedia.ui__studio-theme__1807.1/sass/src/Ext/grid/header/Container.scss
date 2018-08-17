@@ -1,0 +1,4 @@
+// fixes still accessible header via key down when header has focus
+.#{$prefix}grid-header-ct-hidden {
+  display: none
+}

@@ -1,0 +1,100 @@
+@if $cm-include-icon-display-field-default-ui {
+  $_ui: "default";
+  @include cm-icon-display-field-ui(
+    $ui: $_ui
+  );
+}
+
+@if $cm-include-icon-display-field-workarea-ui {
+  $_ui: "workarea";
+  @include cm-icon-display-field-ui(
+    $ui: $_ui,
+    $icon-color: $cm-font-color,
+    $icon-spacing: 4px 8px,
+    $icon-outer-spacing: 4px 8px
+  );
+}
+
+@if $cm-include-icon-display-field-info-ui {
+  $_ui: "info";
+  @include cm-icon-display-field-ui(
+    $ui: $_ui,
+    $icon-spacing: 4px $cm-grid-200
+  );
+}
+
+@if $cm-include-icon-display-field-double-ui {
+  $_ui: "double";
+  @include cm-icon-display-field-ui(
+    $ui: $_ui,
+    $icon-size-small: $cm-icon-display-field-icon-size-small*2,
+    $icon-size-medium: $cm-icon-display-field-icon-size-medium*2,
+    $icon-size-large: $cm-icon-display-field-icon-size-large*2,
+    $icon-spacing: 4px 8px,
+    $icon-outer-spacing: 4px 8px
+  );
+}
+
+@if $cm-include-icon-display-field-italic-ui {
+  $_ui: "italic";
+  @include cm-icon-display-field-ui(
+    $ui: $_ui,
+    $icon-size-small: $cm-icon-display-field-icon-size-small,
+    $icon-size-medium: $cm-icon-display-field-icon-size-medium,
+    $icon-size-large: $cm-icon-display-field-icon-size-large,
+    $icon-spacing: 4px 8px,
+    $icon-outer-spacing: 4px 8px
+  );
+}
+
+@if $cm-include-icon-display-field-bold-ui {
+  $_ui: "bold";
+  @include cm-icon-display-field-ui(
+    $ui: $_ui,
+    $icon-size-small: $cm-icon-display-field-icon-size-small,
+    $icon-size-medium: $cm-icon-display-field-icon-size-medium,
+    $icon-size-large: $cm-icon-display-field-icon-size-large,
+    $icon-spacing: 4px 8px,
+    $icon-outer-spacing: 4px 8px
+  );
+}
+
+@if $cm-include-icon-display-field-logo-ui {
+  $_ui: "logo";
+  @include cm-icon-display-field-ui(
+    $ui: $_ui,
+    $icon-color: $cm-blue-4,
+    // special case for this logo
+    $icon-size-large: 36px,
+    $icon-spacing: 0 8px
+  );
+}
+
+@if $cm-include-icon-display-field-license-warning-ui {
+  $_ui: "license-warning";
+  @include cm-icon-display-field-ui(
+    $ui: $_ui,
+    $icon-color: $cm-icon-color-neg,
+    $icon-size-large: 36px,
+    $icon-spacing: 0 8px
+  );
+}
+
+@if $cm-include-icon-display-field-embedded-ui {
+  $_ui: "embedded";
+  @include cm-icon-display-field-ui(
+    $ui: $_ui,
+    $icon-color: $cm-icon-color-pos,
+    $icon-spacing: $cm-grid-100,
+    $icon-outer-spacing: 5px
+  );
+}
+
+@if $cm-include-icon-display-field-light-ui {
+  $_ui: "light";
+  @include cm-icon-display-field-ui(
+    $ui: $_ui,
+    $icon-color: $cm-icon-color-neg,
+    $icon-spacing: 4px $cm-grid-200
+  );
+}

@@ -1,0 +1,107 @@
+/**
+ * @var {number/list}
+ *
+ * Sets the padding for the SimpleContentList.
+ *
+ * @member com.coremedia.cms.editor.sdk.components.SimpleContentList
+ */
+$cm-simple-content-list-padding: dynamic(($cm-grid-50 + 1) $cm-grid-50 $cm-grid-50);
+
+/**
+ * @var {number}
+ *
+ * Sets the min-height for the SimpleContentList.
+ *
+ * @member com.coremedia.cms.editor.sdk.components.SimpleContentList
+ */
+$cm-simple-content-list-min-height: dynamic($cm-field-height);
+
+/**
+ * @var {number/list}
+ *
+ * Sets the border width for the SimpleContentList.
+ *
+ * @member com.coremedia.cms.editor.sdk.components.SimpleContentList
+ */
+$cm-simple-content-list-border-width: dynamic($cm-border-width);
+
+/**
+ * @var {string}
+ *
+ * Sets the border style for the SimpleContentList.
+ *
+ * @member com.coremedia.cms.editor.sdk.components.SimpleContentList
+ */
+$cm-simple-content-list-border-style: dynamic($cm-border-style);
+
+/**
+ * @var {color}
+ *
+ * Sets the border color for the SimpleContentList.
+ *
+ * @member com.coremedia.cms.editor.sdk.components.SimpleContentList
+ */
+$cm-simple-content-list-border-color: dynamic($cm-grey-3);
+
+/**
+ * @var {number/list}
+ *
+ * Sets the border radius for the SimpleContentList.
+ *
+ * @member com.coremedia.cms.editor.sdk.components.SimpleContentList
+ */
+$cm-simple-content-list-border-radius: dynamic($cm-border-radius);
+
+/**
+ * @var {number}
+ *
+ * Sets the icon size for the SimpleContentList.
+ *
+ * @member com.coremedia.cms.editor.sdk.components.SimpleContentList
+ */
+$cm-simple-content-list-icon-size: dynamic($cm-glyph-font-size-100);
+
+/**
+ * @var {number}
+ *
+ * Sets the text font size for the SimpleContentList.
+ *
+ * @member com.coremedia.cms.editor.sdk.components.SimpleContentList
+ */
+$cm-simple-content-list-text-font-size: dynamic($cm-font-size);
+
+/**
+ * @var {number/list}
+ *
+ * Sets the margin for the icon in SimpleContentList.
+ *
+ * @member com.coremedia.cms.editor.sdk.components.SimpleContentList
+ */
+$cm-simple-content-list-icon-margin: dynamic(0 $cm-grid-50 0 0);
+
+/**
+ * @var {color}
+ *
+ * The selected-background-color of the SimpleContentList item.
+ *
+ * @member com.coremedia.cms.editor.sdk.components.SimpleContentList
+ */
+$cm-simple-content-list-item-background-color-selected: dynamic($grid-row-cell-selected-background-color);
+
+/**
+ * @var {color}
+ *
+ * The text color of the SimpleContentList item if selected.
+ *
+ * @member com.coremedia.cms.editor.sdk.components.SimpleContentList
+ */
+$cm-simple-content-list-item-text-color-selected: dynamic($grid-row-cell-selected-color);
+
+/**
+ * @var {boolean}
+ *
+ * Enables styles for the SimpleContentList.
+ *
+ * @member com.coremedia.cms.editor.sdk.components.SimpleContentList
+ */
+$cm-include-simple-content-list-data-view: dynamic(true);

@@ -1,0 +1,63 @@
+//# fashion warn -elevation
+//
+// @type String
+//
+// Defines the name of the font-family to be generated and used.
+//
+$cm-collaboration-icons-100-font-name: "cm-collaboration-icons-100" !default;
+
+//
+// @type String
+//
+// Defines the path to the directory where the font files can be found. Must be relative to the generated css file.
+//
+$cm-collaboration-icons-100-font-path: "../fonts" !default;
+
+//
+// @type Bool
+//
+// Defines if the B.E.M. syntax should be used, so two css classes will be generated and are required to use the icon.
+// If false, only a single class will be required to use the icon.
+//
+// The B.E.M. syntax leads to smaller css files because shared stylings can be applied using a shared font class and the
+// icon classes only define the icon itself.
+//
+$cm-collaboration-icons-100-bem-syntax: true !default;
+
+//
+// @type String
+//
+// Defines the prefix to attach to the css classes, may also contain selectors as long as the leading dot is left away.
+//
+// When B.E.M. syntax is used, the prefix is used for both classes. While the font class will represent the unmodified
+// css prefix the icon class will be suffixed by two dashes (--) followed by the icon identifier.
+// Otherwise the css-prefix is suffixed by a single dash (-) followed by the icon identifier.
+//
+$cm-collaboration-icons-100-css-prefix: "cm-collaboration-icons-100" !default;
+
+//
+// @type Bool
+//
+// Defines if the font-family (and extended base styling rules if enabled) will be attached to the before pseudo element
+// rather than the parent element.
+//
+$cm-collaboration-icons-100-base-styles-in-before: false !default;
+
+//
+// @type Bool
+//
+// Defines if more basic styling rules are generated for the font along with the font-family.
+// When B.E.M. syntax is used this styles will be applied to the shared font class. The icon classes for will not
+// contain any base styles.
+// Otherwise the base styles will be applied to each icon class.
+//
+$cm-collaboration-icons-100-extended-base-styles: true !default;
+
+$cm-collaboration-icons-100-var-add-expand: "\f101";
+$cm-collaboration-icons-100-var-control-room: "\f102";
+$cm-collaboration-icons-100-var-spacer: "\f103";
+$cm-collaboration-icons-100-var-start-localization-workflow: "\f104";
+$cm-collaboration-icons-100-var-start-publication-workflow: "\f105";
+$cm-collaboration-icons-100-var-start-translation-workflow: "\f106";
+
+//# fashion warn +elevation

@@ -1,0 +1,49 @@
+@if $cm-include-widget-separator {
+  $_block: "cm-widget-separator";
+  .#{$_block} {
+    opacity: 0;
+    z-index: 0;
+
+    &:hover,
+    &:focus {
+      transition: opacity 0.25s ease-in-out;
+      opacity: 1;
+    }
+
+    &:before {
+      content: "";
+      position: absolute;
+      z-index: -1;
+      top: 50%;
+      transform: translateY(-50%);
+      left: 1px;
+      right: 0;
+      border-top: 2px dashed $cm-blue-5;
+    }
+
+    &__icon {
+      position: relative;
+      // include blue "plus" icon which is a circle with a "+" in the center. Only the circle is filled with the color
+      // the "+" has the same color as the background (due to icons in icon fonts only have two colors)
+      @include font-icon(
+        $glyph: ($cm-core-icons-100-var-plus $cm-glyph-font-size-100 $cm-core-icons-100-font-name),
+        $color: $cm-blue-5,
+        $line-height: null
+      );
+      // position a white circle centered behind the "plus" icon so the "+" is always white no matter of the background
+      // the circle must be a little bit smaller as the icon as the circle inside the icon does not start at (0, 0)
+      &:after {
+        content: "";
+        position: absolute;
+        z-index: -1;
+        top: 50%;
+        left: 50%;
+        border-radius: 50%;
+        background-color: $cm-white;
+        width: $cm-glyph-font-size-100 - 2px;
+        height: $cm-glyph-font-size-100 - 2px;
+        transform: translate(-50%, -50%);
+      }
+    }
+  }
+}

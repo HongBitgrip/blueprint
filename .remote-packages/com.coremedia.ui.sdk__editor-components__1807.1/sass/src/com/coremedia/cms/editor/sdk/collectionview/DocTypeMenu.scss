@@ -1,0 +1,12 @@
+@if $cm-include-doctype-menu {
+  $_block: "cm-doctype-menu";
+  .#{$_block} {
+    max-height: $cm-include-doctype-menu-max-height;
+    overflow-x: $cm-include-doctype-menu-overflow-x;
+    overflow-y: $cm-include-doctype-menu-overflow-y;
+
+    & .x-menu-item {
+      position: relative;
+    }
+  }
+}

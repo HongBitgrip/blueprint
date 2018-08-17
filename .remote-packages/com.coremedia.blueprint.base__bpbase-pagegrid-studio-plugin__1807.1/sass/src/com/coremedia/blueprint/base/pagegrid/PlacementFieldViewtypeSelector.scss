@@ -1,0 +1,9 @@
+@if $cm-include-placement-field-viewtype-selector {
+
+  $_block: "cm-placement-field-default-viewtype";
+
+  .#{$_block} {
+    font-style: italic;
+  }
+}
+

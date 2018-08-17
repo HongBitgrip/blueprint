@@ -1,0 +1,26 @@
+@if $cm-include-shimmable-util {
+
+  $_block: "cm-shim";
+
+  .#{$_block} {
+    z-index: 9000;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: transparent;
+    overflow: hidden;
+    display: none;
+
+    &-on {
+      width: 100%;
+      height: 100%;
+      z-index: 610;
+      display: block;
+    }
+
+    &-mask {
+      background-color: $cm-grey-1;
+      opacity: 0.5;
+    }
+  }
+}

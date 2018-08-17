@@ -1,0 +1,17 @@
+@if $cm-include-filter-panel {
+  $_block: "cm-filter-panel";
+  .#{$_block} {
+    &__reset {
+      visibility: hidden;
+    }
+
+    &--customized {
+      .#{$_block}__header {
+        background-color: $cm-blue-0;
+      }
+      .#{$_block}__reset {
+        visibility: inherit;
+      }
+    }
+  }
+}

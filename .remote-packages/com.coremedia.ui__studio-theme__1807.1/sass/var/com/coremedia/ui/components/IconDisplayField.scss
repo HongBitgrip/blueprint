@@ -1,0 +1,167 @@
+/**
+ * @var {color}
+ * Defines the color of the icon in icon-display-fields.
+ *
+ * @member com.coremedia.ui.components.IconDisplayField
+ */
+$cm-icon-display-field-icon-color: dynamic($cm-icon-color-pos);
+
+/**
+ * @var {color}
+ * Defines the disabled color of the icon in icon-display-fields.
+ *
+ * @member com.coremedia.ui.components.IconDisplayField
+ */
+$cm-icon-display-field-icon-color-disabled: dynamic($cm-spot-grey-2);
+
+/**
+ * @var {color}
+ * Defines the padding of icon-display-fields.
+ *
+ * @member com.coremedia.ui.components.IconDisplayField
+ */
+$cm-icon-display-field-padding: dynamic(0);
+
+/**
+ * @var {number/list}
+ * Defines the spacing for the icon in icon-display-fields.
+ *
+ * @member com.coremedia.ui.components.IconDisplayField
+ */
+$cm-icon-display-field-icon-spacing: dynamic(4px 4px 4px $cm-grid-200);
+
+/**
+ * @var {number/list}
+ * Defines an additional spacing between the icon and the border of icon-display-fields.
+ *
+ * @member com.coremedia.ui.components.IconDisplayField
+ */
+$cm-icon-display-field-icon-outer-spacing: dynamic(0);
+
+/**
+ * @var {number}
+ * Defines the width, height and font-size of the icon element in icon-display-fields.
+ * Use this parameter if small scale (default) is used for the icon-display-field.
+ *
+ * @member com.coremedia.ui.components.IconDisplayField
+ */
+$cm-icon-display-field-icon-size-small: dynamic($cm-glyph-font-size-100);
+
+/**
+ * @var {number}
+ * Defines the width, height and font-size of the icon element in icon-display-fields.
+ * Use this parameter if medium scale is used for the icon-display-field.
+ *
+ * @member com.coremedia.ui.components.IconDisplayField
+ */
+$cm-icon-display-field-icon-size-medium: dynamic($cm-glyph-font-size-200);
+
+/**
+ * @var {number}
+ * Defines the width, height and font-size of the icon element in icon-display-fields.
+ * Use this parameter if large scale is used for the icon-display-field.
+ *
+ * @member com.coremedia.ui.components.IconDisplayField
+ */
+$cm-icon-display-field-icon-size-large: dynamic($cm-glyph-font-size-300);
+
+
+/**
+ * @var {boolean}
+ * Specifies if the "default" UI for icon-display-fields will be generated.
+ *
+ * see {@link #cm-include-display-field-default-ui}
+ *
+ * @member com.coremedia.ui.components.IconDisplayField
+ */
+$cm-include-icon-display-field-default-ui: dynamic($cm-include-display-field-default-ui);
+
+/**
+ * @var {boolean}
+ * Specifies if the custom UI "workarea" for icon-display-fields will be generated.
+ *
+ * see {@link #cm-include-display-field-workarea-ui}
+ *
+ * @member com.coremedia.ui.components.IconDisplayField
+ */
+$cm-include-icon-display-field-workarea-ui: dynamic($cm-include-display-field-workarea-ui);
+
+/**
+ * @var {boolean}
+ * Specifies if the custom UI "info" for icon-display-fields will be generated.
+ *
+ * see {@link #cm-include-display-field-info-ui}
+ *
+ * @member com.coremedia.ui.components.IconDisplayField
+ */
+$cm-include-icon-display-field-info-ui: dynamic($cm-include-display-field-info-ui);
+
+/**
+ * @var {boolean}
+ * Specifies if the custom UI "double" for icon-display-fields will be generated.
+ *
+ * see {@link #cm-include-display-field-double-ui}
+ *
+ * @member com.coremedia.ui.components.IconDisplayField
+ */
+$cm-include-icon-display-field-double-ui: dynamic($cm-include-display-field-double-ui);
+
+/**
+ * @var {boolean}
+ * Specifies if the custom UI "italic" for icon-display-fields will be generated.
+ *
+ * see {@link #cm-include-display-field-italic-ui}
+ *
+ * @member com.coremedia.ui.components.IconDisplayField
+ */
+$cm-include-icon-display-field-italic-ui: dynamic($cm-include-display-field-italic-ui);
+
+/**
+ * @var {boolean}
+ * Specifies if the custom UI "bold" for icon-display-fields will be generated.
+ *
+ * see {@link #cm-include-display-field-bold-ui}
+ *
+ * @member com.coremedia.ui.components.IconDisplayField
+ */
+$cm-include-icon-display-field-bold-ui: dynamic($cm-include-display-field-bold-ui);
+
+/**
+ * @var {boolean}
+ * Specifies if the custom UI "logo" for icon-display-fields will be generated.
+ *
+ * see {@link #cm-include-display-field-logo-ui}
+ *
+ * @member com.coremedia.ui.components.IconDisplayField
+ */
+$cm-include-icon-display-field-logo-ui: dynamic($cm-include-display-field-logo-ui);
+
+/**
+ * @var {boolean}
+ * Specifies if the custom UI "license-warning" for icon-display-fields will be generated.
+ *
+ * see {@link #cm-include-display-field-license-warning-ui}
+ *
+ * @member com.coremedia.ui.components.IconDisplayField
+ */
+$cm-include-icon-display-field-license-warning-ui: dynamic($cm-include-display-field-license-warning-ui);
+
+/**
+ * @var {boolean}
+ * Specifies if the custom UI "embedded" for icon-display-fields will be generated.
+ *
+ * see {@link #cm-include-display-field-embedded-ui}
+ *
+ * @member com.coremedia.ui.components.IconDisplayField
+ */
+$cm-include-icon-display-field-embedded-ui: dynamic($cm-include-display-field-embedded-ui);
+
+/**
+ * @var {boolean}
+ * Specifies if the custom UI "light" for icon-display-fields will be generated.
+ *
+ * see {@link #cm-include-display-field-light-ui}
+ *
+ * @member com.coremedia.ui.components.IconDisplayField
+ */
+$cm-include-icon-display-field-light-ui: dynamic($cm-include-display-field-light-ui);

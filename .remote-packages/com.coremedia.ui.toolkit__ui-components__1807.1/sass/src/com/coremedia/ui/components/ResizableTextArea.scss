@@ -1,0 +1,14 @@
+@if $cm-include-resizable-text-area {
+  $_block: "cm-auto-width-text-area";
+  .#{$_block}{
+    .#{$prefix}form-textarea-body {
+      width: 100%;
+      display: table-row;
+      .#{$prefix}form-text {
+        &.#{$prefix}form-textarea {
+          padding-bottom: top($cm-text-field-textarea-padding) + $resizer-handle-size;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,169 @@
+//
+// Technical notes:
+//
+// While showing the thumb-data-view itself is not a big problem, we needed to add a multiline ellipsis which works
+// without JavaScript. The approach can be seen here {@link #cm-ellipsis-multiline}.
+//
+// Problem:
+// The background-color of the panel or the items might change, so the "covering" pseudo element might become visible as
+// white box when the background-color changes to a value different than white.
+//
+// Goal:
+// Always use the same background-color for the covering pseudo element that the ThumbDataView uses.
+//
+// Problems:
+// 1) We can't just use "transparent" here as the "dots" would not be covered anymore if the text uses an ellipsis.
+// 2) While things like "selected" and "hover" could be detected via CSS rules, the background-color of the
+// ThumbDataView is just added via an inline style (coming from an Ext feature). There is no indicator which would allow
+// us to adjust the covering element background color via css rules (e.g. no class is set).
+//
+// Solution:
+// S1) We let all descendant elements leading to the pseudo element use "background-color: inherit" to provide the actual
+// "background-color" of the ThumbDataView to the covering pseudo element.
+// S2) As the initial background-color is transparent this would cause the cover to no longer cover the "dots" (see above),
+// so we explicitly set the background-color to white.
+// Upon setting the background-color via inline styles
+//
+@if $cm-include-thumb-data-view {
+  $_block: "cm-thumb-data-view";
+  .#{$_block} {
+    padding: 6px;
+    background-color: $cm-thumbnail-background-color; // see S2)
+
+    &__item {
+      display: inline-block;
+      vertical-align: top;
+      margin: $cm-thumbnail-margin;
+    }
+
+    &--empty {
+      padding: 0;
+    }
+
+    &--frame {
+      border: 1px solid $cm-grey-3;
+      border-radius: $cm-border-radius;
+    }
+  }
+}
+@if $cm-include-thumbnail {
+  $_block: "cm-thumbnail";
+  $_thumbnail-preview-box-width: $cm-thumbnail-preview-width
+                                  + left($cm-thumbnail-preview-padding)
+                                  + right($cm-thumbnail-preview-padding);
+  $_thumbnail-preview-box-height: $cm-thumbnail-preview-height
+                                   + top($cm-thumbnail-preview-padding)
+                                   + bottom($cm-thumbnail-preview-padding);
+  $_thumbnail-text-box-width: $cm-thumbnail-text-line-height * $cm-thumbnail-text-line-count
+                               + left($cm-thumbnail-text-padding)
+                               + right($cm-thumbnail-text-padding);
+  $_thumbnail-text-box-height: $cm-thumbnail-text-line-height * $cm-thumbnail-text-line-count
+                                + top($cm-thumbnail-text-padding)
+                                + bottom($cm-thumbnail-text-padding)
+                                - 1px;  //Fix for mac os to prevent the third row in the text-box from being displayed
+  $_preview-text-box-gap: 4px;
+  .#{$_block} {
+    width: max($_thumbnail-preview-box-width, $_thumbnail-text-box-width);
+    height: $_thumbnail-preview-box-height + $_thumbnail-text-box-height + $_preview-text-box-gap;
+    line-height: 1;
+    text-align: center;
+    border-radius: $cm-border-radius;
+    background-color: inherit; // see S1)
+    // leave space for a box shadow to the sides
+    padding: 0 1px;
+    overflow: hidden;
+
+    &__icon {
+      margin-top: 10px;
+      margin-bottom: $_preview-text-box-gap;
+      //TODO: improve the combined usage of padding and margin
+    }
+
+    &__icon {
+      box-sizing: content-box;
+      text-align: center;
+      font-size: $cm-thumbnail-preview-height;
+      height: $cm-thumbnail-preview-height;
+      line-height: 1;
+    }
+
+    &__text {
+      // mixin to enable multiline ellipsis
+      @include cm-ellipsis-multiline(
+          $line-height: $cm-thumbnail-text-font-size,
+          $line-count: $cm-thumbnail-text-line-count,
+          // this is the pseudo element's background-color
+          $background-color: inherit, // see S1)
+          $color: $cm-font-color
+      );
+      margin: 0;
+      // this is text actual text element's background-color
+      background-color: inherit; // see S1)
+    }
+
+    &:hover {
+      background-color: $cm-thumbnail-background-color-hover;
+    }
+
+    &--loading {
+      .#{$_block}__image {
+        // TODO, e.g.:
+        // $_spinner-url: file_join("images", $loadmask-msg-inner-icon + ".gif");
+        // background: url($_spinner-url) no-repeat $loadmask-msg-inner-icon-position;
+      }
+    }
+
+    &--read-only {
+      .#{$_block}__text {
+        color: $cm-grey-5;
+      }
+    }
+
+    &.#{$prefix}item-selected {
+      background-color: $cm-thumbnail-background-color-selected;
+
+      .#{$_block}__icon,
+      .#{$_block}__text {
+        color: $cm-white;
+      }
+
+      .#{$_block}__image {
+        border: none;
+      }
+    }
+
+    &.#{$prefix}view-item-focused {
+      box-shadow: cm-focus-box-shadow($cm-grey-7);
+    }
+
+    &--no-selection {
+      &:hover {
+        background-color: transparent;
+      }
+    }
+  }
+
+  $_block: "cm-thumbnail-image";
+  .#{$_block} {
+    &--collection-view {
+      width: $cm-thumbnail-preview-width;
+      height: $cm-thumbnail-preview-height;
+      margin-left: auto;
+      margin-right: auto;
+      margin-top: 10px;
+      margin-bottom: $_preview-text-box-gap;
+      //TODO: improve the combined usage of padding and margin
+
+      line-height: $cm-thumbnail-preview-height;
+      position: relative;
+
+      .#{$_block}__image {
+        max-height: 100%;
+        max-width: 100%;
+        vertical-align: middle;
+        border: 1px solid $cm-grey-3;
+        border-radius: $cm-border-radius;
+      }
+    }
+  }
+}

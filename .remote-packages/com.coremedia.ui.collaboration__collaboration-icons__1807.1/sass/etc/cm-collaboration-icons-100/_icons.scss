@@ -1,0 +1,25 @@
+@include cm-collaboration-icons-100-icon-rule($glyph: "add-expand") {
+  content: $cm-collaboration-icons-100-var-add-expand;
+};
+
+@include cm-collaboration-icons-100-icon-rule($glyph: "control-room") {
+  content: $cm-collaboration-icons-100-var-control-room;
+};
+
+@include cm-collaboration-icons-100-icon-rule($glyph: "spacer") {
+  content: $cm-collaboration-icons-100-var-spacer;
+};
+
+@include cm-collaboration-icons-100-icon-rule($glyph: "start-localization-workflow") {
+  content: $cm-collaboration-icons-100-var-start-localization-workflow;
+};
+
+@include cm-collaboration-icons-100-icon-rule($glyph: "start-publication-workflow") {
+  content: $cm-collaboration-icons-100-var-start-publication-workflow;
+};
+
+@include cm-collaboration-icons-100-icon-rule($glyph: "start-translation-workflow") {
+  content: $cm-collaboration-icons-100-var-start-translation-workflow;
+};
+
+

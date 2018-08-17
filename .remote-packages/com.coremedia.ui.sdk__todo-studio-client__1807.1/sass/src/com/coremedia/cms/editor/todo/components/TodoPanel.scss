@@ -1,0 +1,72 @@
+@if $cm-include-todo-panel {
+  $_block: "cm-todo-panel";
+  .#{$_block} {
+
+    &__delete {
+      opacity: 0;
+      &:focus {
+        opacity: 1;
+      }
+    }
+
+    &__controls {
+      display: flex;
+      align-items: center;
+      padding-right: $cm-grid-100;
+    }
+
+    &__assignees,
+    &__due-date {
+      display: none;
+    }
+
+    &__due-date {
+      flex: 1;
+      text-align: right;
+    }
+
+    &:hover {
+      .#{$_block}__delete {
+        opacity: 1;
+      }
+    }
+
+    &--editor-mode {
+      .#{$_block}__delete {
+        opacity: 1;
+      }
+    }
+
+    &--editor-mode,
+    &--has-assignee {
+      .#{$_block}__assignees {
+        display: inline-block;
+      }
+    }
+
+    &--editor-mode,
+    &--due-date-focus,
+    &--has-due-date {
+      .#{$_block}__due-date {
+        display: inline-block;
+      }
+    }
+  }
+
+  // assuming we are using the default text area
+  .cm-todo-text-display {
+    display: block;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    color: $form-text-field-color;
+    font-size: $form-text-field-font-size;
+    padding: $form-text-field-padding;
+    line-height: $form-textarea-line-height;
+    border: $form-text-field-border-width solid transparent;
+
+    &--empty {
+      color: $cm-grey-7;
+      font-style: italic;
+    }
+  }
+}

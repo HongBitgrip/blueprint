@@ -1,0 +1,47 @@
+@if $cm-include-breadcrumb {
+  $_block: "cm-breadcrumb";
+  $_element: $_block + "__root";
+
+  $_menu_block: "cm-breadcrumb-menu";
+  $_menu_element: $_menu_block + "__active";
+
+  .#{$_block} {
+    .#{$prefix}btn-breadcrumb-small {
+      &.#{$_element} {
+        padding: 2px 0;
+        .#{$prefix}btn-inner {
+          padding: 0;
+          width: 1px;
+        }
+        .#{$prefix}btn-split-right > .#{$prefix}btn-button {
+          padding-right: 0;
+        }
+        .#{$prefix}btn-split-right > .#{$prefix}btn-button:after {
+          display: none;
+        }
+      }
+      &.#{$prefix}btn-over,
+      &.#{$prefix}btn-menu-active {
+        .#{$prefix}btn-split-right > .#{$prefix}btn-button:after {
+          border-right-color: $button-default-color;
+        }
+      }
+      // different padding for splitter
+      .#{$prefix}btn-split-right > .#{$prefix}btn-button {
+        padding-right: 3px;
+      }
+    }
+  }
+  // show opened folder in menu
+  .#{$_menu_block} {
+    .#{$_menu_element} {
+      .cm-core-icons--folder {
+        @include font-icon(
+          $glyph: ($cm-core-icons-100-var-folder-open $cm-glyph-font-size-100 $cm-core-icons-100-font-name),
+          $color: $cm-black,
+          $line-height: null
+        );
+      }
+    }
+  }
+}

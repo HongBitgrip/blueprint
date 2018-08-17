@@ -1,0 +1,90 @@
+/**
+ * CoreMedia UI Mixin for tree views.
+ *
+ * @param {string} $ui
+ * The name of the UI being created. May not include spaces or special punctuation as string is used as part of
+ * CSS class names.
+ *
+ * @param {color} [$arrow-glyph-color-selected=$cm-tree-arrow-glyph-color-selected]
+ * If not null defines the color of the tree arrows when the row is selected.
+ *
+ * @param {color} [$icon-glyph-color-selected=$cm-tree-icon-glyph-color-selected]
+ * If not null defines the color of the tree icon when the row is selected.
+ *
+ * @param {color} [$checkbox-glyph-color-selected=$cm-tree-checkbox-glyph-color-selected]
+ * If not null defines the color of the tree checkbox when the row is selected.
+ *
+ * @param {number} [$cell-editor-min-height=$cm-tree-cell-editor-min-height]
+ * If not null defines the min-height, of the cell's editor.
+ *
+ * @param {list} [$icon-glyph-loading=$cm-tree-icon-glyph-loading]
+ * If not null defines a glyph to be used as the tree node icon when the node is still loading. Only applies when
+ * {@link #enable-font-icons} is true.
+ *
+ * @param {list} [$icon-glyph-loading=$cm-tree-icon-glyph-loading]
+ * If not null defines an animation to be used for the tree node icon when the node is still loading.
+ *
+ * @param {list} [$icon-animation-loading=$cm-tree-icon-animation-loading]
+ * If not null defines the animation behaviour and duration for loading icon.
+ *
+ * @member Ext.tree.View
+ */
+@mixin cm-tree-view-ui(
+  $ui,
+  $arrow-glyph-color-selected: $cm-tree-arrow-glyph-color-selected,
+  $icon-glyph-color-selected: $cm-tree-icon-glyph-color-selected,
+  $checkbox-glyph-color-selected: $cm-tree-checkbox-glyph-color-selected,
+  $cell-editor-min-height: $cm-tree-cell-editor-min-height,
+  $icon-glyph-loading: $cm-tree-icon-glyph-loading,
+  $icon-animation-loading: $cm-tree-icon-animation-loading
+) {
+  .#{$prefix}tree-view-#{$ui} {
+    .#{$prefix}grid-item.#{$prefix}grid-item-selected {
+
+      .#{$prefix}grid-tree-node-expanded .#{$prefix}tree-expander,
+      .#{$prefix}grid-row .#{$prefix}tree-expander {
+        @if $arrow-glyph-color-selected != null {
+          color: $arrow-glyph-color-selected;
+        }
+      }
+
+      .#{$prefix}tree-icon.#{$prefix}tree-icon-parent,
+      .#{$prefix}tree-icon.#{$prefix}tree-icon-parent-expanded,
+      .#{$prefix}tree-icon.#{$prefix}tree-icon-leaf {
+        @if $icon-glyph-color-selected != null {
+          color: $icon-glyph-color-selected;
+        }
+      }
+
+      .#{$prefix}tree-checkbox {
+        @if $checkbox-glyph-color-selected != null {
+          color: $checkbox-glyph-color-selected;
+        }
+      }
+    }
+
+    .#{$prefix}form-text-#{$ui} {
+      @if $cell-editor-min-height != null {
+        min-height: $cell-editor-min-height;
+      }
+    }
+
+    .#{$prefix}grid-tree-loading {
+      .#{$prefix}tree-icon {
+        @if $icon-animation-loading != null {
+          animation: $icon-animation-loading;
+        }
+        @if $enable-font-icons and $icon-glyph-loading != null {
+          // hide default loading indicator
+          background-image: none;
+
+          @include font-icon(
+            $glyph: $icon-glyph-loading,
+            // do not set line-height
+            $line-height: null
+          );
+        }
+      }
+    }
+  }
+}

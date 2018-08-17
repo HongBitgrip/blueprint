@@ -1,0 +1,15 @@
+/**
+ * @var {number}
+ * Sets the size for the custom coremedia badge.
+ *
+ * @member Ext.Component
+ */
+$cm-badge-size: dynamic(14px);
+
+/**
+ * @var {boolean}
+ * Enables additional styles for the coremedia badge plugin.
+ *
+ * @member Ext.Component
+ */
+$cm-include-badge-plugin: dynamic(true);

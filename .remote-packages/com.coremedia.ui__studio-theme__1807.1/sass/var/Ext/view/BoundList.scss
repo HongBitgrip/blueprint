@@ -1,0 +1,17 @@
+$boundlist-border-color: dynamic($cm-blue-4);
+$boundlist-item-height: dynamic($cm-grid-400);
+$boundlist-item-padding: dynamic(0 $cm-grid-100);
+$boundlist-item-text-color: dynamic($cm-font-color);
+$boundlist-item-over-text-color: dynamic($cm-font-color);
+$boundlist-item-over-background-color: dynamic($cm-blue-0);
+// do not show selected state
+$boundlist-item-selected-text-color: dynamic(null);
+$boundlist-item-selected-background-color: dynamic(null);
+
+/**
+ * @var {boolean}
+ * Enables additional styles for the "default" skin.
+ *
+ * @member Ext.view.BoundList
+ */
+$cm-include-view-boundlist-default-ui: dynamic(true);

@@ -1,0 +1,51 @@
+@if $cm-include-struct-editor-tree-grid {
+
+  $_struct-checkbox: $form-checkbox-size ExtJS;
+
+  $_checkbox-block: "cm-struct-editor-checkbox";
+
+  // show checkbox
+  .#{$_checkbox-block} {
+    font: $_struct-checkbox;
+    line-height: top($grid-cell-inner-padding) + bottom($grid-cell-inner-padding) + $grid-row-cell-line-height;
+    margin-top: top($grid-cell-inner-padding)* -1;
+    margin-bottom: bottom($grid-cell-inner-padding)* -1;
+
+    &:before {
+      content: $ext-var-checkbox-unchecked;
+    }
+
+    &--checked {
+      &:before {
+        content: $ext-var-checkbox-checked;
+      }
+    }
+  }
+
+  $_entry-block: "cm-struct-editor-entry";
+  // content type icon margin
+  .#{$_entry-block} {
+    &__icon {
+      margin-right: $cm-grid-100;
+    }
+
+    &__text ~ &__icon {
+      margin-left: $cm-grid-100;
+    }
+  }
+
+  //tree column
+  $_struct-list-property-node: "struct-list-property-node";
+  .cm-struct-editor-tree-grid {
+    .#{$prefix}tree-icon {
+      display: none;
+    }
+    .#{$_struct-list-property-node} {
+      .#{$prefix}tree-cell-editor {
+        .#{$prefix}form-text {
+          padding-left: 8px;
+        }
+      }
+    }
+  }
+}

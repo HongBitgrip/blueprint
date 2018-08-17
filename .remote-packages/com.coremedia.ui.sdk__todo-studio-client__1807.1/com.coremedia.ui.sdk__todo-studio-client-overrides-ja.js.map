@@ -1,0 +1,8 @@
+{
+"version":3,
+"file":"com.coremedia.ui.sdk__todo-studio-client-overrides-ja.js",
+"lineCount":1,
+"mappings":"AAGAA,GAAAC,OAAA,CAAW,kDAAX,CAA+D,CAC7DC,SAAU,+CADmD,CAA/D,CAGG,QAAQ,EAAG,EAHd;",
+"sources":["locale/ja/com/coremedia/cms/editor/todo/Todo_properties.js"],
+"names":["Ext","define","override"]
+}
